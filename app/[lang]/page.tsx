@@ -3,9 +3,10 @@ import { AIChat } from "@/components/AIChat";
 import { Icon } from "@/components/Icon";
 import { CtaBand, FaqList, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
+import { ChildJourney, DayInSchool, EmotionalStatement, MomentsStream, PromiseLetter, TimeBack } from "@/components/heart";
 import {
   AppsShowcase, Bento, BeforeAfter, HomeHero, HowItWorks, ModuleMarquee, PortalsSection, PricingTeaser,
-  ProductsShowcase, SmsStory, StatsBand,
+  ProductsShowcase, SmsStory,
 } from "@/components/home";
 import { aiFeatures, faqs } from "@/lib/content";
 import { isLang, T, tx } from "@/lib/i18n";
@@ -18,9 +19,13 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     <>
       <HomeHero lang={lang} />
       <ModuleMarquee lang={lang} />
+      <EmotionalStatement lang={lang} />
       <BeforeAfter lang={lang} />
       <Bento lang={lang} />
+      <MomentsStream lang={lang} />
       <PortalsSection lang={lang} />
+      <DayInSchool lang={lang} />
+      <ChildJourney lang={lang} />
       <AppsShowcase lang={lang} />
 
       {/* AI */}
@@ -56,10 +61,11 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       </section>
 
       <SmsStory lang={lang} />
-      <StatsBand lang={lang} />
-      <ProductsShowcase lang={lang} />
+      <TimeBack lang={lang} />
       <HowItWorks lang={lang} />
+      <ProductsShowcase lang={lang} />
       <PricingTeaser lang={lang} />
+      <PromiseLetter lang={lang} />
 
       <section className="bg-mist py-24">
         <div className="container-x">
