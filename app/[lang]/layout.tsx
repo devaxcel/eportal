@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const ur = lang === "ur";
   return {
     title: {
-      default: ur ? "ای پورٹل | اسکول مینجمنٹ سافٹ ویئر" : "ePortal | School Management Software",
+      default: ur ? "ای پورٹل | اسکول، فٹنس، صحت اور ڈرائیونگ کے لیے سمارٹ پلیٹ فارمز" : "ePortal | Smart platforms for schools, fitness, healthcare and driving",
       template: "%s | ePortal",
     },
     description: ur
-      ? "داخلے، حاضری، فیس، امتحانات اور والدین سے رابطہ، اردو اور انگریزی میں، اے آئی اسسٹنٹ کے ساتھ۔"
-      : "Admissions, attendance, fees, exams and parent communication in English and Urdu, with an AI assistant.",
+      ? "ای اسکول، فارمڈ، ڈیٹا پورٹل، پرو ایڈ میڈیکل اور ہے روٹس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
+      : "eSchool, Formed, Data Portal, ProEd Medical and HayRoutes: smart platforms built in Lahore.",
     alternates: { languages: { en: "/en", ur: "/ur" } },
   };
 }

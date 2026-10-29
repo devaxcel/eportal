@@ -1,9 +1,7 @@
 import type { L } from "./i18n";
 
 export const nav: { key: string; path: string; label: L }[] = [
-  { key: "portals", path: "/portals", label: { en: "Portals", ur: "پورٹلز" } },
   { key: "solutions", path: "/solutions", label: { en: "Solutions", ur: "حل" } },
-  { key: "ai", path: "/#ai", label: { en: "AI", ur: "اے آئی" } },
   { key: "pricing", path: "/pricing", label: { en: "Pricing", ur: "قیمتیں" } },
   { key: "about", path: "/about", label: { en: "About", ur: "ہمارے بارے میں" } },
   { key: "contact", path: "/contact", label: { en: "Contact", ur: "رابطہ" } },
@@ -478,5 +476,43 @@ export const steps: { title: L; desc: L }[] = [
   {
     title: { en: "Go live", ur: "لائیو ہو جائیں" },
     desc: { en: "Parents get the app and you get your time back.", ur: "والدین کو ایپ ملتی ہے اور آپ کو آپ کا وقت واپس۔" },
+  },
+];
+
+export const hubFaqs: { q: L; a: L }[] = [
+  {
+    q: { en: "What does ePortal offer?", ur: "ای پورٹل کیا پیش کرتا ہے؟" },
+    a: {
+      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, Data Portal for organisation datasets, ProEd Medical for searching medical codes, and HayRoutes for hiring driving instructors.",
+      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، ادارے کے ڈیٹا سیٹس کے لیے ڈیٹا پورٹل، میڈیکل کوڈز تلاش کرنے کے لیے پرو ایڈ میڈیکل، اور ڈرائیونگ انسٹرکٹر ہائر کرنے کے لیے ہے روٹس۔",
+    },
+  },
+  {
+    q: { en: "Do I need to use more than one platform?", ur: "کیا ایک سے زیادہ پلیٹ فارم استعمال کرنا ضروری ہے؟" },
+    a: {
+      en: "No. Every platform works on its own. Choose the one that fits your need and add others later if you want.",
+      ur: "نہیں۔ ہر پلیٹ فارم الگ سے کام کرتا ہے۔ اپنی ضرورت کے مطابق ایک چنیں اور چاہیں تو بعد میں دوسرے شامل کریں۔",
+    },
+  },
+  {
+    q: { en: "Can we see it before we commit?", ur: "کیا ہم پہلے دیکھ سکتے ہیں؟" },
+    a: {
+      en: "Yes. Request a demo, tell us which solution you are interested in, and we will walk you through it.",
+      ur: "جی ہاں۔ ڈیمو کی درخواست کریں، بتائیں کون سا حل چاہیے، اور ہم آپ کو دکھائیں گے۔",
+    },
+  },
+  {
+    q: { en: "Which languages are supported?", ur: "کون سی زبانیں دستیاب ہیں؟" },
+    a: {
+      en: "This website and eSchool work in English and Urdu. Ask us about language support for the other platforms.",
+      ur: "یہ ویب سائٹ اور ای اسکول اردو اور انگریزی میں کام کرتے ہیں۔ دوسرے پلیٹ فارمز کی زبانوں کے بارے میں ہم سے پوچھیں۔",
+    },
+  },
+  {
+    q: { en: "How is pricing decided?", ur: "قیمت کیسے طے ہوتی ہے؟" },
+    a: {
+      en: "eSchool has published plans. For the other platforms we quote based on your needs. Request a demo and we will share a clear price.",
+      ur: "ای اسکول کے پلانز شائع شدہ ہیں۔ دوسرے پلیٹ فارمز کے لیے ہم آپ کی ضرورت کے مطابق قیمت بتاتے ہیں۔ ڈیمو کی درخواست کریں، ہم واضح قیمت بتائیں گے۔",
+    },
   },
 ];

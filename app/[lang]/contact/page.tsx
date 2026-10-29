@@ -3,7 +3,7 @@ import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { DemoForm } from "@/components/DemoForm";
 import { FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal, Spot } from "@/components/motion";
-import { faqs } from "@/lib/content";
+import { hubFaqs } from "@/lib/content";
 import { isLang, T, tx } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
@@ -71,7 +71,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
       <section className="bg-mist py-20">
         <div className="container-x">
           <SectionHead eyebrow={T(lang, "FAQ", "اکثر پوچھے گئے سوالات")} title={T(lang, "Quick answers", "فوری جوابات")} />
-          <div className="mt-10"><FaqList items={faqs} lang={lang} /></div>
+          <div className="mt-10"><FaqList items={hubFaqs} lang={lang} /></div>
         </div>
       </section>
     </>

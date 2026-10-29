@@ -9,7 +9,7 @@ import { faqs, solutions, ui } from "@/lib/content";
 import { href, isLang, locales, T, tx } from "@/lib/i18n";
 
 export const generateStaticParams = () =>
-  locales.flatMap((lang) => solutions.map((s) => ({ lang, slug: s.slug })));
+  locales.flatMap((lang) => solutions.filter((s) => s.slug !== "eschool").map((s) => ({ lang, slug: s.slug })));
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;

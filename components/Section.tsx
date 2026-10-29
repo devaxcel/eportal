@@ -61,10 +61,10 @@ export function CtaBand({ lang }: { lang: Lang }) {
           <div className="animate-float-slow pointer-events-none absolute -start-10 top-8 hidden h-28 w-28 rounded-3xl bg-brand-500/25 blur-xl sm:block" />
           <div className="animate-float pointer-events-none absolute -end-6 bottom-6 hidden h-36 w-36 rounded-full bg-brand-400/25 blur-2xl sm:block" />
           <h2 className="relative mx-auto max-w-2xl text-3xl font-extrabold sm:text-5xl">
-            {T(lang, "See ePortal running your school", "دیکھیں ای پورٹل آپ کا اسکول کیسے چلاتا ہے")}
+            {T(lang, "Find the right ePortal solution for you", "اپنے لیے درست ای پورٹل حل تلاش کریں")}
           </h2>
           <p className="relative mx-auto mt-5 max-w-xl text-lg text-white/75">
-            {T(lang, "A 30-minute demo using your own workflow. No commitment.", "آپ کے اپنے طریقہ کار کے ساتھ 30 منٹ کا ڈیمو۔ کوئی پابندی نہیں۔")}
+            {T(lang, "Tell us what you need. A short demo, no commitment.", "اپنی ضرورت بتائیں۔ مختصر ڈیمو، کوئی پابندی نہیں۔")}
           </p>
           <div className="relative mt-9 flex flex-wrap justify-center gap-3">
             <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">

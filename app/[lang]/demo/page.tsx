@@ -4,7 +4,7 @@ import { DemoForm } from "@/components/DemoForm";
 import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { AdminDashboardMock, BrowserFrame } from "@/components/visuals";
-import { faqs } from "@/lib/content";
+import { hubFaqs } from "@/lib/content";
 import { isLang, T } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -18,13 +18,13 @@ export default async function DemoPage({ params }: { params: Promise<{ lang: str
 
   const perks = [
     { icon: Clock, t: T(lang, "30 minutes, no commitment", "30 منٹ، کوئی پابندی نہیں") },
-    { icon: Sparkles, t: T(lang, "Shown with your own school's workflow", "آپ کے اپنے اسکول کے طریقہ کار کے ساتھ") },
-    { icon: ShieldCheck, t: T(lang, "Free data import quote", "ڈیٹا امپورٹ کا مفت تخمینہ") },
+    { icon: Sparkles, t: T(lang, "Shown with your own workflow", "آپ کے اپنے طریقہ کار کے ساتھ") },
+    { icon: ShieldCheck, t: T(lang, "A clear price, no surprises", "واضح قیمت، کوئی حیرت نہیں") },
   ];
   const expect = [
-    [T(lang, "We learn about your school", "ہم آپ کے اسکول کو سمجھتے ہیں"), T(lang, "Size, branches, and what takes the most time today.", "سائز، برانچیں، اور آج سب سے زیادہ وقت کس میں لگتا ہے۔")],
-    [T(lang, "Live walkthrough", "لائیو دورہ"), T(lang, "Admin, teacher and parent views, with an AI assistant demo.", "ایڈمن، ٹیچر اور پیرنٹ ویو، اے آئی اسسٹنٹ کے مظاہرے کے ساتھ۔")],
-    [T(lang, "A clear plan and price", "واضح منصوبہ اور قیمت"), T(lang, "You get a setup timeline and a quote you can share with your board.", "آپ کو سیٹ اپ کا وقت اور ایسا تخمینہ ملتا ہے جو بورڈ کو دکھا سکیں۔")],
+    [T(lang, "We learn about your need", "ہم آپ کی ضرورت سمجھتے ہیں"), T(lang, "What you do today and what takes the most time.", "آپ آج کیا کرتے ہیں اور سب سے زیادہ وقت کس میں لگتا ہے۔")],
+    [T(lang, "Live walkthrough", "لائیو دورہ"), T(lang, "We show the platform that fits you, step by step.", "ہم آپ کے مطابق پلیٹ فارم مرحلہ وار دکھاتے ہیں۔")],
+    [T(lang, "A clear plan and price", "واضح منصوبہ اور قیمت"), T(lang, "You get a setup timeline and a quote you can share with your team.", "آپ کو سیٹ اپ کا وقت اور ایسا تخمینہ ملتا ہے جو ٹیم کو دکھا سکیں۔")],
   ];
 
   return (
@@ -32,7 +32,7 @@ export default async function DemoPage({ params }: { params: Promise<{ lang: str
       <PageHero
         eyebrow={T(lang, "Demo", "ڈیمو")}
         title={T(lang, "Request a demo", "ڈیمو کی درخواست کریں")}
-        sub={T(lang, "Tell us about your school and we will contact you within one working day.", "اپنے اسکول کے بارے میں بتائیں، ہم ایک کاروباری دن میں رابطہ کریں گے۔")}
+        sub={T(lang, "Tell us what you need and we will contact you within one working day.", "اپنی ضرورت بتائیں، ہم ایک کاروباری دن میں رابطہ کریں گے۔")}
       />
 
       <section className="container-x grid gap-12 py-20 lg:grid-cols-5">
@@ -75,7 +75,7 @@ export default async function DemoPage({ params }: { params: Promise<{ lang: str
 
       <section className="container-x py-20">
         <SectionHead eyebrow={T(lang, "FAQ", "اکثر پوچھے گئے سوالات")} title={T(lang, "Before you book", "بک کرنے سے پہلے")} />
-        <div className="mt-10"><FaqList items={faqs.slice(0, 4)} lang={lang} /></div>
+        <div className="mt-10"><FaqList items={hubFaqs} lang={lang} /></div>
       </section>
       <CtaBand lang={lang} />
     </>

@@ -20,8 +20,8 @@ export default async function SolutionsPage({ params }: { params: Promise<{ lang
     <>
       <PageHero
         eyebrow={T(lang, "Solutions", "حل")}
-        title={T(lang, "Platforms that connect people to the services they need", "ایسے پلیٹ فارمز جو لوگوں کو مطلوبہ خدمات سے جوڑتے ہیں")}
-        sub={T(lang, "From running a school to hiring a trainer, each product is built around real workflows.", "اسکول چلانے سے لے کر ٹرینر ہائر کرنے تک، ہر مصنوعہ حقیقی طریقہ کار پر بنایا گیا ہے۔")}
+        title={T(lang, "All ePortal solutions in one place", "ای پورٹل کے تمام حل ایک جگہ")}
+        sub={T(lang, "From running a school to hiring a trainer or a driving instructor, each platform is built around a real workflow.", "اسکول چلانے سے لے کر ٹرینر یا ڈرائیونگ انسٹرکٹر ہائر کرنے تک، ہر پلیٹ فارم حقیقی طریقہ کار پر بنایا گیا ہے۔")}
       />
 
       <div className="container-x space-y-28 py-20">

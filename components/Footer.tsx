@@ -9,12 +9,12 @@ export function Footer({ lang }: { lang: Lang }) {
   return (
     <footer className="bg-ink text-white/80">
       <div className="container-x grid gap-10 py-14 md:grid-cols-4">
-        <div className="md:col-span-2">
+        <div>
           <Logo light />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
             {lang === "en"
-              ? "Smart school and college management software built in Lahore for institutions across Pakistan."
-              : "لاہور میں تیار کردہ سمارٹ اسکول اور کالج مینجمنٹ سافٹ ویئر، پاکستان بھر کے اداروں کے لیے۔"}
+              ? "Smart platforms for schools, fitness, healthcare and driving, built in Lahore by AXCEL."
+              : "اسکولوں، فٹنس، صحت اور ڈرائیونگ کے لیے سمارٹ پلیٹ فارمز، لاہور میں ایکسل کے تیار کردہ۔"}
           </p>
         </div>
 
@@ -28,7 +28,13 @@ export function Footer({ lang }: { lang: Lang }) {
                 </Link>
               </li>
             ))}
-            {solutions.slice(0, 2).map((s) => (
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-white">{tx({ en: "Solutions", ur: "حل" }, lang)}</h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            {solutions.map((s) => (
               <li key={s.slug}>
                 <Link href={href(lang, `/solutions/${s.slug}`)} className="hover:text-white">
                   {tx(s.name, lang)}

@@ -20,14 +20,21 @@ function Word({ word, progress, range }: { word: string; progress: MotionValue<n
   return <motion.span style={{ opacity }} className="me-[0.28em] inline-block">{word}</motion.span>;
 }
 
-export function EmotionalStatement({ lang }: { lang: Lang }) {
+export function EmotionalStatement({ lang, variant = "hub" }: { lang: Lang; variant?: "hub" | "school" }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "end 0.5"] });
-  const text = T(
-    lang,
-    "Behind every record is a child. Behind every child is a family that trusts you with their future. We built ePortal so your school can give them its full attention.",
-    "ہر ریکارڈ کے پیچھے ایک بچہ ہے۔ ہر بچے کے پیچھے ایک خاندان ہے جو اپنا مستقبل آپ کے سپرد کرتا ہے۔ ہم نے ای پورٹل اس لیے بنایا کہ آپ کا اسکول انہیں اپنی پوری توجہ دے سکے۔",
-  );
+  const text =
+    variant === "school"
+      ? T(
+          lang,
+          "Behind every record is a child. Behind every child is a family that trusts you with their future. We built ePortal so your school can give them its full attention.",
+          "ہر ریکارڈ کے پیچھے ایک بچہ ہے۔ ہر بچے کے پیچھے ایک خاندان ہے جو اپنا مستقبل آپ کے سپرد کرتا ہے۔ ہم نے ای پورٹل اس لیے بنایا کہ آپ کا اسکول انہیں اپنی پوری توجہ دے سکے۔",
+        )
+      : T(
+          lang,
+          "Behind every platform is a person with a goal: a child to teach, a body to strengthen, a patient to care for, a road to learn. We build the tools that help them get there.",
+          "ہر پلیٹ فارم کے پیچھے ایک انسان ہے جس کا ایک مقصد ہے: پڑھانے کے لیے ایک بچہ، مضبوط کرنے کے لیے ایک جسم، دیکھ بھال کے لیے ایک مریض، سیکھنے کے لیے ایک سڑک۔ ہم وہ ٹولز بناتے ہیں جو انہیں منزل تک پہنچائیں۔",
+        );
   const words = text.split(" ");
 
   return (

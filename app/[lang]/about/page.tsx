@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { HowItWorks } from "@/components/home";
+import { GettingStarted } from "@/components/hub";
 import { Icon } from "@/components/Icon";
 import { CtaBand, PageHero, SectionHead } from "@/components/Section";
 import { CountUp, Reveal, Spot } from "@/components/motion";
@@ -26,18 +26,18 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   ];
 
   const nums = [
-    { v: 15, s: "+", l: T(lang, "Modules", "ماڈیولز") },
-    { v: 6, s: "", l: T(lang, "Portals", "پورٹلز") },
-    { v: 5, s: "+", l: T(lang, "Years building", "سال کا تجربہ") },
     { v: 5, s: "", l: T(lang, "Platforms", "پلیٹ فارمز") },
+    { v: 15, s: "+", l: T(lang, "eSchool modules", "ای اسکول ماڈیولز") },
+    { v: 5, s: "+", l: T(lang, "Years building", "سال کا تجربہ") },
+    { v: 2, s: "", l: T(lang, "Languages", "زبانیں") },
   ];
 
   return (
     <>
       <PageHero
         eyebrow={T(lang, "About us", "ہمارے بارے میں")}
-        title={T(lang, "Helping institutions spend less time on admin", "اداروں کو انتظامی کاموں پر کم وقت لگانے میں مدد")}
-        sub={T(lang, `${site.name} is developed by ${site.company} in Lahore. For over five years we have helped institutions replace paper registers with software their staff actually enjoy using.`, `${site.name} کو لاہور میں ${site.company} نے تیار کیا ہے۔ پانچ سال سے زائد عرصے سے ہم اداروں کو کاغذی رجسٹرز کی جگہ ایسا سافٹ ویئر دے رہے ہیں جو عملہ خوشی سے استعمال کرتا ہے۔`)}
+        title={T(lang, "Building platforms that make everyday services simpler", "ایسے پلیٹ فارمز بنانا جو روزمرہ خدمات کو آسان بنائیں")}
+        sub={T(lang, `${site.name} is developed by ${site.company} in Lahore. For over five years we have helped people replace paperwork and guesswork with software they actually enjoy using.`, `${site.name} کو لاہور میں ${site.company} نے تیار کیا ہے۔ پانچ سال سے زائد عرصے سے ہم اداروں کو کاغذی رجسٹرز کی جگہ ایسا سافٹ ویئر دے رہے ہیں جو عملہ خوشی سے استعمال کرتا ہے۔`)}
       />
 
       <section className="container-x grid items-center gap-12 py-20 lg:grid-cols-2">
@@ -45,8 +45,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">{T(lang, "Our story", "ہماری کہانی")}</p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">{T(lang, "Software should fit the way you already work", "سافٹ ویئر کو آپ کے کام کے طریقے کے مطابق ہونا چاہیے")}</h2>
           <div className="mt-5 space-y-4 text-lg text-ink-soft">
-            <p>{T(lang, "We started by listening to principals, cashiers and teachers who were drowning in registers and spreadsheets. They did not need more features. They needed less work.", "ہم نے ان پرنسپلز، کیشیئرز اور اساتذہ کی بات سنی جو رجسٹرز اور اسپریڈ شیٹس میں دبے ہوئے تھے۔ انہیں مزید خصوصیات نہیں، کم کام چاہیے تھا۔")}</p>
-            <p>{T(lang, "So we built ePortal around real days in a real school: mark attendance, collect fees, send results, answer parents. Today the same approach powers our other platforms too.", "اس لیے ہم نے ای پورٹل حقیقی اسکول کے حقیقی دنوں کے گرد بنایا: حاضری لگائیں، فیس وصول کریں، نتائج بھیجیں، والدین کو جواب دیں۔ آج یہی طریقہ ہمارے دوسرے پلیٹ فارمز میں بھی ہے۔")}</p>
+            <p>{T(lang, "We began with schools, listening to principals, cashiers and teachers who were drowning in registers and spreadsheets. They did not need more features. They needed less work.", "ہم نے ان پرنسپلز، کیشیئرز اور اساتذہ کی بات سنی جو رجسٹرز اور اسپریڈ شیٹس میں دبے ہوئے تھے۔ انہیں مزید خصوصیات نہیں، کم کام چاہیے تھا۔")}</p>
+            <p>{T(lang, "So we built eSchool around real days in a real school. Today the same approach powers Formed, Data Portal, ProEd Medical and HayRoutes: start with the real workflow, keep it simple.", "اس لیے ہم نے ای پورٹل حقیقی اسکول کے حقیقی دنوں کے گرد بنایا: حاضری لگائیں، فیس وصول کریں، نتائج بھیجیں، والدین کو جواب دیں۔ آج یہی طریقہ ہمارے دوسرے پلیٹ فارمز میں بھی ہے۔")}</p>
           </div>
         </Reveal>
         <Reveal x={30} y={0} delay={0.1}>
@@ -78,7 +78,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
 
-      <HowItWorks lang={lang} />
+      <GettingStarted lang={lang} />
 
       <section className="container-x pb-8">
         <SectionHead eyebrow={T(lang, "Our platforms", "ہمارے پلیٹ فارمز")} title={T(lang, "What we have built", "ہم نے کیا بنایا")} />
