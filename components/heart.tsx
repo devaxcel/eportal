@@ -5,8 +5,8 @@ import {
   AnimatePresence, motion, useScroll, useSpring, useTransform, type MotionValue,
 } from "motion/react";
 import {
-  Award, BookOpenCheck, CalendarCheck, Clock, FileHeart, GraduationCap, Heart, HeartHandshake,
-  MessageCircleHeart, ShieldCheck, Sparkles, Trophy, UserPlus, Wallet,
+  Award, Backpack, BookOpen, BookOpenCheck, CalendarCheck, Check, ClipboardCheck, Clock, GraduationCap, MessagesSquare,
+  Pencil, PenLine, PhoneOff, ShieldCheck, Sparkles, Trophy, UserPlus, Users, Wallet, Zap,
 } from "lucide-react";
 import { PhoneFrame } from "./visuals";
 import { SectionHead } from "./Section";
@@ -34,16 +34,17 @@ export function EmotionalStatement({ lang }: { lang: Lang }) {
     <section ref={ref} className="bg-hero relative overflow-hidden py-28 text-white sm:py-36">
       <div className="bg-grid absolute inset-0 opacity-60" />
       {[
-        ["start-[8%] top-[18%]", "0s", 22],
-        ["end-[10%] top-[26%]", "1.2s", 30],
-        ["start-[18%] bottom-[16%]", "2.4s", 18],
-        ["end-[22%] bottom-[20%]", "0.6s", 26],
-      ].map(([pos, delay, size], i) => (
-        <Heart key={i} size={size as number} fill="currentColor" className={`animate-float-slow absolute text-brand-400/30 ${pos}`} style={{ animationDelay: delay as string }} aria-hidden="true" />
-      ))}
+        [GraduationCap, "start-[8%] top-[18%]", "0s", 44],
+        [BookOpen, "end-[10%] top-[26%]", "1.2s", 52],
+        [Pencil, "start-[18%] bottom-[16%]", "2.4s", 36],
+        [Backpack, "end-[22%] bottom-[20%]", "0.6s", 46],
+      ].map(([Ic, pos, delay, size], i) => {
+        const Icn = Ic as typeof GraduationCap;
+        return <Icn key={i} size={size as number} strokeWidth={1.2} className={`animate-float-slow absolute text-brand-400/30 ${pos}`} style={{ animationDelay: delay as string }} aria-hidden="true" />;
+      })}
       <div className="container-x relative">
         <p className="text-center text-sm font-semibold uppercase tracking-wide text-brand-300">
-          <Heart size={14} fill="currentColor" className="me-2 inline -translate-y-px" />
+          <BookOpen size={14} className="me-2 inline -translate-y-px" />
           {T(lang, "Why we do this", "ہم یہ کیوں کرتے ہیں")}
         </p>
         <p className="mx-auto mt-6 max-w-4xl text-center text-3xl font-extrabold leading-snug tracking-tight sm:text-5xl sm:leading-tight">
@@ -79,9 +80,9 @@ export function MomentsStream({ lang }: { lang: Lang }) {
   const shown = [0, 1, 2].map((k) => list[(n - k + list.length * 3) % list.length]).map((m, k) => ({ ...m, key: (n - k + list.length * 3), k }));
 
   const lines = [
-    T(lang, "No more worried phone calls at noon.", "دوپہر کو فکرمند فون کالز نہیں۔"),
-    T(lang, "Good news reaches the family the same minute.", "اچھی خبر اسی لمحے گھر والوں تک پہنچتی ہے۔"),
-    T(lang, "Parents feel part of their child's day.", "والدین بچے کے دن کا حصہ محسوس کرتے ہیں۔"),
+    { icon: PhoneOff, t: T(lang, "No more worried phone calls at noon.", "دوپہر کو فکرمند فون کالز نہیں۔") },
+    { icon: Zap, t: T(lang, "Good news reaches the family the same minute.", "اچھی خبر اسی لمحے گھر والوں تک پہنچتی ہے۔") },
+    { icon: Users, t: T(lang, "Parents feel part of their child's day.", "والدین بچے کے دن کا حصہ محسوس کرتے ہیں۔") },
   ];
 
   return (
@@ -98,8 +99,8 @@ export function MomentsStream({ lang }: { lang: Lang }) {
           {lines.map((l, i) => (
             <Reveal key={i} delay={i * 0.1} y={14}>
               <li className="flex items-center gap-3 text-lg font-medium">
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-rose-50 text-rose-500"><Heart size={16} fill="currentColor" /></span>
-                {l}
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700"><l.icon size={17} /></span>
+                {l.t}
               </li>
             </Reveal>
           ))}
@@ -149,7 +150,7 @@ const personas = (lang: Lang) => [
   {
     key: "parent",
     label: T(lang, "Parent", "والدین"),
-    icon: HeartHandshake,
+    icon: Users,
     who: T(lang, "Mrs. Khan, parent", "محترمہ خان، والدہ"),
     steps: [
       ["07:52", T(lang, "A message arrives: Ayesha reached school safely.", "پیغام آتا ہے: عائشہ بخیریت اسکول پہنچ گئی۔")],
@@ -225,7 +226,7 @@ export function DayInSchool({ lang }: { lang: Lang }) {
                 {p.steps.map(([time, text], i) => (
                   <motion.li key={time} initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 + i * 0.12 }} className="relative">
                     <span className="absolute -start-[2.65rem] top-1 grid h-5 w-5 place-items-center rounded-full bg-brand-600 ring-4 ring-white">
-                      <Heart size={9} fill="white" className="text-white" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-white" />
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-600" dir="ltr"><Clock size={13} />{time}</span>
                     <p className="mt-1 text-lg">{text}</p>
@@ -251,8 +252,8 @@ export function ChildJourney({ lang }: { lang: Lang }) {
   const items = [
     { icon: UserPlus, t: T(lang, "The first day", "پہلا دن"), d: T(lang, "A smooth admission, and a family that feels welcome from the start.", "آسان داخلہ، اور ایسا خاندان جو پہلے دن سے خود کو خوش آمدید محسوس کرے۔") },
     { icon: CalendarCheck, t: T(lang, "Every day counts", "ہر دن اہم ہے"), d: T(lang, "Attendance that quietly notices when a child needs a little more support.", "حاضری جو خاموشی سے جان لیتی ہے کہ بچے کو کب تھوڑی اور مدد چاہیے۔") },
-    { icon: FileHeart, t: T(lang, "Proud results", "قابل فخر نتائج"), d: T(lang, "Result cards that celebrate progress, not just marks.", "رزلٹ کارڈ جو صرف نمبروں کی نہیں، پیشرفت کی بھی خوشی مناتے ہیں۔") },
-    { icon: MessageCircleHeart, t: T(lang, "A closer family", "قریب تر خاندان"), d: T(lang, "Teachers and parents talking early, kindly and often.", "اساتذہ اور والدین کا جلد، نرمی سے اور اکثر رابطہ۔") },
+    { icon: ClipboardCheck, t: T(lang, "Proud results", "قابل فخر نتائج"), d: T(lang, "Result cards that celebrate progress, not just marks.", "رزلٹ کارڈ جو صرف نمبروں کی نہیں، پیشرفت کی بھی خوشی مناتے ہیں۔") },
+    { icon: MessagesSquare, t: T(lang, "A closer family", "قریب تر خاندان"), d: T(lang, "Teachers and parents talking early, kindly and often.", "اساتذہ اور والدین کا جلد، نرمی سے اور اکثر رابطہ۔") },
     { icon: GraduationCap, t: T(lang, "The graduation day", "گریجویشن کا دن"), d: T(lang, "Certificates ready on time, and a story the whole school helped write.", "سرٹیفکیٹ وقت پر تیار، اور ایسی کہانی جو پورے اسکول نے مل کر لکھی۔") },
   ];
 
@@ -265,8 +266,8 @@ export function ChildJourney({ lang }: { lang: Lang }) {
       <div ref={ref} className="relative mx-auto mt-16 max-w-4xl">
         <div className="absolute bottom-0 start-5 top-0 w-0.5 bg-brand-100 md:start-1/2 md:-translate-x-1/2 rtl:md:translate-x-1/2" />
         <motion.div style={{ scaleY, transformOrigin: "top" }} className="absolute bottom-0 start-5 top-0 w-0.5 bg-gradient-to-b from-brand-400 to-brand-600 md:start-1/2 md:-translate-x-1/2 rtl:md:translate-x-1/2" />
-        <motion.span style={{ top }} className="absolute start-5 z-10 -ms-2.5 grid h-5 w-5 -translate-y-1/2 place-items-center rounded-full bg-rose-500 text-white shadow-lg shadow-rose-500/40 md:start-1/2" aria-hidden="true">
-          <Heart size={10} fill="currentColor" />
+        <motion.span style={{ top }} className="absolute start-5 z-10 -ms-2.5 grid h-5 w-5 -translate-y-1/2 place-items-center rounded-full bg-brand-600 text-white shadow-lg shadow-brand-600/40 md:start-1/2" aria-hidden="true">
+          <GraduationCap size={11} />
         </motion.span>
 
         <ol className="space-y-12">
@@ -355,7 +356,7 @@ export function PromiseLetter({ lang }: { lang: Lang }) {
     <section className="container-x py-24">
       <Reveal>
         <div className="relative mx-auto max-w-3xl rounded-[2rem] border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-white p-8 shadow-xl shadow-brand-900/5 sm:p-14">
-          <Heart size={44} fill="currentColor" className="absolute -top-6 start-10 rotate-[-10deg] text-rose-400 drop-shadow-lg" aria-hidden="true" />
+          <span className="absolute -top-6 start-10 grid h-14 w-14 rotate-[-8deg] place-items-center rounded-2xl bg-brand-600 text-white shadow-lg shadow-brand-600/30" aria-hidden="true"><PenLine size={26} /></span>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">{T(lang, "A note to every school", "ہر اسکول کے نام ایک خط")}</p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
             {T(lang, "Your school's time belongs to children, not paperwork.", "آپ کے اسکول کا وقت بچوں کا ہے، کاغذی کارروائی کا نہیں۔")}
@@ -367,7 +368,7 @@ export function PromiseLetter({ lang }: { lang: Lang }) {
           <ul className="mt-8 space-y-3">
             {promises.map((x) => (
               <li key={x} className="flex items-center gap-3 font-semibold">
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-600 text-white"><Heart size={13} fill="currentColor" /></span>{x}
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-600 text-white"><Check size={14} strokeWidth={3} /></span>{x}
               </li>
             ))}
           </ul>

@@ -114,7 +114,7 @@ export const portals: Portal[] = [
   },
   {
     slug: "parent",
-    icon: "HeartHandshake",
+    icon: "Users",
     name: { en: "Parent App", ur: "پیرنٹ ایپ" },
     tagline: { en: "Parents stay informed without calling the school", ur: "والدین اسکول کو فون کیے بغیر باخبر رہتے ہیں" },
     features: [
@@ -301,7 +301,7 @@ export const solutions: Solution[] = [
 
 export const aiFeatures: { icon: string; title: L; desc: L }[] = [
   {
-    icon: "MessageCircleHeart",
+    icon: "Bot",
     title: { en: "AI Parent Assistant", ur: "اے آئی پیرنٹ اسسٹنٹ" },
     desc: {
       en: "Parents ask about fees, attendance or results in Urdu or English and get an instant, accurate answer from school data.",
