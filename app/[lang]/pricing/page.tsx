@@ -123,10 +123,10 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
                   <h3 className="mt-4 text-lg font-bold">{tx(s.name, lang)}</h3>
                   <p className="mt-1 text-sm text-ink-soft">{tx(s.tagline, lang)}</p>
                   <p className="mt-5 text-xl font-extrabold text-brand-600">
-                    {s.url ? T(lang, "Pricing on its website", "قیمت ان کی ویب سائٹ پر") : T(lang, "Custom quote", "حسب ضرورت قیمت")}
+                    {s.pricingOnSite ? T(lang, "Pricing on its website", "قیمت ان کی ویب سائٹ پر") : T(lang, "Custom quote", "حسب ضرورت قیمت")}
                   </p>
                   <div className="mt-auto flex flex-col gap-2 pt-6">
-                    {s.url && (
+                    {s.pricingOnSite && s.url && (
                       <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold hover:border-brand-300">
                         {T(lang, "See pricing", "قیمتیں دیکھیں")}<ExternalLink size={14} />
                       </a>

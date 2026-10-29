@@ -50,8 +50,8 @@ export function HubHero({ lang }: { lang: Lang }) {
             <p className="mt-6 max-w-xl text-lg text-white/75">
               {T(
                 lang,
-                "ePortal brings together the software people rely on every day: run a school, hire a trainer, search medical codes, organise your data or find a driving instructor.",
-                "ای پورٹل وہ سافٹ ویئر یکجا کرتا ہے جس پر لوگ روزانہ بھروسا کرتے ہیں: اسکول چلائیں، ٹرینر ہائر کریں، میڈیکل کوڈز تلاش کریں، ڈیٹا منظم کریں یا ڈرائیونگ انسٹرکٹر ڈھونڈیں۔",
+                "ePortal brings together the software people rely on every day: run a school, hire a trainer, code medical records with AI, organise your data or run a driving school.",
+                "ای پورٹل وہ سافٹ ویئر یکجا کرتا ہے جس پر لوگ روزانہ بھروسا کرتے ہیں: اسکول چلائیں، ٹرینر ہائر کریں، اے آئی سے میڈیکل کوڈنگ کریں، ڈیٹا منظم کریں یا ڈرائیونگ اسکول چلائیں۔",
               )}
             </p>
           </Reveal>

@@ -173,6 +173,7 @@ export type Solution = {
   features: L[];
   status: "live" | "new";
   url?: string;
+  pricingOnSite?: boolean;
   accent: string;
   forWho: L[];
 };
@@ -207,6 +208,7 @@ export const solutions: Solution[] = [
     icon: "Dumbbell",
     status: "live",
     url: "https://formed.fit",
+    pricingOnSite: true,
     name: { en: "Formed", ur: "فارمڈ" },
     tagline: { en: "Hire a certified personal trainer", ur: "مستند پرسنل ٹرینر ہائر کریں" },
     description: {
@@ -230,6 +232,7 @@ export const solutions: Solution[] = [
     slug: "data-portal",
     icon: "Database",
     status: "live",
+    url: "https://www.primaportal.co.za/login",
     name: { en: "Data Portal", ur: "ڈیٹا پورٹل" },
     tagline: { en: "A safe home for your organisation's datasets", ur: "آپ کے ادارے کے ڈیٹا سیٹس کا محفوظ ٹھکانا" },
     description: {
@@ -253,46 +256,48 @@ export const solutions: Solution[] = [
     slug: "proed-medical",
     icon: "Stethoscope",
     status: "live",
+    url: "https://proed-coder-ai-eight.vercel.app/",
     name: { en: "ProEd Medical", ur: "پرو ایڈ میڈیکل" },
-    tagline: { en: "Search medical codes in seconds", ur: "سیکنڈوں میں میڈیکل کوڈز تلاش کریں" },
+    tagline: { en: "AI-powered medical coding assistant", ur: "اے آئی سے چلنے والا میڈیکل کوڈنگ اسسٹنٹ" },
     description: {
-      en: "A medical portal for finding the right code fast. Search by code or plain-language description instead of paging through thick code books.",
-      ur: "درست کوڈ تیزی سے تلاش کرنے کے لیے میڈیکل پورٹل۔ موٹی کوڈ کتابیں کھنگالنے کے بجائے کوڈ یا سادہ زبان کی وضاحت سے تلاش کریں۔",
+      en: "MedRecPros MD helps coding and clinical documentation teams with medical coding, policy research and compliant physician query drafting, so the right answer is found in seconds instead of hours.",
+      ur: "میڈرک پروز ایم ڈی کوڈنگ اور کلینیکل ڈاکومنٹیشن ٹیموں کی میڈیکل کوڈنگ، پالیسی ریسرچ اور مستند فزیشن کوئری ڈرافٹنگ میں مدد کرتا ہے، تاکہ درست جواب گھنٹوں کے بجائے سیکنڈوں میں ملے۔",
     },
     features: [
-      { en: "Search by code or description", ur: "کوڈ یا وضاحت سے تلاش" },
-      { en: "Clear definitions for each code", ur: "ہر کوڈ کی واضح تعریف" },
-      { en: "Fast results for coders and clinicians", ur: "کوڈرز اور معالجین کے لیے فوری نتائج" },
-      { en: "Saved searches and favourites", ur: "محفوظ تلاش اور پسندیدہ" },
+      { en: "AI-assisted medical coding", ur: "اے آئی کی مدد سے میڈیکل کوڈنگ" },
+      { en: "Policy research in plain language", ur: "سادہ زبان میں پالیسی ریسرچ" },
+      { en: "Compliant physician query drafting", ur: "مستند فزیشن کوئری ڈرافٹنگ" },
+      { en: "Secure sign-in managed by administrators", ur: "ایڈمنسٹریٹرز کے زیر انتظام محفوظ سائن ان" },
     ],
     accent: "from-cyan-400 to-blue-600",
     forWho: [
       { en: "Medical coders and billing teams", ur: "میڈیکل کوڈرز اور بلنگ ٹیمیں" },
-      { en: "Clinics and hospitals", ur: "کلینکس اور اسپتال" },
-      { en: "Students learning medical coding", ur: "میڈیکل کوڈنگ سیکھنے والے طلبہ" },
+      { en: "Clinical documentation improvement (CDI) teams", ur: "کلینیکل ڈاکومنٹیشن امپروومنٹ (سی ڈی آئی) ٹیمیں" },
+      { en: "Clinics, hospitals and staffing firms", ur: "کلینکس، اسپتال اور اسٹاف فرمیں" },
     ],
   },
   {
     slug: "hayroutes",
     icon: "Car",
     status: "live",
+    url: "https://hayroutes.com/",
     name: { en: "HayRoutes", ur: "ہے روٹس" },
-    tagline: { en: "Hire a driving instructor", ur: "ڈرائیونگ انسٹرکٹر ہائر کریں" },
+    tagline: { en: "Driving school platform for learners and instructors", ur: "سیکھنے والوں اور انسٹرکٹرز کے لیے ڈرائیونگ اسکول پلیٹ فارم" },
     description: {
-      en: "An app and web portal that connects learners with driving trainers. Compare instructors, book lessons and track progress toward the licence test.",
-      ur: "ایک ایپ اور ویب پورٹل جو سیکھنے والوں کو ڈرائیونگ ٹرینرز سے ملاتا ہے۔ انسٹرکٹرز کا موازنہ کریں، اسباق بک کریں اور لائسنس ٹیسٹ کی جانب پیشرفت دیکھیں۔",
+      en: "HayRoutes connects learners with driving instructors and gives driving schools the tools to run everything: lesson booking, scheduling, progress tracking, fleet and billing.",
+      ur: "ہے روٹس سیکھنے والوں کو ڈرائیونگ انسٹرکٹرز سے ملاتا ہے اور ڈرائیونگ اسکولوں کو سب کچھ چلانے کے ٹولز دیتا ہے: اسباق کی بکنگ، شیڈولنگ، پیشرفت کی ٹریکنگ، گاڑیاں اور بلنگ۔",
     },
     features: [
-      { en: "Browse and compare driving trainers", ur: "ڈرائیونگ ٹرینرز دیکھیں اور موازنہ کریں" },
-      { en: "Book lessons from the app", ur: "ایپ سے اسباق بک کریں" },
-      { en: "Trainer portal for schedules and learners", ur: "شیڈول اور سیکھنے والوں کے لیے ٹرینر پورٹل" },
-      { en: "Mobile app and web portal", ur: "موبائل ایپ اور ویب پورٹل" },
+      { en: "Learners book lessons and track milestones", ur: "سیکھنے والے اسباق بک کرتے اور سنگ میل ٹریک کرتے ہیں" },
+      { en: "Smart instructor scheduling and lesson templates", ur: "انسٹرکٹرز کے لیے سمارٹ شیڈولنگ اور لیسن ٹیمپلیٹس" },
+      { en: "Fleet maintenance, licence and insurance tracking", ur: "گاڑیوں کی مینٹیننس، لائسنس اور انشورنس ٹریکنگ" },
+      { en: "Admin billing, permissions and reports", ur: "ایڈمن بلنگ، اجازتیں اور رپورٹس" },
     ],
     accent: "from-amber-400 to-orange-600",
     forWho: [
       { en: "Learners preparing for a driving licence", ur: "ڈرائیونگ لائسنس کی تیاری کرنے والے" },
       { en: "Professional driving instructors", ur: "پیشہ ور ڈرائیونگ انسٹرکٹرز" },
-      { en: "Families looking for a trusted trainer", ur: "قابل اعتماد ٹرینر ڈھونڈنے والے خاندان" },
+      { en: "Driving schools and fleet managers", ur: "ڈرائیونگ اسکول اور فلیٹ مینیجرز" },
     ],
   },
 ];
@@ -483,8 +488,8 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "What does ePortal offer?", ur: "ای پورٹل کیا پیش کرتا ہے؟" },
     a: {
-      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, Data Portal for organisation datasets, ProEd Medical for searching medical codes, and HayRoutes for hiring driving instructors.",
-      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، ادارے کے ڈیٹا سیٹس کے لیے ڈیٹا پورٹل، میڈیکل کوڈز تلاش کرنے کے لیے پرو ایڈ میڈیکل، اور ڈرائیونگ انسٹرکٹر ہائر کرنے کے لیے ہے روٹس۔",
+      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, Data Portal for organisation datasets, ProEd Medical for AI-assisted medical coding, and HayRoutes for driving schools, instructors and learners.",
+      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، ادارے کے ڈیٹا سیٹس کے لیے ڈیٹا پورٹل، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے پرو ایڈ میڈیکل، اور ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے ہے روٹس۔",
     },
   },
   {
