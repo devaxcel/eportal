@@ -25,6 +25,13 @@
   --font-urdu: var(--font-nastaliq), "Noto Nastaliq Urdu", serif;
 }
 
+/* Headings use the brand green; anything inside a .text-white (dark) block flips to white */
+:root { --heading: #3d7766; }
+.text-white { --heading: #ffffff; }
+@layer base {
+  h1, h2, h3, h4, h5, h6 { color: var(--heading); }
+}
+
 html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {

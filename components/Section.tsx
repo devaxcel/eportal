@@ -27,7 +27,7 @@ export function SectionHead({
           {eyebrow}
         </p>
       )}
-      <h2 className={`mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl ${light ? "text-white" : "text-ink"}`}>{title}</h2>
+      <h2 className={`mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl ${light ? "text-white" : ""}`}>{title}</h2>
       {sub && <p className={`mt-4 text-lg ${light ? "text-white/75" : "text-ink-soft"}`}>{sub}</p>}
     </Reveal>
   );
