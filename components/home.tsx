@@ -41,7 +41,7 @@ export function HomeHero({ lang }: { lang: Lang }) {
           </Reveal>
           <Reveal delay={0.24}>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-400">
+              <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">
                 {tx(ui.demo, lang)}
                 <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
               </Link>

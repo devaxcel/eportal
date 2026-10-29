@@ -59,7 +59,7 @@ export function CtaBand({ lang }: { lang: Lang }) {
         <div className="bg-hero relative overflow-hidden rounded-[2rem] px-6 py-16 text-center text-white sm:px-12">
           <div className="bg-grid absolute inset-0" />
           <div className="animate-float-slow pointer-events-none absolute -start-10 top-8 hidden h-28 w-28 rounded-3xl bg-brand-500/25 blur-xl sm:block" />
-          <div className="animate-float pointer-events-none absolute -end-6 bottom-6 hidden h-36 w-36 rounded-full bg-sky-500/25 blur-2xl sm:block" />
+          <div className="animate-float pointer-events-none absolute -end-6 bottom-6 hidden h-36 w-36 rounded-full bg-brand-400/25 blur-2xl sm:block" />
           <h2 className="relative mx-auto max-w-2xl text-3xl font-extrabold sm:text-5xl">
             {T(lang, "See ePortal running your school", "دیکھیں ای پورٹل آپ کا اسکول کیسے چلاتا ہے")}
           </h2>
@@ -67,7 +67,7 @@ export function CtaBand({ lang }: { lang: Lang }) {
             {T(lang, "A 30-minute demo using your own workflow. No commitment.", "آپ کے اپنے طریقہ کار کے ساتھ 30 منٹ کا ڈیمو۔ کوئی پابندی نہیں۔")}
           </p>
           <div className="relative mt-9 flex flex-wrap justify-center gap-3">
-            <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-400">
+            <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">
               {tx(ui.demo, lang)}
               <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
             </Link>

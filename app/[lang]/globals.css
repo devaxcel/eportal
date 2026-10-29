@@ -1,28 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand: green from the ePortal logo arrow */
-  --color-brand-50: #effcf3;
-  --color-brand-100: #d6f7e1;
-  --color-brand-200: #aeeec5;
-  --color-brand-300: #78df9f;
-  --color-brand-400: #3fc975;
-  --color-brand-500: #1fae58;
-  --color-brand-600: #17924a;
-  --color-brand-700: #14753d;
-  --color-brand-800: #145d34;
-  --color-brand-900: #114d2d;
-  /* Navy from the ePortal logo wordmark */
-  --color-ink: #0f2557;
-  --color-ink-soft: #46557a;
-  --color-navy-700: #14307a;
-  --color-navy-800: #0f2557;
-  --color-navy-900: #0a1a40;
-  --color-navy-950: #061231;
-  --color-mist: #f4f7fb;
-  --color-line: #e2e8f2;
+  /* Brand: #3d7766 green and #000000 black */
+  --color-brand-50: #f2f8f6;
+  --color-brand-100: #e0eeea;
+  --color-brand-200: #c0dbd2;
+  --color-brand-300: #97c2b5;
+  --color-brand-400: #6aa594;
+  --color-brand-500: #4f8c7a;
+  --color-brand-600: #3d7766;
+  --color-brand-700: #2f5e51;
+  --color-brand-800: #254a40;
+  --color-brand-900: #1c3830;
+  --color-ink: #000000;
+  --color-ink-soft: #505452;
+  --color-navy-700: #1f2321;
+  --color-navy-800: #141716;
+  --color-navy-900: #0a0b0b;
+  --color-navy-950: #000000;
+  --color-mist: #f5f7f6;
+  --color-line: #e4e8e6;
   --color-sun: #f5a524;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: "roc-grotesk", var(--font-inter), system-ui, sans-serif;
   --font-urdu: var(--font-nastaliq), "Noto Nastaliq Urdu", serif;
 }
 
@@ -63,9 +62,9 @@ body {
 /* ---------- Decorative backgrounds ---------- */
 .bg-hero {
   background:
-    radial-gradient(60rem 36rem at 85% -10%, rgba(31, 174, 88, 0.32), transparent 60%),
-    radial-gradient(50rem 32rem at -10% 30%, rgba(59, 100, 255, 0.28), transparent 60%),
-    linear-gradient(180deg, #0a1a40 0%, #0f2557 100%);
+    radial-gradient(60rem 36rem at 85% -10%, rgba(61, 119, 102, 0.55), transparent 60%),
+    radial-gradient(46rem 30rem at -10% 40%, rgba(61, 119, 102, 0.28), transparent 60%),
+    linear-gradient(180deg, #000000 0%, #0b0f0d 100%);
 }
 .bg-grid {
   background-image:
@@ -75,17 +74,17 @@ body {
   mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
 .bg-dots {
-  background-image: radial-gradient(rgba(15, 37, 87, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 .text-gradient {
-  background: linear-gradient(95deg, #78df9f 0%, #3fc975 45%, #7fb0ff 100%);
+  background: linear-gradient(95deg, #c0dbd2 0%, #6aa594 55%, #97c2b5 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 .text-gradient-dark {
-  background: linear-gradient(95deg, #17924a, #14307a);
+  background: linear-gradient(95deg, #3d7766, #000000);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -106,7 +105,7 @@ body {
   border-radius: inherit;
   opacity: 0;
   transition: opacity 0.3s;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(31, 174, 88, 0.14), transparent 55%);
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(61, 119, 102, 0.14), transparent 55%);
 }
 .spot:hover::before { opacity: 1; }
 

@@ -41,7 +41,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ lang:
             <p className="mt-2 text-xl font-medium text-brand-300">{tx(s.tagline, lang)}</p>
             <p className="mt-5 max-w-lg text-lg text-white/75">{tx(s.description, lang)}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-400">
+              <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">
                 {tx(ui.demo, lang)}
                 <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
               </Link>

@@ -101,7 +101,7 @@ export function ScrollProgress() {
     <motion.div
       aria-hidden="true"
       style={{ scaleX, transformOrigin: "left" }}
-      className="fixed inset-x-0 top-0 z-[60] h-0.5 bg-gradient-to-r from-brand-400 to-sky-400 rtl:origin-right"
+      className="fixed inset-x-0 top-0 z-[60] h-0.5 bg-gradient-to-r from-brand-400 to-brand-300 rtl:origin-right"
     />
   );
 }

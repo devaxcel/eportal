@@ -15,6 +15,8 @@ const nastaliq = Noto_Nastaliq_Urdu({
   display: "swap",
 });
 
+const typekit = process.env.NEXT_PUBLIC_TYPEKIT_ID;
+
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -44,6 +46,10 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={dirOf(lang)} className={`${inter.variable} ${nastaliq.variable}`}>
+      <head>
+        {/* roc-grotesk is an Adobe Fonts typeface: set NEXT_PUBLIC_TYPEKIT_ID to your web project id to load it. */}
+        {typekit && <link rel="stylesheet" href={`https://use.typekit.net/${typekit}.css`} />}
+      </head>
       <body>
         <MotionProvider>
           <ScrollProgress />

@@ -36,7 +36,7 @@ export default async function PortalPage({ params }: { params: Promise<{ lang: s
             </span>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">{tx(p.name, lang)}</h1>
             <p className="mt-4 max-w-lg text-lg text-white/75">{tx(p.tagline, lang)}</p>
-            <Link href={href(lang, "/demo")} className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-500/30 transition hover:bg-brand-400">
+            <Link href={href(lang, "/demo")} className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">
               {tx(ui.demo, lang)}
               <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
             </Link>

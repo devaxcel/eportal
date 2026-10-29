@@ -55,7 +55,7 @@ const payments = [
 export function AdminDashboardMock({ lang }: { lang: Lang }) {
   const kpis = [
     { l: T(lang, "Students", "طلبہ"), v: "1,248", d: "+12", tone: "text-brand-600 bg-brand-50", icon: Users },
-    { l: T(lang, "Present", "حاضر"), v: "94%", d: "+3.2%", tone: "text-sky-600 bg-sky-50", icon: CalendarCheck },
+    { l: T(lang, "Present", "حاضر"), v: "94%", d: "+3.2%", tone: "text-brand-700 bg-brand-100", icon: CalendarCheck },
     { l: T(lang, "Collected", "وصولی"), v: "Rs 4.2M", d: "+18%", tone: "text-amber-600 bg-amber-50", icon: Wallet },
     { l: T(lang, "Results", "نتائج"), v: "86%", d: "+5%", tone: "text-violet-600 bg-violet-50", icon: FileText },
   ];
@@ -107,12 +107,12 @@ export function AdminDashboardMock({ lang }: { lang: Lang }) {
             <svg viewBox="0 0 340 90" className="mt-2 h-24 w-full overflow-visible">
               <defs>
                 <linearGradient id="gArea" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stopColor="#1fae58" stopOpacity="0.3" />
-                  <stop offset="1" stopColor="#1fae58" stopOpacity="0" />
+                  <stop offset="0" stopColor="#3d7766" stopOpacity="0.3" />
+                  <stop offset="1" stopColor="#3d7766" stopOpacity="0" />
                 </linearGradient>
               </defs>
               <motion.path d={`${chartLine} L340,90 L0,90 Z`} fill="url(#gArea)" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.8, duration: 0.8 }} />
-              <motion.path d={chartLine} fill="none" stroke="#1fae58" strokeWidth="2.5" strokeLinecap="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.6, delay: 0.3, ease: "easeInOut" }} />
+              <motion.path d={chartLine} fill="none" stroke="#3d7766" strokeWidth="2.5" strokeLinecap="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.6, delay: 0.3, ease: "easeInOut" }} />
             </svg>
           </div>
           <div className="rounded-xl border border-line p-3 lg:col-span-2">
@@ -161,7 +161,7 @@ export function ParentPhoneMock({ lang }: { lang: Lang }) {
             <svg viewBox="0 0 80 80" className="h-16 w-16 -rotate-90 shrink-0">
               <circle cx="40" cy="40" r={r} fill="none" stroke="#e2e8f2" strokeWidth="8" />
               <motion.circle
-                cx="40" cy="40" r={r} fill="none" stroke="#1fae58" strokeWidth="8" strokeLinecap="round"
+                cx="40" cy="40" r={r} fill="none" stroke="#3d7766" strokeWidth="8" strokeLinecap="round"
                 strokeDasharray={c}
                 initial={{ strokeDashoffset: c }}
                 whileInView={{ strokeDashoffset: c * 0.06 }}
@@ -186,7 +186,7 @@ export function ParentPhoneMock({ lang }: { lang: Lang }) {
           <p className="text-[10px] font-semibold">{T(lang, "Monthly test", "ماہانہ ٹیسٹ")}</p>
           <div className="mt-2 flex h-12 items-end gap-1.5">
             {[90, 85, 78, 75, 82].map((h, i) => (
-              <motion.span key={i} className="flex-1 rounded-t bg-gradient-to-t from-navy-700 to-sky-400" initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ delay: 0.5 + i * 0.1, duration: 0.6 }} />
+              <motion.span key={i} className="flex-1 rounded-t bg-gradient-to-t from-navy-700 to-brand-300" initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ delay: 0.5 + i * 0.1, duration: 0.6 }} />
             ))}
           </div>
         </div>
@@ -227,7 +227,7 @@ export function FeeMock({ lang }: { lang: Lang }) {
       <div className="rounded-xl bg-navy-900 p-3 text-white">
         <div className="flex justify-between text-[11px] text-white/70"><span>{T(lang, "Collected this month", "اس ماہ کی وصولی")}</span><b className="text-white">82%</b></div>
         <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/15">
-          <motion.div className="h-full rounded-full bg-gradient-to-r from-brand-400 to-sky-400" initial={{ width: 0 }} whileInView={{ width: "82%" }} viewport={{ once: true }} transition={{ duration: 1.4, delay: 0.4 }} />
+          <motion.div className="h-full rounded-full bg-gradient-to-r from-brand-400 to-brand-300" initial={{ width: 0 }} whileInView={{ width: "82%" }} viewport={{ once: true }} transition={{ duration: 1.4, delay: 0.4 }} />
         </div>
       </div>
     </div>
