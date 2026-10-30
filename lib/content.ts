@@ -1,4 +1,5 @@
-import type { L } from "./i18n";
+import type { L, Lang } from "./i18n";
+import type { Story } from "./stories";
 
 export const nav: { key: string; path: string; label: L }[] = [
   { key: "solutions", path: "/solutions", label: { en: "Solutions", ur: "حل" } },
@@ -177,7 +178,23 @@ export type Solution = {
   category: "education" | "health" | "business" | "retail";
   accent: string;
   forWho: L[];
+  /** Copy for the shared solution page: statement, before/after and FAQs. */
+  story?: Story;
+  /** Per-language SEO fields edited in the dashboard. */
+  seo?: Seo;
+  /** Sections switched off in the dashboard (see SECTION_KEYS). */
+  hidden?: string[];
+  /** Display order (lower first). */
+  sort?: number;
+  /** Which dashboard picture to show (one of the built-in product slugs). Defaults to the slug. */
+  mock?: string;
 };
+
+export type SeoFields = { title?: string; description?: string; keywords?: string; schema?: string };
+export type Seo = { ogImage?: string; langs?: Partial<Record<Lang, SeoFields>> };
+
+/** Sections of the shared solution page that can be switched on or off. */
+export const SECTION_KEYS = ["marquee", "statement", "compare", "action", "whoFor", "steps", "pricing", "faq", "others"] as const;
 
 // Placeholder product line-up. Edit to match the SaaS platforms you actually offer.
 export const solutions: Solution[] = [

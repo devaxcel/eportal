@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
-import { nav, solutions, ui } from "@/lib/content";
+import { nav, ui } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { href, T, tx, type Lang } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
-export function Footer({ lang }: { lang: Lang }) {
+export async function Footer({ lang }: { lang: Lang }) {
+  const solutions = await getSolutions();
   return (
     <footer className="bg-ink text-white/80">
       <div className="container-x grid gap-10 py-14 md:grid-cols-4">

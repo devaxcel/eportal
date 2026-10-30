@@ -17,7 +17,7 @@ export const langNames: Record<Lang, string> = {
 };
 
 /** English and Urdu are written inline; Spanish, Dutch and Arabic come from lib/translations by English text. */
-export type L = { en: string; ur: string };
+export type L = { en: string; ur: string; es?: string; nl?: string; ar?: string };
 
 export const isLang = (v: string): v is Lang => (locales as readonly string[]).includes(v);
 export const dirOf = (lang: Lang) => (rtl.includes(lang) ? "rtl" : "ltr");
@@ -29,7 +29,12 @@ const pick = (lang: Lang, en: string, ur: string) => {
   return catalogs[lang].get(en) ?? en;
 };
 
-export const tx = (v: L, lang: Lang) => pick(lang, v.en, v.ur);
+/** Dashboard-edited text can carry its own es/nl/ar; otherwise the built-in catalog is used. */
+export const tx = (v: L, lang: Lang) => {
+  const own = v[lang];
+  if (own && own.trim()) return own;
+  return pick(lang, v.en, v.ur || v.en);
+};
 
 /** Pick the string for the current language: T(lang, "English", "اردو") */
 export const T = (lang: Lang, en: string, ur: string) => pick(lang, en, ur);

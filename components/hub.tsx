@@ -4,10 +4,12 @@ import { Icon } from "./Icon";
 import { SolutionColumns } from "./SolutionColumns";
 import { SectionHead } from "./Section";
 import { Reveal, Spot } from "./motion";
-import { solutions, ui } from "@/lib/content";
+import { ui, type Solution } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { href, T, tx, type Lang } from "@/lib/i18n";
 
-export function HubHero({ lang }: { lang: Lang }) {
+export async function HubHero({ lang }: { lang: Lang }) {
+  const solutions = await getSolutions();
   const featured = solutions.slice(0, 6);
   const col1 = featured.filter((_, i) => i % 2 === 0);
   const col2 = featured.filter((_, i) => i % 2 === 1);
@@ -17,7 +19,7 @@ export function HubHero({ lang }: { lang: Lang }) {
     T(lang, "5 languages", "5 زبانیں"),
   ];
 
-  const card = (s: (typeof solutions)[number], i: number) => (
+  const card = (s: Solution, i: number) => (
     <Link
       key={s.slug}
       href={href(lang, `/solutions/${s.slug}`)}

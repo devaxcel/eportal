@@ -5,7 +5,8 @@ import { Icon } from "@/components/Icon";
 import { PricingTable } from "@/components/PricingTable";
 import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
-import { faqs, hubFaqs, plans, solutions } from "@/lib/content";
+import { faqs, hubFaqs, plans } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { href, isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -17,6 +18,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
   const { lang } = await params;
   if (!isLang(lang)) notFound();
 
+  const solutions = await getSolutions();
+  const school = solutions.find((s) => s.slug === "eschool") ?? solutions[0];
   const others = solutions.filter((s) => s.slug !== "eschool");
 
   // [feature, starter, growth, campus, enterprise]
@@ -53,7 +56,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
         <Reveal>
           <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <span className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${solutions[0].accent} text-white`}><Icon name={solutions[0].icon} size={26} /></span>
+              <span className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${school.accent} text-white`}><Icon name={school.icon} size={26} /></span>
               <div>
                 <h2 className="text-2xl font-extrabold">eSchool</h2>
                 <p className="text-ink-soft">{T(lang, "Plans for schools and colleges. All prices in PKR.", "اسکولوں اور کالجوں کے پلانز۔ تمام قیمتیں پاکستانی روپے میں۔")}</p>

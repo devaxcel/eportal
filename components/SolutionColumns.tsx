@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Icon } from "./Icon";
-import { solutions, ui, type Solution } from "@/lib/content";
+import { ui, type Solution } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { href, tx, type Lang } from "@/lib/i18n";
 
 function Card({ s, lang, hidden }: { s: Solution; lang: Lang; hidden: boolean }) {
@@ -50,14 +51,15 @@ function Column({ items, lang, down, seconds }: { items: Solution[]; lang: Lang;
 }
 
 /** Solution cards as vertical sliders: neighbouring columns move in opposite directions. Pauses on hover. */
-export function SolutionColumns({ lang }: { lang: Lang }) {
+export async function SolutionColumns({ lang }: { lang: Lang }) {
+  const solutions = await getSolutions();
   // Wide screens: 4 columns of 2. Smaller screens: 2 columns of 4.
-  const four = [0, 1, 2, 3].map((c) => solutions.filter((_, i) => i % 4 === c));
-  const two = [0, 1].map((c) => solutions.filter((_, i) => i % 2 === c));
+  const four = [0, 1, 2, 3].map((c) => solutions.filter((_, i) => i % 4 === c)).filter((c) => c.length);
+  const two = [0, 1].map((c) => solutions.filter((_, i) => i % 2 === c)).filter((c) => c.length);
 
   return (
     <>
-      <div className="hidden gap-5 lg:grid lg:grid-cols-4">
+      <div className="hidden gap-5 lg:grid lg:grid-cols-4" style={{ gridTemplateColumns: `repeat(${four.length}, minmax(0, 1fr))` }}>
         {four.map((items, c) => (
           <Column key={c} items={items} lang={lang} down={c % 2 === 1} seconds={32} />
         ))}

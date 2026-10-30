@@ -6,6 +6,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MotionProvider, ScrollProgress } from "@/components/motion";
+import { SolutionsProvider } from "@/components/SolutionsProvider";
+import { getSolutions } from "@/lib/solutions-data";
 import { dirOf, isLang, locales, Tm } from "@/lib/i18n";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -50,6 +52,7 @@ export default async function RootLayout({
 }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
+  const solutions = await getSolutions();
 
   return (
     <html lang={lang} dir={dirOf(lang)} className={`${inter.variable} ${nastaliq.variable} ${arabic.variable}`}>
@@ -59,11 +62,13 @@ export default async function RootLayout({
       </head>
       <body>
         <MotionProvider>
-          <ScrollProgress />
-          <Header lang={lang} />
-          <main>{children}</main>
-          <Footer lang={lang} />
-          <WhatsAppButton lang={lang} />
+          <SolutionsProvider solutions={solutions}>
+            <ScrollProgress />
+            <Header lang={lang} />
+            <main>{children}</main>
+            <Footer lang={lang} />
+            <WhatsAppButton lang={lang} />
+          </SolutionsProvider>
         </MotionProvider>
       </body>
     </html>

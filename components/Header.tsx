@@ -3,14 +3,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Bot, Check, ChevronDown, Globe, Car, Dumbbell, Mail, Menu, School, ShoppingCart, Stethoscope, Workflow, X, type LucideIcon } from "lucide-react";
+import {
+  BarChart3, Bot, BookOpen, Briefcase, Building2, Camera, Car, Check, ChevronDown, Dumbbell, Globe, House, Landmark,
+  Mail, Menu, Plane, Rocket, Scale, School, Shield, ShoppingCart, Stethoscope, Store, Truck, Users, Utensils,
+  Wallet, Workflow, Wrench, X, Zap, type LucideIcon,
+} from "lucide-react";
 import { Logo } from "./Logo";
-import { nav, solutions, ui } from "@/lib/content";
+import { nav, ui } from "@/lib/content";
+import { useSolutions } from "./SolutionsProvider";
 import { href, langNames, locales, T, tx, type Lang } from "@/lib/i18n";
 
-const icons: Record<string, LucideIcon> = { School, Dumbbell, Workflow, Mail, Stethoscope, Car, Bot, ShoppingCart };
+const icons: Record<string, LucideIcon> = {
+  School, Dumbbell, Workflow, Mail, Stethoscope, Car, Bot, ShoppingCart, Briefcase, Building2, Store, Landmark, Truck, Plane,
+  Utensils, Camera, Scale, Wrench, Globe, Shield, Zap, Rocket, BookOpen, Users, BarChart3, Wallet, House,
+};
 
 export function Header({ lang }: { lang: Lang }) {
+  const solutions = useSolutions();
   const [open, setOpen] = useState(false);
   const pathname = usePathname() || `/${lang}`;
   const [langOpen, setLangOpen] = useState(false);

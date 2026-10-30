@@ -8,7 +8,8 @@ import { CountUp, Parallax, Reveal, Spot, Tilt } from "./motion";
 import {
   AdminDashboardMock, AttendanceMock, BrowserFrame, FeeMock, FingerprintMock, ParentPhoneMock, PhoneFrame, PhoneShot,
 } from "./visuals";
-import { hero, modules, plans, portals, solutions, steps, ui } from "@/lib/content";
+import { hero, modules, plans, portals, steps, ui } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { dirOf, href, T, tx, type Lang } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------- hero */
@@ -378,7 +379,8 @@ export function HowItWorks({ lang }: { lang: Lang }) {
 
 /* -------------------------------------------------------------- products */
 
-export function ProductsShowcase({ lang, exclude = "eschool" }: { lang: Lang; exclude?: string }) {
+export async function ProductsShowcase({ lang, exclude = "eschool" }: { lang: Lang; exclude?: string }) {
+  const solutions = await getSolutions();
   return (
     <section className="relative overflow-hidden bg-navy-950 py-20 text-white">
       <div className="bg-grid absolute inset-0 opacity-60" />

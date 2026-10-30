@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { MessageCircle, Mail } from "lucide-react";
-import { solutions } from "@/lib/content";
+import { useSolutions } from "./SolutionsProvider";
 import { tx, type Lang } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
@@ -24,6 +24,7 @@ const t = {
 const sizes = ["< 200", "200 – 600", "600 – 1,500", "1,500+"];
 
 export function DemoForm({ lang }: { lang: Lang }) {
+  const solutions = useSolutions();
   const [v, setV] = useState({ solution: "", name: "", org: "", phone: "", students: sizes[0], msg: "" });
   const set = (k: keyof typeof v) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setV((s) => ({ ...s, [k]: e.target.value }));

@@ -9,19 +9,26 @@ import {
   ProductsShowcase, SmsStory,
 } from "@/components/home";
 import { aiFeatures, faqs } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { getSolution } from "@/lib/solutions-data";
+import { solutionMetadata, solutionSchema } from "@/lib/seo";
 import { isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const s = await getSolution("eschool");
+  if (s && isLang(lang)) return solutionMetadata(s, lang);
   return { title: Tm(lang, "eSchool: School Management System", "ای اسکول") };
 }
 
 export default async function ESchoolPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
+  const solution = await getSolution("eschool");
 
   return (
     <>
+      {solution && <JsonLd data={solutionSchema(solution, lang)} />}
       <HomeHero lang={lang} />
       <ModuleMarquee lang={lang} />
       <EmotionalStatement lang={lang} variant="school" />

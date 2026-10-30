@@ -5,7 +5,7 @@ import { GettingStarted } from "@/components/hub";
 import { Icon } from "@/components/Icon";
 import { CtaBand, PageHero, SectionHead } from "@/components/Section";
 import { CountUp, Reveal, Spot } from "@/components/motion";
-import { solutions } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { href, isLang, T, tx, Tm } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
@@ -18,6 +18,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const { lang } = await params;
   if (!isLang(lang)) notFound();
 
+  const solutions = await getSolutions();
   const values = [
     { icon: "Languages", t: T(lang, "Built for Pakistan", "پاکستان کے لیے"), d: T(lang, "Urdu and English, local fee systems, Pakistani school workflows.", "اردو اور انگریزی، مقامی فیس نظام، پاکستانی اسکولوں کا طریقہ کار۔") },
     { icon: "Handshake", t: T(lang, "Support you can reach", "قابل رسائی سپورٹ"), d: T(lang, "Talk to a real person on phone or WhatsApp.", "فون یا واٹس ایپ پر حقیقی انسان سے بات کریں۔") },

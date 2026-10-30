@@ -10,7 +10,9 @@ import { EmotionalStatement } from "./heart";
 import { GettingStarted } from "./hub";
 import { ProductsShowcase } from "./home";
 import { hubFaqs, ui, type Solution } from "@/lib/content";
-import { stories } from "@/lib/stories";
+import type { Story } from "@/lib/stories";
+import { JsonLd } from "./JsonLd";
+import { solutionSchema } from "@/lib/seo";
 import { href, T, tx, type Lang } from "@/lib/i18n";
 
 /* -------------------------------------------------------------- hero */
@@ -68,7 +70,7 @@ function SolutionHero({ s, lang }: { s: Solution; lang: Lang }) {
 
         <Reveal delay={0.2} y={40} className="relative pb-10 ps-0 sm:ps-6">
           <Tilt>
-            <ProductMock slug={s.slug} lang={lang} />
+            <ProductMock slug={s.mock ?? s.slug} lang={lang} />
           </Tilt>
           {chips.map((c, i) => (
             <span key={i} className={`glass animate-float absolute hidden rounded-xl px-3.5 py-2 text-xs font-semibold text-white shadow-xl sm:block ${pos[i]}`} style={{ animationDelay: `${i * 1.4}s` }}>
@@ -107,8 +109,8 @@ function FeatureMarquee({ s, lang }: { s: Solution; lang: Lang }) {
 
 /* ------------------------------------------------- before and after */
 
-function ComparePanel({ slug, lang }: { slug: string; lang: Lang }) {
-  const story = stories[slug];
+function ComparePanel({ story, lang }: { story: Story; lang: Lang }) {
+  if (!story.before.length && !story.after.length) return null;
   return (
     <section className="container-x py-20">
       <SectionHead
@@ -223,30 +225,37 @@ function PricingNote({ s, lang }: { s: Solution; lang: Lang }) {
 
 /* ----------------------------------------------------------- template */
 
-/** One shared layout for every solution page (eSchool has its own longer page). */
+const EMPTY_STORY: Story = { statement: { en: "", ur: "" }, before: [], after: [], faqs: [] };
+
+/** One shared layout for every solution page (eSchool has its own longer page). Each section can be hidden from the dashboard. */
 export function SolutionTemplate({ s, lang }: { s: Solution; lang: Lang }) {
-  const story = stories[s.slug];
+  const story = s.story ?? EMPTY_STORY;
+  const show = (key: string) => !s.hidden?.includes(key);
   const faqs = [...story.faqs, ...hubFaqs.slice(2, 4)];
+  const statement = tx(story.statement, lang);
 
   return (
     <>
+      <JsonLd data={solutionSchema(s, lang)} />
       <SolutionHero s={s} lang={lang} />
-      <FeatureMarquee s={s} lang={lang} />
-      <EmotionalStatement lang={lang} text={tx(story.statement, lang)} />
-      <ComparePanel slug={s.slug} lang={lang} />
-      <SeeInAction s={s} lang={lang} />
-      <WhoFor s={s} lang={lang} />
-      <GettingStarted lang={lang} />
-      <PricingNote s={s} lang={lang} />
+      {show("marquee") && <FeatureMarquee s={s} lang={lang} />}
+      {show("statement") && statement && <EmotionalStatement lang={lang} text={statement} />}
+      {show("compare") && <ComparePanel story={story} lang={lang} />}
+      {show("action") && <SeeInAction s={s} lang={lang} />}
+      {show("whoFor") && s.forWho.length > 0 && <WhoFor s={s} lang={lang} />}
+      {show("steps") && <GettingStarted lang={lang} />}
+      {show("pricing") && <PricingNote s={s} lang={lang} />}
 
-      <section className="bg-mist py-24">
-        <div className="container-x">
-          <SectionHead eyebrow={T(lang, "FAQ", "اکثر پوچھے گئے سوالات")} title={T(lang, "Questions we often hear", "جو سوالات اکثر پوچھے جاتے ہیں")} />
-          <div className="mt-10"><FaqList items={faqs} lang={lang} /></div>
-        </div>
-      </section>
+      {show("faq") && faqs.length > 0 && (
+        <section className="bg-mist py-24">
+          <div className="container-x">
+            <SectionHead eyebrow={T(lang, "FAQ", "اکثر پوچھے گئے سوالات")} title={T(lang, "Questions we often hear", "جو سوالات اکثر پوچھے جاتے ہیں")} />
+            <div className="mt-10"><FaqList items={faqs} lang={lang} /></div>
+          </div>
+        </section>
+      )}
 
-      <ProductsShowcase lang={lang} exclude={s.slug} />
+      {show("others") && <ProductsShowcase lang={lang} exclude={s.slug} />}
       <CtaBand lang={lang} />
     </>
   );

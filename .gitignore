@@ -42,3 +42,5 @@ next-env.d.ts
 
 # alternate build output
 /.next-build/
+
+!.env.example
