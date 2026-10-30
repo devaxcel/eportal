@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { ProductVisual } from "@/components/ProductVisual";
+import { ArrowRight } from "lucide-react";
+import { Icon } from "@/components/Icon";
+import { SolutionShowcase } from "@/components/SolutionShowcase";
 import { CtaBand, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { solutions, ui } from "@/lib/content";
@@ -21,61 +22,57 @@ export default async function SolutionsPage({ params }: { params: Promise<{ lang
       <PageHero
         eyebrow={T(lang, "Solutions", "حل")}
         title={T(lang, "All ePortal solutions in one place", "ای پورٹل کے تمام حل ایک جگہ")}
-        sub={T(lang, "From running a school to hiring a trainer or a driving instructor, each platform is built around a real workflow.", "اسکول چلانے سے لے کر ٹرینر یا ڈرائیونگ انسٹرکٹر ہائر کرنے تک، ہر پلیٹ فارم حقیقی طریقہ کار پر بنایا گیا ہے۔")}
+        sub={T(lang, "From running a school to hiring a trainer, selling in a shop or automating reports, each platform is built around a real workflow.", "اسکول چلانے سے لے کر ٹرینر ہائر کرنے، دکان چلانے یا رپورٹس خودکار بنانے تک، ہر پلیٹ فارم حقیقی طریقہ کار پر بنایا گیا ہے۔")}
       />
 
-      <div className="container-x space-y-28 py-20">
-        {solutions.map((s, i) => (
-          <div key={s.slug} className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal x={i % 2 ? 30 : -30} y={0} className={i % 2 ? "lg:order-2" : ""}>
-              <ProductVisual s={s} lang={lang} />
-            </Reveal>
-            <Reveal delay={0.1} x={i % 2 ? -30 : 30} y={0}>
-              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${s.status === "live" ? "bg-brand-100 text-brand-700" : "bg-amber-100 text-amber-800"}`}>
-                {tx(s.status === "live" ? ui.liveBadge : ui.newBadge, lang)}
-              </span>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight">{tx(s.name, lang)}</h2>
-              <p className="mt-1 text-lg font-medium text-brand-600">{tx(s.tagline, lang)}</p>
-              <p className="mt-4 text-lg text-ink-soft">{tx(s.description, lang)}</p>
-              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-ink-soft">{T(lang, "Built for", "کس کے لیے")}</h3>
-              <ul className="mt-3 space-y-2">
-                {s.forWho.map((w, k) => (
-                  <li key={k} className="flex items-center gap-2.5"><span className="h-1.5 w-1.5 rounded-full bg-brand-500" />{tx(w, lang)}</li>
-                ))}
-              </ul>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href={href(lang, `/solutions/${s.slug}`)} className="group inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 font-semibold text-white hover:bg-brand-700">
-                  {tx(ui.learnMore, lang)}<ArrowRight size={16} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                </Link>
-                {s.url && (
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 font-semibold hover:border-brand-300">
-                    {T(lang, "Visit website", "ویب سائٹ دیکھیں")}<ExternalLink size={15} />
-                  </a>
-                )}
+      <section className="container-x py-16">
+        <SolutionShowcase lang={lang} />
+      </section>
+
+      <section className="bg-mist py-20">
+        <div className="container-x">
+          <SectionHead eyebrow={T(lang, "At a glance", "ایک نظر میں")} title={T(lang, "Which one is right for you?", "آپ کے لیے کون سا درست ہے؟")} />
+          <Reveal>
+            <ul className="mx-auto mt-10 max-w-4xl divide-y divide-line overflow-hidden rounded-3xl border border-line bg-white shadow-sm">
+              {solutions.map((s) => (
+                <li key={s.slug}>
+                  <Link href={href(lang, `/solutions/${s.slug}`)} className="group flex items-center gap-4 p-5 transition hover:bg-brand-50/50">
+                    <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={22} /></span>
+                    <span className="min-w-0 flex-1">
+                      <b className="block text-lg">{tx(s.name, lang)}</b>
+                      <span className="block text-sm text-ink-soft">{tx(s.tagline, lang)}</span>
+                    </span>
+                    <span className="hidden max-w-[16rem] text-sm text-ink-soft md:block">
+                      <span className="font-semibold text-black">{T(lang, "Best for: ", "موزوں برائے: ")}</span>{tx(s.forWho[0], lang)}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600">
+                      <span className="hidden sm:inline">{tx(ui.learnMore, lang)}</span>
+                      <ArrowRight size={16} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="container-x py-20">
+        <SectionHead eyebrow={T(lang, "Our approach", "ہمارا طریقہ")} title={T(lang, "Built the same way, every time", "ہر بار ایک ہی معیار سے")} />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {[
+            [T(lang, "Start with the workflow", "طریقہ کار سے آغاز"), T(lang, "We study how the work really happens before writing a line of code.", "کوڈ لکھنے سے پہلے ہم دیکھتے ہیں کہ کام حقیقت میں کیسے ہوتا ہے۔")],
+            [T(lang, "Simple for everyone", "سب کے لیے آسان"), T(lang, "Clear screens that staff, parents and customers can use without training.", "واضح اسکرینیں جو عملہ، والدین اور صارفین بغیر تربیت استعمال کر سکیں۔")],
+            [T(lang, "AI where it helps", "اے آئی جہاں مفید ہو"), T(lang, "Practical AI features that save time, never replacing human judgement.", "عملی اے آئی خصوصیات جو وقت بچائیں، انسانی فیصلے کی جگہ نہ لیں۔")],
+          ].map(([t, d], i) => (
+            <Reveal key={t} delay={i * 0.1}>
+              <div className="h-full rounded-2xl border border-line bg-white p-7">
+                <span className="text-4xl font-extrabold text-brand-200" dir="ltr">0{i + 1}</span>
+                <h3 className="mt-3 text-lg font-bold">{t}</h3>
+                <p className="mt-2 text-ink-soft">{d}</p>
               </div>
             </Reveal>
-          </div>
-        ))}
-      </div>
-
-      <section className="bg-mist py-24">
-        <div className="container-x">
-          <SectionHead eyebrow={T(lang, "Our approach", "ہمارا طریقہ")} title={T(lang, "Built the same way, every time", "ہر بار ایک ہی معیار سے")} />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              [T(lang, "Start with the workflow", "طریقہ کار سے آغاز"), T(lang, "We study how the work really happens before writing a line of code.", "کوڈ لکھنے سے پہلے ہم دیکھتے ہیں کہ کام حقیقت میں کیسے ہوتا ہے۔")],
-              [T(lang, "Simple for everyone", "سب کے لیے آسان"), T(lang, "Clear screens that staff, parents and customers can use without training.", "واضح اسکرینیں جو عملہ، والدین اور صارفین بغیر تربیت استعمال کر سکیں۔")],
-              [T(lang, "AI where it helps", "اے آئی جہاں مفید ہو"), T(lang, "Practical AI features that save time, never replacing human judgement.", "عملی اے آئی خصوصیات جو وقت بچائیں، انسانی فیصلے کی جگہ نہ لیں۔")],
-            ].map(([t, d], i) => (
-              <Reveal key={t} delay={i * 0.1}>
-                <div className="h-full rounded-2xl border border-line bg-white p-7">
-                  <span className="text-4xl font-extrabold text-brand-200" dir="ltr">0{i + 1}</span>
-                  <h3 className="mt-3 text-lg font-bold">{t}</h3>
-                  <p className="mt-2 text-ink-soft">{d}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          ))}
         </div>
       </section>
       <CtaBand lang={lang} />

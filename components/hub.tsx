@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2 } from "lucide-react";
 import { Icon } from "./Icon";
-import { ProductMock } from "./productMocks";
+import { SolutionShowcase } from "./SolutionShowcase";
 import { SectionHead } from "./Section";
 import { Reveal, Spot } from "./motion";
 import { solutions, ui } from "@/lib/content";
@@ -97,48 +97,14 @@ export function SolutionsGrid({ lang }: { lang: Lang }) {
       <SectionHead
         eyebrow={T(lang, "Our solutions", "ہمارے حل")}
         title={T(lang, "Find the platform that fits your need", "اپنی ضرورت کے مطابق پلیٹ فارم چنیں")}
-        sub={T(lang, "Each platform does one job really well, and you can use any of them on its own.", "ہر پلیٹ فارم ایک کام بہت اچھی طرح کرتا ہے، اور آپ ان میں سے کوئی بھی الگ سے استعمال کر سکتے ہیں۔")}
+        sub={T(lang, "Pick a platform to see what it does. Each one works on its own.", "ایک پلیٹ فارم چنیں اور دیکھیں وہ کیا کرتا ہے۔ ہر ایک الگ سے کام کرتا ہے۔")}
       />
-      <div className="mt-14 flex flex-wrap justify-center gap-6">
-        {solutions.map((s, i) => (
-          <Reveal key={s.slug} delay={i * 0.07} className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-            <Spot className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white transition hover:border-brand-300 hover:shadow-xl hover:shadow-black/5">
-              <div className={`relative h-52 overflow-hidden bg-gradient-to-br ${s.accent}`} dir="ltr">
-                <div className="bg-grid absolute inset-0 opacity-60" />
-                <Icon name={s.icon} size={150} strokeWidth={1} className="absolute -right-6 -top-8 text-white/15" />
-                <div className="absolute left-5 top-6 w-[190%] transition duration-500 group-hover:-translate-y-2" style={{ transform: "scale(0.52)", transformOrigin: "top left" }}>
-                  <ProductMock slug={s.slug} lang={lang} />
-                </div>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-center gap-3">
-                  <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={22} /></span>
-                  <div>
-                    <h3 className="text-xl font-extrabold">{tx(s.name, lang)}</h3>
-                    <p className="text-sm font-medium text-brand-600">{tx(s.tagline, lang)}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-ink-soft">{tx(s.description, lang)}</p>
-                <ul className="mt-5 space-y-2 text-sm">
-                  {s.features.slice(0, 3).map((f, k) => (
-                    <li key={k} className="flex items-start gap-2.5"><Check size={15} className="mt-1.5 shrink-0 text-brand-600" />{tx(f, lang)}</li>
-                  ))}
-                </ul>
-                <div className="mt-auto flex items-center justify-between pt-6">
-                  <Link href={href(lang, `/solutions/${s.slug}`)} className="inline-flex items-center gap-1.5 font-semibold text-brand-600">
-                    {tx(ui.learnMore, lang)}
-                    <ArrowRight size={16} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                  </Link>
-                  {s.url && (
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-ink-soft hover:text-brand-600">
-                      {T(lang, "Visit site ↗", "ویب سائٹ ↗")}
-                    </a>
-                  )}
-                </div>
-              </div>
-            </Spot>
-          </Reveal>
-        ))}
+      <div className="mt-12"><SolutionShowcase lang={lang} /></div>
+      <div className="mt-8 text-center">
+        <Link href={href(lang, "/solutions")} className="group inline-flex items-center gap-2 font-semibold text-brand-600">
+          {tx(ui.exploreSolutions, lang)}
+          <ArrowRight size={16} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+        </Link>
       </div>
     </section>
   );

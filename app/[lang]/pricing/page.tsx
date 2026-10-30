@@ -4,7 +4,7 @@ import { ArrowRight, Check, ExternalLink, Headset, Minus, Rocket, ShieldCheck } 
 import { Icon } from "@/components/Icon";
 import { PricingTable } from "@/components/PricingTable";
 import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
-import { Reveal, Spot } from "@/components/motion";
+import { Reveal } from "@/components/motion";
 import { faqs, hubFaqs, plans, solutions } from "@/lib/content";
 import { href, isLang, T, tx } from "@/lib/i18n";
 
@@ -115,30 +115,32 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
             title={T(lang, "Priced around what you need", "آپ کی ضرورت کے مطابق قیمت")}
             sub={T(lang, "Tell us about your needs and we will send a clear quote.", "اپنی ضرورت بتائیں، ہم واضح قیمت بھیجیں گے۔")}
           />
-          <div className="mt-12 flex flex-wrap justify-center gap-5">
-            {others.map((s, i) => (
-              <Reveal key={s.slug} delay={i * 0.07} className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.85rem)]">
-                <Spot className="flex h-full flex-col rounded-2xl border border-line bg-white p-6">
-                  <span className={`grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={22} /></span>
-                  <h3 className="mt-4 text-lg font-bold">{tx(s.name, lang)}</h3>
-                  <p className="mt-1 text-sm text-ink-soft">{tx(s.tagline, lang)}</p>
-                  <p className="mt-5 text-xl font-extrabold text-brand-600">
+          <Reveal>
+            <ul className="mx-auto mt-12 max-w-4xl divide-y divide-line overflow-hidden rounded-3xl border border-line bg-white shadow-sm">
+              {others.map((s) => (
+                <li key={s.slug} className="flex flex-wrap items-center gap-4 p-5">
+                  <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={22} /></span>
+                  <span className="min-w-0 flex-1">
+                    <b className="block text-lg">{tx(s.name, lang)}</b>
+                    <span className="block text-sm text-ink-soft">{tx(s.tagline, lang)}</span>
+                  </span>
+                  <span className="text-sm font-bold text-brand-600">
                     {s.pricingOnSite ? T(lang, "Pricing on its website", "قیمت ان کی ویب سائٹ پر") : T(lang, "Custom quote", "حسب ضرورت قیمت")}
-                  </p>
-                  <div className="mt-auto flex flex-col gap-2 pt-6">
+                  </span>
+                  <span className="flex gap-2">
                     {s.pricingOnSite && s.url && (
-                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm font-semibold hover:border-brand-300">
+                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-xl border border-line px-4 py-2 text-sm font-semibold hover:border-brand-300">
                         {T(lang, "See pricing", "قیمتیں دیکھیں")}<ExternalLink size={14} />
                       </a>
                     )}
-                    <Link href={`${href(lang, "/demo")}?solution=${s.slug}`} className="rounded-xl bg-brand-600 px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-brand-700">
+                    <Link href={`${href(lang, "/demo")}?solution=${s.slug}`} className="rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">
                       {T(lang, "Get a quote", "قیمت حاصل کریں")}
                     </Link>
-                  </div>
-                </Spot>
-              </Reveal>
-            ))}
-          </div>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 

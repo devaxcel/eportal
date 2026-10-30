@@ -380,42 +380,31 @@ export function HowItWorks({ lang }: { lang: Lang }) {
 
 export function ProductsShowcase({ lang }: { lang: Lang }) {
   return (
-    <section className="relative overflow-hidden bg-navy-950 py-24 text-white">
+    <section className="relative overflow-hidden bg-navy-950 py-20 text-white">
       <div className="bg-grid absolute inset-0 opacity-60" />
-      <div className="container-x relative">
+      <div className="container-x relative text-center">
         <SectionHead
           light
-          eyebrow={T(lang, "Our platforms", "ہمارے پلیٹ فارمز")}
-          title={T(lang, "One team, a family of products", "ایک ٹیم، مصنوعات کا خاندان")}
-          sub={T(lang, "From schools to fitness, healthcare and driving, we build portals that connect people to the services they need.", "اسکولوں سے لے کر فٹنس، صحت اور ڈرائیونگ تک، ہم ایسے پورٹل بناتے ہیں جو لوگوں کو ان کی مطلوبہ خدمات سے جوڑتے ہیں۔")}
+          eyebrow={T(lang, "More from ePortal", "ای پورٹل سے مزید")}
+          title={T(lang, "Explore our other platforms", "ہمارے دوسرے پلیٹ فارمز دیکھیں")}
         />
-        <div className="mt-14 flex flex-wrap justify-center gap-5">
-          {solutions.map((s, i) => (
-            <Reveal key={s.slug} delay={i * 0.07} className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
-              <Link href={href(lang, `/solutions/${s.slug}`)} className="group block h-full">
-                <Spot className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-7 transition hover:border-white/25">
-                  <div className={`pointer-events-none absolute -end-12 -top-12 h-44 w-44 rounded-full bg-gradient-to-br ${s.accent} opacity-40 blur-2xl transition group-hover:opacity-70`} />
-                  <span className={`relative grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${s.accent} text-white shadow-lg`}>
-                    <Icon name={s.icon} size={26} />
-                  </span>
-                  <h3 className="relative mt-6 text-2xl font-extrabold">{tx(s.name, lang)}</h3>
-                  <p className="relative mt-1 font-medium text-brand-300">{tx(s.tagline, lang)}</p>
-                  <p className="relative mt-3 text-sm text-white/65">{tx(s.description, lang)}</p>
-                  <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-white">
-                    {tx(ui.learnMore, lang)}
-                    <ArrowRight size={16} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                  </span>
-                </Spot>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {solutions.filter((s) => s.slug !== "eschool").map((s, i) => (
+            <Reveal key={s.slug} delay={i * 0.05} y={14}>
+              <Link href={href(lang, `/solutions/${s.slug}`)} className="glass group inline-flex items-center gap-3 rounded-full py-2 pe-5 ps-2 font-semibold transition hover:bg-white/15">
+                <span className={`grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={17} /></span>
+                {tx(s.name, lang)}
               </Link>
             </Reveal>
           ))}
         </div>
+        <Link href={href(lang, "/solutions")} className="mt-8 inline-flex items-center gap-2 font-semibold text-brand-300 hover:underline">
+          {tx(ui.exploreSolutions, lang)}<ArrowRight size={16} className="rtl:rotate-180" />
+        </Link>
       </div>
     </section>
   );
 }
-
-/* ---------------------------------------------------------- pricing peek */
 
 export function PricingTeaser({ lang }: { lang: Lang }) {
   const shown = plans.slice(0, 3);
