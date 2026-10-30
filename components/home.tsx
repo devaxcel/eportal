@@ -378,7 +378,7 @@ export function HowItWorks({ lang }: { lang: Lang }) {
 
 /* -------------------------------------------------------------- products */
 
-export function ProductsShowcase({ lang }: { lang: Lang }) {
+export function ProductsShowcase({ lang, exclude = "eschool" }: { lang: Lang; exclude?: string }) {
   return (
     <section className="relative overflow-hidden bg-navy-950 py-20 text-white">
       <div className="bg-grid absolute inset-0 opacity-60" />
@@ -389,7 +389,7 @@ export function ProductsShowcase({ lang }: { lang: Lang }) {
           title={T(lang, "Explore our other platforms", "ہمارے دوسرے پلیٹ فارمز دیکھیں")}
         />
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {solutions.filter((s) => s.slug !== "eschool").map((s, i) => (
+          {solutions.filter((s) => s.slug !== exclude).map((s, i) => (
             <Reveal key={s.slug} delay={i * 0.05} y={14}>
               <Link href={href(lang, `/solutions/${s.slug}`)} className="glass group inline-flex items-center gap-3 rounded-full py-2 pe-5 ps-2 font-semibold transition hover:bg-white/15">
                 <span className={`grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={17} /></span>

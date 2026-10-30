@@ -667,96 +667,6 @@ export const rows: [string, string, string, string][] = [
   "ميزات ذكاء اصطناعي عملية توفر الوقت دون أن تحل محل الحكم البشري."
  ],
  [
-  "Talk to us",
-  "Hable con nosotros",
-  "Neem contact met ons op",
-  "تحدث إلينا"
- ],
- [
-  "Tell us about your needs in a short call.",
-  "Cuéntenos sus necesidades en una llamada breve.",
-  "Vertel ons in een kort gesprek wat u nodig heeft.",
-  "أخبرنا باحتياجاتك في مكالمة قصيرة."
- ],
- [
-  "We set it up",
-  "Lo configuramos nosotros",
-  "Wij richten het in",
-  "نحن نتولى الإعداد"
- ],
- [
-  "Your account is configured and your data imported.",
-  "Su cuenta se configura y sus datos se importan.",
-  "Uw account wordt ingesteld en uw gegevens worden geïmporteerd.",
-  "يتم إعداد حسابك واستيراد بياناتك."
- ],
- [
-  "Go live",
-  "Puesta en marcha",
-  "Live gaan",
-  "الانطلاق"
- ],
- [
-  "Start using it right away, with our support beside you.",
-  "Empiece a usarlo de inmediato, con nuestro soporte a su lado.",
-  "Begin direct met gebruiken, met onze support aan uw zijde.",
-  "ابدأ الاستخدام فورًا، ودعمنا بجانبك."
- ],
- [
-  "← All solutions",
-  "← Todas las soluciones",
-  "← Alle oplossingen",
-  "← جميع الحلول"
- ],
- [
-  "Key features",
-  "Funciones clave",
-  "Belangrijkste functies",
-  "الميزات الرئيسية"
- ],
- [
-  "What you get",
-  "Lo que obtiene",
-  "Wat u krijgt",
-  "ما ستحصل عليه"
- ],
- [
-  "Who it is for",
-  "Para quién es",
-  "Voor wie het is",
-  "لمن هو موجّه"
- ],
- [
-  "Made for people like you",
-  "Hecho para personas como usted",
-  "Gemaakt voor mensen zoals u",
-  "مصمم لأشخاص مثلك"
- ],
- [
-  "Getting started",
-  "Primeros pasos",
-  "Aan de slag",
-  "البدء"
- ],
- [
-  "Up and running in three steps",
-  "En marcha en tres pasos",
-  "In drie stappen aan de slag",
-  "جاهز للعمل في ثلاث خطوات"
- ],
- [
-  "More from us",
-  "Más de nosotros",
-  "Meer van ons",
-  "المزيد منا"
- ],
- [
-  "Explore other platforms",
-  "Explore otras plataformas",
-  "Ontdek andere platforms",
-  "اكتشف منصات أخرى"
- ],
- [
   "ePortal Assistant",
   "Asistente de ePortal",
   "ePortal-assistent",
@@ -1531,6 +1441,12 @@ export const rows: [string, string, string, string][] = [
   "الواجبات"
  ],
  [
+  "Getting started",
+  "Primeros pasos",
+  "Aan de slag",
+  "البدء"
+ ],
+ [
   "Live in one to two weeks",
   "En marcha en una o dos semanas",
   "In één tot twee weken live",
@@ -1697,6 +1613,12 @@ export const rows: [string, string, string, string][] = [
   "Sesiones breves y prácticas para todos los que la usarán.",
   "Korte, praktische sessies voor iedereen die het gaat gebruiken.",
   "جلسات قصيرة وعملية لكل من سيستخدمها."
+ ],
+ [
+  "Go live",
+  "Puesta en marcha",
+  "Live gaan",
+  "الانطلاق"
  ],
  [
   "You start using it, with our support beside you.",
@@ -2269,6 +2191,42 @@ export const rows: [string, string, string, string][] = [
   "أخبرنا بما تحتاجه. عرض توضيحي قصير دون التزام."
  ],
  [
+  "← All solutions",
+  "← Todas las soluciones",
+  "← Alle oplossingen",
+  "← جميع الحلول"
+ ],
+ [
+  "From the old way to a smoother one",
+  "Del método antiguo a uno más fluido",
+  "Van de oude manier naar een soepelere",
+  "من الطريقة القديمة إلى طريقة أكثر سلاسة"
+ ],
+ [
+  "See it in action",
+  "Véalo en acción",
+  "Zie het in actie",
+  "شاهده أثناء العمل"
+ ],
+ [
+  "A closer look at what it does",
+  "Una mirada más de cerca a lo que hace",
+  "Een nadere blik op wat het doet",
+  "نظرة أقرب على ما يقدّمه"
+ ],
+ [
+  "Who it is for",
+  "Para quién es",
+  "Voor wie het is",
+  "لمن هو موجّه"
+ ],
+ [
+  "Made for people like you",
+  "Hecho para personas como usted",
+  "Gemaakt voor mensen zoals u",
+  "مصمم لأشخاص مثلك"
+ ],
+ [
   "Students",
   "Alumnos",
   "Leerlingen",
@@ -2477,6 +2435,12 @@ export const rows: [string, string, string, string][] = [
   "Empezar",
   "Aan de slag",
   "ابدأ الآن"
+ ],
+ [
+  "Talk to us",
+  "Hable con nosotros",
+  "Neem contact met ons op",
+  "تحدث إلينا"
  ],
  [
   "Explore all portals",
@@ -3773,5 +3737,455 @@ export const rows: [string, string, string, string][] = [
   "Lunes a viernes, de 9:00 a 18:00",
   "Maandag t/m vrijdag, 9.00 – 18.00 uur",
   "من الاثنين إلى الجمعة، من 9 صباحًا إلى 6 مساءً"
+ ],
+ [
+  "Getting fit should not mean fighting your schedule. Formed brings a certified trainer to you, and keeps everything about your progress in one place.",
+  "Ponerse en forma no debería significar luchar contra su agenda. Formed le acerca un entrenador certificado y reúne todo su progreso en un solo lugar.",
+  "Fit worden hoeft geen strijd tegen uw agenda te zijn. Formed brengt een gecertificeerde trainer naar u toe en bewaart alles over uw voortgang op één plek.",
+  "لا ينبغي أن تعني اللياقة صراعًا مع جدولك. يأتيك Formed بمدرب معتمد ويجمع كل ما يخص تقدمك في مكان واحد."
+ ],
+ [
+  "Long commutes to a crowded gym",
+  "Largos desplazamientos a un gimnasio abarrotado",
+  "Lange reistijd naar een drukke sportschool",
+  "التنقل لمسافات طويلة إلى نادٍ رياضي مزدحم"
+ ],
+ [
+  "Guessing which trainer is right for you",
+  "Adivinar qué entrenador le conviene",
+  "Raden welke trainer bij u past",
+  "التخمين في اختيار المدرب المناسب لك"
+ ],
+ [
+  "Plans and progress scattered across notes and chats",
+  "Planes y progreso dispersos entre notas y chats",
+  "Plannen en voortgang verspreid over notities en chats",
+  "خطط وتقدم متفرقة بين الملاحظات والمحادثات"
+ ],
+ [
+  "Private sessions where you already are",
+  "Sesiones privadas donde usted ya está",
+  "Privésessies waar u al bent",
+  "جلسات خاصة حيث أنت موجود بالفعل"
+ ],
+ [
+  "Matched with a vetted, certified trainer",
+  "Asignado a un entrenador certificado y verificado",
+  "Gekoppeld aan een gescreende, gecertificeerde trainer",
+  "مطابقة مع مدرب معتمد وموثّق"
+ ],
+ [
+  "Programme, notes and progress in one client portal",
+  "Programa, notas y progreso en un solo portal de cliente",
+  "Programma, notities en voortgang in één klantportaal",
+  "البرنامج والملاحظات والتقدم في بوابة عميل واحدة"
+ ],
+ [
+  "How are trainers matched to me?",
+  "¿Cómo se me asigna un entrenador?",
+  "Hoe word ik aan een trainer gekoppeld?",
+  "كيف تتم مطابقة المدربين معي؟"
+ ],
+ [
+  "Tell us your goals and schedule and we match you with a certified, background-checked trainer.",
+  "Cuéntenos sus objetivos y su horario y le asignaremos un entrenador certificado y con antecedentes verificados.",
+  "Vertel ons uw doelen en agenda en wij koppelen u aan een gecertificeerde trainer met gecontroleerde achtergrond.",
+  "أخبرنا بأهدافك وجدولك وسنطابقك مع مدرب معتمد خضع لفحص الخلفية."
+ ],
+ [
+  "Can I pause or cancel?",
+  "¿Puedo pausar o cancelar?",
+  "Kan ik pauzeren of annuleren?",
+  "هل يمكنني الإيقاف المؤقت أو الإلغاء؟"
+ ],
+ [
+  "Yes. Memberships are month to month, and you can pause or cancel from the client portal.",
+  "Sí. Las membresías son mensuales y puede pausar o cancelar desde el portal de cliente.",
+  "Ja. Lidmaatschappen lopen per maand en u kunt pauzeren of annuleren via het klantportaal.",
+  "نعم. العضويات شهرية، ويمكنك الإيقاف المؤقت أو الإلغاء من بوابة العميل."
+ ],
+ [
+  "Work moves at the speed of the slowest approval. Workflow Portal gives every document a clear path and every person a clear role.",
+  "El trabajo avanza a la velocidad de la aprobación más lenta. Workflow Portal da a cada documento un camino claro y a cada persona un rol claro.",
+  "Werk gaat net zo snel als de langzaamste goedkeuring. Workflow Portal geeft elk document een duidelijk pad en elke persoon een duidelijke rol.",
+  "يسير العمل بسرعة أبطأ موافقة. يمنح Workflow Portal كل مستند مسارًا واضحًا وكل شخص دورًا واضحًا."
+ ],
+ [
+  "Documents lost in email threads",
+  "Documentos perdidos en cadenas de correo",
+  "Documenten die zoekraken in e-mailketens",
+  "مستندات ضائعة في سلاسل البريد الإلكتروني"
+ ],
+ [
+  "Approvals waiting in someone's inbox",
+  "Aprobaciones esperando en la bandeja de alguien",
+  "Goedkeuringen die in iemands inbox wachten",
+  "موافقات تنتظر في صندوق بريد أحدهم"
+ ],
+ [
+  "No clear record of who approved what",
+  "Sin un registro claro de quién aprobó qué",
+  "Geen duidelijk overzicht van wie wat heeft goedgekeurd",
+  "لا سجل واضح لمن وافق على ماذا"
+ ],
+ [
+  "Every document stored in one place",
+  "Cada documento almacenado en un solo lugar",
+  "Elk document op één plek opgeslagen",
+  "كل مستند محفوظ في مكان واحد"
+ ],
+ [
+  "Approvals routed automatically to the right person",
+  "Aprobaciones dirigidas automáticamente a la persona adecuada",
+  "Goedkeuringen automatisch naar de juiste persoon gestuurd",
+  "موافقات تُوجَّه تلقائيًا إلى الشخص المناسب"
+ ],
+ [
+  "A full trail of every decision",
+  "Un registro completo de cada decisión",
+  "Een volledig spoor van elke beslissing",
+  "سجل كامل لكل قرار"
+ ],
+ [
+  "Can we set different permissions for each team?",
+  "¿Podemos establecer permisos diferentes para cada equipo?",
+  "Kunnen we per team andere rechten instellen?",
+  "هل يمكننا تعيين صلاحيات مختلفة لكل فريق؟"
+ ],
+ [
+  "Yes. Users, roles and permissions are managed centrally, so people only see what they should.",
+  "Sí. Los usuarios, roles y permisos se gestionan de forma centralizada, de modo que cada persona solo ve lo que debe.",
+  "Ja. Gebruikers, rollen en rechten worden centraal beheerd, zodat mensen alleen zien wat ze mogen zien.",
+  "نعم. تُدار المستخدمون والأدوار والصلاحيات مركزيًا، فلا يرى الأشخاص إلا ما يجب أن يروه."
+ ],
+ [
+  "Do people get notified when something needs them?",
+  "¿Se avisa a las personas cuando algo requiere su atención?",
+  "Krijgen mensen een melding als er iets van hen nodig is?",
+  "هل يتم تنبيه الأشخاص عندما يحتاج أمر ما إليهم؟"
+ ],
+ [
+  "Yes. Real-time notifications tell people when an approval or task needs their attention.",
+  "Sí. Las notificaciones en tiempo real avisan cuando una aprobación o tarea requiere su atención.",
+  "Ja. Realtime meldingen laten mensen weten wanneer een goedkeuring of taak hun aandacht nodig heeft.",
+  "نعم. تُعلم الإشعارات الفورية الأشخاص عندما تحتاج موافقة أو مهمة إلى انتباههم."
+ ],
+ [
+  "A report only matters when it reaches the right person. Email Report Portal prepares, protects and delivers it for you.",
+  "Un informe solo importa cuando llega a la persona adecuada. Email Report Portal lo prepara, lo protege y se lo entrega por usted.",
+  "Een rapport telt pas als het de juiste persoon bereikt. Email Report Portal bereidt het voor, beveiligt het en bezorgt het voor u.",
+  "لا قيمة للتقرير إلا إذا وصل إلى الشخص المناسب. يقوم Email Report Portal بإعداده وحمايته وتسليمه نيابةً عنك."
+ ],
+ [
+  "Reports built and emailed by hand every month",
+  "Informes creados y enviados a mano cada mes",
+  "Rapporten die elke maand met de hand worden gemaakt en gemaild",
+  "تقارير تُعدّ وتُرسل يدويًا كل شهر"
+ ],
+ [
+  "Sensitive files sent without protection",
+  "Archivos sensibles enviados sin protección",
+  "Gevoelige bestanden die onbeveiligd worden verstuurd",
+  "ملفات حساسة تُرسل دون حماية"
+ ],
+ [
+  "No way to know who opened what",
+  "Sin forma de saber quién abrió qué",
+  "Geen manier om te weten wie wat heeft geopend",
+  "لا وسيلة لمعرفة من فتح ماذا"
+ ],
+ [
+  "Reports generated in bulk, ready to send",
+  "Informes generados en bloque, listos para enviar",
+  "Rapporten in bulk gegenereerd, klaar om te verzenden",
+  "تقارير تُنشأ بالجملة وجاهزة للإرسال"
+ ],
+ [
+  "Password-protected PDFs delivered by email",
+  "PDF protegidos con contraseña enviados por correo",
+  "Met wachtwoord beveiligde pdf's bezorgd per e-mail",
+  "ملفات PDF محمية بكلمة مرور تُسلَّم عبر البريد الإلكتروني"
+ ],
+ [
+  "Delivery and click analytics with an audit trail",
+  "Analítica de entregas y clics con registro de auditoría",
+  "Analyse van bezorging en kliks met een auditspoor",
+  "تحليلات التسليم والنقرات مع سجل تدقيق"
+ ],
+ [
+  "Are the reports protected?",
+  "¿Están protegidos los informes?",
+  "Zijn de rapporten beveiligd?",
+  "هل التقارير محمية؟"
+ ],
+ [
+  "Yes. Reports can be generated as password-protected PDFs, with role-based access and an audit trail.",
+  "Sí. Los informes pueden generarse como PDF protegidos con contraseña, con acceso por roles y registro de auditoría.",
+  "Ja. Rapporten kunnen worden gegenereerd als met wachtwoord beveiligde pdf's, met toegang op basis van rollen en een auditspoor.",
+  "نعم. يمكن إنشاء التقارير بصيغة PDF محمية بكلمة مرور، مع وصول قائم على الأدوار وسجل تدقيق."
+ ],
+ [
+  "Can we send reports to many clients at once?",
+  "¿Podemos enviar informes a muchos clientes a la vez?",
+  "Kunnen we rapporten in één keer naar veel klanten sturen?",
+  "هل يمكننا إرسال التقارير إلى عدة عملاء دفعة واحدة؟"
+ ],
+ [
+  "Yes. Reports are generated in bulk and delivered to each client by email.",
+  "Sí. Los informes se generan en bloque y se entregan a cada cliente por correo electrónico.",
+  "Ja. Rapporten worden in bulk gegenereerd en per e-mail bij elke klant bezorgd.",
+  "نعم. تُنشأ التقارير بالجملة وتُسلَّم لكل عميل عبر البريد الإلكتروني."
+ ],
+ [
+  "Behind every code is a patient's record and a clinician's time. Medical Coding AI helps teams find the right answer faster.",
+  "Detrás de cada código hay el historial de un paciente y el tiempo de un profesional clínico. Medical Coding AI ayuda a los equipos a encontrar la respuesta correcta más rápido.",
+  "Achter elke code zit het dossier van een patiënt en de tijd van een zorgverlener. Medical Coding AI helpt teams sneller het juiste antwoord te vinden.",
+  "وراء كل رمز سجل مريض ووقت طبيب. يساعد Medical Coding AI الفرق على إيجاد الإجابة الصحيحة بسرعة أكبر."
+ ],
+ [
+  "Searching long policy documents for answers",
+  "Buscar respuestas en largos documentos de políticas",
+  "Antwoorden zoeken in lange beleidsdocumenten",
+  "البحث عن الإجابات في وثائق سياسات طويلة"
+ ],
+ [
+  "Drafting physician queries from scratch",
+  "Redactar consultas a médicos desde cero",
+  "Artsenqueries helemaal opnieuw opstellen",
+  "صياغة استفسارات الأطباء من الصفر"
+ ],
+ [
+  "Coding decisions that take hours",
+  "Decisiones de codificación que llevan horas",
+  "Coderingsbeslissingen die uren kosten",
+  "قرارات ترميز تستغرق ساعات"
+ ],
+ [
+  "Compliant physician query drafts in seconds",
+  "Borradores de consultas a médicos conformes en segundos",
+  "Conforme artsenquery-concepten in seconden",
+  "مسودات استفسارات أطباء متوافقة في ثوانٍ"
+ ],
+ [
+  "AI suggestions your coders review and approve",
+  "Sugerencias de IA que sus codificadores revisan y aprueban",
+  "AI-suggesties die uw coders beoordelen en goedkeuren",
+  "اقتراحات من الذكاء الاصطناعي يراجعها مرمّزوك ويعتمدونها"
+ ],
+ [
+  "Does the AI replace our coders?",
+  "¿Sustituye la IA a nuestros codificadores?",
+  "Vervangt de AI onze coders?",
+  "هل يحل الذكاء الاصطناعي محل المرمّزين لدينا؟"
+ ],
+ [
+  "No. It assists your coding and documentation teams, who review and make the final decision.",
+  "No. Asiste a sus equipos de codificación y documentación, que revisan y toman la decisión final.",
+  "Nee. Het ondersteunt uw coderings- en documentatieteams, die beoordelen en de eindbeslissing nemen.",
+  "لا. إنه يساعد فرق الترميز والتوثيق لديك، وهي التي تراجع وتتخذ القرار النهائي."
+ ],
+ [
+  "How do users sign in?",
+  "¿Cómo inician sesión los usuarios?",
+  "Hoe melden gebruikers zich aan?",
+  "كيف يسجّل المستخدمون الدخول؟"
+ ],
+ [
+  "Accounts are created and managed by administrators, so access stays controlled.",
+  "Las cuentas las crean y gestionan los administradores, por lo que el acceso permanece controlado.",
+  "Accounts worden aangemaakt en beheerd door beheerders, zodat de toegang gecontroleerd blijft.",
+  "يُنشئ المسؤولون الحسابات ويديرونها، فيبقى الوصول تحت السيطرة."
+ ],
+ [
+  "Learning to drive is a big step. HayRoutes helps learners find the right instructor, and helps schools run every lesson smoothly.",
+  "Aprender a conducir es un gran paso. HayRoutes ayuda a los alumnos a encontrar al instructor adecuado y a las autoescuelas a gestionar cada clase sin complicaciones.",
+  "Leren autorijden is een grote stap. HayRoutes helpt leerlingen de juiste instructeur te vinden en helpt rijscholen elke les soepel te laten verlopen.",
+  "تعلّم القيادة خطوة كبيرة. يساعد HayRoutes المتعلمين على إيجاد المدرب المناسب، ويساعد المدارس على إدارة كل درس بسلاسة."
+ ],
+ [
+  "Calling around to find an instructor",
+  "Llamar por todas partes para encontrar un instructor",
+  "Rondbellen om een instructeur te vinden",
+  "الاتصال في كل مكان للعثور على مدرب"
+ ],
+ [
+  "Paper schedules and double bookings",
+  "Horarios en papel y reservas duplicadas",
+  "Papieren roosters en dubbele boekingen",
+  "جداول ورقية وحجوزات مزدوجة"
+ ],
+ [
+  "Vehicle and licence records kept in different places",
+  "Registros de vehículos y permisos guardados en distintos lugares",
+  "Voertuig- en rijbewijsgegevens op verschillende plekken",
+  "سجلات المركبات والرخص محفوظة في أماكن مختلفة"
+ ],
+ [
+  "Smart scheduling for instructors",
+  "Programación inteligente para instructores",
+  "Slimme planning voor instructeurs",
+  "جدولة ذكية للمدربين"
+ ],
+ [
+  "Fleet, licence and billing managed in one platform",
+  "Flota, permisos y facturación gestionados en una sola plataforma",
+  "Wagenpark, rijbewijzen en facturatie beheerd op één platform",
+  "الأسطول والرخص والفوترة تُدار في منصة واحدة"
+ ],
+ [
+  "Who can use HayRoutes?",
+  "¿Quién puede usar HayRoutes?",
+  "Wie kan HayRoutes gebruiken?",
+  "من يمكنه استخدام HayRoutes؟"
+ ],
+ [
+  "Learners, instructors, driving schools and fleet managers each get the tools they need.",
+  "Alumnos, instructores, autoescuelas y gestores de flotas obtienen cada uno las herramientas que necesitan.",
+  "Leerlingen, instructeurs, rijscholen en wagenparkbeheerders krijgen elk de tools die ze nodig hebben.",
+  "يحصل المتعلمون والمدربون ومدارس القيادة ومديرو الأساطيل كلٌّ على الأدوات التي يحتاجها."
+ ],
+ [
+  "Can driving schools manage their vehicles?",
+  "¿Pueden las autoescuelas gestionar sus vehículos?",
+  "Kunnen rijscholen hun voertuigen beheren?",
+  "هل تستطيع مدارس القيادة إدارة مركباتها؟"
+ ],
+ [
+  "Yes. You can track maintenance, licences and insurance for every vehicle.",
+  "Sí. Puede hacer seguimiento del mantenimiento, los permisos y el seguro de cada vehículo.",
+  "Ja. U kunt onderhoud, rijbewijzen en verzekering van elk voertuig bijhouden.",
+  "نعم. يمكنك تتبع الصيانة والرخص والتأمين لكل مركبة."
+ ],
+ [
+  "Every visitor to your website is a possible customer. AI Sales Agent answers them straight away and makes sure good leads are never lost.",
+  "Cada visitante de su sitio web es un posible cliente. AI Sales Agent les responde de inmediato y evita que se pierdan buenos contactos.",
+  "Elke bezoeker van uw website is een mogelijke klant. AI Sales Agent beantwoordt hen meteen en zorgt dat goede leads nooit verloren gaan.",
+  "كل زائر لموقعك عميل محتمل. يجيبهم AI Sales Agent فورًا ويضمن ألا تضيع العملاء المحتملون الجيدون."
+ ],
+ [
+  "Visitors leave without ever getting a reply",
+  "Los visitantes se van sin recibir respuesta",
+  "Bezoekers vertrekken zonder ooit antwoord te krijgen",
+  "يغادر الزوار دون أن يتلقوا أي رد"
+ ],
+ [
+  "Leads sorted by hand and followed up late",
+  "Contactos clasificados a mano y con seguimiento tardío",
+  "Leads met de hand gesorteerd en te laat opgevolgd",
+  "عملاء محتملون يُصنَّفون يدويًا ويُتابَعون متأخرًا"
+ ],
+ [
+  "No clear view of the sales pipeline",
+  "Sin una visión clara del embudo de ventas",
+  "Geen duidelijk zicht op de verkooppijplijn",
+  "لا رؤية واضحة لمسار المبيعات"
+ ],
+ [
+  "A chatbot greets and helps visitors instantly",
+  "Un chatbot saluda y ayuda a los visitantes al instante",
+  "Een chatbot begroet en helpt bezoekers direct",
+  "روبوت دردشة يرحّب بالزوار ويساعدهم فورًا"
+ ],
+ [
+  "Leads captured and scored automatically",
+  "Contactos captados y puntuados automáticamente",
+  "Leads automatisch vastgelegd en gescoord",
+  "يتم التقاط العملاء المحتملين وتقييمهم تلقائيًا"
+ ],
+ [
+  "Follow-ups sent for you, pipeline in one dashboard",
+  "Seguimientos enviados por usted y embudo en un solo panel",
+  "Opvolging voor u verstuurd, pijplijn in één dashboard",
+  "تُرسل المتابعات نيابةً عنك، والمسار في لوحة واحدة"
+ ],
+ [
+  "What does the chatbot do?",
+  "¿Qué hace el chatbot?",
+  "Wat doet de chatbot?",
+  "ماذا يفعل روبوت الدردشة؟"
+ ],
+ [
+  "It talks to your website visitors, answers their questions, captures their details and scores the lead.",
+  "Habla con los visitantes de su web, responde a sus preguntas, recoge sus datos y puntúa el contacto.",
+  "Het praat met uw websitebezoekers, beantwoordt hun vragen, legt hun gegevens vast en scoort de lead.",
+  "يتحدث مع زوار موقعك، ويجيب عن أسئلتهم، ويلتقط بياناتهم، ويقيّم العميل المحتمل."
+ ],
+ [
+  "Can it follow up with leads?",
+  "¿Puede hacer seguimiento de los contactos?",
+  "Kan het leads opvolgen?",
+  "هل يمكنه متابعة العملاء المحتملين؟"
+ ],
+ [
+  "Yes. Automated follow-ups keep the conversation moving until the lead is ready to convert.",
+  "Sí. Los seguimientos automáticos mantienen la conversación hasta que el contacto esté listo para convertir.",
+  "Ja. Geautomatiseerde opvolging houdt het gesprek gaande tot de lead klaar is om te converteren.",
+  "نعم. تُبقي المتابعات التلقائية المحادثة جارية حتى يصبح العميل المحتمل جاهزًا للتحويل."
+ ],
+ [
+  "A shop runs on small moments: a sale, a stock count, a regular customer. AXCEL POS keeps them all connected.",
+  "Una tienda funciona a base de pequeños momentos: una venta, un recuento de existencias, un cliente habitual. AXCEL POS los mantiene todos conectados.",
+  "Een winkel draait op kleine momenten: een verkoop, een voorraadtelling, een vaste klant. AXCEL POS houdt ze allemaal verbonden.",
+  "يقوم المتجر على لحظات صغيرة: عملية بيع، وجرد للمخزون، وعميل دائم. يُبقي AXCEL POS كل ذلك مترابطًا."
+ ],
+ [
+  "Stock counted by hand and often wrong",
+  "Existencias contadas a mano y a menudo erróneas",
+  "Voorraad met de hand geteld en vaak fout",
+  "مخزون يُجرد يدويًا وغالبًا ما يكون خاطئًا"
+ ],
+ [
+  "Sales totals known only at closing time",
+  "Totales de ventas conocidos solo al cierre",
+  "Verkooptotalen pas bekend bij sluitingstijd",
+  "إجمالي المبيعات لا يُعرف إلا عند الإغلاق"
+ ],
+ [
+  "Regular customers treated like strangers",
+  "Clientes habituales tratados como desconocidos",
+  "Vaste klanten behandeld als vreemden",
+  "عملاء دائمون يُعاملون كغرباء"
+ ],
+ [
+  "Inventory updated in real time with every sale",
+  "Inventario actualizado en tiempo real con cada venta",
+  "Voorraad realtime bijgewerkt bij elke verkoop",
+  "مخزون يُحدَّث لحظيًا مع كل عملية بيع"
+ ],
+ [
+  "Live sales analytics through the day",
+  "Analítica de ventas en vivo durante todo el día",
+  "Live verkoopanalyse de hele dag door",
+  "تحليلات مبيعات مباشرة طوال اليوم"
+ ],
+ [
+  "Customer records and orders in one system",
+  "Registros de clientes y pedidos en un solo sistema",
+  "Klantgegevens en bestellingen in één systeem",
+  "سجلات العملاء والطلبات في نظام واحد"
+ ],
+ [
+  "Can I see sales as they happen?",
+  "¿Puedo ver las ventas a medida que ocurren?",
+  "Kan ik verkopen zien terwijl ze gebeuren?",
+  "هل يمكنني رؤية المبيعات لحظة حدوثها؟"
+ ],
+ [
+  "Yes. Real-time analytics show today's sales, orders and top products.",
+  "Sí. La analítica en tiempo real muestra las ventas, pedidos y productos más vendidos de hoy.",
+  "Ja. Realtime analyse toont de verkoop, bestellingen en topproducten van vandaag.",
+  "نعم. تعرض التحليلات اللحظية مبيعات اليوم والطلبات وأفضل المنتجات."
+ ],
+ [
+  "Does it manage inventory?",
+  "¿Gestiona el inventario?",
+  "Beheert het de voorraad?",
+  "هل يدير المخزون؟"
+ ],
+ [
+  "Yes. Inventory updates in real time and low-stock items are flagged.",
+  "Sí. El inventario se actualiza en tiempo real y se señalan los artículos con poco stock.",
+  "Ja. De voorraad wordt realtime bijgewerkt en artikelen met lage voorraad worden gesignaleerd.",
+  "نعم. يتحدث المخزون لحظيًا ويتم تنبيه العناصر منخفضة المخزون."
  ]
 ];
