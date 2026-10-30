@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Bot, Check, ChevronDown, Globe, Car, Dumbbell, Mail, Menu, School, ShoppingCart, Stethoscope, Workflow, X, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
 import { nav, solutions, ui } from "@/lib/content";
@@ -14,6 +14,24 @@ export function Header({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() || `/${lang}`;
   const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+
+  // Close the language menu on outside click/tap or Escape
+  useEffect(() => {
+    if (!langOpen) return;
+    const onDown = (e: MouseEvent | TouchEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setLangOpen(false);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("touchstart", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("touchstart", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [langOpen]);
   const switchHref = (l: Lang) => pathname.replace(/^\/(en|ur|es|nl|ar)/, `/${l}`) || `/${l}`;
   const link = "rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition hover:bg-mist hover:text-black";
 
@@ -61,7 +79,7 @@ export function Header({ lang }: { lang: Lang }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="relative" onMouseLeave={() => setLangOpen(false)}>
+          <div className="relative" ref={langRef}>
             <button
               onClick={() => setLangOpen((v) => !v)}
               aria-expanded={langOpen}
@@ -74,7 +92,7 @@ export function Header({ lang }: { lang: Lang }) {
               <ChevronDown size={13} className={`transition ${langOpen ? "rotate-180" : ""}`} />
             </button>
             {langOpen && (
-              <ul role="listbox" className="absolute end-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-line bg-white p-1 shadow-2xl shadow-black/10">
+              <ul role="listbox" className="absolute end-0 top-full z-50 w-44 translate-y-2 overflow-hidden rounded-xl border border-line bg-white p-1 shadow-2xl shadow-black/10">
                 {locales.map((l) => (
                   <li key={l}>
                     <Link
