@@ -32,8 +32,8 @@ export function Header({ lang }: { lang: Lang }) {
                   {tx(n.label, lang)}
                   <ChevronDown size={14} className="transition group-hover:rotate-180 group-focus-within:rotate-180" />
                 </Link>
-                <div className="invisible absolute start-0 top-full w-[26rem] translate-y-2 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-2xl border border-line bg-white p-2 shadow-2xl shadow-black/10">
+                <div className="invisible absolute start-0 top-full w-[42rem] translate-y-2 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="grid grid-cols-2 gap-x-1 rounded-2xl border border-line bg-white p-2 shadow-2xl shadow-black/10">
                     {solutions.map((s) => {
                       const Ic = icons[s.icon] ?? School;
                       return (
@@ -46,7 +46,7 @@ export function Header({ lang }: { lang: Lang }) {
                         </Link>
                       );
                     })}
-                    <Link href={href(lang, "/solutions")} className="mt-1 block rounded-xl bg-brand-50 p-3 text-center text-sm font-semibold text-brand-700 hover:bg-brand-100">
+                    <Link href={href(lang, "/solutions")} className="col-span-2 mt-1 block rounded-xl bg-brand-50 p-3 text-center text-sm font-semibold text-brand-700 hover:bg-brand-100">
                       {tx(ui.exploreSolutions, lang)}
                     </Link>
                   </div>
