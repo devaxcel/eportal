@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2 } from "lucide-react";
 import { Icon } from "./Icon";
-import { SolutionCards } from "./SolutionCards";
+import { SolutionColumns } from "./SolutionColumns";
 import { SectionHead } from "./Section";
 import { Reveal, Spot } from "./motion";
 import { solutions, ui } from "@/lib/content";
@@ -99,7 +99,7 @@ export function SolutionsGrid({ lang }: { lang: Lang }) {
         title={T(lang, "Find the platform that fits your need", "اپنی ضرورت کے مطابق پلیٹ فارم چنیں")}
         sub={T(lang, "Eight platforms. Each one works on its own.", "آٹھ پلیٹ فارمز۔ ہر ایک الگ سے کام کرتا ہے۔")}
       />
-      <div className="mt-12"><SolutionCards lang={lang} /></div>
+      <div className="mt-12"><SolutionColumns lang={lang} /></div>
     </section>
   );
 }
