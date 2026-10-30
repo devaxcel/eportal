@@ -28,6 +28,12 @@ The public website works without any setup, using the built-in content. The dash
 - **Language buttons** switch which language you are editing. A blank Spanish, Dutch or Arabic field falls back to the built-in translation, then to English.
 - **Save draft** stores your work privately. **Preview** shows the saved draft exactly as visitors will see it. **Publish** (admins) makes it live within seconds. **Unpublish** hides the solution from the whole site.
 
+## Passwords
+
+- **Your own:** open **Account** (top menu), enter the current password and a new one (12 characters or more).
+- **A teammate who is locked out:** an admin opens **Users**, clicks **Set password** on that row and shares the new password securely.
+- **If the only admin is locked out:** in Supabase open **Authentication, Users**, select the user and use the password recovery option. (Changing `ADMIN_PASSWORD` and re-running the seed does not change an existing user.)
+
 ## Good to know
 
 - Visitors can only read published solutions. Drafts, users and roles are protected by row-level security in the database.

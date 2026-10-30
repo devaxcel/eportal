@@ -33,10 +33,11 @@ export default async function PanelLayout({ children }: { children: React.ReactN
           <nav className="ms-4 flex gap-1">
             <Link href="/admin" className={nav}>Solutions</Link>
             {staff.role === "admin" && <Link href="/admin/users" className={nav}>Users</Link>}
+            <Link href="/admin/account" className={nav}>Account</Link>
             <a href="/" target="_blank" rel="noopener noreferrer" className={nav}>View site ↗</a>
           </nav>
           <div className="ms-auto flex items-center gap-3 text-sm">
-            <span className="text-ink-soft">{staff.email}</span>
+            <Link href="/admin/account" className="text-ink-soft underline-offset-2 hover:underline">{staff.email}</Link>
             <span className="rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold capitalize text-brand-700">{staff.role}</span>
             <form action={signOut}><button className="rounded-lg border border-line px-3 py-1.5 font-semibold hover:bg-mist">Sign out</button></form>
           </div>

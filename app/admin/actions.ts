@@ -47,6 +47,43 @@ export async function signOut() {
   redirect("/admin/login");
 }
 
+/* ----------------------------------------------------------- passwords */
+
+const MIN_PASSWORD = 12;
+
+/** Signed-in users change their own password; the current one is asked for again. */
+export async function changePassword(_prev: { error?: string; done?: string } | undefined, form: FormData) {
+  const staff = await getStaff();
+  if (!staff) return { error: "Please sign in again." };
+  const current = String(form.get("current") ?? "");
+  const next = String(form.get("next") ?? "");
+  const confirm = String(form.get("confirm") ?? "");
+  if (next.length < MIN_PASSWORD) return { error: `Use at least ${MIN_PASSWORD} characters.` };
+  if (next !== confirm) return { error: "The two new passwords do not match." };
+  if (next === current) return { error: "Choose a password you have not used just now." };
+
+  const sb = await serverClient();
+  if (!sb) return { error: "Supabase is not configured." };
+  const check = await sb.auth.signInWithPassword({ email: staff.email, password: current });
+  if (check.error) return { error: "The current password is wrong." };
+  const { error } = await sb.auth.updateUser({ password: next });
+  if (error) return { error: error.message };
+  return { done: "Password changed. Use it next time you sign in." };
+}
+
+/** Admins can set a new password for a teammate who is locked out. */
+export async function resetUserPassword(id: string, password: string): Promise<Result> {
+  try {
+    await requireAdmin();
+    if (password.length < MIN_PASSWORD) return { ok: false, error: `Use at least ${MIN_PASSWORD} characters.` };
+    const { error } = await adminClient().auth.admin.updateUserById(id, { password });
+    if (error) return { ok: false, error: error.message };
+    return { ok: true, message: "Password updated." };
+  } catch (e) {
+    return fail(e);
+  }
+}
+
 /* ---------------------------------------------------------- solutions */
 
 export async function saveDraft(id: string, content: SolutionContent): Promise<Result> {
@@ -160,7 +197,7 @@ export async function createStaff(_prev: { error?: string; done?: string } | und
     const password = String(form.get("password") ?? "");
     const role = (form.get("role") === "admin" ? "admin" : "editor") as Role;
     if (!/^\S+@\S+\.\S+$/.test(email)) return { error: "Enter a valid email." };
-    if (password.length < 10) return { error: "Use a password of at least 10 characters." };
+    if (password.length < MIN_PASSWORD) return { error: `Use a password of at least ${MIN_PASSWORD} characters.` };
     const sb = adminClient();
     const { data, error } = await sb.auth.admin.createUser({ email, password, email_confirm: true });
     if (error || !data.user) return { error: error?.message ?? "Could not create the user." };

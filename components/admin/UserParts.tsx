@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useActionState, useState, useTransition } from "react";
-import { createStaff, removeStaff, setRole } from "@/app/admin/actions";
+import { createStaff, removeStaff, resetUserPassword, setRole } from "@/app/admin/actions";
 
 const field = "rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200";
 
@@ -14,7 +14,7 @@ export function NewUserForm() {
         <input name="email" type="email" required className={`${field} mt-1 block w-64 font-normal normal-case`} />
       </label>
       <label className="text-xs font-semibold uppercase tracking-wide text-ink-soft">Temporary password
-        <input name="password" type="text" required minLength={10} autoComplete="off" className={`${field} mt-1 block w-56 font-normal normal-case`} />
+        <input name="password" type="text" required minLength={12} autoComplete="off" className={`${field} mt-1 block w-56 font-normal normal-case`} />
       </label>
       <label className="text-xs font-semibold uppercase tracking-wide text-ink-soft">Role
         <select name="role" className={`${field} mt-1 block font-normal normal-case`} defaultValue="editor">
@@ -33,10 +33,12 @@ export function UserRow({ id, email, role, isMe }: { id: string; email: string; 
   const router = useRouter();
   const [pending, start] = useTransition();
   const [error, setError] = useState("");
+  const [pw, setPw] = useState<string | null>(null);
   const run = (fn: () => Promise<{ ok: boolean; error?: string }>) =>
     start(async () => {
       const r = await fn();
       setError(r.ok ? "" : (r.error ?? "Failed"));
+      if (r.ok) setPw(null);
       router.refresh();
     });
 
@@ -56,6 +58,15 @@ export function UserRow({ id, email, role, isMe }: { id: string; email: string; 
         </select>
       </td>
       <td className="p-3 text-end">
+        {pw === null ? (
+          !isMe && <button disabled={pending} onClick={() => setPw("")} className="me-2 rounded-lg border border-line px-3 py-1.5 text-sm font-semibold hover:bg-mist">Set password</button>
+        ) : (
+          <span className="me-2 inline-flex items-center gap-2">
+            <input value={pw} onChange={(e) => setPw(e.target.value)} placeholder="New password (12+)" autoComplete="off" className={`${field} w-48 px-2 py-1`} />
+            <button disabled={pending || pw.length < 12} onClick={() => run(() => resetUserPassword(id, pw))} className="rounded-lg bg-brand-600 px-3 py-1.5 text-sm font-semibold text-white disabled:opacity-50">Save</button>
+            <button onClick={() => setPw(null)} className="text-sm text-ink-soft">Cancel</button>
+          </span>
+        )}
         {!isMe && (
           <button disabled={pending} onClick={() => confirm(`Remove ${email}? They will no longer be able to sign in.`) && run(() => removeStaff(id))} className="rounded-lg border border-red-200 px-3 py-1.5 text-sm font-semibold text-red-700 hover:bg-red-50 disabled:opacity-50">Remove</button>
         )}
