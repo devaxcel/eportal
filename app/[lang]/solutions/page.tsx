@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { SolutionCategories } from "@/components/SolutionCategories";
+import { SolutionCards } from "@/components/SolutionCards";
 import { CtaBand, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { isLang, T } from "@/lib/i18n";
@@ -22,7 +22,7 @@ export default async function SolutionsPage({ params }: { params: Promise<{ lang
       />
 
       <section className="container-x py-16">
-        <SolutionCategories lang={lang} detailed />
+        <SolutionCards lang={lang} />
       </section>
 
       <section className="container-x py-20">

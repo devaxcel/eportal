@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2 } from "lucide-react";
 import { Icon } from "./Icon";
-import { SolutionCategories, SeeAllLink } from "./SolutionCategories";
+import { SolutionCards } from "./SolutionCards";
 import { SectionHead } from "./Section";
 import { Reveal, Spot } from "./motion";
 import { solutions, ui } from "@/lib/content";
@@ -97,10 +97,9 @@ export function SolutionsGrid({ lang }: { lang: Lang }) {
       <SectionHead
         eyebrow={T(lang, "Our solutions", "ہمارے حل")}
         title={T(lang, "Find the platform that fits your need", "اپنی ضرورت کے مطابق پلیٹ فارم چنیں")}
-        sub={T(lang, "Eight platforms in four areas. Each one works on its own.", "چار شعبوں میں آٹھ پلیٹ فارمز۔ ہر ایک الگ سے کام کرتا ہے۔")}
+        sub={T(lang, "Eight platforms. Each one works on its own.", "آٹھ پلیٹ فارمز۔ ہر ایک الگ سے کام کرتا ہے۔")}
       />
-      <div className="mt-12"><SolutionCategories lang={lang} /></div>
-      <div className="mt-8 text-center"><SeeAllLink lang={lang} label={tx(ui.exploreSolutions, lang)} /></div>
+      <div className="mt-12"><SolutionCards lang={lang} /></div>
     </section>
   );
 }
