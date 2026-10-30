@@ -174,6 +174,7 @@ export type Solution = {
   status: "live" | "new";
   url?: string;
   pricingOnSite?: boolean;
+  category: "education" | "health" | "business" | "retail";
   accent: string;
   forWho: L[];
 };
@@ -182,6 +183,7 @@ export type Solution = {
 export const solutions: Solution[] = [
   {
     slug: "eschool",
+    category: "education",
     icon: "School",
     status: "live",
     url: "https://eportal.pk",
@@ -206,6 +208,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "formed",
+    category: "health",
     icon: "Dumbbell",
     status: "live",
     url: "https://formed.fit",
@@ -231,6 +234,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "prima-portal",
+    category: "business",
     icon: "Workflow",
     status: "live",
     url: "https://www.primaportal.co.za/login",
@@ -255,6 +259,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "email-report-portal",
+    category: "business",
     icon: "Mail",
     status: "live",
     url: "https://rb.dtmetrix.com",
@@ -279,6 +284,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "proed-medical",
+    category: "health",
     icon: "Stethoscope",
     status: "live",
     url: "https://proed-coder-ai-eight.vercel.app/",
@@ -303,6 +309,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "hayroutes",
+    category: "retail",
     icon: "Car",
     status: "live",
     url: "https://hayroutes.com/",
@@ -327,6 +334,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "salesmate-ai",
+    category: "business",
     icon: "Bot",
     status: "live",
     url: "https://axcelworld.com/",
@@ -351,6 +359,7 @@ export const solutions: Solution[] = [
   },
   {
     slug: "pos",
+    category: "retail",
     icon: "ShoppingCart",
     status: "live",
     url: "https://posale.axcelstudio.com/",
@@ -593,4 +602,11 @@ export const hubFaqs: { q: L; a: L }[] = [
       ur: "ای اسکول کے پلانز شائع شدہ ہیں۔ دوسرے پلیٹ فارمز کے لیے ہم آپ کی ضرورت کے مطابق قیمت بتاتے ہیں۔ ڈیمو کی درخواست کریں، ہم واضح قیمت بتائیں گے۔",
     },
   },
+];
+
+export const categories: { key: Solution["category"]; title: L; caption: L }[] = [
+  { key: "education", title: { en: "Education", ur: "تعلیم" }, caption: { en: "Run a school or college from one place.", ur: "اسکول یا کالج ایک ہی جگہ سے چلائیں۔" } },
+  { key: "health", title: { en: "Health and fitness", ur: "صحت اور فٹنس" }, caption: { en: "Train smarter and code medical records faster.", ur: "بہتر ٹریننگ اور تیز میڈیکل کوڈنگ۔" } },
+  { key: "business", title: { en: "Business tools", ur: "کاروباری ٹولز" }, caption: { en: "Workflows, reports and sales that run themselves.", ur: "ورک فلو، رپورٹس اور سیلز جو خود چلیں۔" } },
+  { key: "retail", title: { en: "Retail and mobility", ur: "ریٹیل اور موبیلٹی" }, caption: { en: "Sell in store and run a driving school.", ur: "دکان پر فروخت کریں اور ڈرائیونگ اسکول چلائیں۔" } },
 ];
