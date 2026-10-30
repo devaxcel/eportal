@@ -6,11 +6,11 @@ import { PricingTable } from "@/components/PricingTable";
 import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { faqs, hubFaqs, plans, solutions } from "@/lib/content";
-import { href, isLang, T, tx } from "@/lib/i18n";
+import { href, isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "قیمتیں" : "Pricing" };
+  return { title: Tm(lang, "Pricing", "قیمتیں") };
 }
 
 export default async function PricingPage({ params }: { params: Promise<{ lang: string }> }) {

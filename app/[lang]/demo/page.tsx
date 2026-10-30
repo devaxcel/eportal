@@ -5,11 +5,11 @@ import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { AdminDashboardMock, BrowserFrame } from "@/components/visuals";
 import { hubFaqs } from "@/lib/content";
-import { isLang, T } from "@/lib/i18n";
+import { isLang, T, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "ڈیمو حاصل کریں" : "Request a Demo" };
+  return { title: Tm(lang, "Request a Demo", "ڈیمو حاصل کریں") };
 }
 
 export default async function DemoPage({ params }: { params: Promise<{ lang: string }> }) {

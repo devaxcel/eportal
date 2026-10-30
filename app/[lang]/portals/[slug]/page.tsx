@@ -6,7 +6,7 @@ import { PortalVisual } from "@/components/PortalExplorer";
 import { CtaBand, FaqList, SectionHead } from "@/components/Section";
 import { Reveal, Spot } from "@/components/motion";
 import { faqs, portals, ui } from "@/lib/content";
-import { href, isLang, locales, T, tx } from "@/lib/i18n";
+import { href, isLang, locales, T, tx, Tm } from "@/lib/i18n";
 
 export const generateStaticParams = () =>
   locales.flatMap((lang) => portals.map((p) => ({ lang, slug: p.slug })));
@@ -14,7 +14,7 @@ export const generateStaticParams = () =>
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
   const p = portals.find((x) => x.slug === slug);
-  return { title: p ? p.name[lang === "ur" ? "ur" : "en"] : "Portal" };
+  return { title: p ? Tm(lang, p.name.en, p.name.ur) : "Portal" };
 }
 
 export default async function PortalPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {

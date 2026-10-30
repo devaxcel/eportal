@@ -4,12 +4,12 @@ import { DemoForm } from "@/components/DemoForm";
 import { FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal, Spot } from "@/components/motion";
 import { hubFaqs } from "@/lib/content";
-import { isLang, T, tx } from "@/lib/i18n";
+import { isLang, T, tx, Tm } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "رابطہ" : "Contact" };
+  return { title: Tm(lang, "Contact", "رابطہ") };
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {

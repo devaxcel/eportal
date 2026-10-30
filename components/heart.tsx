@@ -339,7 +339,7 @@ export function TimeBack({ lang }: { lang: Lang }) {
             <p className="text-xl font-semibold">{T(lang, "hours", "گھنٹے")}</p>
             <div className="mx-auto my-6 h-px w-24 bg-white/20" />
             <p className="text-white/80">
-              {T(lang, `That is about ${days} full working days of attention, ready to go back to students.`, `یہ تقریباً ${days} مکمل کام کے دنوں کی توجہ ہے، جو طلبہ کو واپس مل سکتی ہے۔`)}
+              {T(lang, "That is about {days} full working days of attention, ready to go back to students.", "یہ تقریباً {days} مکمل کام کے دنوں کی توجہ ہے، جو طلبہ کو واپس مل سکتی ہے۔").replace("{days}", String(days))}
             </p>
             <p className="mt-4 text-xs text-white/45">
               {T(lang, "Based on 24 school days a month and 8-hour days.", "ایک ماہ میں 24 اسکول دن اور 8 گھنٹے کے دن کی بنیاد پر۔")}

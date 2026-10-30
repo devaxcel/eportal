@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { plans, ui } from "@/lib/content";
-import { href, tx, type Lang } from "@/lib/i18n";
+import { dirOf, href, T, tx, type Lang } from "@/lib/i18n";
 
 const fmt = (n: number, lang: Lang) =>
-  `Rs ${n.toLocaleString(lang === "ur" ? "en-PK" : "en-US")}`;
+  `Rs ${n.toLocaleString("en-US")}`;
 
 export function PricingTable({ lang }: { lang: Lang }) {
   const [yearly, setYearly] = useState(false);
@@ -50,9 +50,9 @@ export function PricingTable({ lang }: { lang: Lang }) {
               <h3 className="text-lg font-bold">{tx(p.name, lang)}</h3>
               <p className="mt-1 text-sm text-ink-soft">{tx(p.students, lang)}</p>
 
-              <p className="mt-5 flex items-baseline gap-1" dir={lang === "ur" ? "rtl" : "ltr"}>
+              <p className="mt-5 flex items-baseline gap-1" dir={dirOf(lang)}>
                 {price === null ? (
-                  <span className="text-3xl font-extrabold">{lang === "en" ? "Custom" : "حسب ضرورت"}</span>
+                  <span className="text-3xl font-extrabold">{T(lang, "Custom", "حسب ضرورت")}</span>
                 ) : (
                   <>
                     <span className="text-3xl font-extrabold">{fmt(price, lang)}</span>

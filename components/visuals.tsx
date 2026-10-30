@@ -125,7 +125,7 @@ export function AdminDashboardMock({ lang }: { lang: Lang }) {
                     <span className="truncate font-medium">{p.n}</span>
                   </span>
                   <span className={`shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${p.ok ? "bg-brand-100 text-brand-700" : "bg-amber-100 text-amber-800"}`}>
-                    {p.ok ? "Paid" : "Due"}
+                    {p.ok ? T(lang, "Paid", "ادا") : T(lang, "Due", "واجب")}
                   </span>
                 </li>
               ))}

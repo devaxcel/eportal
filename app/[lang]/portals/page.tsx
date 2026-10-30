@@ -6,11 +6,11 @@ import { PortalVisual } from "@/components/PortalExplorer";
 import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { faqs, portals, ui } from "@/lib/content";
-import { href, isLang, T, tx } from "@/lib/i18n";
+import { href, isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "پورٹلز" : "Portals" };
+  return { title: Tm(lang, "Portals", "پورٹلز") };
 }
 
 export default async function PortalsPage({ params }: { params: Promise<{ lang: string }> }) {

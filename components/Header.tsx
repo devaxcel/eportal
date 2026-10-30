@@ -3,18 +3,18 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Bot, ChevronDown, Car, Dumbbell, Mail, Menu, School, ShoppingCart, Stethoscope, Workflow, X, type LucideIcon } from "lucide-react";
+import { Bot, Check, ChevronDown, Globe, Car, Dumbbell, Mail, Menu, School, ShoppingCart, Stethoscope, Workflow, X, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
 import { nav, solutions, ui } from "@/lib/content";
-import { href, T, tx, type Lang } from "@/lib/i18n";
+import { href, langNames, locales, T, tx, type Lang } from "@/lib/i18n";
 
 const icons: Record<string, LucideIcon> = { School, Dumbbell, Workflow, Mail, Stethoscope, Car, Bot, ShoppingCart };
 
 export function Header({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() || `/${lang}`;
-  const other: Lang = lang === "en" ? "ur" : "en";
-  const switchHref = pathname.replace(/^\/(en|ur)/, `/${other}`) || `/${other}`;
+  const [langOpen, setLangOpen] = useState(false);
+  const switchHref = (l: Lang) => pathname.replace(/^\/(en|ur|es|nl|ar)/, `/${l}`) || `/${l}`;
   const link = "rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition hover:bg-mist hover:text-black";
 
   return (
@@ -61,13 +61,36 @@ export function Header({ lang }: { lang: Lang }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href={switchHref}
-            hrefLang={other}
-            className="rounded-lg border border-line px-3 py-1.5 text-sm font-semibold text-ink-soft transition hover:border-brand-300 hover:text-brand-700"
-          >
-            {tx(ui.language, lang)}
-          </Link>
+          <div className="relative" onMouseLeave={() => setLangOpen(false)}>
+            <button
+              onClick={() => setLangOpen((v) => !v)}
+              aria-expanded={langOpen}
+              aria-haspopup="listbox"
+              aria-label="Language"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-sm font-semibold text-ink-soft transition hover:border-brand-300 hover:text-brand-700"
+            >
+              <Globe size={15} />
+              {langNames[lang]}
+              <ChevronDown size={13} className={`transition ${langOpen ? "rotate-180" : ""}`} />
+            </button>
+            {langOpen && (
+              <ul role="listbox" className="absolute end-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-line bg-white p-1 shadow-2xl shadow-black/10">
+                {locales.map((l) => (
+                  <li key={l}>
+                    <Link
+                      href={switchHref(l)}
+                      hrefLang={l}
+                      onClick={() => setLangOpen(false)}
+                      className={`flex items-center justify-between rounded-lg px-3 py-2 text-sm hover:bg-mist ${l === lang ? "font-bold text-brand-700" : "text-black"}`}
+                    >
+                      {langNames[l]}
+                      {l === lang && <Check size={14} />}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           <Link
             href={href(lang, "/demo")}
             className="hidden rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 sm:inline-block"

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { nav, solutions, ui } from "@/lib/content";
-import { href, tx, type Lang } from "@/lib/i18n";
+import { href, T, tx, type Lang } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
 export function Footer({ lang }: { lang: Lang }) {
@@ -12,9 +12,7 @@ export function Footer({ lang }: { lang: Lang }) {
         <div>
           <Logo light />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
-            {lang === "en"
-              ? "Smart platforms for schools, fitness, healthcare, sales and retail, built in Lahore by AXCEL."
-              : "اسکولوں، فٹنس، صحت، سیلز اور ریٹیل کے لیے سمارٹ پلیٹ فارمز، لاہور میں ایکسل کے تیار کردہ۔"}
+            {T(lang, "Smart platforms for schools, fitness, healthcare, sales and retail, built in Lahore by AXCEL.", "اسکولوں، فٹنس، صحت، سیلز اور ریٹیل کے لیے سمارٹ پلیٹ فارمز، لاہور میں ایکسل کے تیار کردہ۔")}
           </p>
         </div>
 
@@ -32,7 +30,7 @@ export function Footer({ lang }: { lang: Lang }) {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-white">{tx({ en: "Solutions", ur: "حل" }, lang)}</h3>
+          <h3 className="text-sm font-semibold text-white">{T(lang, "Solutions", "حل")}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {solutions.map((s) => (
               <li key={s.slug}>

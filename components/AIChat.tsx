@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Bot, Send } from "lucide-react";
 import { chatDemo, ui } from "@/lib/content";
-import { tx, type Lang } from "@/lib/i18n";
+import { T, tx, type Lang } from "@/lib/i18n";
 
 export function AIChat({ lang }: { lang: Lang }) {
   const [asked, setAsked] = useState<number[]>([0]);
@@ -23,8 +23,8 @@ export function AIChat({ lang }: { lang: Lang }) {
           <Bot size={18} />
         </span>
         <div>
-          <p className="font-semibold leading-tight">{lang === "en" ? "ePortal Assistant" : "ای پورٹل اسسٹنٹ"}</p>
-          <p className="text-xs text-ink-soft">{lang === "en" ? "Parent of Ayesha, Class 6-B" : "والدین عائشہ، جماعت 6-بی"}</p>
+          <p className="font-semibold leading-tight">{T(lang, "ePortal Assistant", "ای پورٹل اسسٹنٹ")}</p>
+          <p className="text-xs text-ink-soft">{T(lang, "Parent of Ayesha, Class 6-B", "والدین عائشہ، جماعت 6-بی")}</p>
         </div>
       </div>
 

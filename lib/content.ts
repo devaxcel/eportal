@@ -591,8 +591,8 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "Which languages are supported?", ur: "کون سی زبانیں دستیاب ہیں؟" },
     a: {
-      en: "This website and eSchool work in English and Urdu. Ask us about language support for the other platforms.",
-      ur: "یہ ویب سائٹ اور ای اسکول اردو اور انگریزی میں کام کرتے ہیں۔ دوسرے پلیٹ فارمز کی زبانوں کے بارے میں ہم سے پوچھیں۔",
+      en: "This website works in English, Urdu, Spanish, Dutch and Arabic. eSchool works in English and Urdu. Ask us about language support for the other platforms.",
+      ur: "یہ ویب سائٹ انگریزی، اردو، ہسپانوی، ڈچ اور عربی میں کام کرتی ہے۔ ای اسکول اردو اور انگریزی میں کام کرتا ہے۔ دوسرے پلیٹ فارمز کی زبانوں کے بارے میں ہم سے پوچھیں۔",
     },
   },
   {

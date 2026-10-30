@@ -6,12 +6,12 @@ import { Icon } from "@/components/Icon";
 import { CtaBand, PageHero, SectionHead } from "@/components/Section";
 import { CountUp, Reveal, Spot } from "@/components/motion";
 import { solutions } from "@/lib/content";
-import { href, isLang, T, tx } from "@/lib/i18n";
+import { href, isLang, T, tx, Tm } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "ہمارے بارے میں" : "About" };
+  return { title: Tm(lang, "About", "ہمارے بارے میں") };
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -37,7 +37,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <PageHero
         eyebrow={T(lang, "About us", "ہمارے بارے میں")}
         title={T(lang, "Building platforms that make everyday services simpler", "ایسے پلیٹ فارمز بنانا جو روزمرہ خدمات کو آسان بنائیں")}
-        sub={T(lang, `${site.name} is developed by ${site.company} in Lahore. For over five years we have helped people replace paperwork and guesswork with software they actually enjoy using.`, `${site.name} کو لاہور میں ${site.company} نے تیار کیا ہے۔ پانچ سال سے زائد عرصے سے ہم اداروں کو کاغذی رجسٹرز کی جگہ ایسا سافٹ ویئر دے رہے ہیں جو عملہ خوشی سے استعمال کرتا ہے۔`)}
+        sub={T(lang, "ePortal is developed by AXCEL in Lahore. For over five years we have helped people replace paperwork and guesswork with software they actually enjoy using.", "ای پورٹل کو لاہور میں ایکسل نے تیار کیا ہے۔ پانچ سال سے زائد عرصے سے ہم اداروں کو کاغذی رجسٹرز کی جگہ ایسا سافٹ ویئر دے رہے ہیں جو عملہ خوشی سے استعمال کرتا ہے۔")}
       />
 
       <section className="container-x grid items-center gap-12 py-20 lg:grid-cols-2">

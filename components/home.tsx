@@ -9,7 +9,7 @@ import {
   AdminDashboardMock, AttendanceMock, BrowserFrame, FeeMock, FingerprintMock, ParentPhoneMock, PhoneFrame, PhoneShot,
 } from "./visuals";
 import { hero, modules, plans, portals, solutions, steps, ui } from "@/lib/content";
-import { href, T, tx, type Lang } from "@/lib/i18n";
+import { dirOf, href, T, tx, type Lang } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------- hero */
 
@@ -94,7 +94,7 @@ export function ModuleMarquee({ lang }: { lang: Lang }) {
           <div key={r} className="overflow-hidden">
             <div className={`marquee-track ${r ? "rev" : ""} gap-4`} style={{ animationDuration: r ? "46s" : "38s" }}>
               {[...row, ...row, ...row, ...row].map((m, i) => (
-                <span key={i} className="me-4 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line bg-white px-5 py-3 font-semibold shadow-sm" dir={lang === "ur" ? "rtl" : "ltr"}>
+                <span key={i} className="me-4 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line bg-white px-5 py-3 font-semibold shadow-sm" dir={dirOf(lang)}>
                   <span className="grid h-8 w-8 place-items-center rounded-full bg-brand-50 text-brand-600"><Icon name={m.icon} size={16} /></span>
                   {tx(m.label, lang)}
                 </span>

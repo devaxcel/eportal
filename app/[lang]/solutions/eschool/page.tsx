@@ -9,11 +9,11 @@ import {
   ProductsShowcase, SmsStory,
 } from "@/components/home";
 import { aiFeatures, faqs } from "@/lib/content";
-import { isLang, T, tx } from "@/lib/i18n";
+import { isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "ای اسکول" : "eSchool: School Management System" };
+  return { title: Tm(lang, "eSchool: School Management System", "ای اسکول") };
 }
 
 export default async function ESchoolPage({ params }: { params: Promise<{ lang: string }> }) {

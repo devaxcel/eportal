@@ -2,11 +2,11 @@ import { notFound } from "next/navigation";
 import { SolutionCards } from "@/components/SolutionCards";
 import { CtaBand, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
-import { isLang, T } from "@/lib/i18n";
+import { isLang, T, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: lang === "ur" ? "حل" : "Solutions" };
+  return { title: Tm(lang, "Solutions", "حل") };
 }
 
 export default async function SolutionsPage({ params }: { params: Promise<{ lang: string }> }) {

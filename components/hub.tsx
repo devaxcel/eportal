@@ -14,7 +14,7 @@ export function HubHero({ lang }: { lang: Lang }) {
   const points = [
     T(lang, "8 platforms", "8 پلیٹ فارمز"),
     T(lang, "Built in Lahore", "لاہور میں تیار"),
-    T(lang, "Urdu and English", "اردو اور انگریزی"),
+    T(lang, "5 languages", "5 زبانیں"),
   ];
 
   const card = (s: (typeof solutions)[number], i: number) => (
