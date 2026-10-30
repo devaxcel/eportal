@@ -323,6 +323,52 @@ export const solutions: Solution[] = [
       { en: "Driving schools and fleet managers", ur: "ڈرائیونگ اسکول اور فلیٹ مینیجرز" },
     ],
   },
+  {
+    slug: "salesmate-ai",
+    icon: "Bot",
+    status: "live",
+    name: { en: "Salesmate AI", ur: "سیلز میٹ اے آئی" },
+    tagline: { en: "AI sales agent for your website", ur: "آپ کی ویب سائٹ کے لیے اے آئی سیلز ایجنٹ" },
+    description: {
+      en: "A chatbot agent that talks to your website visitors, captures and scores leads, follows up automatically and shows your sales pipeline in one dashboard.",
+      ur: "ایک چیٹ بوٹ ایجنٹ جو آپ کی ویب سائٹ کے وزیٹرز سے بات کرتا ہے، لیڈز حاصل اور اسکور کرتا ہے، خودکار فالو اپ کرتا ہے اور سیلز پائپ لائن ایک ڈیش بورڈ میں دکھاتا ہے۔",
+    },
+    features: [
+      { en: "AI chatbot agent for your website", ur: "آپ کی ویب سائٹ کے لیے اے آئی چیٹ بوٹ ایجنٹ" },
+      { en: "Lead capture and AI lead scoring", ur: "لیڈ کیپچر اور اے آئی لیڈ اسکورنگ" },
+      { en: "Automated follow-ups", ur: "خودکار فالو اپ" },
+      { en: "Sales and pipeline dashboard", ur: "سیلز اور پائپ لائن ڈیش بورڈ" },
+    ],
+    accent: "from-teal-400 to-emerald-700",
+    forWho: [
+      { en: "Businesses with website visitors who never get a reply", ur: "وہ کاروبار جن کی ویب سائٹ کے وزیٹرز کو جواب نہیں ملتا" },
+      { en: "Sales teams that want better leads", ur: "سیلز ٹیمیں جو بہتر لیڈز چاہتی ہیں" },
+      { en: "Online stores and agencies", ur: "آن لائن اسٹورز اور ایجنسیاں" },
+    ],
+  },
+  {
+    slug: "pos",
+    icon: "ShoppingCart",
+    status: "live",
+    name: { en: "AXCEL POS", ur: "ایکسل پی او ایس" },
+    tagline: { en: "AI-powered point of sale", ur: "اے آئی سے چلنے والا پوائنٹ آف سیل" },
+    description: {
+      en: "A custom point-of-sale system that streamlines retail operations. Sell faster, manage inventory in real time and see powerful business insights.",
+      ur: "ایک حسب ضرورت پوائنٹ آف سیل سسٹم جو ریٹیل آپریشنز کو آسان بناتا ہے۔ تیزی سے فروخت کریں، انوینٹری کو فوری طور پر منظم کریں اور کاروباری رجحانات دیکھیں۔",
+    },
+    features: [
+      { en: "Real-time sales analytics", ur: "فوری سیلز تجزیات" },
+      { en: "Real-time inventory management", ur: "فوری انوینٹری مینجمنٹ" },
+      { en: "Customer management", ur: "کسٹمر مینجمنٹ" },
+      { en: "Sales and order management", ur: "سیلز اور آرڈر مینجمنٹ" },
+    ],
+    accent: "from-stone-500 to-stone-800",
+    forWho: [
+      { en: "Retail shops and stores", ur: "ریٹیل دکانیں اور اسٹورز" },
+      { en: "Multi-branch retailers", ur: "متعدد برانچ والے ریٹیلرز" },
+      { en: "Owners who want live sales insight", ur: "وہ مالکان جنہیں فوری سیلز معلومات چاہیے" },
+    ],
+  },
 ];
 
 export const aiFeatures: { icon: string; title: L; desc: L }[] = [
@@ -511,8 +557,8 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "What does ePortal offer?", ur: "ای پورٹل کیا پیش کرتا ہے؟" },
     a: {
-      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, PRIMA Portal for enterprise workflows and documents, Email Report Portal for automated reports, ProEd Medical for AI-assisted medical coding, and HayRoutes for driving schools, instructors and learners.",
-      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، انٹرپرائز ورک فلو اور دستاویزات کے لیے پرائما پورٹل، خودکار رپورٹس کے لیے ای میل رپورٹ پورٹل، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے پرو ایڈ میڈیکل، اور ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے ہے روٹس۔",
+      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, PRIMA Portal for enterprise workflows and documents, Email Report Portal for automated reports, ProEd Medical for AI-assisted medical coding, HayRoutes for driving schools, instructors and learners, Salesmate AI for website sales chat and lead automation, and AXCEL POS for retail point of sale.",
+      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، انٹرپرائز ورک فلو اور دستاویزات کے لیے پرائما پورٹل، خودکار رپورٹس کے لیے ای میل رپورٹ پورٹل، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے پرو ایڈ میڈیکل، ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے ہے روٹس، ویب سائٹ پر سیلز چیٹ اور لیڈ آٹومیشن کے لیے سیلز میٹ اے آئی، اور ریٹیل کے لیے ایکسل پی او ایس۔",
     },
   },
   {

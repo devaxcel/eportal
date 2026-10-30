@@ -13,8 +13,8 @@ export function Footer({ lang }: { lang: Lang }) {
           <Logo light />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
             {lang === "en"
-              ? "Smart platforms for schools, fitness, healthcare and driving, built in Lahore by AXCEL."
-              : "اسکولوں، فٹنس، صحت اور ڈرائیونگ کے لیے سمارٹ پلیٹ فارمز، لاہور میں ایکسل کے تیار کردہ۔"}
+              ? "Smart platforms for schools, fitness, healthcare, sales and retail, built in Lahore by AXCEL."
+              : "اسکولوں، فٹنس، صحت، سیلز اور ریٹیل کے لیے سمارٹ پلیٹ فارمز، لاہور میں ایکسل کے تیار کردہ۔"}
           </p>
         </div>
 

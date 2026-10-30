@@ -8,10 +8,11 @@ import { solutions, ui } from "@/lib/content";
 import { href, T, tx, type Lang } from "@/lib/i18n";
 
 export function HubHero({ lang }: { lang: Lang }) {
-  const col1 = solutions.filter((_, i) => i % 2 === 0);
-  const col2 = solutions.filter((_, i) => i % 2 === 1);
+  const featured = solutions.slice(0, 6);
+  const col1 = featured.filter((_, i) => i % 2 === 0);
+  const col2 = featured.filter((_, i) => i % 2 === 1);
   const points = [
-    T(lang, "6 platforms", "6 پلیٹ فارمز"),
+    T(lang, "8 platforms", "8 پلیٹ فارمز"),
     T(lang, "Built in Lahore", "لاہور میں تیار"),
     T(lang, "Urdu and English", "اردو اور انگریزی"),
   ];
@@ -43,16 +44,16 @@ export function HubHero({ lang }: { lang: Lang }) {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
-              {T(lang, "Smart platforms for", "اسکولوں، فٹنس، صحت اور ڈرائیونگ کے لیے")}{" "}
-              <span className="text-gradient">{T(lang, "schools, fitness, healthcare and driving", "سمارٹ پلیٹ فارمز")}</span>
+              {T(lang, "Smart platforms for", "اسکولوں، فٹنس، صحت، سیلز اور ریٹیل کے لیے")}{" "}
+              <span className="text-gradient">{T(lang, "schools, fitness, healthcare, sales and retail", "سمارٹ پلیٹ فارمز")}</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-xl text-lg text-white/75">
               {T(
                 lang,
-                "ePortal brings together the software people rely on every day: run a school, hire a trainer, code medical records with AI, organise your data or run a driving school.",
-                "ای پورٹل وہ سافٹ ویئر یکجا کرتا ہے جس پر لوگ روزانہ بھروسا کرتے ہیں: اسکول چلائیں، ٹرینر ہائر کریں، اے آئی سے میڈیکل کوڈنگ کریں، ڈیٹا منظم کریں یا ڈرائیونگ اسکول چلائیں۔",
+                "ePortal brings together the software people rely on every day: run a school, hire a trainer, code medical records with AI, automate sales or run your shop.",
+                "ای پورٹل وہ سافٹ ویئر یکجا کرتا ہے جس پر لوگ روزانہ بھروسا کرتے ہیں: اسکول چلائیں، ٹرینر ہائر کریں، اے آئی سے میڈیکل کوڈنگ کریں، سیلز خودکار بنائیں یا اپنی دکان چلائیں۔",
               )}
             </p>
           </Reveal>
@@ -98,9 +99,9 @@ export function SolutionsGrid({ lang }: { lang: Lang }) {
         title={T(lang, "Find the platform that fits your need", "اپنی ضرورت کے مطابق پلیٹ فارم چنیں")}
         sub={T(lang, "Each platform does one job really well, and you can use any of them on its own.", "ہر پلیٹ فارم ایک کام بہت اچھی طرح کرتا ہے، اور آپ ان میں سے کوئی بھی الگ سے استعمال کر سکتے ہیں۔")}
       />
-      <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+      <div className="mt-14 flex flex-wrap justify-center gap-6">
         {solutions.map((s, i) => (
-          <Reveal key={s.slug} delay={i * 0.07} className="lg:col-span-2">
+          <Reveal key={s.slug} delay={i * 0.07} className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <Spot className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white transition hover:border-brand-300 hover:shadow-xl hover:shadow-black/5">
               <div className={`relative h-52 overflow-hidden bg-gradient-to-br ${s.accent}`} dir="ltr">
                 <div className="bg-grid absolute inset-0 opacity-60" />

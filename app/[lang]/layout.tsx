@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const ur = lang === "ur";
   return {
     title: {
-      default: ur ? "ای پورٹل | اسکول، فٹنس، صحت اور ڈرائیونگ کے لیے سمارٹ پلیٹ فارمز" : "ePortal | Smart platforms for schools, fitness, healthcare and driving",
+      default: ur ? "ای پورٹل | اسکول، فٹنس، صحت، سیلز اور ریٹیل کے لیے سمارٹ پلیٹ فارمز" : "ePortal | Smart platforms for schools, fitness, healthcare, sales and retail",
       template: "%s | ePortal",
     },
     description: ur
-      ? "ای اسکول، فارمڈ، پرائما پورٹل، ای میل رپورٹ پورٹل، پرو ایڈ میڈیکل اور ہے روٹس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
-      : "eSchool, Formed, PRIMA Portal, Email Report Portal, ProEd Medical and HayRoutes: smart platforms built in Lahore.",
+      ? "ای اسکول، فارمڈ، پرائما پورٹل، ای میل رپورٹ پورٹل، پرو ایڈ میڈیکل، ہے روٹس، سیلز میٹ اے آئی اور ایکسل پی او ایس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
+      : "eSchool, Formed, PRIMA Portal, Email Report Portal, ProEd Medical, HayRoutes, Salesmate AI and AXCEL POS: smart platforms built in Lahore.",
     alternates: { languages: { en: "/en", ur: "/ur" } },
   };
 }

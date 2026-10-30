@@ -4,7 +4,7 @@ import { useId, type ReactNode } from "react";
 import {
   Activity, BarChart3, Bell, BookOpen, Calendar, CalendarCheck, Car, CheckCircle2, ClipboardList, Dumbbell, FileText,
   FolderOpen, GitPullRequestArrow, LayoutDashboard, Mail, MessageSquare, Search, Settings, Stethoscope, Users,
-  Workflow, Wallet, Send, Clock, Gauge, UserCog, ListChecks, type LucideIcon,
+  Workflow, Wallet, Send, Clock, Gauge, UserCog, ListChecks, Bot, Package, ShoppingCart, Target, TrendingUp, type LucideIcon,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { AdminDashboardMock, BrowserFrame } from "./visuals";
@@ -274,6 +274,83 @@ function HayMock({ lang }: { lang: Lang }) {
   );
 }
 
+
+function SalesmateMock({ lang }: { lang: Lang }) {
+  const leads: [string, string, "ok" | "warn" | "info"][] = [
+    ["Ariene McCoy", T(lang, "New", "نیا"), "info"],
+    ["Dianne Russell", T(lang, "Contacted", "رابطہ ہوا"), "warn"],
+    ["Guy Hawkins", T(lang, "Qualified", "اہل"), "ok"],
+  ];
+  const flow = [T(lang, "New lead", "نئی لیڈ"), T(lang, "AI score", "اے آئی اسکور"), T(lang, "Follow up", "فالو اپ"), T(lang, "Convert", "کنورٹ")];
+  return (
+    <Shell icons={[LayoutDashboard, Users, MessageSquare, Workflow, TrendingUp, Settings]} title="Salesmate AI" sub={T(lang, "Sales overview", "سیلز کا جائزہ")}>
+      <Kpis items={[
+        { l: T(lang, "Total revenue", "کل آمدنی"), v: "$248,560", d: "+16.5%", icon: Wallet },
+        { l: T(lang, "Deals in pipeline", "پائپ لائن میں ڈیلز"), v: "156", icon: Target },
+        { l: T(lang, "Win rate", "کامیابی کی شرح"), v: "68%", d: "+5%", icon: CheckCircle2 },
+        { l: T(lang, "New leads", "نئی لیڈز"), v: "342", d: "+21%", icon: Users },
+      ]} />
+      <div className="mt-3 grid gap-3 lg:grid-cols-5">
+        <Card title={T(lang, "Recent leads", "حالیہ لیڈز")} className="lg:col-span-2">
+          <ul className="mt-2 space-y-2.5">{leads.map(([n, st, tone]) => <Row key={n} lead={avatar(n)} title={n} right={<Chip tone={tone}>{st}</Chip>} />)}</ul>
+        </Card>
+        <Card title={T(lang, "AI assistant", "اے آئی اسسٹنٹ")} className="lg:col-span-3">
+          <div className="mt-2 space-y-2 text-[10px]">
+            <p className="max-w-[85%] rounded-xl rounded-es-sm bg-mist px-2.5 py-1.5">{T(lang, "Hi! I am your AI sales assistant. How can I help you today?", "السلام علیکم! میں آپ کا اے آئی سیلز اسسٹنٹ ہوں۔ میں آپ کی کیا مدد کر سکتا ہوں؟")}</p>
+            <p className="ms-auto max-w-[80%] rounded-xl rounded-ee-sm bg-brand-600 px-2.5 py-1.5 text-white">{T(lang, "Do you have a monthly plan?", "کیا آپ کا کوئی ماہانہ پلان ہے؟")}</p>
+            <p className="max-w-[85%] rounded-xl rounded-es-sm bg-mist px-2.5 py-1.5">{T(lang, "Yes! I can share the options and book a demo for you.", "جی ہاں! میں آپ کو آپشنز بتا کر ڈیمو بک کر سکتا ہوں۔")}</p>
+          </div>
+        </Card>
+      </div>
+      <Card title={T(lang, "Smart automation", "سمارٹ آٹومیشن")} className="mt-3">
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          {flow.map((f, i) => (
+            <span key={f} className="flex items-center gap-1.5">
+              <span className="rounded-lg bg-brand-50 px-2.5 py-1 text-[10px] font-semibold text-brand-700">{f}</span>
+              {i < flow.length - 1 && <span className="text-ink-soft">→</span>}
+            </span>
+          ))}
+        </div>
+      </Card>
+    </Shell>
+  );
+}
+
+function PosMock({ lang }: { lang: Lang }) {
+  const orders: [string, string, string, "ok" | "warn"][] = [
+    ["#X90-00022", "Wireless Headphones", "Rs 320", "ok"],
+    ["#X90-00024", "Bluetooth Speaker", "Rs 256", "warn"],
+    ["#X90-00123", "Smart Case", "Rs 100", "ok"],
+  ];
+  const top: [string, number][] = [["Wireless Headphones", 325], ["Bluetooth Speaker", 279], ["Charger Adapter", 189]];
+  return (
+    <Shell icons={[LayoutDashboard, ShoppingCart, Package, Users, BarChart3, Settings]} title={T(lang, "Dashboard", "ڈیش بورڈ")} sub="AXCEL POS">
+      <Kpis items={[
+        { l: T(lang, "Today's sales", "آج کی فروخت"), v: "Rs 32,589", d: "+12.2%", icon: Wallet },
+        { l: T(lang, "Orders", "آرڈرز"), v: "246", d: "+13.5%", icon: ShoppingCart },
+        { l: T(lang, "Customers", "کسٹمرز"), v: "1,245", d: "+18.2%", icon: Users },
+        { l: T(lang, "Low stock", "کم اسٹاک"), v: "23", icon: Package },
+      ]} />
+      <div className="mt-3 grid gap-3 lg:grid-cols-5">
+        <Card title={T(lang, "Recent orders", "حالیہ آرڈرز")} className="lg:col-span-3">
+          <ul className="mt-2 space-y-2.5">{orders.map(([id, name, amt, tone]) => <Row key={id} lead={tile(ShoppingCart)} title={name} sub={`${id} · ${amt}`} right={<Chip tone={tone}>{tone === "ok" ? T(lang, "Delivered", "ڈیلیور") : T(lang, "Processing", "جاری")}</Chip>} />)}</ul>
+        </Card>
+        <Card title={T(lang, "Payment methods", "ادائیگی کے طریقے")} className="lg:col-span-2"><div className="mt-3"><Donut pct={62} label={T(lang, "Card payments", "کارڈ ادائیگیاں")} /></div></Card>
+      </div>
+      <Card title={T(lang, "Top products", "مقبول مصنوعات")} className="mt-3">
+        <ul className="mt-2 space-y-2">
+          {top.map(([n, v]) => (
+            <li key={n} className="text-[10px]">
+              <span className="flex justify-between"><b>{n}</b><span className="text-ink-soft">{v}</span></span>
+              <span className="mt-1 block h-1.5 overflow-hidden rounded-full bg-mist"><motion.span initial={{ width: 0 }} whileInView={{ width: `${(v / 325) * 100}%` }} viewport={{ once: true }} transition={{ duration: 1.1, delay: 0.3 }} className="block h-full rounded-full bg-brand-600" /></span>
+            </li>
+          ))}
+        </ul>
+      </Card>
+    </Shell>
+  );
+}
+
 /** Branded dashboard mockup for a product slug. */
 export function ProductMock({ slug, lang }: { slug: string; lang: Lang }) {
   const inner =
@@ -282,10 +359,10 @@ export function ProductMock({ slug, lang }: { slug: string; lang: Lang }) {
     slug === "email-report-portal" ? <EmailMock lang={lang} /> :
     slug === "proed-medical" ? <ProEdMock lang={lang} /> :
     slug === "hayroutes" ? <HayMock lang={lang} /> :
+    slug === "salesmate-ai" ? <SalesmateMock lang={lang} /> :
+    slug === "pos" ? <PosMock lang={lang} /> :
     <AdminDashboardMock lang={lang} />;
-  const url: Record<string, string> = {
-    eschool: "app.eportal.pk", formed: "formed.fit", "prima-portal": "primaportal.co.za",
-    "email-report-portal": "reports.eportal.pk", "proed-medical": "medrecpros.md", hayroutes: "hayroutes.com",
-  };
-  return <BrowserFrame url={url[slug] ?? "eportal.pk"}>{inner}</BrowserFrame>;
+  // Only real product domains are shown; the rest use an ePortal path.
+  const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", "prima-portal": "primaportal.co.za", hayroutes: "hayroutes.com" };
+  return <BrowserFrame url={url[slug] ?? `eportal.pk/solutions/${slug}`}>{inner}</BrowserFrame>;
 }

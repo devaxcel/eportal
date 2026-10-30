@@ -389,9 +389,9 @@ export function ProductsShowcase({ lang }: { lang: Lang }) {
           title={T(lang, "One team, a family of products", "ایک ٹیم، مصنوعات کا خاندان")}
           sub={T(lang, "From schools to fitness, healthcare and driving, we build portals that connect people to the services they need.", "اسکولوں سے لے کر فٹنس، صحت اور ڈرائیونگ تک، ہم ایسے پورٹل بناتے ہیں جو لوگوں کو ان کی مطلوبہ خدمات سے جوڑتے ہیں۔")}
         />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-14 flex flex-wrap justify-center gap-5">
           {solutions.map((s, i) => (
-            <Reveal key={s.slug} delay={i * 0.07} className="lg:col-span-2">
+            <Reveal key={s.slug} delay={i * 0.07} className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <Link href={href(lang, `/solutions/${s.slug}`)} className="group block h-full">
                 <Spot className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-7 transition hover:border-white/25">
                   <div className={`pointer-events-none absolute -end-12 -top-12 h-44 w-44 rounded-full bg-gradient-to-br ${s.accent} opacity-40 blur-2xl transition group-hover:opacity-70`} />
