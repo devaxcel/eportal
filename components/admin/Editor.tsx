@@ -59,7 +59,7 @@ function LLList({ lang, name, items, onChange, rows, make = blank }: { lang: Lan
 }
 
 
-export function SolutionEditor({ id, slug, initial, initialStatus, role }: { id: string; slug: string; initial: SolutionContent; initialStatus: "draft" | "published"; role: Role }) {
+export function SolutionEditor({ id, slug, initial, initialStatus, role, siteUrl }: { id: string; slug: string; initial: SolutionContent; initialStatus: "draft" | "published"; role: Role; siteUrl: string }) {
   const [c, setC] = useState<SolutionContent>(initial);
   const [lang, setLang] = useState<Lang>("en");
   const [tab, setTab] = useState<Tab>("content");
@@ -279,7 +279,7 @@ export function SolutionEditor({ id, slug, initial, initialStatus, role }: { id:
             <section className="rounded-2xl border border-line bg-white p-5">
               <h2 className="font-bold">Google preview</h2>
               <div className="mt-3 rounded-xl bg-mist p-4" dir={dir}>
-                <p className="truncate text-xs text-ink-soft" dir="ltr">eportal.pk › {lang} › solutions › {slug}</p>
+                <p className="truncate text-xs text-ink-soft" dir="ltr">{siteUrl.replace(/^https?:\/\//, "")} › {lang} › solutions › {slug}</p>
                 <p className="mt-1 truncate text-lg text-[#1a0dab]">{title}</p>
                 <p className="mt-0.5 line-clamp-2 text-sm text-ink-soft">{desc}</p>
               </div>
@@ -288,7 +288,7 @@ export function SolutionEditor({ id, slug, initial, initialStatus, role }: { id:
             <section className="space-y-3 rounded-2xl border border-line bg-white p-5">
               <div className="flex items-center justify-between">
                 <h2 className="font-bold">Schema (JSON-LD)</h2>
-                <button type="button" className="text-sm font-semibold text-brand-600" onClick={() => setSeo({ schema: JSON.stringify(solutionSchema({ ...asSolution, seo: undefined }, lang), null, 2) })}>Generate from content</button>
+                <button type="button" className="text-sm font-semibold text-brand-600" onClick={() => setSeo({ schema: JSON.stringify(solutionSchema({ ...asSolution, seo: undefined }, lang, siteUrl), null, 2) })}>Generate from content</button>
               </div>
               <textarea rows={14} dir="ltr" spellCheck={false} className={`${input} font-mono text-xs`} value={seoLang.schema ?? ""} placeholder="Leave empty to use the automatic schema (software, breadcrumbs and FAQ)." onChange={(e) => setSeo({ schema: e.target.value })} />
               {schemaError ? <p className="text-sm text-red-600">{schemaError}</p> : seoLang.schema ? <p className="text-sm text-brand-700">Valid JSON.</p> : null}

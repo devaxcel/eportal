@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import type { Solution } from "./content";
+import { siteUrl } from "./env";
 import { locales, tx, type Lang } from "./i18n";
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://eportal.pk").replace(/\/$/, "");
+export const SITE_URL = siteUrl();
 
 const trim = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s);
 
@@ -38,7 +39,7 @@ export function solutionMetadata(s: Solution, lang: Lang): Metadata {
 }
 
 /** JSON-LD for a solution: the custom schema from the dashboard if it parses, otherwise a generated one. */
-export function solutionSchema(s: Solution, lang: Lang): unknown {
+export function solutionSchema(s: Solution, lang: Lang, site: string = SITE_URL): unknown {
   const seo = seoOf(s, lang);
   if (seo.schema) {
     try {
@@ -48,7 +49,7 @@ export function solutionSchema(s: Solution, lang: Lang): unknown {
     }
   }
   const name = tx(s.name, lang);
-  const url = `${SITE_URL}/${lang}/solutions/${s.slug}`;
+  const url = `${site}/${lang}/solutions/${s.slug}`;
   const graph: unknown[] = [
     {
       "@type": "SoftwareApplication",
@@ -63,8 +64,8 @@ export function solutionSchema(s: Solution, lang: Lang): unknown {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "ePortal", item: `${SITE_URL}/${lang}` },
-        { "@type": "ListItem", position: 2, name: "Solutions", item: `${SITE_URL}/${lang}/solutions` },
+        { "@type": "ListItem", position: 1, name: "ePortal", item: `${site}/${lang}` },
+        { "@type": "ListItem", position: 2, name: "Solutions", item: `${site}/${lang}/solutions` },
         { "@type": "ListItem", position: 3, name, item: url },
       ],
     },

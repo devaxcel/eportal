@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextRequest, NextResponse } from "next/server";
+import { supabaseAnonKey, supabaseUrl } from "./lib/env";
 
 const locales = ["en", "ur", "es", "nl", "ar"];
 
@@ -13,8 +14,8 @@ function preferred(accept: string) {
 
 /** Keeps the dashboard session fresh and sends signed-out visitors to the login page. */
 async function adminGate(req: NextRequest) {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = supabaseUrl();
+  const key = supabaseAnonKey();
   if (!url || !key) return NextResponse.next(); // the pages explain how to set Supabase up
 
   let res = NextResponse.next({ request: req });

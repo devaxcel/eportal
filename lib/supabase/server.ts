@@ -2,11 +2,12 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 import { cache } from "react";
+import { supabaseAnonKey, supabaseUrl } from "../env";
 
 /** Client acting as the signed-in dashboard user (row-level security applies). */
 export async function serverClient(): Promise<SupabaseClient | null> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = supabaseUrl();
+  const key = supabaseAnonKey();
   if (!url || !key) return null;
   const store = await cookies();
   return createServerClient(url, key, {

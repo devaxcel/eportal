@@ -7,12 +7,12 @@ The public website works without any setup, using the built-in content. The dash
 1. **Create a Supabase project** at supabase.com (the free plan is enough).
 2. **Create the tables.** Open **SQL Editor**, paste the contents of `supabase/schema.sql` and run it.
 3. **Add the keys.** Copy `.env.example` to `.env.local` and fill in:
-   - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` (Project Settings, API)
+   - `SUPABASE_URL` and `SUPABASE_ANON_KEY` (Project Settings, API)
    - `SUPABASE_SERVICE_ROLE_KEY` (same page, keep it secret)
-   - `NEXT_PUBLIC_SITE_URL` (for example `https://eportal.pk`)
+   - `SITE_URL` (for example `https://eportal.pk`)
    - `ADMIN_EMAIL` and `ADMIN_PASSWORD` (your first login)
 4. **Load today's content.** Run `npm run seed`. It copies the eight solutions (in all five languages) into the database and creates your admin login. It never overwrites a solution that already exists, so it is safe to run again.
-5. **Add the same variables in Vercel** (Settings, Environment Variables) and redeploy. Do not add `ADMIN_EMAIL` or `ADMIN_PASSWORD` there; they are only for the seed.
+5. **Add the same variables in Vercel** (Settings, Environment Variables) and redeploy. Leave them as *Sensitive*: none of them need the `NEXT_PUBLIC_` prefix, because the browser never uses them. Do not add `ADMIN_EMAIL` or `ADMIN_PASSWORD` there; they are only for the seed.
 6. Sign in at `/admin`.
 
 ## Using it

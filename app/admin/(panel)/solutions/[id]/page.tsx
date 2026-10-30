@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { SolutionEditor } from "@/components/admin/Editor";
+import { siteUrl } from "@/lib/env";
 import { getStaff, serverClient } from "@/lib/supabase/server";
 import type { SolutionContent } from "@/lib/solution-schema";
 
@@ -19,5 +20,5 @@ export default async function EditSolution({ params }: { params: Promise<{ id: s
   const content = (draft?.content ?? row.published) as SolutionContent | null;
   if (!content) notFound();
 
-  return <SolutionEditor id={row.id} slug={row.slug} initial={content} initialStatus={row.status} role={staff.role} />;
+  return <SolutionEditor id={row.id} slug={row.slug} initial={content} initialStatus={row.status} role={staff.role} siteUrl={siteUrl()} />;
 }
