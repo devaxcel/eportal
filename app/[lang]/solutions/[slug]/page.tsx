@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Icon } from "@/components/Icon";
 import { ProductVisual } from "@/components/ProductVisual";
 import { CtaBand, FaqList, SectionHead } from "@/components/Section";
@@ -45,11 +45,6 @@ export default async function SolutionPage({ params }: { params: Promise<{ lang:
                 {tx(ui.demo, lang)}
                 <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
               </Link>
-              {s.url && (
-                <a href={s.url} target="_blank" rel="noopener noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold transition hover:bg-white/15">
-                  {T(lang, "Visit website", "ویب سائٹ دیکھیں")}<ExternalLink size={16} />
-                </a>
-              )}
             </div>
           </Reveal>
           <Reveal delay={0.15} y={30}><ProductVisual s={s} lang={lang} /></Reveal>
