@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2 } from "lucide-react";
 import { Icon } from "./Icon";
+import { ProductMock } from "./productMocks";
 import { SectionHead } from "./Section";
 import { Reveal, Spot } from "./motion";
 import { solutions, ui } from "@/lib/content";
@@ -10,7 +11,7 @@ export function HubHero({ lang }: { lang: Lang }) {
   const col1 = solutions.filter((_, i) => i % 2 === 0);
   const col2 = solutions.filter((_, i) => i % 2 === 1);
   const points = [
-    T(lang, "5 platforms", "5 پلیٹ فارمز"),
+    T(lang, "6 platforms", "6 پلیٹ فارمز"),
     T(lang, "Built in Lahore", "لاہور میں تیار"),
     T(lang, "Urdu and English", "اردو اور انگریزی"),
   ];
@@ -99,16 +100,24 @@ export function SolutionsGrid({ lang }: { lang: Lang }) {
       />
       <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
         {solutions.map((s, i) => (
-          <Reveal key={s.slug} delay={i * 0.07} className={i < 2 ? "lg:col-span-3" : "lg:col-span-2"}>
+          <Reveal key={s.slug} delay={i * 0.07} className="lg:col-span-2">
             <Spot className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white transition hover:border-brand-300 hover:shadow-xl hover:shadow-black/5">
-              <div className={`relative isolate overflow-hidden bg-gradient-to-br ${s.accent} p-6 text-white`}>
-                <Icon name={s.icon} size={150} strokeWidth={1} className="absolute -end-6 -top-8 -z-10 text-white/15 transition duration-500 group-hover:rotate-6 group-hover:scale-110" />
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/20 backdrop-blur"><Icon name={s.icon} size={24} /></span>
-                <h3 className="mt-5 text-2xl font-extrabold">{tx(s.name, lang)}</h3>
-                <p className="mt-1 text-white/90">{tx(s.tagline, lang)}</p>
+              <div className={`relative h-52 overflow-hidden bg-gradient-to-br ${s.accent}`} dir="ltr">
+                <div className="bg-grid absolute inset-0 opacity-60" />
+                <Icon name={s.icon} size={150} strokeWidth={1} className="absolute -right-6 -top-8 text-white/15" />
+                <div className="absolute left-5 top-6 w-[190%] transition duration-500 group-hover:-translate-y-2" style={{ transform: "scale(0.52)", transformOrigin: "top left" }}>
+                  <ProductMock slug={s.slug} lang={lang} />
+                </div>
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <p className="text-ink-soft">{tx(s.description, lang)}</p>
+                <div className="flex items-center gap-3">
+                  <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${s.accent} text-white`}><Icon name={s.icon} size={22} /></span>
+                  <div>
+                    <h3 className="text-xl font-extrabold">{tx(s.name, lang)}</h3>
+                    <p className="text-sm font-medium text-brand-600">{tx(s.tagline, lang)}</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-ink-soft">{tx(s.description, lang)}</p>
                 <ul className="mt-5 space-y-2 text-sm">
                   {s.features.slice(0, 3).map((f, k) => (
                     <li key={k} className="flex items-start gap-2.5"><Check size={15} className="mt-1.5 shrink-0 text-brand-600" />{tx(f, lang)}</li>

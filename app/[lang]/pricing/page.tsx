@@ -115,7 +115,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
             title={T(lang, "Priced around what you need", "آپ کی ضرورت کے مطابق قیمت")}
             sub={T(lang, "Tell us about your needs and we will send a clear quote.", "اپنی ضرورت بتائیں، ہم واضح قیمت بھیجیں گے۔")}
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((s, i) => (
               <Reveal key={s.slug} delay={i * 0.07}>
                 <Spot className="flex h-full flex-col rounded-2xl border border-line bg-white p-6">

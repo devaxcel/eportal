@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       template: "%s | ePortal",
     },
     description: ur
-      ? "ای اسکول، فارمڈ، ڈیٹا پورٹل، پرو ایڈ میڈیکل اور ہے روٹس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
-      : "eSchool, Formed, Data Portal, ProEd Medical and HayRoutes: smart platforms built in Lahore.",
+      ? "ای اسکول، فارمڈ، پرائما پورٹل، ای میل رپورٹ پورٹل، پرو ایڈ میڈیکل اور ہے روٹس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
+      : "eSchool, Formed, PRIMA Portal, Email Report Portal, ProEd Medical and HayRoutes: smart platforms built in Lahore.",
     alternates: { languages: { en: "/en", ur: "/ur" } },
   };
 }

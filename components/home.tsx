@@ -391,7 +391,7 @@ export function ProductsShowcase({ lang }: { lang: Lang }) {
         />
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
           {solutions.map((s, i) => (
-            <Reveal key={s.slug} delay={i * 0.07} className={i < 2 ? "lg:col-span-3" : "lg:col-span-2"}>
+            <Reveal key={s.slug} delay={i * 0.07} className="lg:col-span-2">
               <Link href={href(lang, `/solutions/${s.slug}`)} className="group block h-full">
                 <Spot className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-7 transition hover:border-white/25">
                   <div className={`pointer-events-none absolute -end-12 -top-12 h-44 w-44 rounded-full bg-gradient-to-br ${s.accent} opacity-40 blur-2xl transition group-hover:opacity-70`} />

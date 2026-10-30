@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ChevronDown, Car, Database, Dumbbell, Menu, School, Stethoscope, X, type LucideIcon } from "lucide-react";
+import { ChevronDown, Car, Dumbbell, Mail, Menu, School, Stethoscope, Workflow, X, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
 import { nav, solutions, ui } from "@/lib/content";
 import { href, T, tx, type Lang } from "@/lib/i18n";
 
-const icons: Record<string, LucideIcon> = { School, Dumbbell, Database, Stethoscope, Car };
+const icons: Record<string, LucideIcon> = { School, Dumbbell, Workflow, Mail, Stethoscope, Car };
 
 export function Header({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
