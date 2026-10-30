@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       template: "%s | ePortal",
     },
     description: ur
-      ? "ای اسکول، فارمڈ، پرائما پورٹل، ای میل رپورٹ پورٹل، پرو ایڈ میڈیکل، ہے روٹس، سیلز میٹ اے آئی اور ایکسل پی او ایس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
-      : "eSchool, Formed, PRIMA Portal, Email Report Portal, ProEd Medical, HayRoutes, Salesmate AI and AXCEL POS: smart platforms built in Lahore.",
+      ? "ای اسکول، فارمڈ، ورک فلو پورٹل، ای میل رپورٹ پورٹل، میڈیکل کوڈنگ اے آئی، ہے روٹس، اے آئی سیلز ایجنٹ اور ایکسل پی او ایس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔"
+      : "eSchool, Formed, Workflow Portal, Email Report Portal, Medical Coding AI, HayRoutes, AI Sales Agent and AXCEL POS: smart platforms built in Lahore.",
     alternates: { languages: { en: "/en", ur: "/ur" } },
   };
 }

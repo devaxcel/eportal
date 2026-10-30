@@ -148,7 +148,7 @@ function FormedMock({ lang }: { lang: Lang }) {
   );
 }
 
-function PrimaMock({ lang }: { lang: Lang }) {
+function WorkflowMock({ lang }: { lang: Lang }) {
   const tasks: [string, string, "ok" | "warn" | "info"][] = [
     [T(lang, "Employee handbook review", "ملازم ہینڈ بک کا جائزہ"), T(lang, "In review", "زیر جائزہ"), "info"],
     [T(lang, "Contract verification", "معاہدے کی تصدیق"), T(lang, "Qualified", "تصدیق شدہ"), "ok"],
@@ -201,9 +201,9 @@ function EmailMock({ lang }: { lang: Lang }) {
   );
 }
 
-function ProEdMock({ lang }: { lang: Lang }) {
+function MedCodingMock({ lang }: { lang: Lang }) {
   return (
-    <Shell icons={[LayoutDashboard, Stethoscope, BookOpen, FileText, MessageSquare, Settings]} title="MedRecPros MD" sub={T(lang, "AI-assisted coding and policy research", "اے آئی کی مدد سے کوڈنگ اور پالیسی ریسرچ")}>
+    <Shell icons={[LayoutDashboard, Stethoscope, BookOpen, FileText, MessageSquare, Settings]} title="Medical Coding AI" sub={T(lang, "AI-assisted coding and policy research", "اے آئی کی مدد سے کوڈنگ اور پالیسی ریسرچ")}>
       <div className="mt-4 flex items-center gap-2 rounded-xl border border-brand-300 bg-brand-50/60 px-3 py-2.5 text-[11px] text-ink-soft">
         <Search size={13} className="shrink-0 text-brand-600" />
         <span className="truncate">{T(lang, "Acute exacerbation of COPD in a patient who quit smoking", "سگریٹ چھوڑ چکے مریض میں سی او پی ڈی کی شدید شدت")}</span>
@@ -275,7 +275,7 @@ function HayMock({ lang }: { lang: Lang }) {
 }
 
 
-function SalesmateMock({ lang }: { lang: Lang }) {
+function SalesAgentMock({ lang }: { lang: Lang }) {
   const leads: [string, string, "ok" | "warn" | "info"][] = [
     ["Ariene McCoy", T(lang, "New", "نیا"), "info"],
     ["Dianne Russell", T(lang, "Contacted", "رابطہ ہوا"), "warn"],
@@ -283,7 +283,7 @@ function SalesmateMock({ lang }: { lang: Lang }) {
   ];
   const flow = [T(lang, "New lead", "نئی لیڈ"), T(lang, "AI score", "اے آئی اسکور"), T(lang, "Follow up", "فالو اپ"), T(lang, "Convert", "کنورٹ")];
   return (
-    <Shell icons={[LayoutDashboard, Users, MessageSquare, Workflow, TrendingUp, Settings]} title="Salesmate AI" sub={T(lang, "Sales overview", "سیلز کا جائزہ")}>
+    <Shell icons={[LayoutDashboard, Users, MessageSquare, Workflow, TrendingUp, Settings]} title="AI Sales Agent" sub={T(lang, "Sales overview", "سیلز کا جائزہ")}>
       <Kpis items={[
         { l: T(lang, "Total revenue", "کل آمدنی"), v: "$248,560", d: "+16.5%", icon: Wallet },
         { l: T(lang, "Deals in pipeline", "پائپ لائن میں ڈیلز"), v: "156", icon: Target },
@@ -355,14 +355,14 @@ function PosMock({ lang }: { lang: Lang }) {
 export function ProductMock({ slug, lang }: { slug: string; lang: Lang }) {
   const inner =
     slug === "formed" ? <FormedMock lang={lang} /> :
-    slug === "prima-portal" ? <PrimaMock lang={lang} /> :
+    slug === "workflow-portal" ? <WorkflowMock lang={lang} /> :
     slug === "email-report-portal" ? <EmailMock lang={lang} /> :
-    slug === "proed-medical" ? <ProEdMock lang={lang} /> :
+    slug === "medical-coding-ai" ? <MedCodingMock lang={lang} /> :
     slug === "hayroutes" ? <HayMock lang={lang} /> :
-    slug === "salesmate-ai" ? <SalesmateMock lang={lang} /> :
+    slug === "ai-sales-agent" ? <SalesAgentMock lang={lang} /> :
     slug === "pos" ? <PosMock lang={lang} /> :
     <AdminDashboardMock lang={lang} />;
   // Only real product domains are shown; the rest use an ePortal path.
-  const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", "prima-portal": "primaportal.co.za", hayroutes: "hayroutes.com" };
+  const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", hayroutes: "hayroutes.com" };
   return <BrowserFrame url={url[slug] ?? `eportal.pk/solutions/${slug}`}>{inner}</BrowserFrame>;
 }

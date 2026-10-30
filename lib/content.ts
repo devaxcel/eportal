@@ -233,12 +233,12 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "prima-portal",
+    slug: "workflow-portal",
     category: "business",
     icon: "Workflow",
     status: "live",
     url: "https://www.primaportal.co.za/login",
-    name: { en: "PRIMA Portal", ur: "پرائما پورٹل" },
+    name: { en: "Workflow Portal", ur: "ورک فلو پورٹل" },
     tagline: { en: "Enterprise workflow and management system", ur: "انٹرپرائز ورک فلو اور مینجمنٹ سسٹم" },
     description: {
       en: "One secure place for an organisation's people, documents and approvals. Manage users, store and track documents, automate approval workflows and see live reports.",
@@ -283,16 +283,16 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "proed-medical",
+    slug: "medical-coding-ai",
     category: "health",
     icon: "Stethoscope",
     status: "live",
     url: "https://proed-coder-ai-eight.vercel.app/",
-    name: { en: "ProEd Medical", ur: "پرو ایڈ میڈیکل" },
+    name: { en: "Medical Coding AI", ur: "میڈیکل کوڈنگ اے آئی" },
     tagline: { en: "AI-powered medical coding assistant", ur: "اے آئی سے چلنے والا میڈیکل کوڈنگ اسسٹنٹ" },
     description: {
-      en: "MedRecPros MD helps coding and clinical documentation teams with medical coding, policy research and compliant physician query drafting, so the right answer is found in seconds instead of hours.",
-      ur: "میڈرک پروز ایم ڈی کوڈنگ اور کلینیکل ڈاکومنٹیشن ٹیموں کی میڈیکل کوڈنگ، پالیسی ریسرچ اور مستند فزیشن کوئری ڈرافٹنگ میں مدد کرتا ہے، تاکہ درست جواب گھنٹوں کے بجائے سیکنڈوں میں ملے۔",
+      en: "This AI assistant helps coding and clinical documentation teams with medical coding, policy research and compliant physician query drafting, so the right answer is found in seconds instead of hours.",
+      ur: "یہ اے آئی اسسٹنٹ کوڈنگ اور کلینیکل ڈاکومنٹیشن ٹیموں کی میڈیکل کوڈنگ، پالیسی ریسرچ اور مستند فزیشن کوئری ڈرافٹنگ میں مدد کرتا ہے، تاکہ درست جواب گھنٹوں کے بجائے سیکنڈوں میں ملے۔",
     },
     features: [
       { en: "AI-assisted medical coding", ur: "اے آئی کی مدد سے میڈیکل کوڈنگ" },
@@ -333,12 +333,12 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "salesmate-ai",
+    slug: "ai-sales-agent",
     category: "business",
     icon: "Bot",
     status: "live",
     url: "https://axcelworld.com/",
-    name: { en: "Salesmate AI", ur: "سیلز میٹ اے آئی" },
+    name: { en: "AI Sales Agent", ur: "اے آئی سیلز ایجنٹ" },
     tagline: { en: "AI sales agent for your website", ur: "آپ کی ویب سائٹ کے لیے اے آئی سیلز ایجنٹ" },
     description: {
       en: "A chatbot agent that talks to your website visitors, captures and scores leads, follows up automatically and shows your sales pipeline in one dashboard.",
@@ -570,8 +570,8 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "What does ePortal offer?", ur: "ای پورٹل کیا پیش کرتا ہے؟" },
     a: {
-      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, PRIMA Portal for enterprise workflows and documents, Email Report Portal for automated reports, ProEd Medical for AI-assisted medical coding, HayRoutes for driving schools, instructors and learners, Salesmate AI for website sales chat and lead automation, and AXCEL POS for retail point of sale.",
-      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، انٹرپرائز ورک فلو اور دستاویزات کے لیے پرائما پورٹل، خودکار رپورٹس کے لیے ای میل رپورٹ پورٹل، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے پرو ایڈ میڈیکل، ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے ہے روٹس، ویب سائٹ پر سیلز چیٹ اور لیڈ آٹومیشن کے لیے سیلز میٹ اے آئی، اور ریٹیل کے لیے ایکسل پی او ایس۔",
+      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, Workflow Portal for enterprise workflows and documents, Email Report Portal for automated reports, Medical Coding AI for faster medical coding, HayRoutes for driving schools, instructors and learners, AI Sales Agent for website sales chat and lead automation, and AXCEL POS for retail point of sale.",
+      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، انٹرپرائز ورک فلو اور دستاویزات کے لیے ورک فلو پورٹل، خودکار رپورٹس کے لیے ای میل رپورٹ پورٹل، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے میڈیکل کوڈنگ اے آئی، ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے ہے روٹس، ویب سائٹ پر سیلز چیٹ اور لیڈ آٹومیشن کے لیے اے آئی سیلز ایجنٹ، اور ریٹیل کے لیے ایکسل پی او ایس۔",
     },
   },
   {

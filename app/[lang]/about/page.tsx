@@ -46,7 +46,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">{T(lang, "Software should fit the way you already work", "سافٹ ویئر کو آپ کے کام کے طریقے کے مطابق ہونا چاہیے")}</h2>
           <div className="mt-5 space-y-4 text-lg text-ink-soft">
             <p>{T(lang, "We began with schools, listening to principals, cashiers and teachers who were drowning in registers and spreadsheets. They did not need more features. They needed less work.", "ہم نے ان پرنسپلز، کیشیئرز اور اساتذہ کی بات سنی جو رجسٹرز اور اسپریڈ شیٹس میں دبے ہوئے تھے۔ انہیں مزید خصوصیات نہیں، کم کام چاہیے تھا۔")}</p>
-            <p>{T(lang, "So we built eSchool around real days in a real school. Today the same approach powers Formed, PRIMA Portal, Email Report Portal, ProEd Medical, HayRoutes, Salesmate AI and AXCEL POS: start with the real workflow, keep it simple.", "اس لیے ہم نے ای پورٹل حقیقی اسکول کے حقیقی دنوں کے گرد بنایا: حاضری لگائیں، فیس وصول کریں، نتائج بھیجیں، والدین کو جواب دیں۔ آج یہی طریقہ ہمارے دوسرے پلیٹ فارمز میں بھی ہے۔")}</p>
+            <p>{T(lang, "So we built eSchool around real days in a real school. Today the same approach powers Formed, Workflow Portal, Email Report Portal, Medical Coding AI, HayRoutes, AI Sales Agent and AXCEL POS: start with the real workflow, keep it simple.", "اس لیے ہم نے ای پورٹل حقیقی اسکول کے حقیقی دنوں کے گرد بنایا: حاضری لگائیں، فیس وصول کریں، نتائج بھیجیں، والدین کو جواب دیں۔ آج یہی طریقہ ہمارے دوسرے پلیٹ فارمز میں بھی ہے۔")}</p>
           </div>
         </Reveal>
         <Reveal x={30} y={0} delay={0.1}>
