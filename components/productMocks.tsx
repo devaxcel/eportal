@@ -9,6 +9,7 @@ import {
 import { motion } from "motion/react";
 import { AdminDashboardMock, BrowserFrame } from "./visuals";
 import { T, type Lang } from "@/lib/i18n";
+import { oldSlug } from "@/lib/slugs";
 
 /* ---------------------------------------------------------------- atoms */
 
@@ -352,7 +353,8 @@ function PosMock({ lang }: { lang: Lang }) {
 }
 
 /** Branded dashboard mockup for a product slug. */
-export function ProductMock({ slug, lang }: { slug: string; lang: Lang }) {
+export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang }) {
+  const slug = oldSlug(address); // built-in pictures are keyed by the original names
   const inner =
     slug === "formed" ? <FormedMock lang={lang} /> :
     slug === "workflow-portal" ? <WorkflowMock lang={lang} /> :
@@ -364,5 +366,5 @@ export function ProductMock({ slug, lang }: { slug: string; lang: Lang }) {
     <AdminDashboardMock lang={lang} />;
   // Only real product domains are shown; the rest use an ePortal path.
   const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", hayroutes: "hayroutes.com" };
-  return <BrowserFrame url={url[slug] ?? `eportal.pk/solutions/${slug}`}>{inner}</BrowserFrame>;
+  return <BrowserFrame url={url[slug] ?? `eportal.pk/solutions/${address}`}>{inner}</BrowserFrame>;
 }

@@ -199,7 +199,7 @@ export const SECTION_KEYS = ["marquee", "statement", "compare", "action", "whoFo
 // Placeholder product line-up. Edit to match the SaaS platforms you actually offer.
 export const solutions: Solution[] = [
   {
-    slug: "eschool",
+    slug: "schooldesk",
     category: "education",
     icon: "School",
     status: "live",
@@ -224,7 +224,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "formed",
+    slug: "trainerbook",
     category: "health",
     icon: "Dumbbell",
     status: "live",
@@ -250,7 +250,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "workflow-portal",
+    slug: "approveflow",
     category: "business",
     icon: "Workflow",
     status: "live",
@@ -275,7 +275,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "email-report-portal",
+    slug: "reportrelay",
     category: "business",
     icon: "Mail",
     status: "live",
@@ -300,7 +300,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "medical-coding-ai",
+    slug: "medcodex",
     category: "health",
     icon: "Stethoscope",
     status: "live",
@@ -325,7 +325,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "hayroutes",
+    slug: "lessonbook",
     category: "retail",
     icon: "Car",
     status: "live",
@@ -350,7 +350,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "ai-sales-agent",
+    slug: "leadchat",
     category: "business",
     icon: "Bot",
     status: "live",
@@ -375,7 +375,7 @@ export const solutions: Solution[] = [
     ],
   },
   {
-    slug: "pos",
+    slug: "saledesk",
     category: "retail",
     icon: "ShoppingCart",
     status: "live",

@@ -8,6 +8,7 @@ import { solutions } from "../lib/content";
 import { stories } from "../lib/stories";
 import { catalogs } from "../lib/translations";
 import { adminClient } from "../lib/supabase/admin";
+import { oldSlug } from "../lib/slugs";
 
 type Json = unknown;
 
@@ -50,7 +51,7 @@ async function main() {
     const { slug, ...rest } = s;
     const content = expand({ ...rest, story: s.story ?? stories[slug], hidden: [], seo: { langs: {} } }) as Record<string, Json>;
 
-    const { data: existing } = await sb.from("solutions").select("id").eq("slug", slug).maybeSingle();
+    const { data: existing } = await sb.from("solutions").select("id").in("slug", [slug, oldSlug(slug)]).maybeSingle();
     if (existing) {
       console.log(`skip   ${slug} (already exists)`);
       continue;

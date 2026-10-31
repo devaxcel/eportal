@@ -16,7 +16,7 @@ import { isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const s = await getSolution("eschool");
+  const s = await getSolution("schooldesk");
   if (s && isLang(lang)) return solutionMetadata(s, lang);
   return { title: Tm(lang, "SchoolDesk: School Management System", "اسکول ڈیسک") };
 }
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function ESchoolPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
-  const solution = await getSolution("eschool");
+  const solution = await getSolution("schooldesk");
 
   return (
     <>

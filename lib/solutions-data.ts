@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { solutions as staticSolutions, type Solution } from "./content";
 import { stories } from "./stories";
+import { newSlug } from "./slugs";
 import { publicClient } from "./supabase/public";
 
 /** Built-in content, used until Supabase is set up and whenever the database cannot be reached. */
@@ -19,7 +20,7 @@ async function load(): Promise<Solution[]> {
     if (error || !data || data.length === 0) return fallback();
     return data
       .filter((r) => r.published)
-      .map((r) => ({ ...(r.published as Solution), slug: r.slug, sort: r.sort }));
+      .map((r) => ({ ...(r.published as Solution), slug: newSlug(r.slug), sort: r.sort }));
   } catch {
     return fallback();
   }

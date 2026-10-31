@@ -144,7 +144,7 @@ export async function createSolution(_prev: { error?: string } | undefined, form
     const slug = String(form.get("slug") ?? "").trim().toLowerCase();
     if (!name) return { error: "Enter a name." };
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) return { error: "The address may only use lowercase letters, numbers and single hyphens." };
-    if (["eschool"].includes(slug)) return { error: "That address is reserved." };
+    if (["schooldesk"].includes(slug)) return { error: "That address is reserved." };
     const sb = (await serverClient())!;
     const { data: last } = await sb.from("solutions").select("sort").order("sort", { ascending: false }).limit(1).maybeSingle();
     const { data, error } = await sb

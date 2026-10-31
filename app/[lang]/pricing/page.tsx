@@ -19,8 +19,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
   if (!isLang(lang)) notFound();
 
   const solutions = await getSolutions();
-  const school = solutions.find((s) => s.slug === "eschool") ?? solutions[0];
-  const others = solutions.filter((s) => s.slug !== "eschool");
+  const school = solutions.find((s) => s.slug === "schooldesk") ?? solutions[0];
+  const others = solutions.filter((s) => s.slug !== "schooldesk");
 
   // [feature, starter, growth, campus, enterprise]
   const rows: [string, boolean, boolean, boolean, boolean][] = [
@@ -62,7 +62,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
                 <p className="text-ink-soft">{T(lang, "Plans for schools and colleges. All prices in PKR.", "اسکولوں اور کالجوں کے پلانز۔ تمام قیمتیں پاکستانی روپے میں۔")}</p>
               </div>
             </div>
-            <Link href={href(lang, "/solutions/eschool")} className="inline-flex items-center gap-1.5 font-semibold text-brand-600">
+            <Link href={href(lang, "/solutions/schooldesk")} className="inline-flex items-center gap-1.5 font-semibold text-brand-600">
               {tx({ en: "About SchoolDesk", ur: "اسکول ڈیسک کے بارے میں" }, lang)}<ArrowRight size={16} className="rtl:rotate-180" />
             </Link>
           </div>

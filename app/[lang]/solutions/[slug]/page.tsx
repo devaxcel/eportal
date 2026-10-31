@@ -8,8 +8,8 @@ import { getSolution, getSolutions } from "@/lib/solutions-data";
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // SchoolDesk has its own page at /solutions/eschool
-  const list = (await getSolutions()).filter((s) => s.slug !== "eschool");
+  // SchoolDesk has its own page at /solutions/schooldesk
+  const list = (await getSolutions()).filter((s) => s.slug !== "schooldesk");
   return locales.flatMap((lang) => list.map((s) => ({ lang, slug: s.slug })));
 }
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function SolutionPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
   const s = await getSolution(slug);
-  if (!isLang(lang) || !s || s.slug === "eschool") notFound();
+  if (!isLang(lang) || !s || s.slug === "schooldesk") notFound();
 
   return <SolutionTemplate s={s} lang={lang} />;
 }

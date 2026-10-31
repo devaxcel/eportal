@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { useSolutions } from "./SolutionsProvider";
 import { tx, type Lang } from "@/lib/i18n";
+import { newSlug } from "@/lib/slugs";
 import { site } from "@/lib/site";
 
 const t = {
@@ -31,7 +32,8 @@ export function DemoForm({ lang }: { lang: Lang }) {
 
   // Preselect a solution from ?solution=slug links
   useEffect(() => {
-    const pick = new URLSearchParams(window.location.search).get("solution");
+    const raw = new URLSearchParams(window.location.search).get("solution");
+    const pick = raw ? newSlug(raw) : null;
     if (pick && solutions.some((s) => s.slug === pick)) setV((s) => ({ ...s, solution: pick }));
   }, []);
 
@@ -42,7 +44,7 @@ export function DemoForm({ lang }: { lang: Lang }) {
     `Name: ${v.name}`,
     `Organisation: ${v.org}`,
     `Phone: ${v.phone}`,
-    v.solution === "eschool" && `Students: ${v.students}`,
+    v.solution === "schooldesk" && `Students: ${v.students}`,
     v.msg && `Notes: ${v.msg}`,
   ]
     .filter(Boolean)
@@ -70,12 +72,12 @@ export function DemoForm({ lang }: { lang: Lang }) {
         <span className="mb-1.5 block text-sm font-semibold">{tx(t.org, lang)}</span>
         <input className={field} value={v.org} onChange={set("org")} required autoComplete="organization" />
       </label>
-      <div className={`grid gap-5 ${v.solution === "eschool" ? "sm:grid-cols-2" : ""}`}>
+      <div className={`grid gap-5 ${v.solution === "schooldesk" ? "sm:grid-cols-2" : ""}`}>
         <label className="block">
           <span className="mb-1.5 block text-sm font-semibold">{tx(t.phone, lang)}</span>
           <input className={field} dir="ltr" type="tel" value={v.phone} onChange={set("phone")} required autoComplete="tel" />
         </label>
-        {v.solution === "eschool" && (
+        {v.solution === "schooldesk" && (
           <label className="block">
             <span className="mb-1.5 block text-sm font-semibold">{tx(t.students, lang)}</span>
             <select className={field} value={v.students} onChange={set("students")}>

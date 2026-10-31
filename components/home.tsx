@@ -379,7 +379,7 @@ export function HowItWorks({ lang }: { lang: Lang }) {
 
 /* -------------------------------------------------------------- products */
 
-export async function ProductsShowcase({ lang, exclude = "eschool" }: { lang: Lang; exclude?: string }) {
+export async function ProductsShowcase({ lang, exclude = "schooldesk" }: { lang: Lang; exclude?: string }) {
   const solutions = await getSolutions();
   return (
     <section className="relative overflow-hidden bg-navy-950 py-20 text-white">

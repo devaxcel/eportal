@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx --env-file=.env.local scripts/seed.ts",
-    "rename-products": "tsx --env-file=.env.local scripts/rename-products.ts"
+    "rename-products": "tsx --env-file=.env.local scripts/rename-products.ts",
+    "rename-slugs": "tsx --env-file=.env.local scripts/rename-slugs.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
