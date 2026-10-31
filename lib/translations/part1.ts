@@ -55,10 +55,10 @@ export const rows: [string, string, string, string][] = [
   "المنصات"
  ],
  [
-  "eSchool modules",
-  "Módulos de eSchool",
-  "eSchool-modules",
-  "وحدات eSchool"
+  "SchoolDesk modules",
+  "Módulos de SchoolDesk",
+  "SchoolDesk-modules",
+  "وحدات SchoolDesk"
  ],
  [
   "Years building",
@@ -109,10 +109,10 @@ export const rows: [string, string, string, string][] = [
   "بدأنا مع المدارس، واستمعنا إلى المديرين وأمناء الصندوق والمعلمين الذين كانوا يغرقون في السجلات وجداول البيانات. لم يكونوا بحاجة إلى مزيد من الميزات، بل إلى عمل أقل."
  ],
  [
-  "So we built eSchool around real days in a real school. Today the same approach powers Formed, Workflow Portal, Email Report Portal, Medical Coding AI, HayRoutes, AI Sales Agent and AXCEL POS: start with the real workflow, keep it simple.",
-  "Así que creamos eSchool en torno a días reales en una escuela real. Hoy el mismo enfoque impulsa Formed, Workflow Portal, Email Report Portal, Medical Coding AI, HayRoutes, AI Sales Agent y AXCEL POS: empezar por el flujo de trabajo real y mantenerlo simple.",
-  "Daarom bouwden we eSchool rond echte dagen op een echte school. Vandaag drijft dezelfde aanpak Formed, Workflow Portal, Email Report Portal, Medical Coding AI, HayRoutes, AI Sales Agent en AXCEL POS aan: begin bij de echte workflow en houd het eenvoudig.",
-  "لذلك بنينا eSchool حول أيام حقيقية في مدرسة حقيقية. واليوم يقوم النهج نفسه بتشغيل Formed وWorkflow Portal وEmail Report Portal وMedical Coding AI وHayRoutes وAI Sales Agent وAXCEL POS: نبدأ بسير العمل الحقيقي ونبقيه بسيطًا."
+  "So we built SchoolDesk around real days in a real school. Today the same approach powers TrainerBook, ApproveFlow, ReportRelay, MedCodeX, LessonBook, LeadChat and SaleDesk: start with the real workflow, keep it simple.",
+  "Así que creamos SchoolDesk en torno a días reales en una escuela real. Hoy el mismo enfoque impulsa TrainerBook, ApproveFlow, ReportRelay, MedCodeX, LessonBook, LeadChat y SaleDesk: empezar por el flujo de trabajo real y mantenerlo simple.",
+  "Daarom bouwden we SchoolDesk rond echte dagen op een echte school. Vandaag drijft dezelfde aanpak TrainerBook, ApproveFlow, ReportRelay, MedCodeX, LessonBook, LeadChat en SaleDesk aan: begin bij de echte workflow en houd het eenvoudig.",
+  "لذلك بنينا SchoolDesk حول أيام حقيقية في مدرسة حقيقية. واليوم يقوم النهج نفسه بتشغيل TrainerBook وApproveFlow وReportRelay وMedCodeX وLessonBook وLeadChat وSaleDesk: نبدأ بسير العمل الحقيقي ونبقيه بسيطًا."
  ],
  [
   "What we stand for",
@@ -307,10 +307,10 @@ export const rows: [string, string, string, string][] = [
   "أسئلة نسمعها كثيرًا"
  ],
  [
-  "eSchool portals",
-  "Portales de eSchool",
-  "eSchool-portalen",
-  "بوابات eSchool"
+  "SchoolDesk portals",
+  "Portales de SchoolDesk",
+  "SchoolDesk-portalen",
+  "بوابات SchoolDesk"
  ],
  [
   "One system, a portal for every role",
@@ -373,10 +373,10 @@ export const rows: [string, string, string, string][] = [
   "أسئلة حول هذه البوابة"
  ],
  [
-  "About eSchool",
-  "Sobre eSchool",
-  "Over eSchool",
-  "حول eSchool"
+  "About SchoolDesk",
+  "Sobre SchoolDesk",
+  "Over SchoolDesk",
+  "حول SchoolDesk"
  ],
  [
   "Admission, attendance, fees, results",
@@ -499,10 +499,10 @@ export const rows: [string, string, string, string][] = [
   "أسعار واضحة لكل منصة"
  ],
  [
-  "eSchool has published plans below. For our other platforms we quote based on your needs.",
-  "eSchool tiene planes publicados a continuación. Para el resto de plataformas ofrecemos presupuestos según sus necesidades.",
-  "Voor eSchool staan hieronder de tarieven. Voor onze andere platforms maken wij een offerte op basis van uw behoeften.",
-  "خطط eSchool منشورة أدناه. أما منصاتنا الأخرى فنقدّم لها عروض أسعار بحسب احتياجاتك."
+  "SchoolDesk has published plans below. For our other platforms we quote based on your needs.",
+  "SchoolDesk tiene planes publicados a continuación. Para el resto de plataformas ofrecemos presupuestos según sus necesidades.",
+  "Voor SchoolDesk staan hieronder de tarieven. Voor onze andere platforms maken wij een offerte op basis van uw behoeften.",
+  "خطط SchoolDesk منشورة أدناه. أما منصاتنا الأخرى فنقدّم لها عروض أسعار بحسب احتياجاتك."
  ],
  [
   "Plans for schools and colleges. All prices in PKR.",
@@ -511,10 +511,10 @@ export const rows: [string, string, string, string][] = [
   "خطط للمدارس والكليات. جميع الأسعار بالروبية الباكستانية."
  ],
  [
-  "Compare eSchool plans",
-  "Compare los planes de eSchool",
-  "Vergelijk de eSchool-abonnementen",
-  "قارن بين خطط eSchool"
+  "Compare SchoolDesk plans",
+  "Compare los planes de SchoolDesk",
+  "Vergelijk de SchoolDesk-abonnementen",
+  "قارن بين خطط SchoolDesk"
  ],
  [
   "Every feature, side by side",
@@ -1843,7 +1843,7 @@ export const rows: [string, string, string, string][] = [
   "تقرير تحليلات التسويق"
  ],
  [
-  "Email Report Portal",
+  "ReportRelay",
   "Portal de informes por correo",
   "Rapportportaal via e-mail",
   "بوابة التقارير عبر البريد الإلكتروني"
@@ -2869,10 +2869,10 @@ export const rows: [string, string, string, string][] = [
   "تنبيهات أداء الفروع"
  ],
  [
-  "eSchool",
-  "eSchool",
-  "eSchool",
-  "eSchool"
+  "SchoolDesk",
+  "SchoolDesk",
+  "SchoolDesk",
+  "SchoolDesk"
  ],
  [
   "Complete school management",
@@ -2917,10 +2917,10 @@ export const rows: [string, string, string, string][] = [
   "مديرون يريدون سجلات أقل"
  ],
  [
-  "Formed",
-  "Formed",
-  "Formed",
-  "Formed"
+  "TrainerBook",
+  "TrainerBook",
+  "TrainerBook",
+  "TrainerBook"
  ],
  [
   "Hire a certified personal trainer",
@@ -2977,10 +2977,10 @@ export const rows: [string, string, string, string][] = [
   "من يفضلون الجلسات الخاصة الفردية"
  ],
  [
-  "Workflow Portal",
-  "Workflow Portal",
-  "Workflow Portal",
-  "Workflow Portal"
+  "ApproveFlow",
+  "ApproveFlow",
+  "ApproveFlow",
+  "ApproveFlow"
  ],
  [
   "Enterprise workflow and management system",
@@ -3091,10 +3091,10 @@ export const rows: [string, string, string, string][] = [
   "وكالات ترفع تقارير لعملائها"
  ],
  [
-  "Medical Coding AI",
-  "Medical Coding AI",
-  "Medical Coding AI",
-  "Medical Coding AI"
+  "MedCodeX",
+  "MedCodeX",
+  "MedCodeX",
+  "MedCodeX"
  ],
  [
   "AI-powered medical coding assistant",
@@ -3151,10 +3151,10 @@ export const rows: [string, string, string, string][] = [
   "عيادات ومستشفيات وشركات توظيف"
  ],
  [
-  "HayRoutes",
-  "HayRoutes",
-  "HayRoutes",
-  "HayRoutes"
+  "LessonBook",
+  "LessonBook",
+  "LessonBook",
+  "LessonBook"
  ],
  [
   "Driving school platform for learners and instructors",
@@ -3163,10 +3163,10 @@ export const rows: [string, string, string, string][] = [
   "منصة لمدارس القيادة للمتعلمين والمدربين"
  ],
  [
-  "HayRoutes connects learners with driving instructors and gives driving schools the tools to run everything: lesson booking, scheduling, progress tracking, fleet and billing.",
-  "HayRoutes conecta a los alumnos con instructores de conducción y da a las autoescuelas las herramientas para gestionarlo todo: reserva de clases, horarios, seguimiento del progreso, flota y facturación.",
-  "HayRoutes verbindt leerlingen met rij-instructeurs en geeft rijscholen de tools om alles te beheren: lessen boeken, plannen, voortgang volgen, wagenpark en facturatie.",
-  "يربط HayRoutes المتعلمين بمدربي القيادة ويمنح مدارس القيادة الأدوات اللازمة لإدارة كل شيء: حجز الدروس والجدولة وتتبع التقدم والأسطول والفوترة."
+  "LessonBook connects learners with driving instructors and gives driving schools the tools to run everything: lesson booking, scheduling, progress tracking, fleet and billing.",
+  "LessonBook conecta a los alumnos con instructores de conducción y da a las autoescuelas las herramientas para gestionarlo todo: reserva de clases, horarios, seguimiento del progreso, flota y facturación.",
+  "LessonBook verbindt leerlingen met rij-instructeurs en geeft rijscholen de tools om alles te beheren: lessen boeken, plannen, voortgang volgen, wagenpark en facturatie.",
+  "يربط LessonBook المتعلمين بمدربي القيادة ويمنح مدارس القيادة الأدوات اللازمة لإدارة كل شيء: حجز الدروس والجدولة وتتبع التقدم والأسطول والفوترة."
  ],
  [
   "Learners book lessons and track milestones",
@@ -3211,10 +3211,10 @@ export const rows: [string, string, string, string][] = [
   "مدارس القيادة ومديرو الأساطيل"
  ],
  [
-  "AI Sales Agent",
-  "AI Sales Agent",
-  "AI Sales Agent",
-  "AI Sales Agent"
+  "LeadChat",
+  "LeadChat",
+  "LeadChat",
+  "LeadChat"
  ],
  [
   "AI sales agent for your website",
@@ -3271,10 +3271,10 @@ export const rows: [string, string, string, string][] = [
   "المتاجر الإلكترونية والوكالات"
  ],
  [
-  "AXCEL POS",
-  "AXCEL POS",
-  "AXCEL POS",
-  "AXCEL POS"
+  "SaleDesk",
+  "SaleDesk",
+  "SaleDesk",
+  "SaleDesk"
  ],
  [
   "AI-powered point of sale",
@@ -3619,10 +3619,10 @@ export const rows: [string, string, string, string][] = [
   "ماذا يقدّم ePortal؟"
  ],
  [
-  "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, Workflow Portal for enterprise workflows and documents, Email Report Portal for automated reports, Medical Coding AI for faster medical coding, HayRoutes for driving schools, instructors and learners, AI Sales Agent for website sales chat and lead automation, and AXCEL POS for retail point of sale.",
-  "ePortal es una familia de plataformas creada por AXCEL en Lahore: eSchool para escuelas y colegios, Formed para contratar entrenadores personales, Workflow Portal para flujos de trabajo y documentos empresariales, Email Report Portal para informes automáticos, Medical Coding AI para una codificación médica más rápida, HayRoutes para autoescuelas, instructores y alumnos, AI Sales Agent para chat de ventas web y automatización de contactos, y AXCEL POS para punto de venta minorista.",
-  "ePortal is een familie van platforms, gebouwd door AXCEL in Lahore: eSchool voor scholen en colleges, Formed voor het inhuren van personal trainers, Workflow Portal voor bedrijfsworkflows en documenten, Email Report Portal voor geautomatiseerde rapporten, Medical Coding AI voor snellere medische codering, HayRoutes voor rijscholen, instructeurs en leerlingen, AI Sales Agent voor verkoopchat op websites en leadautomatisering, en AXCEL POS voor retailkassa's.",
-  "ePortal عائلة من المنصات طورتها AXCEL في لاهور: eSchool للمدارس والكليات، وFormed لتوظيف المدربين الشخصيين، وWorkflow Portal لسير العمل والمستندات المؤسسية، وEmail Report Portal للتقارير الآلية، وMedical Coding AI لترميز طبي أسرع، وHayRoutes لمدارس القيادة والمدربين والمتعلمين، وAI Sales Agent لدردشة المبيعات على المواقع وأتمتة العملاء المحتملين، وAXCEL POS لنقاط البيع في التجزئة."
+  "ePortal is a family of platforms built by AXCEL in Lahore: SchoolDesk for schools and colleges, TrainerBook for hiring personal trainers, ApproveFlow for enterprise workflows and documents, ReportRelay for automated reports, MedCodeX for faster medical coding, LessonBook for driving schools, instructors and learners, LeadChat for website sales chat and lead automation, and SaleDesk for retail point of sale.",
+  "ePortal es una familia de plataformas creada por AXCEL en Lahore: SchoolDesk para escuelas y colegios, TrainerBook para contratar entrenadores personales, ApproveFlow para flujos de trabajo y documentos empresariales, ReportRelay para informes automáticos, MedCodeX para una codificación médica más rápida, LessonBook para autoescuelas, instructores y alumnos, LeadChat para chat de ventas web y automatización de contactos, y SaleDesk para punto de venta minorista.",
+  "ePortal is een familie van platforms, gebouwd door AXCEL in Lahore: SchoolDesk voor scholen en colleges, TrainerBook voor het inhuren van personal trainers, ApproveFlow voor bedrijfsworkflows en documenten, ReportRelay voor geautomatiseerde rapporten, MedCodeX voor snellere medische codering, LessonBook voor rijscholen, instructeurs en leerlingen, LeadChat voor verkoopchat op websites en leadautomatisering, en SaleDesk voor retailkassa's.",
+  "ePortal عائلة من المنصات طورتها AXCEL في لاهور: SchoolDesk للمدارس والكليات، وTrainerBook لتوظيف المدربين الشخصيين، وApproveFlow لسير العمل والمستندات المؤسسية، وReportRelay للتقارير الآلية، وMedCodeX لترميز طبي أسرع، وLessonBook لمدارس القيادة والمدربين والمتعلمين، وLeadChat لدردشة المبيعات على المواقع وأتمتة العملاء المحتملين، وSaleDesk لنقاط البيع في التجزئة."
  ],
  [
   "Do I need to use more than one platform?",
@@ -3655,10 +3655,10 @@ export const rows: [string, string, string, string][] = [
   "ما اللغات المدعومة؟"
  ],
  [
-  "This website works in English, Urdu, Spanish, Dutch and Arabic. eSchool works in English and Urdu. Ask us about language support for the other platforms.",
-  "Este sitio web funciona en inglés, urdu, español, neerlandés y árabe. eSchool funciona en inglés y urdu. Consúltenos sobre los idiomas de las demás plataformas.",
-  "Deze website werkt in het Engels, Urdu, Spaans, Nederlands en Arabisch. eSchool werkt in het Engels en Urdu. Vraag ons naar taalondersteuning voor de andere platforms.",
-  "يعمل هذا الموقع بالإنجليزية والأردية والإسبانية والهولندية والعربية. ويعمل eSchool بالإنجليزية والأردية. اسألنا عن دعم اللغات في المنصات الأخرى."
+  "This website works in English, Urdu, Spanish, Dutch and Arabic. SchoolDesk works in English and Urdu. Ask us about language support for the other platforms.",
+  "Este sitio web funciona en inglés, urdu, español, neerlandés y árabe. SchoolDesk funciona en inglés y urdu. Consúltenos sobre los idiomas de las demás plataformas.",
+  "Deze website werkt in het Engels, Urdu, Spaans, Nederlands en Arabisch. SchoolDesk werkt in het Engels en Urdu. Vraag ons naar taalondersteuning voor de andere platforms.",
+  "يعمل هذا الموقع بالإنجليزية والأردية والإسبانية والهولندية والعربية. ويعمل SchoolDesk بالإنجليزية والأردية. اسألنا عن دعم اللغات في المنصات الأخرى."
  ],
  [
   "How is pricing decided?",
@@ -3667,10 +3667,10 @@ export const rows: [string, string, string, string][] = [
   "كيف يتم تحديد السعر؟"
  ],
  [
-  "eSchool has published plans. For the other platforms we quote based on your needs. Request a demo and we will share a clear price.",
-  "eSchool tiene planes publicados. Para las demás plataformas ofrecemos un presupuesto según sus necesidades. Solicite una demostración y le daremos un precio claro.",
-  "eSchool heeft gepubliceerde abonnementen. Voor de andere platforms maken wij een offerte op basis van uw behoeften. Vraag een demo aan en wij delen een duidelijke prijs.",
-  "لدى eSchool خطط منشورة. أما المنصات الأخرى فنقدّم لها عرض سعر بحسب احتياجاتك. اطلب عرضًا توضيحيًا وسنقدّم لك سعرًا واضحًا."
+  "SchoolDesk has published plans. For the other platforms we quote based on your needs. Request a demo and we will share a clear price.",
+  "SchoolDesk tiene planes publicados. Para las demás plataformas ofrecemos un presupuesto según sus necesidades. Solicite una demostración y le daremos un precio claro.",
+  "SchoolDesk heeft gepubliceerde abonnementen. Voor de andere platforms maken wij een offerte op basis van uw behoeften. Vraag een demo aan en wij delen een duidelijke prijs.",
+  "لدى SchoolDesk خطط منشورة. أما المنصات الأخرى فنقدّم لها عرض سعر بحسب احتياجاتك. اطلب عرضًا توضيحيًا وسنقدّم لك سعرًا واضحًا."
  ],
  [
   "Education",
@@ -3739,10 +3739,10 @@ export const rows: [string, string, string, string][] = [
   "من الاثنين إلى الجمعة، من 9 صباحًا إلى 6 مساءً"
  ],
  [
-  "Getting fit should not mean fighting your schedule. Formed brings a certified trainer to you, and keeps everything about your progress in one place.",
-  "Ponerse en forma no debería significar luchar contra su agenda. Formed le acerca un entrenador certificado y reúne todo su progreso en un solo lugar.",
-  "Fit worden hoeft geen strijd tegen uw agenda te zijn. Formed brengt een gecertificeerde trainer naar u toe en bewaart alles over uw voortgang op één plek.",
-  "لا ينبغي أن تعني اللياقة صراعًا مع جدولك. يأتيك Formed بمدرب معتمد ويجمع كل ما يخص تقدمك في مكان واحد."
+  "Getting fit should not mean fighting your schedule. TrainerBook brings a certified trainer to you, and keeps everything about your progress in one place.",
+  "Ponerse en forma no debería significar luchar contra su agenda. TrainerBook le acerca un entrenador certificado y reúne todo su progreso en un solo lugar.",
+  "Fit worden hoeft geen strijd tegen uw agenda te zijn. TrainerBook brengt een gecertificeerde trainer naar u toe en bewaart alles over uw voortgang op één plek.",
+  "لا ينبغي أن تعني اللياقة صراعًا مع جدولك. يأتيك TrainerBook بمدرب معتمد ويجمع كل ما يخص تقدمك في مكان واحد."
  ],
  [
   "Long commutes to a crowded gym",
@@ -3805,10 +3805,10 @@ export const rows: [string, string, string, string][] = [
   "نعم. العضويات شهرية، ويمكنك الإيقاف المؤقت أو الإلغاء من بوابة العميل."
  ],
  [
-  "Work moves at the speed of the slowest approval. Workflow Portal gives every document a clear path and every person a clear role.",
-  "El trabajo avanza a la velocidad de la aprobación más lenta. Workflow Portal da a cada documento un camino claro y a cada persona un rol claro.",
-  "Werk gaat net zo snel als de langzaamste goedkeuring. Workflow Portal geeft elk document een duidelijk pad en elke persoon een duidelijke rol.",
-  "يسير العمل بسرعة أبطأ موافقة. يمنح Workflow Portal كل مستند مسارًا واضحًا وكل شخص دورًا واضحًا."
+  "Work moves at the speed of the slowest approval. ApproveFlow gives every document a clear path and every person a clear role.",
+  "El trabajo avanza a la velocidad de la aprobación más lenta. ApproveFlow da a cada documento un camino claro y a cada persona un rol claro.",
+  "Werk gaat net zo snel als de langzaamste goedkeuring. ApproveFlow geeft elk document een duidelijk pad en elke persoon een duidelijke rol.",
+  "يسير العمل بسرعة أبطأ موافقة. يمنح ApproveFlow كل مستند مسارًا واضحًا وكل شخص دورًا واضحًا."
  ],
  [
   "Documents lost in email threads",
@@ -3871,10 +3871,10 @@ export const rows: [string, string, string, string][] = [
   "نعم. تُعلم الإشعارات الفورية الأشخاص عندما تحتاج موافقة أو مهمة إلى انتباههم."
  ],
  [
-  "A report only matters when it reaches the right person. Email Report Portal prepares, protects and delivers it for you.",
-  "Un informe solo importa cuando llega a la persona adecuada. Email Report Portal lo prepara, lo protege y se lo entrega por usted.",
-  "Een rapport telt pas als het de juiste persoon bereikt. Email Report Portal bereidt het voor, beveiligt het en bezorgt het voor u.",
-  "لا قيمة للتقرير إلا إذا وصل إلى الشخص المناسب. يقوم Email Report Portal بإعداده وحمايته وتسليمه نيابةً عنك."
+  "A report only matters when it reaches the right person. ReportRelay prepares, protects and delivers it for you.",
+  "Un informe solo importa cuando llega a la persona adecuada. ReportRelay lo prepara, lo protege y se lo entrega por usted.",
+  "Een rapport telt pas als het de juiste persoon bereikt. ReportRelay bereidt het voor, beveiligt het en bezorgt het voor u.",
+  "لا قيمة للتقرير إلا إذا وصل إلى الشخص المناسب. يقوم ReportRelay بإعداده وحمايته وتسليمه نيابةً عنك."
  ],
  [
   "Reports built and emailed by hand every month",
@@ -3937,10 +3937,10 @@ export const rows: [string, string, string, string][] = [
   "نعم. تُنشأ التقارير بالجملة وتُسلَّم لكل عميل عبر البريد الإلكتروني."
  ],
  [
-  "Behind every code is a patient's record and a clinician's time. Medical Coding AI helps teams find the right answer faster.",
-  "Detrás de cada código hay el historial de un paciente y el tiempo de un profesional clínico. Medical Coding AI ayuda a los equipos a encontrar la respuesta correcta más rápido.",
-  "Achter elke code zit het dossier van een patiënt en de tijd van een zorgverlener. Medical Coding AI helpt teams sneller het juiste antwoord te vinden.",
-  "وراء كل رمز سجل مريض ووقت طبيب. يساعد Medical Coding AI الفرق على إيجاد الإجابة الصحيحة بسرعة أكبر."
+  "Behind every code is a patient's record and a clinician's time. MedCodeX helps teams find the right answer faster.",
+  "Detrás de cada código hay el historial de un paciente y el tiempo de un profesional clínico. MedCodeX ayuda a los equipos a encontrar la respuesta correcta más rápido.",
+  "Achter elke code zit het dossier van een patiënt en de tijd van een zorgverlener. MedCodeX helpt teams sneller het juiste antwoord te vinden.",
+  "وراء كل رمز سجل مريض ووقت طبيب. يساعد MedCodeX الفرق على إيجاد الإجابة الصحيحة بسرعة أكبر."
  ],
  [
   "Searching long policy documents for answers",
@@ -3997,10 +3997,10 @@ export const rows: [string, string, string, string][] = [
   "يُنشئ المسؤولون الحسابات ويديرونها، فيبقى الوصول تحت السيطرة."
  ],
  [
-  "Learning to drive is a big step. HayRoutes helps learners find the right instructor, and helps schools run every lesson smoothly.",
-  "Aprender a conducir es un gran paso. HayRoutes ayuda a los alumnos a encontrar al instructor adecuado y a las autoescuelas a gestionar cada clase sin complicaciones.",
-  "Leren autorijden is een grote stap. HayRoutes helpt leerlingen de juiste instructeur te vinden en helpt rijscholen elke les soepel te laten verlopen.",
-  "تعلّم القيادة خطوة كبيرة. يساعد HayRoutes المتعلمين على إيجاد المدرب المناسب، ويساعد المدارس على إدارة كل درس بسلاسة."
+  "Learning to drive is a big step. LessonBook helps learners find the right instructor, and helps schools run every lesson smoothly.",
+  "Aprender a conducir es un gran paso. LessonBook ayuda a los alumnos a encontrar al instructor adecuado y a las autoescuelas a gestionar cada clase sin complicaciones.",
+  "Leren autorijden is een grote stap. LessonBook helpt leerlingen de juiste instructeur te vinden en helpt rijscholen elke les soepel te laten verlopen.",
+  "تعلّم القيادة خطوة كبيرة. يساعد LessonBook المتعلمين على إيجاد المدرب المناسب، ويساعد المدارس على إدارة كل درس بسلاسة."
  ],
  [
   "Calling around to find an instructor",
@@ -4033,10 +4033,10 @@ export const rows: [string, string, string, string][] = [
   "الأسطول والرخص والفوترة تُدار في منصة واحدة"
  ],
  [
-  "Who can use HayRoutes?",
-  "¿Quién puede usar HayRoutes?",
-  "Wie kan HayRoutes gebruiken?",
-  "من يمكنه استخدام HayRoutes؟"
+  "Who can use LessonBook?",
+  "¿Quién puede usar LessonBook?",
+  "Wie kan LessonBook gebruiken?",
+  "من يمكنه استخدام LessonBook؟"
  ],
  [
   "Learners, instructors, driving schools and fleet managers each get the tools they need.",
@@ -4057,10 +4057,10 @@ export const rows: [string, string, string, string][] = [
   "نعم. يمكنك تتبع الصيانة والرخص والتأمين لكل مركبة."
  ],
  [
-  "Every visitor to your website is a possible customer. AI Sales Agent answers them straight away and makes sure good leads are never lost.",
-  "Cada visitante de su sitio web es un posible cliente. AI Sales Agent les responde de inmediato y evita que se pierdan buenos contactos.",
-  "Elke bezoeker van uw website is een mogelijke klant. AI Sales Agent beantwoordt hen meteen en zorgt dat goede leads nooit verloren gaan.",
-  "كل زائر لموقعك عميل محتمل. يجيبهم AI Sales Agent فورًا ويضمن ألا تضيع العملاء المحتملون الجيدون."
+  "Every visitor to your website is a possible customer. LeadChat answers them straight away and makes sure good leads are never lost.",
+  "Cada visitante de su sitio web es un posible cliente. LeadChat les responde de inmediato y evita que se pierdan buenos contactos.",
+  "Elke bezoeker van uw website is een mogelijke klant. LeadChat beantwoordt hen meteen en zorgt dat goede leads nooit verloren gaan.",
+  "كل زائر لموقعك عميل محتمل. يجيبهم LeadChat فورًا ويضمن ألا تضيع العملاء المحتملون الجيدون."
  ],
  [
   "Visitors leave without ever getting a reply",
@@ -4123,10 +4123,10 @@ export const rows: [string, string, string, string][] = [
   "نعم. تُبقي المتابعات التلقائية المحادثة جارية حتى يصبح العميل المحتمل جاهزًا للتحويل."
  ],
  [
-  "A shop runs on small moments: a sale, a stock count, a regular customer. AXCEL POS keeps them all connected.",
-  "Una tienda funciona a base de pequeños momentos: una venta, un recuento de existencias, un cliente habitual. AXCEL POS los mantiene todos conectados.",
-  "Een winkel draait op kleine momenten: een verkoop, een voorraadtelling, een vaste klant. AXCEL POS houdt ze allemaal verbonden.",
-  "يقوم المتجر على لحظات صغيرة: عملية بيع، وجرد للمخزون، وعميل دائم. يُبقي AXCEL POS كل ذلك مترابطًا."
+  "A shop runs on small moments: a sale, a stock count, a regular customer. SaleDesk keeps them all connected.",
+  "Una tienda funciona a base de pequeños momentos: una venta, un recuento de existencias, un cliente habitual. SaleDesk los mantiene todos conectados.",
+  "Een winkel draait op kleine momenten: een verkoop, een voorraadtelling, een vaste klant. SaleDesk houdt ze allemaal verbonden.",
+  "يقوم المتجر على لحظات صغيرة: عملية بيع، وجرد للمخزون، وعميل دائم. يُبقي SaleDesk كل ذلك مترابطًا."
  ],
  [
   "Stock counted by hand and often wrong",

@@ -227,7 +227,7 @@ function PricingNote({ s, lang }: { s: Solution; lang: Lang }) {
 
 const EMPTY_STORY: Story = { statement: { en: "", ur: "" }, before: [], after: [], faqs: [] };
 
-/** One shared layout for every solution page (eSchool has its own longer page). Each section can be hidden from the dashboard. */
+/** One shared layout for every solution page (SchoolDesk has its own longer page). Each section can be hidden from the dashboard. */
 export function SolutionTemplate({ s, lang }: { s: Solution; lang: Lang }) {
   const story = s.story ?? EMPTY_STORY;
   const show = (key: string) => !s.hidden?.includes(key);

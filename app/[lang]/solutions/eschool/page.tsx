@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const s = await getSolution("eschool");
   if (s && isLang(lang)) return solutionMetadata(s, lang);
-  return { title: Tm(lang, "eSchool: School Management System", "ای اسکول") };
+  return { title: Tm(lang, "SchoolDesk: School Management System", "اسکول ڈیسک") };
 }
 
 export default async function ESchoolPage({ params }: { params: Promise<{ lang: string }> }) {

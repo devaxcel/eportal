@@ -39,4 +39,4 @@ The public website works without any setup, using the built-in content. The dash
 - Visitors can only read published solutions. Drafts, users and roles are protected by row-level security in the database.
 - The sitemap (`/sitemap.xml`) and `robots.txt` update automatically and list only published solutions.
 - If the database cannot be reached, the site shows the built-in content instead of an error.
-- eSchool's long page (portals, apps, AI chat and so on) is still written in code. Its name, tagline, description, card and SEO come from the dashboard.
+- SchoolDesk's long page (portals, apps, AI chat and so on) is still written in code. Its name, tagline, description, card and SEO come from the dashboard.

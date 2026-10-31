@@ -49,7 +49,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
       <PageHero
         eyebrow={T(lang, "Pricing", "قیمتیں")}
         title={T(lang, "Clear pricing for every platform", "ہر پلیٹ فارم کے لیے واضح قیمتیں")}
-        sub={T(lang, "eSchool has published plans below. For our other platforms we quote based on your needs.", "ای اسکول کے پلانز نیچے شائع ہیں۔ دوسرے پلیٹ فارمز کی قیمت ہم آپ کی ضرورت کے مطابق بتاتے ہیں۔")}
+        sub={T(lang, "SchoolDesk has published plans below. For our other platforms we quote based on your needs.", "اسکول ڈیسک کے پلانز نیچے شائع ہیں۔ دوسرے پلیٹ فارمز کی قیمت ہم آپ کی ضرورت کے مطابق بتاتے ہیں۔")}
       />
 
       <section className="container-x pt-16">
@@ -58,12 +58,12 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
             <div className="flex items-center gap-4">
               <span className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${school.accent} text-white`}><Icon name={school.icon} size={26} /></span>
               <div>
-                <h2 className="text-2xl font-extrabold">eSchool</h2>
+                <h2 className="text-2xl font-extrabold">SchoolDesk</h2>
                 <p className="text-ink-soft">{T(lang, "Plans for schools and colleges. All prices in PKR.", "اسکولوں اور کالجوں کے پلانز۔ تمام قیمتیں پاکستانی روپے میں۔")}</p>
               </div>
             </div>
             <Link href={href(lang, "/solutions/eschool")} className="inline-flex items-center gap-1.5 font-semibold text-brand-600">
-              {tx({ en: "About eSchool", ur: "ای اسکول کے بارے میں" }, lang)}<ArrowRight size={16} className="rtl:rotate-180" />
+              {tx({ en: "About SchoolDesk", ur: "اسکول ڈیسک کے بارے میں" }, lang)}<ArrowRight size={16} className="rtl:rotate-180" />
             </Link>
           </div>
         </Reveal>
@@ -84,7 +84,7 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
       </section>
 
       <section className="container-x py-16">
-        <SectionHead eyebrow={T(lang, "Compare eSchool plans", "ای اسکول پلانز کا موازنہ")} title={T(lang, "Every feature, side by side", "ہر خصوصیت، ساتھ ساتھ")} />
+        <SectionHead eyebrow={T(lang, "Compare SchoolDesk plans", "اسکول ڈیسک پلانز کا موازنہ")} title={T(lang, "Every feature, side by side", "ہر خصوصیت، ساتھ ساتھ")} />
         <Reveal>
           <div className="mt-12 overflow-x-auto rounded-3xl border border-line bg-white shadow-sm">
             <table className="w-full min-w-[40rem] text-sm">

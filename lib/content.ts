@@ -204,7 +204,7 @@ export const solutions: Solution[] = [
     icon: "School",
     status: "live",
     url: "https://eportal.pk",
-    name: { en: "eSchool", ur: "ای اسکول" },
+    name: { en: "SchoolDesk", ur: "اسکول ڈیسک" },
     tagline: { en: "Complete school management", ur: "مکمل اسکول مینجمنٹ" },
     description: {
       en: "Our flagship platform for schools and colleges: admissions, attendance, exams, fees, timetable and parent communication in one place.",
@@ -230,7 +230,7 @@ export const solutions: Solution[] = [
     status: "live",
     url: "https://formed.fit",
     pricingOnSite: true,
-    name: { en: "Formed", ur: "فارمڈ" },
+    name: { en: "TrainerBook", ur: "ٹرینر بک" },
     tagline: { en: "Hire a certified personal trainer", ur: "مستند پرسنل ٹرینر ہائر کریں" },
     description: {
       en: "A trainer-matching platform for people who want results without the gym commute. Clients are matched with certified, vetted trainers for private sessions, with programmes and progress tracked in a client portal.",
@@ -255,7 +255,7 @@ export const solutions: Solution[] = [
     icon: "Workflow",
     status: "live",
     url: "https://www.primaportal.co.za/login",
-    name: { en: "Workflow Portal", ur: "ورک فلو پورٹل" },
+    name: { en: "ApproveFlow", ur: "اپروو فلو" },
     tagline: { en: "Enterprise workflow and management system", ur: "انٹرپرائز ورک فلو اور مینجمنٹ سسٹم" },
     description: {
       en: "One secure place for an organisation's people, documents and approvals. Manage users, store and track documents, automate approval workflows and see live reports.",
@@ -280,7 +280,7 @@ export const solutions: Solution[] = [
     icon: "Mail",
     status: "live",
     url: "https://rb.dtmetrix.com",
-    name: { en: "Email Report Portal", ur: "ای میل رپورٹ پورٹل" },
+    name: { en: "ReportRelay", ur: "رپورٹ ریلے" },
     tagline: { en: "Secure reports, delivered to clients", ur: "محفوظ رپورٹس، کلائنٹس تک ترسیل" },
     description: {
       en: "Generate financial and business reports, protect them with passwords and deliver them to clients by email in bulk, with a full audit trail and role-based access.",
@@ -305,7 +305,7 @@ export const solutions: Solution[] = [
     icon: "Stethoscope",
     status: "live",
     url: "https://proed-coder-ai-eight.vercel.app/",
-    name: { en: "Medical Coding AI", ur: "میڈیکل کوڈنگ اے آئی" },
+    name: { en: "MedCodeX", ur: "میڈ کوڈ ایکس" },
     tagline: { en: "AI-powered medical coding assistant", ur: "اے آئی سے چلنے والا میڈیکل کوڈنگ اسسٹنٹ" },
     description: {
       en: "This AI assistant helps coding and clinical documentation teams with medical coding, policy research and compliant physician query drafting, so the right answer is found in seconds instead of hours.",
@@ -330,11 +330,11 @@ export const solutions: Solution[] = [
     icon: "Car",
     status: "live",
     url: "https://hayroutes.com/",
-    name: { en: "HayRoutes", ur: "ہے روٹس" },
+    name: { en: "LessonBook", ur: "لیسن بک" },
     tagline: { en: "Driving school platform for learners and instructors", ur: "سیکھنے والوں اور انسٹرکٹرز کے لیے ڈرائیونگ اسکول پلیٹ فارم" },
     description: {
-      en: "HayRoutes connects learners with driving instructors and gives driving schools the tools to run everything: lesson booking, scheduling, progress tracking, fleet and billing.",
-      ur: "ہے روٹس سیکھنے والوں کو ڈرائیونگ انسٹرکٹرز سے ملاتا ہے اور ڈرائیونگ اسکولوں کو سب کچھ چلانے کے ٹولز دیتا ہے: اسباق کی بکنگ، شیڈولنگ، پیشرفت کی ٹریکنگ، گاڑیاں اور بلنگ۔",
+      en: "LessonBook connects learners with driving instructors and gives driving schools the tools to run everything: lesson booking, scheduling, progress tracking, fleet and billing.",
+      ur: "لیسن بک سیکھنے والوں کو ڈرائیونگ انسٹرکٹرز سے ملاتا ہے اور ڈرائیونگ اسکولوں کو سب کچھ چلانے کے ٹولز دیتا ہے: اسباق کی بکنگ، شیڈولنگ، پیشرفت کی ٹریکنگ، گاڑیاں اور بلنگ۔",
     },
     features: [
       { en: "Learners book lessons and track milestones", ur: "سیکھنے والے اسباق بک کرتے اور سنگ میل ٹریک کرتے ہیں" },
@@ -355,8 +355,8 @@ export const solutions: Solution[] = [
     icon: "Bot",
     status: "live",
     url: "https://axcelworld.com/",
-    name: { en: "AI Sales Agent", ur: "اے آئی سیلز ایجنٹ" },
-    tagline: { en: "AI sales agent for your website", ur: "آپ کی ویب سائٹ کے لیے اے آئی سیلز ایجنٹ" },
+    name: { en: "LeadChat", ur: "لیڈ چیٹ" },
+    tagline: { en: "AI sales agent for your website", ur: "آپ کی ویب سائٹ کے لیے لیڈ چیٹ" },
     description: {
       en: "A chatbot agent that talks to your website visitors, captures and scores leads, follows up automatically and shows your sales pipeline in one dashboard.",
       ur: "ایک چیٹ بوٹ ایجنٹ جو آپ کی ویب سائٹ کے وزیٹرز سے بات کرتا ہے، لیڈز حاصل اور اسکور کرتا ہے، خودکار فالو اپ کرتا ہے اور سیلز پائپ لائن ایک ڈیش بورڈ میں دکھاتا ہے۔",
@@ -380,7 +380,7 @@ export const solutions: Solution[] = [
     icon: "ShoppingCart",
     status: "live",
     url: "https://posale.axcelstudio.com/",
-    name: { en: "AXCEL POS", ur: "ایکسل پی او ایس" },
+    name: { en: "SaleDesk", ur: "سیل ڈیسک" },
     tagline: { en: "AI-powered point of sale", ur: "اے آئی سے چلنے والا پوائنٹ آف سیل" },
     description: {
       en: "A custom point-of-sale system that streamlines retail operations. Sell faster, manage inventory in real time and see powerful business insights.",
@@ -587,8 +587,8 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "What does ePortal offer?", ur: "ای پورٹل کیا پیش کرتا ہے؟" },
     a: {
-      en: "ePortal is a family of platforms built by AXCEL in Lahore: eSchool for schools and colleges, Formed for hiring personal trainers, Workflow Portal for enterprise workflows and documents, Email Report Portal for automated reports, Medical Coding AI for faster medical coding, HayRoutes for driving schools, instructors and learners, AI Sales Agent for website sales chat and lead automation, and AXCEL POS for retail point of sale.",
-      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے ای اسکول، پرسنل ٹرینر ہائر کرنے کے لیے فارمڈ، انٹرپرائز ورک فلو اور دستاویزات کے لیے ورک فلو پورٹل، خودکار رپورٹس کے لیے ای میل رپورٹ پورٹل، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے میڈیکل کوڈنگ اے آئی، ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے ہے روٹس، ویب سائٹ پر سیلز چیٹ اور لیڈ آٹومیشن کے لیے اے آئی سیلز ایجنٹ، اور ریٹیل کے لیے ایکسل پی او ایس۔",
+      en: "ePortal is a family of platforms built by AXCEL in Lahore: SchoolDesk for schools and colleges, TrainerBook for hiring personal trainers, ApproveFlow for enterprise workflows and documents, ReportRelay for automated reports, MedCodeX for faster medical coding, LessonBook for driving schools, instructors and learners, LeadChat for website sales chat and lead automation, and SaleDesk for retail point of sale.",
+      ur: "ای پورٹل لاہور میں ایکسل کے بنائے ہوئے پلیٹ فارمز کا خاندان ہے: اسکولوں اور کالجوں کے لیے اسکول ڈیسک، پرسنل ٹرینر ہائر کرنے کے لیے ٹرینر بک، انٹرپرائز ورک فلو اور دستاویزات کے لیے اپروو فلو، خودکار رپورٹس کے لیے رپورٹ ریلے، اے آئی کی مدد سے میڈیکل کوڈنگ کے لیے میڈ کوڈ ایکس، ڈرائیونگ اسکولوں، انسٹرکٹرز اور سیکھنے والوں کے لیے لیسن بک، ویب سائٹ پر سیلز چیٹ اور لیڈ آٹومیشن کے لیے لیڈ چیٹ، اور ریٹیل کے لیے سیل ڈیسک۔",
     },
   },
   {
@@ -608,15 +608,15 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "Which languages are supported?", ur: "کون سی زبانیں دستیاب ہیں؟" },
     a: {
-      en: "This website works in English, Urdu, Spanish, Dutch and Arabic. eSchool works in English and Urdu. Ask us about language support for the other platforms.",
-      ur: "یہ ویب سائٹ انگریزی، اردو، ہسپانوی، ڈچ اور عربی میں کام کرتی ہے۔ ای اسکول اردو اور انگریزی میں کام کرتا ہے۔ دوسرے پلیٹ فارمز کی زبانوں کے بارے میں ہم سے پوچھیں۔",
+      en: "This website works in English, Urdu, Spanish, Dutch and Arabic. SchoolDesk works in English and Urdu. Ask us about language support for the other platforms.",
+      ur: "یہ ویب سائٹ انگریزی، اردو، ہسپانوی، ڈچ اور عربی میں کام کرتی ہے۔ اسکول ڈیسک اردو اور انگریزی میں کام کرتا ہے۔ دوسرے پلیٹ فارمز کی زبانوں کے بارے میں ہم سے پوچھیں۔",
     },
   },
   {
     q: { en: "How is pricing decided?", ur: "قیمت کیسے طے ہوتی ہے؟" },
     a: {
-      en: "eSchool has published plans. For the other platforms we quote based on your needs. Request a demo and we will share a clear price.",
-      ur: "ای اسکول کے پلانز شائع شدہ ہیں۔ دوسرے پلیٹ فارمز کے لیے ہم آپ کی ضرورت کے مطابق قیمت بتاتے ہیں۔ ڈیمو کی درخواست کریں، ہم واضح قیمت بتائیں گے۔",
+      en: "SchoolDesk has published plans. For the other platforms we quote based on your needs. Request a demo and we will share a clear price.",
+      ur: "اسکول ڈیسک کے پلانز شائع شدہ ہیں۔ دوسرے پلیٹ فارمز کے لیے ہم آپ کی ضرورت کے مطابق قیمت بتاتے ہیں۔ ڈیمو کی درخواست کریں، ہم واضح قیمت بتائیں گے۔",
     },
   },
 ];

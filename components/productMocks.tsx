@@ -183,7 +183,7 @@ function EmailMock({ lang }: { lang: Lang }) {
     [T(lang, "Marketing analytics report", "مارکیٹنگ تجزیاتی رپورٹ"), "06:00"],
   ];
   return (
-    <Shell icons={[LayoutDashboard, FileText, Mail, Clock, ClipboardList, Users, BarChart3, Settings]} title={T(lang, "Email Report Portal", "ای میل رپورٹ پورٹل")} sub={T(lang, "Overview", "جائزہ")}>
+    <Shell icons={[LayoutDashboard, FileText, Mail, Clock, ClipboardList, Users, BarChart3, Settings]} title={T(lang, "ReportRelay", "رپورٹ ریلے")} sub={T(lang, "Overview", "جائزہ")}>
       <Kpis items={[
         { l: T(lang, "Total reports", "کل رپورٹس"), v: "128", d: "+12%", icon: FileText },
         { l: T(lang, "Emails sent", "بھیجی گئی ای میلز"), v: "2,543", d: "+18%", icon: Send },
@@ -203,7 +203,7 @@ function EmailMock({ lang }: { lang: Lang }) {
 
 function MedCodingMock({ lang }: { lang: Lang }) {
   return (
-    <Shell icons={[LayoutDashboard, Stethoscope, BookOpen, FileText, MessageSquare, Settings]} title="Medical Coding AI" sub={T(lang, "AI-assisted coding and policy research", "اے آئی کی مدد سے کوڈنگ اور پالیسی ریسرچ")}>
+    <Shell icons={[LayoutDashboard, Stethoscope, BookOpen, FileText, MessageSquare, Settings]} title="MedCodeX" sub={T(lang, "AI-assisted coding and policy research", "اے آئی کی مدد سے کوڈنگ اور پالیسی ریسرچ")}>
       <div className="mt-4 flex items-center gap-2 rounded-xl border border-brand-300 bg-brand-50/60 px-3 py-2.5 text-[11px] text-ink-soft">
         <Search size={13} className="shrink-0 text-brand-600" />
         <span className="truncate">{T(lang, "Acute exacerbation of COPD in a patient who quit smoking", "سگریٹ چھوڑ چکے مریض میں سی او پی ڈی کی شدید شدت")}</span>
@@ -283,7 +283,7 @@ function SalesAgentMock({ lang }: { lang: Lang }) {
   ];
   const flow = [T(lang, "New lead", "نئی لیڈ"), T(lang, "AI score", "اے آئی اسکور"), T(lang, "Follow up", "فالو اپ"), T(lang, "Convert", "کنورٹ")];
   return (
-    <Shell icons={[LayoutDashboard, Users, MessageSquare, Workflow, TrendingUp, Settings]} title="AI Sales Agent" sub={T(lang, "Sales overview", "سیلز کا جائزہ")}>
+    <Shell icons={[LayoutDashboard, Users, MessageSquare, Workflow, TrendingUp, Settings]} title="LeadChat" sub={T(lang, "Sales overview", "سیلز کا جائزہ")}>
       <Kpis items={[
         { l: T(lang, "Total revenue", "کل آمدنی"), v: "$248,560", d: "+16.5%", icon: Wallet },
         { l: T(lang, "Deals in pipeline", "پائپ لائن میں ڈیلز"), v: "156", icon: Target },
@@ -324,7 +324,7 @@ function PosMock({ lang }: { lang: Lang }) {
   ];
   const top: [string, number][] = [["Wireless Headphones", 325], ["Bluetooth Speaker", 279], ["Charger Adapter", 189]];
   return (
-    <Shell icons={[LayoutDashboard, ShoppingCart, Package, Users, BarChart3, Settings]} title={T(lang, "Dashboard", "ڈیش بورڈ")} sub="AXCEL POS">
+    <Shell icons={[LayoutDashboard, ShoppingCart, Package, Users, BarChart3, Settings]} title={T(lang, "Dashboard", "ڈیش بورڈ")} sub="SaleDesk">
       <Kpis items={[
         { l: T(lang, "Today's sales", "آج کی فروخت"), v: "Rs 32,589", d: "+12.2%", icon: Wallet },
         { l: T(lang, "Orders", "آرڈرز"), v: "246", d: "+13.5%", icon: ShoppingCart },

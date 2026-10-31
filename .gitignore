@@ -44,3 +44,6 @@ next-env.d.ts
 /.next-build/
 
 !.env.example
+
+# database backups written by scripts
+/backups/

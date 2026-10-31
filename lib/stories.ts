@@ -7,12 +7,12 @@ export type Story = {
   faqs: { q: L; a: L }[];
 };
 
-/** Content for the shared solution page template. eSchool has its own long page. */
+/** Content for the shared solution page template. SchoolDesk has its own long page. */
 export const stories: Record<string, Story> = {
   formed: {
     statement: {
-      en: "Getting fit should not mean fighting your schedule. Formed brings a certified trainer to you, and keeps everything about your progress in one place.",
-      ur: "فٹ ہونے کا مطلب اپنے شیڈول سے لڑنا نہیں ہونا چاہیے۔ فارمڈ ایک مستند ٹرینر کو آپ کے پاس لاتا ہے اور آپ کی پیشرفت کی ہر چیز ایک جگہ رکھتا ہے۔",
+      en: "Getting fit should not mean fighting your schedule. TrainerBook brings a certified trainer to you, and keeps everything about your progress in one place.",
+      ur: "فٹ ہونے کا مطلب اپنے شیڈول سے لڑنا نہیں ہونا چاہیے۔ ٹرینر بک ایک مستند ٹرینر کو آپ کے پاس لاتا ہے اور آپ کی پیشرفت کی ہر چیز ایک جگہ رکھتا ہے۔",
     },
     before: [
       { en: "Long commutes to a crowded gym", ur: "بھیڑ والے جم تک لمبا سفر" },
@@ -38,8 +38,8 @@ export const stories: Record<string, Story> = {
 
   "workflow-portal": {
     statement: {
-      en: "Work moves at the speed of the slowest approval. Workflow Portal gives every document a clear path and every person a clear role.",
-      ur: "کام سب سے سست منظوری کی رفتار سے چلتا ہے۔ ورک فلو پورٹل ہر دستاویز کو واضح راستہ اور ہر فرد کو واضح کردار دیتا ہے۔",
+      en: "Work moves at the speed of the slowest approval. ApproveFlow gives every document a clear path and every person a clear role.",
+      ur: "کام سب سے سست منظوری کی رفتار سے چلتا ہے۔ اپروو فلو ہر دستاویز کو واضح راستہ اور ہر فرد کو واضح کردار دیتا ہے۔",
     },
     before: [
       { en: "Documents lost in email threads", ur: "دستاویزات ای میل کی لڑیوں میں گم" },
@@ -65,8 +65,8 @@ export const stories: Record<string, Story> = {
 
   "email-report-portal": {
     statement: {
-      en: "A report only matters when it reaches the right person. Email Report Portal prepares, protects and delivers it for you.",
-      ur: "رپورٹ تبھی اہم ہوتی ہے جب وہ درست شخص تک پہنچے۔ ای میل رپورٹ پورٹل اسے تیار، محفوظ اور ترسیل کرتا ہے۔",
+      en: "A report only matters when it reaches the right person. ReportRelay prepares, protects and delivers it for you.",
+      ur: "رپورٹ تبھی اہم ہوتی ہے جب وہ درست شخص تک پہنچے۔ رپورٹ ریلے اسے تیار، محفوظ اور ترسیل کرتا ہے۔",
     },
     before: [
       { en: "Reports built and emailed by hand every month", ur: "ہر ماہ رپورٹس ہاتھ سے بنانا اور ای میل کرنا" },
@@ -92,8 +92,8 @@ export const stories: Record<string, Story> = {
 
   "medical-coding-ai": {
     statement: {
-      en: "Behind every code is a patient's record and a clinician's time. Medical Coding AI helps teams find the right answer faster.",
-      ur: "ہر کوڈ کے پیچھے مریض کا ریکارڈ اور معالج کا وقت ہے۔ میڈیکل کوڈنگ اے آئی ٹیموں کو درست جواب جلد تلاش کرنے میں مدد دیتا ہے۔",
+      en: "Behind every code is a patient's record and a clinician's time. MedCodeX helps teams find the right answer faster.",
+      ur: "ہر کوڈ کے پیچھے مریض کا ریکارڈ اور معالج کا وقت ہے۔ میڈ کوڈ ایکس ٹیموں کو درست جواب جلد تلاش کرنے میں مدد دیتا ہے۔",
     },
     before: [
       { en: "Searching long policy documents for answers", ur: "جوابات کے لیے طویل پالیسی دستاویزات میں تلاش" },
@@ -119,8 +119,8 @@ export const stories: Record<string, Story> = {
 
   hayroutes: {
     statement: {
-      en: "Learning to drive is a big step. HayRoutes helps learners find the right instructor, and helps schools run every lesson smoothly.",
-      ur: "ڈرائیونگ سیکھنا ایک بڑا قدم ہے۔ ہے روٹس سیکھنے والوں کو درست انسٹرکٹر ڈھونڈنے اور اسکولوں کو ہر سبق آسانی سے چلانے میں مدد دیتا ہے۔",
+      en: "Learning to drive is a big step. LessonBook helps learners find the right instructor, and helps schools run every lesson smoothly.",
+      ur: "ڈرائیونگ سیکھنا ایک بڑا قدم ہے۔ لیسن بک سیکھنے والوں کو درست انسٹرکٹر ڈھونڈنے اور اسکولوں کو ہر سبق آسانی سے چلانے میں مدد دیتا ہے۔",
     },
     before: [
       { en: "Calling around to find an instructor", ur: "انسٹرکٹر کی تلاش میں جگہ جگہ فون" },
@@ -134,7 +134,7 @@ export const stories: Record<string, Story> = {
     ],
     faqs: [
       {
-        q: { en: "Who can use HayRoutes?", ur: "ہے روٹس کون استعمال کر سکتا ہے؟" },
+        q: { en: "Who can use LessonBook?", ur: "لیسن بک کون استعمال کر سکتا ہے؟" },
         a: { en: "Learners, instructors, driving schools and fleet managers each get the tools they need.", ur: "سیکھنے والوں، انسٹرکٹرز، ڈرائیونگ اسکولوں اور فلیٹ مینیجرز میں سے ہر ایک کو اپنی ضرورت کے ٹولز ملتے ہیں۔" },
       },
       {
@@ -146,8 +146,8 @@ export const stories: Record<string, Story> = {
 
   "ai-sales-agent": {
     statement: {
-      en: "Every visitor to your website is a possible customer. AI Sales Agent answers them straight away and makes sure good leads are never lost.",
-      ur: "آپ کی ویب سائٹ کا ہر وزیٹر ممکنہ گاہک ہے۔ اے آئی سیلز ایجنٹ انہیں فوراً جواب دیتا ہے اور اچھی لیڈز ضائع نہیں ہونے دیتا۔",
+      en: "Every visitor to your website is a possible customer. LeadChat answers them straight away and makes sure good leads are never lost.",
+      ur: "آپ کی ویب سائٹ کا ہر وزیٹر ممکنہ گاہک ہے۔ لیڈ چیٹ انہیں فوراً جواب دیتا ہے اور اچھی لیڈز ضائع نہیں ہونے دیتا۔",
     },
     before: [
       { en: "Visitors leave without ever getting a reply", ur: "وزیٹرز جواب ملے بغیر چلے جاتے ہیں" },
@@ -173,8 +173,8 @@ export const stories: Record<string, Story> = {
 
   pos: {
     statement: {
-      en: "A shop runs on small moments: a sale, a stock count, a regular customer. AXCEL POS keeps them all connected.",
-      ur: "دکان چھوٹے لمحوں پر چلتی ہے: ایک فروخت، اسٹاک کی گنتی، ایک مستقل گاہک۔ ایکسل پی او ایس ان سب کو جوڑے رکھتا ہے۔",
+      en: "A shop runs on small moments: a sale, a stock count, a regular customer. SaleDesk keeps them all connected.",
+      ur: "دکان چھوٹے لمحوں پر چلتی ہے: ایک فروخت، اسٹاک کی گنتی، ایک مستقل گاہک۔ سیل ڈیسک ان سب کو جوڑے رکھتا ہے۔",
     },
     before: [
       { en: "Stock counted by hand and often wrong", ur: "اسٹاک ہاتھ سے گنا جاتا ہے اور اکثر غلط ہوتا ہے" },

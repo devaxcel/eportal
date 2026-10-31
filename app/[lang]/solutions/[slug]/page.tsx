@@ -8,7 +8,7 @@ import { getSolution, getSolutions } from "@/lib/solutions-data";
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // eSchool has its own page at /solutions/eschool
+  // SchoolDesk has its own page at /solutions/eschool
   const list = (await getSolutions()).filter((s) => s.slug !== "eschool");
   return locales.flatMap((lang) => list.map((s) => ({ lang, slug: s.slug })));
 }

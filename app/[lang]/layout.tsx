@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     description: Tm(
       lang,
-      "eSchool, Formed, Workflow Portal, Email Report Portal, Medical Coding AI, HayRoutes, AI Sales Agent and AXCEL POS: smart platforms built in Lahore.",
-      "ای اسکول، فارمڈ، ورک فلو پورٹل، ای میل رپورٹ پورٹل، میڈیکل کوڈنگ اے آئی، ہے روٹس، اے آئی سیلز ایجنٹ اور ایکسل پی او ایس: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔",
+      "SchoolDesk, TrainerBook, ApproveFlow, ReportRelay, MedCodeX, LessonBook, LeadChat and SaleDesk: smart platforms built in Lahore.",
+      "اسکول ڈیسک، ٹرینر بک، اپروو فلو، رپورٹ ریلے، میڈ کوڈ ایکس، لیسن بک، لیڈ چیٹ اور سیل ڈیسک: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔",
     ),
     alternates: { languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])) },
   };

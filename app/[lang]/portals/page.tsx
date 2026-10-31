@@ -20,7 +20,7 @@ export default async function PortalsPage({ params }: { params: Promise<{ lang: 
   return (
     <>
       <PageHero
-        eyebrow={T(lang, "eSchool portals", "ای اسکول پورٹلز")}
+        eyebrow={T(lang, "SchoolDesk portals", "اسکول ڈیسک پورٹلز")}
         title={T(lang, "One system, a portal for every role", "ایک سسٹم، ہر کردار کے لیے پورٹل")}
         sub={T(lang, "Everyone sees exactly what they need, on web and mobile, in English or Urdu.", "ہر شخص وہی دیکھتا ہے جو اسے چاہیے، ویب اور موبائل پر، اردو یا انگریزی میں۔")}
       />
