@@ -30,8 +30,12 @@ export default async function PanelLayout({ children }: { children: React.ReactN
       <header className="border-b border-line bg-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
           <Link href="/admin" aria-label="Dashboard home"><Logo /></Link>
-          <nav className="ms-4 flex gap-1">
+          <nav className="ms-4 flex flex-wrap gap-1">
             <Link href="/admin" className={nav}>Solutions</Link>
+            <Link href="/admin/enquiries" className={nav}>Leads</Link>
+            <Link href="/admin/bookings" className={nav}>Bookings</Link>
+            <Link href="/admin/analytics" className={nav}>Analytics</Link>
+            {staff.role === "admin" && <Link href="/admin/availability" className={nav}>Availability</Link>}
             {staff.role === "admin" && <Link href="/admin/users" className={nav}>Users</Link>}
             <Link href="/admin/account" className={nav}>Account</Link>
             <a href="/" target="_blank" rel="noopener noreferrer" className={nav}>View site ↗</a>

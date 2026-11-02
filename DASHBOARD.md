@@ -15,6 +15,15 @@ The public website works without any setup, using the built-in content. The dash
 5. **Add the same variables in Vercel** (Settings, Environment Variables) and redeploy. Leave them as *Sensitive*: none of them need the `NEXT_PUBLIC_` prefix, because the browser never uses them. Do not add `ADMIN_EMAIL` or `ADMIN_PASSWORD` there; they are only for the seed.
 6. Sign in at `/admin`.
 
+## Leads, bookings and analytics (second setup step)
+
+After the first setup, run `supabase/002_leads_analytics_booking.sql` once in the Supabase SQL editor. It adds the tables for saved enquiries, demo bookings, opening hours and analytics. Until you run it the site keeps working; the new dashboard pages just show a setup hint.
+
+1. **Email alerts (optional).** Create a free key at resend.com, then set `RESEND_API_KEY`, `NOTIFY_EMAIL` (who gets alerts) and `MAIL_FROM` in `.env.local` and in Vercel. Without them nothing is emailed, but every enquiry is still saved.
+2. **Leads.** Every message and every booking appears under **Leads** with a status (New, Contacted, Won, Lost), private notes, one-click email, call and WhatsApp links, and a CSV download.
+3. **Bookings.** Under **Availability** (admins) set the time zone, call length, weekly hours, minimum notice and days off, then tick *Let visitors book a demo call*. The demo page then shows a calendar. Times are shown to each visitor in their own time zone; the visitor and your team get an email with a calendar invitation, and the visitor gets a cancel link. Nobody can book a time that is taken.
+4. **Analytics.** Counted by the site itself: page views, daily visitors, languages, countries, referring sites, devices, WhatsApp clicks and leads. It uses no cookies and keeps no IP address; a visitor is an anonymous hash that changes every day, and browsers that send Do Not Track are skipped. Open **Analytics** and pick 7, 30 or 90 days.
+
 ## Using it
 
 | Role | Can do |

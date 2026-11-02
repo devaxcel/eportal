@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import { Clock, ShieldCheck, Sparkles } from "lucide-react";
-import { DemoForm } from "@/components/DemoForm";
+import { DemoTabs } from "@/components/DemoTabs";
 import { CtaBand, FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { AdminDashboardMock, BrowserFrame } from "@/components/visuals";
 import { hubFaqs } from "@/lib/content";
+import { getBookingSettings } from "@/lib/booking-server";
 import { isLang, T, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -15,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function DemoPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
+  const booking = await getBookingSettings();
 
   const perks = [
     { icon: Clock, t: T(lang, "30 minutes, no commitment", "30 منٹ، کوئی پابندی نہیں") },
@@ -53,7 +55,7 @@ export default async function DemoPage({ params }: { params: Promise<{ lang: str
             </div>
           </Reveal>
         </div>
-        <Reveal delay={0.1} className="lg:col-span-3"><DemoForm lang={lang} /></Reveal>
+        <Reveal delay={0.1} className="lg:col-span-3"><DemoTabs lang={lang} bookingEnabled={booking.enabled} /></Reveal>
       </section>
 
       <section className="bg-mist py-20">

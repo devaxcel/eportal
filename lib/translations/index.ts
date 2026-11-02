@@ -1,7 +1,8 @@
 import { rows as part1 } from "./part1";
+import { rows as part2 } from "./part2";
 
 /** Rows are [English, Spanish, Dutch, Arabic]. English text is the lookup key. */
-const all: [string, string, string, string][] = [...part1];
+const all: [string, string, string, string][] = [...part1, ...part2];
 
 const build = (i: 1 | 2 | 3) => new Map(all.map((r) => [r[0], r[i]] as const));
 

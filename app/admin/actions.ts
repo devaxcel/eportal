@@ -5,6 +5,11 @@ import { redirect } from "next/navigation";
 import { adminClient } from "@/lib/supabase/admin";
 import { getStaff, serverClient, type Role } from "@/lib/supabase/server";
 import { newContent, validateContent, type SolutionContent } from "@/lib/solution-schema";
+import { DAY_KEYS, type BookingSettings } from "@/lib/booking";
+import { siteUrl } from "@/lib/env";
+import { isLang, T } from "@/lib/i18n";
+import { layout, sendMail } from "@/lib/mail";
+import { formatSlot, isValidTimeZone } from "@/lib/tz";
 
 export type Result = { ok: true; message?: string } | { ok: false; error: string };
 
@@ -232,6 +237,102 @@ export async function removeStaff(id: string): Promise<Result> {
     if (error) return { ok: false, error: error.message };
     revalidatePath("/admin/users");
     return { ok: true };
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+/* ---------------------------------------------------------- enquiries */
+
+const STATUSES = ["new", "contacted", "won", "lost"] as const;
+
+export async function setEnquiryStatus(id: string, status: string): Promise<Result> {
+  try {
+    await requireStaff();
+    if (!(STATUSES as readonly string[]).includes(status)) return { ok: false, error: "Unknown status." };
+    const { error } = await (await serverClient())!.from("enquiries").update({ status }).eq("id", id);
+    if (error) return { ok: false, error: error.message };
+    revalidatePath("/admin/enquiries");
+    return { ok: true };
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+export async function saveEnquiryNotes(id: string, notes: string): Promise<Result> {
+  try {
+    await requireStaff();
+    const { error } = await (await serverClient())!.from("enquiries").update({ notes: notes.slice(0, 4000) || null }).eq("id", id);
+    if (error) return { ok: false, error: error.message };
+    return { ok: true, message: "Saved." };
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+export async function deleteEnquiry(id: string): Promise<Result> {
+  try {
+    await requireAdmin();
+    const { error } = await (await serverClient())!.from("enquiries").delete().eq("id", id);
+    if (error) return { ok: false, error: error.message };
+    revalidatePath("/admin/enquiries");
+    return { ok: true };
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+/* ------------------------------------------------- bookings and hours */
+
+export async function cancelBookingAdmin(id: string): Promise<Result> {
+  try {
+    await requireAdmin();
+    const sb = (await serverClient())!;
+    const { data, error } = await sb.from("bookings").update({ status: "cancelled" }).eq("id", id).select("name, email, start_at, lang, visitor_tz").single();
+    if (error || !data) return { ok: false, error: error?.message ?? "Not found." };
+    const lang = isLang(data.lang ?? "") ? (data.lang as "en") : "en";
+    await sendMail({
+      to: data.email,
+      subject: T(lang, "Your demo was cancelled", "آپ کا ڈیمو منسوخ کر دیا گیا"),
+      html: layout(T(lang, "Your demo was cancelled by our team", "آپ کا ڈیمو ہماری ٹیم نے منسوخ کر دیا"), [[T(lang, "Was at", "وقت تھا"), formatSlot(Date.parse(data.start_at), data.visitor_tz || "UTC", lang)]], `${T(lang, "Sorry about that. Please book another time:", "معذرت۔ براہ کرم نیا وقت بک کریں:")} ${siteUrl()}/${lang}/demo`),
+    });
+    revalidatePath("/admin/bookings");
+    return { ok: true, message: "Cancelled. The visitor was emailed." };
+  } catch (e) {
+    return fail(e);
+  }
+}
+
+const HHMM = /^([01]\d|2[0-3]):[0-5]\d$/;
+
+export async function saveAvailability(input: BookingSettings): Promise<Result> {
+  try {
+    await requireAdmin();
+    if (!isValidTimeZone(input.timezone)) return { ok: false, error: "That time zone is not recognised. Use a name like Asia/Karachi." };
+    const n = (v: number, lo: number, hi: number) => Number.isInteger(v) && v >= lo && v <= hi;
+    if (!n(input.slot_minutes, 10, 240)) return { ok: false, error: "Call length must be 10 to 240 minutes." };
+    if (!n(input.min_notice_hours, 0, 336)) return { ok: false, error: "Minimum notice must be 0 to 336 hours." };
+    if (!n(input.max_days_ahead, 1, 120)) return { ok: false, error: "Days ahead must be 1 to 120." };
+    const weekly = Object.fromEntries(
+      DAY_KEYS.map((k) => {
+        const rows = [...(input.weekly?.[k] ?? [])];
+        for (const [a, b] of rows) if (!HHMM.test(a) || !HHMM.test(b) || a >= b) throw new Error(`Check the hours for ${k.toUpperCase()}: each period needs a start before its end (HH:MM).`);
+        rows.sort((x, y) => x[0].localeCompare(y[0]));
+        rows.forEach((r, i) => { if (i && r[0] < rows[i - 1][1]) throw new Error(`The periods on ${k.toUpperCase()} overlap.`); });
+        return [k, rows];
+      }),
+    );
+    const blackout = [...new Set((input.blackout_dates ?? []).map((d) => d.trim()).filter(Boolean))];
+    if (blackout.some((d) => !/^\d{4}-\d{2}-\d{2}$/.test(d))) return { ok: false, error: "Days off must look like 2026-12-25, one per line." };
+    const row = {
+      enabled: Boolean(input.enabled), timezone: input.timezone, slot_minutes: input.slot_minutes, min_notice_hours: input.min_notice_hours,
+      max_days_ahead: input.max_days_ahead, weekly, blackout_dates: blackout.sort(), meeting_info: String(input.meeting_info ?? "").slice(0, 500), updated_at: new Date().toISOString(),
+    };
+    const { error } = await (await serverClient())!.from("booking_settings").update(row).eq("id", 1);
+    if (error) return { ok: false, error: error.message };
+    revalidateTag("booking");
+    revalidatePath("/", "layout");
+    return { ok: true, message: "Saved. Visitors see the new times straight away." };
   } catch (e) {
     return fail(e);
   }

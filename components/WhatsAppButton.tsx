@@ -1,11 +1,12 @@
 import { MessageCircle } from "lucide-react";
+import { TrackedLink } from "./Track";
 import { ui } from "@/lib/content";
 import { tx, type Lang } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
 export function WhatsAppButton({ lang }: { lang: Lang }) {
   return (
-    <a
+    <TrackedLink
       href={`https://wa.me/${site.whatsapp}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -14,6 +15,6 @@ export function WhatsAppButton({ lang }: { lang: Lang }) {
     >
       <MessageCircle size={20} />
       <span className="hidden sm:inline">{tx(ui.whatsapp, lang)}</span>
-    </a>
+    </TrackedLink>
   );
 }

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MotionProvider, ScrollProgress } from "@/components/motion";
 import { SolutionsProvider } from "@/components/SolutionsProvider";
+import { Track } from "@/components/Track";
 import { getSolutions } from "@/lib/solutions-data";
 import { dirOf, isLang, locales, Tm } from "@/lib/i18n";
 
@@ -64,6 +65,7 @@ export default async function RootLayout({
         <MotionProvider>
           <SolutionsProvider solutions={solutions}>
             <ScrollProgress />
+            <Track />
             <Header lang={lang} />
             <main>{children}</main>
             <Footer lang={lang} />
