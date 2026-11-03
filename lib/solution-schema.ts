@@ -29,7 +29,7 @@ export const ACCENTS = [
 ] as const;
 
 /** Built-in dashboard pictures a solution can use. */
-export const MOCKS = ["eschool", "formed", "workflow-portal", "email-report-portal", "medical-coding-ai", "hayroutes", "ai-sales-agent", "pos"] as const;
+export const MOCKS = ["eschool", "formed", "workflow-portal", "email-report-portal", "medical-coding-ai", "hayroutes", "ai-sales-agent", "pos", "smartinvoice"] as const;
 
 export const SECTION_LABELS: Record<(typeof SECTION_KEYS)[number], string> = {
   marquee: "Feature strip (scrolling pills)",

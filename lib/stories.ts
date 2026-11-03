@@ -197,4 +197,94 @@ export const stories: Record<string, Story> = {
       },
     ],
   },
+
+  smartinvoice: {
+    statement: {
+      en: "Getting paid starts with a clear invoice. Smart Invoice numbers them, formats the currency and shows what is still owed.",
+      ur: "ادائیگی کی شروعات واضح انوائس سے ہوتی ہے۔ سمارٹ انوائس انہیں نمبر دیتا ہے، کرنسی درست لکھتا ہے اور بقایا رقم دکھاتا ہے۔",
+      es: "Cobrar empieza con una factura clara. Smart Invoice las numera, da formato a la moneda y muestra lo que aún se debe.",
+      nl: "Betaald krijgen begint met een duidelijke factuur. Smart Invoice nummert ze, zet de valuta goed en toont wat nog open staat.",
+      ar: "يبدأ التحصيل بفاتورة واضحة. يرقّم Smart Invoice الفواتير وينسّق العملة ويُظهر ما لا يزال مستحقًا.",
+    },
+    before: [
+      {
+        en: "Invoices typed into documents, numbers repeated or skipped",
+        ur: "دستاویزات میں ہاتھ سے لکھی انوائس، نمبر دہرائے یا چھوٹے ہوئے",
+        es: "Facturas escritas en documentos, con números repetidos u omitidos",
+        nl: "Facturen getypt in documenten, nummers dubbel of overgeslagen",
+        ar: "فواتير تُكتب في مستندات بأرقام مكررة أو متخطاة",
+      },
+      {
+        en: "Foreign clients and currencies handled by hand",
+        ur: "بیرونی گاہک اور کرنسیاں ہاتھ سے سنبھالنا",
+        es: "Clientes y monedas del extranjero gestionados a mano",
+        nl: "Buitenlandse klanten en valuta's met de hand verwerkt",
+        ar: "التعامل يدويًا مع العملاء والعملات الأجنبية",
+      },
+      {
+        en: "No quick answer to who has paid and who has not",
+        ur: "کس نے ادائیگی کی اور کس نے نہیں، اس کا فوری جواب نہیں",
+        es: "Sin una respuesta rápida a quién ha pagado y quién no",
+        nl: "Geen snel antwoord op wie betaald heeft en wie niet",
+        ar: "لا إجابة سريعة عمّن دفع ومن لم يدفع",
+      },
+    ],
+    after: [
+      {
+        en: "Every invoice numbered automatically, in order",
+        ur: "ہر انوائس خود بخود ترتیب سے نمبر پاتی ہے",
+        es: "Cada factura numerada automáticamente y en orden",
+        nl: "Elke factuur automatisch en in volgorde genummerd",
+        ar: "كل فاتورة تُرقَّم تلقائيًا وبالترتيب",
+      },
+      {
+        en: "Eight currencies, formatted correctly",
+        ur: "آٹھ کرنسیاں، درست فارمیٹ کے ساتھ",
+        es: "Ocho monedas, con el formato correcto",
+        nl: "Acht valuta's, correct opgemaakt",
+        ar: "ثماني عملات بتنسيق صحيح",
+      },
+      {
+        en: "Revenue and pending invoices on a live dashboard",
+        ur: "آمدنی اور زیر التوا انوائس لائیو ڈیش بورڈ پر",
+        es: "Ingresos y facturas pendientes en un panel en vivo",
+        nl: "Omzet en openstaande facturen op een live dashboard",
+        ar: "الإيرادات والفواتير المعلّقة على لوحة مباشرة",
+      },
+    ],
+    faqs: [
+      {
+        q: {
+          en: "Which currencies can I bill in?",
+          ur: "میں کن کرنسیوں میں بل بھیج سکتا ہوں؟",
+          es: "¿En qué monedas puedo facturar?",
+          nl: "In welke valuta's kan ik factureren?",
+          ar: "بأي عملات يمكنني إصدار الفواتير؟",
+        },
+        a: {
+          en: "PKR, USD, AUD, EUR, GBP, AED, INR and SAR, formatted automatically.",
+          ur: "پاکستانی روپیہ، امریکی ڈالر، آسٹریلین ڈالر، یورو، پاؤنڈ، درہم، بھارتی روپیہ اور سعودی ریال، خودکار فارمیٹ کے ساتھ۔",
+          es: "PKR, USD, AUD, EUR, GBP, AED, INR y SAR, con formato automático.",
+          nl: "PKR, USD, AUD, EUR, GBP, AED, INR en SAR, automatisch opgemaakt.",
+          ar: "PKR وUSD وAUD وEUR وGBP وAED وINR وSAR، بتنسيق تلقائي.",
+        },
+      },
+      {
+        q: {
+          en: "Can my team use it with different access?",
+          ur: "کیا میری ٹیم مختلف رسائی کے ساتھ اسے استعمال کر سکتی ہے؟",
+          es: "¿Mi equipo puede usarlo con distintos accesos?",
+          nl: "Kan mijn team het met verschillende toegangsrechten gebruiken?",
+          ar: "هل يمكن لفريقي استخدامه بصلاحيات مختلفة؟",
+        },
+        a: {
+          en: "Yes. Access is role based and an activity log records what each person did.",
+          ur: "جی ہاں۔ رسائی کردار کی بنیاد پر ہوتی ہے اور سرگرمی لاگ ہر فرد کے کام کو درج کرتا ہے۔",
+          es: "Sí. El acceso depende del rol y un registro de actividad anota lo que hizo cada persona.",
+          nl: "Ja. Toegang is rolgebaseerd en een activiteitenlogboek legt vast wat iedereen deed.",
+          ar: "نعم. الوصول قائم على الأدوار، وسجل النشاط يدوّن ما فعله كل شخص.",
+        },
+      },
+    ],
+  },
 };

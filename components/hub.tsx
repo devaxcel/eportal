@@ -14,7 +14,7 @@ export async function HubHero({ lang }: { lang: Lang }) {
   const col1 = featured.filter((_, i) => i % 2 === 0);
   const col2 = featured.filter((_, i) => i % 2 === 1);
   const points = [
-    T(lang, "8 platforms", "8 پلیٹ فارمز"),
+    T(lang, "9 platforms", "9 پلیٹ فارمز"),
     T(lang, "Built in Lahore", "لاہور میں تیار"),
     T(lang, "5 languages", "5 زبانیں"),
   ];
@@ -99,7 +99,7 @@ export function SolutionsGrid({ lang }: { lang: Lang }) {
       <SectionHead
         eyebrow={T(lang, "Our solutions", "ہمارے حل")}
         title={T(lang, "Find the platform that fits your need", "اپنی ضرورت کے مطابق پلیٹ فارم چنیں")}
-        sub={T(lang, "Eight platforms. Each one works on its own.", "آٹھ پلیٹ فارمز۔ ہر ایک الگ سے کام کرتا ہے۔")}
+        sub={T(lang, "Nine platforms. Each one works on its own.", "نو پلیٹ فارمز۔ ہر ایک الگ سے کام کرتا ہے۔")}
       />
       <div className="mt-12"><SolutionColumns lang={lang} /></div>
     </section>

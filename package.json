@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx --env-file=.env.local scripts/seed.ts",
-    "rename-products": "tsx --env-file=.env.local scripts/rename-products.ts",
+    "apply-seo": "tsx --env-file=.env.local scripts/apply-seo.ts",
+    "rename-products":"tsx --env-file=.env.local scripts/rename-products.ts",
     "rename-slugs": "tsx --env-file=.env.local scripts/rename-slugs.ts"
   },
   "dependencies": {

@@ -352,6 +352,32 @@ function PosMock({ lang }: { lang: Lang }) {
   );
 }
 
+function InvoiceMock({ lang }: { lang: Lang }) {
+  const invoices: [string, string, string, "ok" | "warn" | "info"][] = [
+    ["INV-0042", "Northwind Studio", "$1,250.00", "ok"],
+    ["INV-0043", "Al Noor Trading", "AED 4,800.00", "warn"],
+    ["INV-0044", "Bright Agency", "£980.00", "info"],
+  ];
+  const tones = { ok: T(lang, "Paid", "ادا"), warn: T(lang, "Pending", "زیر التوا"), info: T(lang, "Sent", "بھیجی گئی") };
+  return (
+    <Shell icons={[LayoutDashboard, FileText, Users, Wallet, BarChart3, Settings]} title={T(lang, "Dashboard", "ڈیش بورڈ")} sub="Smart Invoice">
+      <Kpis items={[
+        { l: T(lang, "Revenue", "آمدنی"), v: "$18,420", d: "+14%", icon: Wallet },
+        { l: T(lang, "Pending invoices", "زیر التوا انوائس"), v: "7", icon: Clock },
+        { l: T(lang, "Clients", "کلائنٹس"), v: "36", d: "+4", icon: Users },
+        { l: T(lang, "Paid this month", "اس ماہ ادا"), v: "21", icon: CheckCircle2 },
+      ]} />
+      <div className="mt-3 grid gap-3 lg:grid-cols-5">
+        <Card title={T(lang, "Recent invoices", "حالیہ انوائس")} className="lg:col-span-3">
+          <ul className="mt-2 space-y-2.5">{invoices.map(([id, who, amt, tone]) => <Row key={id} lead={tile(FileText)} title={`${id} · ${who}`} sub={amt} right={<Chip tone={tone}>{tones[tone]}</Chip>} />)}</ul>
+        </Card>
+        <Card title={T(lang, "Revenue", "آمدنی")} className="lg:col-span-2"><Area d={lineA} className="h-24" /></Card>
+      </div>
+      <p className="mt-2 text-[9px] text-ink-soft">PKR · USD · AUD · EUR · GBP · AED · INR · SAR</p>
+    </Shell>
+  );
+}
+
 /** Branded dashboard mockup for a product slug. */
 export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang }) {
   const slug = oldSlug(address); // built-in pictures are keyed by the original names
@@ -363,6 +389,7 @@ export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang 
     slug === "hayroutes" ? <HayMock lang={lang} /> :
     slug === "ai-sales-agent" ? <SalesAgentMock lang={lang} /> :
     slug === "pos" ? <PosMock lang={lang} /> :
+    slug === "smartinvoice" ? <InvoiceMock lang={lang} /> :
     <AdminDashboardMock lang={lang} />;
   // Only real product domains are shown; the rest use an ePortal path.
   const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", hayroutes: "hayroutes.com" };

@@ -11,7 +11,7 @@ The public website works without any setup, using the built-in content. The dash
    - `SUPABASE_SERVICE_ROLE_KEY` (same page, keep it secret)
    - `SITE_URL` (for example `https://eportal.pk`)
    - `ADMIN_EMAIL` and `ADMIN_PASSWORD` (your first login)
-4. **Load today's content.** Run `npm run seed`. It copies the eight solutions (in all five languages) into the database and creates your admin login. It never overwrites a solution that already exists, so it is safe to run again.
+4. **Load today's content.** Run `npm run seed`. It copies the nine solutions (in all five languages) into the database and creates your admin login. It never overwrites a solution that already exists, so it is safe to run again.
 5. **Add the same variables in Vercel** (Settings, Environment Variables) and redeploy. Leave them as *Sensitive*: none of them need the `NEXT_PUBLIC_` prefix, because the browser never uses them. Do not add `ADMIN_EMAIL` or `ADMIN_PASSWORD` there; they are only for the seed.
 6. Sign in at `/admin`.
 

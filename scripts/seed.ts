@@ -21,9 +21,9 @@ function expand(value: Json): Json {
       return {
         en: o.en,
         ur: o.ur,
-        es: catalogs.es.get(o.en) ?? "",
-        nl: catalogs.nl.get(o.en) ?? "",
-        ar: catalogs.ar.get(o.en) ?? "",
+        es: (o.es as string | undefined) || catalogs.es.get(o.en) || "",
+        nl: (o.nl as string | undefined) || catalogs.nl.get(o.en) || "",
+        ar: (o.ar as string | undefined) || catalogs.ar.get(o.en) || "",
       };
     }
     return Object.fromEntries(Object.entries(o).map(([k, v]) => [k, expand(v)]));
@@ -49,7 +49,7 @@ async function main() {
 
   for (const [i, s] of solutions.entries()) {
     const { slug, ...rest } = s;
-    const content = expand({ ...rest, story: s.story ?? stories[slug], hidden: [], seo: { langs: {} } }) as Record<string, Json>;
+    const content = expand({ ...rest, story: s.story ?? stories[slug], hidden: [], seo: s.seo ?? { langs: {} } }) as Record<string, Json>;
 
     const { data: existing } = await sb.from("solutions").select("id").in("slug", [slug, oldSlug(slug)]).maybeSingle();
     if (existing) {

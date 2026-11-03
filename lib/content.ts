@@ -1,5 +1,6 @@
 import type { L, Lang } from "./i18n";
 import type { Story } from "./stories";
+import { seoBySlug } from "./seo-content";
 
 export const nav: { key: string; path: string; label: L }[] = [
   { key: "solutions", path: "/solutions", label: { en: "Solutions", ur: "حل" } },
@@ -197,7 +198,7 @@ export type Seo = { ogImage?: string; langs?: Partial<Record<Lang, SeoFields>> }
 export const SECTION_KEYS = ["marquee", "statement", "compare", "action", "whoFor", "steps", "pricing", "faq", "others"] as const;
 
 // Placeholder product line-up. Edit to match the SaaS platforms you actually offer.
-export const solutions: Solution[] = [
+const baseSolutions: Solution[] = [
   {
     slug: "schooldesk",
     category: "education",
@@ -399,7 +400,87 @@ export const solutions: Solution[] = [
       { en: "Owners who want live sales insight", ur: "وہ مالکان جنہیں فوری سیلز معلومات چاہیے" },
     ],
   },
+  {
+    slug: "smartinvoice",
+    category: "business",
+    icon: "Wallet",
+    status: "new",
+    url: "https://ledger.axcelworld.com/",
+    mock: "smartinvoice",
+    name: { en: "Smart Invoice", ur: "سمارٹ انوائس", es: "Smart Invoice", nl: "Smart Invoice", ar: "Smart Invoice" },
+    tagline: {
+      en: "Professional invoicing made simple",
+      ur: "پیشہ ورانہ انوائسنگ، آسان انداز میں",
+      es: "Facturación profesional, sin complicaciones",
+      nl: "Professioneel factureren, eenvoudig gemaakt",
+      ar: "فوترة احترافية بكل بساطة",
+    },
+    description: {
+      en: "An invoice management system for modern businesses. Create numbered invoices, bill clients in the currency they pay in, and follow revenue and pending payments on one dashboard.",
+      ur: "جدید کاروبار کے لیے انوائس مینجمنٹ سسٹم۔ نمبر والی انوائس بنائیں، گاہک کی کرنسی میں بل بھیجیں، اور آمدنی اور زیر التوا ادائیگیاں ایک ڈیش بورڈ میں دیکھیں۔",
+      es: "Un sistema de gestión de facturas para empresas modernas. Cree facturas numeradas, facture en la moneda de pago de cada cliente y siga ingresos y cobros pendientes en un único panel.",
+      nl: "Een factuurbeheersysteem voor moderne bedrijven. Maak genummerde facturen, factureer in de valuta waarin uw klant betaalt en volg omzet en openstaande betalingen in één dashboard.",
+      ar: "نظام لإدارة الفواتير للأعمال العصرية. أنشئ فواتير مرقّمة، وحاسب العميل بالعملة التي يدفع بها، وتابع الإيرادات والمدفوعات المعلّقة في لوحة واحدة.",
+    },
+    features: [
+      {
+        en: "Invoice numbers that count up on their own (INV-0001, INV-0002)",
+        ur: "خود بخود بڑھنے والے انوائس نمبر (INV-0001، INV-0002)",
+        es: "Números de factura que avanzan solos (INV-0001, INV-0002)",
+        nl: "Factuurnummers die vanzelf oplopen (INV-0001, INV-0002)",
+        ar: "أرقام فواتير تزداد تلقائيًا (INV-0001، INV-0002)",
+      },
+      {
+        en: "Billing in PKR, USD, AUD, EUR, GBP, AED, INR and SAR",
+        ur: "روپے، ڈالر، آسٹریلین ڈالر، یورو، پاؤنڈ، درہم، بھارتی روپے اور ریال میں بلنگ",
+        es: "Facturación en PKR, USD, AUD, EUR, GBP, AED, INR y SAR",
+        nl: "Factureren in PKR, USD, AUD, EUR, GBP, AED, INR en SAR",
+        ar: "فوترة بعملات PKR وUSD وAUD وEUR وGBP وAED وINR وSAR",
+      },
+      {
+        en: "Dashboard with revenue, pending invoices and client data",
+        ur: "آمدنی، زیر التوا انوائس اور کلائنٹ ڈیٹا کا ڈیش بورڈ",
+        es: "Panel con ingresos, facturas pendientes y datos de clientes",
+        nl: "Dashboard met omzet, openstaande facturen en klantgegevens",
+        ar: "لوحة تعرض الإيرادات والفواتير المعلّقة وبيانات العملاء",
+      },
+      {
+        en: "Roles for your team and an activity log",
+        ur: "ٹیم کے لیے کردار اور سرگرمی کا لاگ",
+        es: "Roles para su equipo y un registro de actividad",
+        nl: "Rollen voor uw team en een activiteitenlogboek",
+        ar: "أدوار لفريقك وسجل للنشاط",
+      },
+    ],
+    accent: "from-violet-400 to-purple-700",
+    forWho: [
+      {
+        en: "Freelancers and agencies who bill abroad",
+        ur: "فری لانسرز اور ایجنسیاں جو بیرون ملک بل بھیجتی ہیں",
+        es: "Autónomos y agencias que facturan al extranjero",
+        nl: "Freelancers en bureaus die in het buitenland factureren",
+        ar: "المستقلون والوكالات الذين يفوترون عملاء في الخارج",
+      },
+      {
+        en: "Small and growing businesses",
+        ur: "چھوٹے اور بڑھتے ہوئے کاروبار",
+        es: "Pequeñas empresas en crecimiento",
+        nl: "Kleine en groeiende bedrijven",
+        ar: "الأعمال الصغيرة والنامية",
+      },
+      {
+        en: "Teams that need to see who did what",
+        ur: "وہ ٹیمیں جنہیں معلوم ہونا چاہیے کہ کس نے کیا کیا",
+        es: "Equipos que necesitan saber quién hizo qué",
+        nl: "Teams die willen weten wie wat deed",
+        ar: "الفرق التي تحتاج إلى معرفة من فعل ماذا",
+      },
+    ],
+  },
 ];
+
+/** The built-in line-up with its search text (see seo-content.ts). */
+export const solutions: Solution[] = baseSolutions.map((s) => ({ ...s, seo: s.seo ?? seoBySlug[s.slug] }));
 
 export const aiFeatures: { icon: string; title: L; desc: L }[] = [
   {
