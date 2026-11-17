@@ -9,33 +9,6 @@ export type Story = {
 
 /** Content for the shared solution page template. SchoolDesk has its own long page. */
 export const stories: Record<string, Story> = {
-  trainerbook: {
-    statement: {
-      en: "Getting fit should not mean fighting your schedule. TrainerBook brings a certified trainer to you, and keeps everything about your progress in one place.",
-      ur: "فٹ ہونے کا مطلب اپنے شیڈول سے لڑنا نہیں ہونا چاہیے۔ ٹرینر بک ایک مستند ٹرینر کو آپ کے پاس لاتا ہے اور آپ کی پیشرفت کی ہر چیز ایک جگہ رکھتا ہے۔",
-    },
-    before: [
-      { en: "Long commutes to a crowded gym", ur: "بھیڑ والے جم تک لمبا سفر" },
-      { en: "Guessing which trainer is right for you", ur: "اندازے سے ٹرینر چننا" },
-      { en: "Plans and progress scattered across notes and chats", ur: "پلان اور پیشرفت نوٹس اور چیٹس میں بکھری ہوئی" },
-    ],
-    after: [
-      { en: "Private sessions where you already are", ur: "نجی سیشنز وہیں جہاں آپ پہلے سے ہیں" },
-      { en: "Matched with a vetted, certified trainer", ur: "جانچے ہوئے مستند ٹرینر سے میچنگ" },
-      { en: "Programme, notes and progress in one client portal", ur: "پروگرام، نوٹس اور پیشرفت ایک کلائنٹ پورٹل میں" },
-    ],
-    faqs: [
-      {
-        q: { en: "How are trainers matched to me?", ur: "ٹرینرز میرے لیے کیسے چنے جاتے ہیں؟" },
-        a: { en: "Tell us your goals and schedule and we match you with a certified, background-checked trainer.", ur: "اپنے مقاصد اور شیڈول بتائیں اور ہم آپ کو مستند اور جانچ شدہ ٹرینر سے ملا دیتے ہیں۔" },
-      },
-      {
-        q: { en: "Can I pause or cancel?", ur: "کیا میں توقف یا منسوخ کر سکتا ہوں؟" },
-        a: { en: "Yes. Memberships are month to month, and you can pause or cancel from the client portal.", ur: "جی ہاں۔ رکنیت ماہ بہ ماہ ہے، اور آپ کلائنٹ پورٹل سے توقف یا منسوخی کر سکتے ہیں۔" },
-      },
-    ],
-  },
-
   approveflow: {
     statement: {
       en: "Work moves at the speed of the slowest approval. ApproveFlow gives every document a clear path and every person a clear role.",
@@ -59,60 +32,6 @@ export const stories: Record<string, Story> = {
       {
         q: { en: "Do people get notified when something needs them?", ur: "کیا کام آنے پر لوگوں کو اطلاع ملتی ہے؟" },
         a: { en: "Yes. Real-time notifications tell people when an approval or task needs their attention.", ur: "جی ہاں۔ فوری اطلاعات بتاتی ہیں کہ کب کسی منظوری یا ٹاسک کو ان کی توجہ چاہیے۔" },
-      },
-    ],
-  },
-
-  reportrelay: {
-    statement: {
-      en: "A report only matters when it reaches the right person. ReportRelay prepares, protects and delivers it for you.",
-      ur: "رپورٹ تبھی اہم ہوتی ہے جب وہ درست شخص تک پہنچے۔ رپورٹ ریلے اسے تیار، محفوظ اور ترسیل کرتا ہے۔",
-    },
-    before: [
-      { en: "Reports built and emailed by hand every month", ur: "ہر ماہ رپورٹس ہاتھ سے بنانا اور ای میل کرنا" },
-      { en: "Sensitive files sent without protection", ur: "حساس فائلیں بغیر تحفظ کے بھیجنا" },
-      { en: "No way to know who opened what", ur: "یہ جاننے کا کوئی طریقہ نہیں کہ کس نے کیا کھولا" },
-    ],
-    after: [
-      { en: "Reports generated in bulk, ready to send", ur: "رپورٹس بڑی تعداد میں تیار اور بھیجنے کے لیے حاضر" },
-      { en: "Password-protected PDFs delivered by email", ur: "پاس ورڈ سے محفوظ پی ڈی ایف ای میل سے ترسیل" },
-      { en: "Delivery and click analytics with an audit trail", ur: "آڈٹ ٹریل کے ساتھ ترسیل اور کلکس کے تجزیات" },
-    ],
-    faqs: [
-      {
-        q: { en: "Are the reports protected?", ur: "کیا رپورٹس محفوظ ہوتی ہیں؟" },
-        a: { en: "Yes. Reports can be generated as password-protected PDFs, with role-based access and an audit trail.", ur: "جی ہاں۔ رپورٹس پاس ورڈ سے محفوظ پی ڈی ایف کے طور پر بنائی جا سکتی ہیں، کردار پر مبنی رسائی اور آڈٹ ٹریل کے ساتھ۔" },
-      },
-      {
-        q: { en: "Can we send reports to many clients at once?", ur: "کیا ہم بہت سے کلائنٹس کو ایک ساتھ رپورٹس بھیج سکتے ہیں؟" },
-        a: { en: "Yes. Reports are generated in bulk and delivered to each client by email.", ur: "جی ہاں۔ رپورٹس بڑی تعداد میں بنتی ہیں اور ہر کلائنٹ کو ای میل سے پہنچائی جاتی ہیں۔" },
-      },
-    ],
-  },
-
-  medcodex: {
-    statement: {
-      en: "Behind every code is a patient's record and a clinician's time. MedCodeX helps teams find the right answer faster.",
-      ur: "ہر کوڈ کے پیچھے مریض کا ریکارڈ اور معالج کا وقت ہے۔ میڈ کوڈ ایکس ٹیموں کو درست جواب جلد تلاش کرنے میں مدد دیتا ہے۔",
-    },
-    before: [
-      { en: "Searching long policy documents for answers", ur: "جوابات کے لیے طویل پالیسی دستاویزات میں تلاش" },
-      { en: "Drafting physician queries from scratch", ur: "فزیشن کوئریز شروع سے لکھنا" },
-      { en: "Coding decisions that take hours", ur: "کوڈنگ کے فیصلے جن میں گھنٹے لگتے ہیں" },
-    ],
-    after: [
-      { en: "Policy research in plain language", ur: "سادہ زبان میں پالیسی ریسرچ" },
-      { en: "Compliant physician query drafts in seconds", ur: "مستند فزیشن کوئری کے مسودے سیکنڈوں میں" },
-      { en: "AI suggestions your coders review and approve", ur: "اے آئی کی تجاویز جنہیں آپ کے کوڈرز جانچ کر منظور کرتے ہیں" },
-    ],
-    faqs: [
-      {
-        q: { en: "Does the AI replace our coders?", ur: "کیا اے آئی ہمارے کوڈرز کی جگہ لے لیتا ہے؟" },
-        a: { en: "No. It assists your coding and documentation teams, who review and make the final decision.", ur: "نہیں۔ یہ آپ کی کوڈنگ اور ڈاکومنٹیشن ٹیموں کی مدد کرتا ہے، جو جائزہ لے کر آخری فیصلہ کرتی ہیں۔" },
-      },
-      {
-        q: { en: "How do users sign in?", ur: "صارفین سائن ان کیسے کرتے ہیں؟" },
-        a: { en: "Accounts are created and managed by administrators, so access stays controlled.", ur: "اکاؤنٹس ایڈمنسٹریٹرز بناتے اور سنبھالتے ہیں، اس لیے رسائی کنٹرول میں رہتی ہے۔" },
       },
     ],
   },

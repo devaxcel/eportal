@@ -16,15 +16,6 @@ export const seoBySlug: Record<string, Seo> = {
       ar: { title: "SchoolDesk: برنامج إدارة المدارس | ePortal", description: "أدِر الرسوم والحضور والنتائج والجداول والتواصل مع أولياء الأمور من نظام واحد، مع بوابات للإدارة والمعلمين وأولياء الأمور والطلاب.", keywords: "برنامج إدارة المدارس, نظام مدرسي, إدارة الرسوم, نظام الحضور, تطبيق أولياء الأمور, SchoolDesk" },
     },
   },
-  trainerbook: {
-    langs: {
-      en: { title: "TrainerBook: Hire a Certified Personal Trainer | ePortal", description: "Book a vetted, certified personal trainer for private sessions where you are, and keep your programme, notes and progress in one client portal.", keywords: "hire personal trainer, certified trainer, home fitness training, fitness booking app, client portal, TrainerBook" },
-      ur: { title: "ٹرینر بک: مستند پرسنل ٹرینر ہائر کریں | ای پورٹل", description: "جانچے ہوئے مستند پرسنل ٹرینر کے ساتھ اپنی جگہ پر نجی سیشن بک کریں، اور اپنا پروگرام، نوٹس اور پیشرفت ایک کلائنٹ پورٹل میں رکھیں۔", keywords: "پرسنل ٹرینر ہائر کریں, مستند ٹرینر, گھر پر فٹنس ٹریننگ, فٹنس بکنگ ایپ, ٹرینر بک" },
-      es: { title: "TrainerBook: contrate un entrenador personal certificado | ePortal", description: "Reserve un entrenador personal certificado y verificado para sesiones privadas donde usted esté, y guarde programa, notas y progreso en un portal de cliente.", keywords: "contratar entrenador personal, entrenador certificado, entrenamiento en casa, app de reservas fitness, portal de cliente, TrainerBook" },
-      nl: { title: "TrainerBook: boek een gecertificeerde personal trainer | ePortal", description: "Boek een gescreende, gecertificeerde personal trainer voor privésessies waar u bent en bewaar uw programma, notities en voortgang in één klantportaal.", keywords: "personal trainer boeken, gecertificeerde trainer, thuis trainen, fitness boekingsapp, klantportaal, TrainerBook" },
-      ar: { title: "TrainerBook: استأجر مدربًا شخصيًا معتمدًا | ePortal", description: "احجز مدربًا شخصيًا معتمدًا وموثوقًا لجلسات خاصة في مكانك، واحتفظ ببرنامجك وملاحظاتك وتقدمك في بوابة عميل واحدة.", keywords: "مدرب شخصي, مدرب معتمد, تدريب لياقة في المنزل, تطبيق حجز لياقة, بوابة العميل, TrainerBook" },
-    },
-  },
   approveflow: {
     langs: {
       en: { title: "ApproveFlow: Workflow and Approval Management Software | ePortal", description: "Route documents and requests through clear approval steps, track every task and employee record, and see what is pending in one workflow dashboard.", keywords: "workflow software, approval workflow, document approval, employee management, task tracking, ApproveFlow" },
@@ -32,24 +23,6 @@ export const seoBySlug: Record<string, Seo> = {
       es: { title: "ApproveFlow: software de flujos de trabajo y aprobaciones | ePortal", description: "Dirija documentos y solicitudes por pasos de aprobación claros, siga cada tarea y registro de empleados, y vea lo pendiente en un único panel.", keywords: "software de flujos de trabajo, flujo de aprobación, aprobación de documentos, gestión de empleados, seguimiento de tareas, ApproveFlow" },
       nl: { title: "ApproveFlow: software voor workflows en goedkeuringen | ePortal", description: "Leid documenten en aanvragen langs duidelijke goedkeuringsstappen, volg elke taak en elk personeelsdossier en zie in één dashboard wat openstaat.", keywords: "workflowsoftware, goedkeuringsworkflow, documenten goedkeuren, personeelsbeheer, taken volgen, ApproveFlow" },
       ar: { title: "ApproveFlow: برنامج إدارة سير العمل والموافقات | ePortal", description: "مرّر المستندات والطلبات عبر خطوات موافقة واضحة، وتابع كل مهمة وسجل موظف، وشاهد المعلّق في لوحة سير عمل واحدة.", keywords: "برنامج سير العمل, سير عمل الموافقات, الموافقة على المستندات, إدارة الموظفين, متابعة المهام, ApproveFlow" },
-    },
-  },
-  reportrelay: {
-    langs: {
-      en: { title: "ReportRelay: Automated Email Report Portal | ePortal", description: "Schedule business reports and send them by email on time, every time, and track delivery, opens and clicks from a single dashboard.", keywords: "automated email reports, scheduled reports, report delivery, email analytics, business reporting, ReportRelay" },
-      ur: { title: "رپورٹ ریلے: خودکار ای میل رپورٹ پورٹل | ای پورٹل", description: "کاروباری رپورٹس شیڈول کریں اور وقت پر ای میل سے بھیجیں، اور ترسیل، کھولنے اور کلک کی شرح ایک ڈیش بورڈ سے دیکھیں۔", keywords: "خودکار ای میل رپورٹس, شیڈول رپورٹس, رپورٹ کی ترسیل, ای میل تجزیات, کاروباری رپورٹنگ, رپورٹ ریلے" },
-      es: { title: "ReportRelay: portal de informes automáticos por correo | ePortal", description: "Programe informes de negocio y envíelos por correo puntualmente; siga entregas, aperturas y clics desde un único panel.", keywords: "informes automáticos por correo, informes programados, envío de informes, analítica de correo, informes de negocio, ReportRelay" },
-      nl: { title: "ReportRelay: portaal voor automatische e-mailrapporten | ePortal", description: "Plan bedrijfsrapporten en verstuur ze op tijd per e-mail; volg bezorging, geopende mails en klikken in één dashboard.", keywords: "automatische e-mailrapporten, geplande rapporten, rapportbezorging, e-mailanalyse, bedrijfsrapportage, ReportRelay" },
-      ar: { title: "ReportRelay: بوابة تقارير البريد الإلكتروني الآلية | ePortal", description: "جدول تقارير أعمالك وأرسلها بالبريد في موعدها، وتابع التسليم ونسب الفتح والنقر من لوحة واحدة.", keywords: "تقارير بريد إلكتروني آلية, تقارير مجدولة, تسليم التقارير, تحليلات البريد, تقارير الأعمال, ReportRelay" },
-    },
-  },
-  medcodex: {
-    langs: {
-      en: { title: "MedCodeX: AI Medical Coding and Policy Search | ePortal", description: "Search ICD and procedure codes in plain language, get AI-assisted suggestions with context and draft compliant physician queries faster.", keywords: "medical coding software, AI medical coding, ICD-10 code search, physician query, coding policy research, MedCodeX" },
-      ur: { title: "میڈ کوڈ ایکس: اے آئی میڈیکل کوڈنگ اور پالیسی سرچ | ای پورٹل", description: "عام زبان میں آئی سی ڈی اور پروسیجر کوڈ تلاش کریں، سیاق کے ساتھ اے آئی تجاویز پائیں اور فزیشن کوئری کے مستند مسودے تیزی سے بنائیں۔", keywords: "میڈیکل کوڈنگ سافٹ ویئر, اے آئی میڈیکل کوڈنگ, آئی سی ڈی 10 کوڈ سرچ, فزیشن کوئری, میڈ کوڈ ایکس" },
-      es: { title: "MedCodeX: codificación médica con IA y búsqueda de políticas | ePortal", description: "Busque códigos CIE y de procedimientos con lenguaje natural, reciba sugerencias con IA y contexto, y redacte consultas al médico conformes más rápido.", keywords: "software de codificación médica, codificación médica con IA, búsqueda CIE-10, consulta al médico, políticas de codificación, MedCodeX" },
-      nl: { title: "MedCodeX: medische codering met AI en beleidszoeker | ePortal", description: "Zoek ICD- en verrichtingscodes in gewone taal, krijg AI-suggesties met context en stel sneller conforme vragen aan de arts op.", keywords: "software voor medische codering, medische codering AI, ICD-10 zoeken, vraag aan arts, coderingsbeleid, MedCodeX" },
-      ar: { title: "MedCodeX: الترميز الطبي بالذكاء الاصطناعي وبحث السياسات | ePortal", description: "ابحث عن رموز التشخيص والإجراءات بلغة بسيطة، واحصل على اقتراحات بالذكاء الاصطناعي مع السياق، وأعدّ استفسارات الأطباء المطابقة للمعايير بسرعة.", keywords: "برنامج الترميز الطبي, ترميز طبي بالذكاء الاصطناعي, بحث رموز ICD-10, استفسار الطبيب, سياسات الترميز, MedCodeX" },
     },
   },
   lessonbook: {
