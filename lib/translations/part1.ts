@@ -1483,10 +1483,10 @@ export const rows: [string, string, string, string][] = [
   "قارن بين جميع الخطط"
  ],
  [
-  "9 platforms",
-  "9 plataformas",
-  "9 platforms",
-  "9 منصات"
+  "10 platforms",
+  "10 plataformas",
+  "10 platforms",
+  "10 منصات"
  ],
  [
   "Built in Lahore",
@@ -1537,10 +1537,10 @@ export const rows: [string, string, string, string][] = [
   "اعثر على المنصة التي تناسب احتياجك"
  ],
  [
-  "Nine platforms. Each one works on its own.",
-  "Nueve plataformas. Cada una funciona por sí sola.",
-  "Negen platforms. Elk werkt zelfstandig.",
-  "تسع منصات. كل واحدة تعمل بمفردها."
+  "Ten platforms. Each one works on its own.",
+  "Diez plataformas. Cada una funciona por sí sola.",
+  "Tien platforms. Elk werkt zelfstandig.",
+  "عشر منصات. كل واحدة تعمل بمفردها."
  ],
  [
   "Built in Pakistan",

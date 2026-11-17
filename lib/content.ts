@@ -477,6 +477,83 @@ const baseSolutions: Solution[] = [
       },
     ],
   },
+  {
+    slug: "shortenurl",
+    category: "business",
+    icon: "Globe",
+    status: "new",
+    url: "https://trimu.net/",
+    mock: "shortenurl",
+    name: { en: "Shorten URL", ur: "شارٹن یو آر ایل", es: "Shorten URL", nl: "Shorten URL", ar: "Shorten URL" },
+    tagline: {
+      en: "Short links with analytics and QR codes",
+      ur: "تجزیات اور کیو آر کوڈ کے ساتھ مختصر لنکس",
+      es: "Enlaces cortos con analítica y códigos QR",
+      nl: "Korte links met statistieken en QR-codes",
+      ar: "روابط قصيرة مع تحليلات ورموز QR",
+    },
+    description: {
+      en: "Turn long links into short, shareable ones and see how people use them: clicks by country, city, device, browser and source, with a QR code for every link.",
+      ur: "لمبے لنکس کو مختصر اور شیئر کرنے کے قابل بنائیں اور دیکھیں لوگ انہیں کیسے استعمال کرتے ہیں: ملک، شہر، ڈیوائس، براؤزر اور ذریعے کے حساب سے کلکس، ہر لنک کے لیے کیو آر کوڈ کے ساتھ۔",
+      es: "Convierta enlaces largos en enlaces cortos y fáciles de compartir, y vea cómo se usan: clics por país, ciudad, dispositivo, navegador y origen, con un código QR para cada enlace.",
+      nl: "Maak van lange links korte links die makkelijk te delen zijn en zie hoe ze worden gebruikt: klikken per land, stad, apparaat, browser en bron, met een QR-code bij elke link.",
+      ar: "حوّل الروابط الطويلة إلى روابط قصيرة سهلة المشاركة، وتعرّف على كيفية استخدامها: النقرات حسب الدولة والمدينة والجهاز والمتصفح والمصدر، مع رمز QR لكل رابط.",
+    },
+    features: [
+      {
+        en: "Short links with a downloadable QR code",
+        ur: "ڈاؤن لوڈ ہونے والے کیو آر کوڈ کے ساتھ مختصر لنکس",
+        es: "Enlaces cortos con código QR descargable",
+        nl: "Korte links met een downloadbare QR-code",
+        ar: "روابط قصيرة مع رمز QR قابل للتنزيل",
+      },
+      {
+        en: "Click analytics by country, city, device, browser and source",
+        ur: "ملک، شہر، ڈیوائس، براؤزر اور ذریعے کے مطابق کلک تجزیات",
+        es: "Analítica de clics por país, ciudad, dispositivo, navegador y origen",
+        nl: "Klikstatistieken per land, stad, apparaat, browser en bron",
+        ar: "تحليلات النقرات حسب الدولة والمدينة والجهاز والمتصفح والمصدر",
+      },
+      {
+        en: "Custom domains and link expiry dates",
+        ur: "حسب ضرورت ڈومین اور لنک کی میعاد ختم ہونے کی تاریخیں",
+        es: "Dominios personalizados y fechas de caducidad de enlaces",
+        nl: "Eigen domeinen en vervaldatums voor links",
+        ar: "نطاقات مخصصة وتواريخ انتهاء صلاحية للروابط",
+      },
+      {
+        en: "Team workspaces with access controls",
+        ur: "رسائی کے کنٹرول کے ساتھ ٹیم ورک اسپیس",
+        es: "Espacios de trabajo en equipo con control de acceso",
+        nl: "Teamwerkruimtes met toegangsbeheer",
+        ar: "مساحات عمل للفريق مع التحكم في الوصول",
+      },
+    ],
+    accent: "from-cyan-400 to-blue-600",
+    forWho: [
+      {
+        en: "Marketers and creators who share links",
+        ur: "لنکس شیئر کرنے والے مارکیٹرز اور کری ایٹرز",
+        es: "Especialistas en marketing y creadores que comparten enlaces",
+        nl: "Marketeers en makers die links delen",
+        ar: "المسوّقون وصنّاع المحتوى الذين يشاركون الروابط",
+      },
+      {
+        en: "Businesses and event organisers",
+        ur: "کاروبار اور ایونٹ منتظمین",
+        es: "Empresas y organizadores de eventos",
+        nl: "Bedrijven en evenementenorganisatoren",
+        ar: "الشركات ومنظّمو الفعاليات",
+      },
+      {
+        en: "Teams that want branded links on their own domain",
+        ur: "وہ ٹیمیں جنہیں اپنے ڈومین پر برانڈڈ لنکس چاہئیں",
+        es: "Equipos que quieren enlaces de marca en su propio dominio",
+        nl: "Teams die links onder hun eigen merk en domein willen",
+        ar: "الفرق التي تريد روابط تحمل علامتها على نطاقها الخاص",
+      },
+    ],
+  },
 ];
 
 /** The built-in line-up with its search text (see seo-content.ts). */

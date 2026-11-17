@@ -88,4 +88,13 @@ export const seoBySlug: Record<string, Seo> = {
       ar: { title: "Smart Invoice: فوترة إلكترونية بعملات متعددة | ePortal", description: "أنشئ فواتير احترافية بترقيم تلقائي، وحاسب عملاءك بالروبية والدولار واليورو والجنيه والدرهم وغيرها، وتابع الإيرادات والمدفوعات المعلّقة في لوحة واحدة.", keywords: "برنامج فواتير, فوترة إلكترونية, فواتير متعددة العملات, منشئ فواتير, لوحة الفوترة, Smart Invoice" },
     },
   },
+  shortenurl: {
+    langs: {
+      en: { title: "Shorten URL: Free Link Shortener with Analytics and QR Codes | ePortal", description: "Shorten long links, add a QR code to each one and see clicks by country, city, device and source. Custom domains, expiry dates and team workspaces included.", keywords: "URL shortener, link shortener, QR code generator, link analytics, custom domain short links, Shorten URL" },
+      ur: { title: "شارٹن یو آر ایل: تجزیات اور کیو آر کوڈ کے ساتھ لنک شارٹنر | ای پورٹل", description: "لمبے لنکس مختصر کریں، ہر لنک کے ساتھ کیو آر کوڈ بنائیں اور ملک، شہر، ڈیوائس اور ذریعے کے مطابق کلکس دیکھیں۔ حسب ضرورت ڈومین، میعاد کی تاریخیں اور ٹیم ورک اسپیس شامل ہیں۔", keywords: "یو آر ایل شارٹنر, لنک شارٹنر, کیو آر کوڈ جنریٹر, لنک تجزیات, مختصر لنکس, شارٹن یو آر ایل" },
+      es: { title: "Shorten URL: acortador de enlaces con analítica y códigos QR | ePortal", description: "Acorte enlaces largos, añada un código QR a cada uno y vea clics por país, ciudad, dispositivo y origen. Incluye dominios personalizados, caducidad y espacios de equipo.", keywords: "acortador de URL, acortador de enlaces, generador de códigos QR, analítica de enlaces, dominio personalizado, Shorten URL" },
+      nl: { title: "Shorten URL: linkverkorter met statistieken en QR-codes | ePortal", description: "Verkort lange links, voeg bij elke link een QR-code toe en zie klikken per land, stad, apparaat en bron. Inclusief eigen domeinen, vervaldatums en teamwerkruimtes.", keywords: "URL-verkorter, linkverkorter, QR-code generator, linkstatistieken, eigen domein korte links, Shorten URL" },
+      ar: { title: "Shorten URL: مختصر روابط مع تحليلات ورموز QR | ePortal", description: "اختصر الروابط الطويلة وأضف رمز QR لكل رابط وشاهد النقرات حسب الدولة والمدينة والجهاز والمصدر. يشمل نطاقات مخصصة وتواريخ انتهاء ومساحات عمل للفريق.", keywords: "مختصر روابط, اختصار الروابط, مولّد رمز QR, تحليلات الروابط, نطاق مخصص, Shorten URL" },
+    },
+  },
 };

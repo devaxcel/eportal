@@ -287,4 +287,94 @@ export const stories: Record<string, Story> = {
       },
     ],
   },
+
+  shortenurl: {
+    statement: {
+      en: "A link is only useful if people open it. Shorten URL makes links easy to share and shows you what happens next.",
+      ur: "لنک تب ہی کارآمد ہے جب لوگ اسے کھولیں۔ شارٹن یو آر ایل لنکس کو شیئر کرنا آسان بناتا ہے اور دکھاتا ہے کہ اس کے بعد کیا ہوتا ہے۔",
+      es: "Un enlace solo sirve si la gente lo abre. Shorten URL facilita compartirlos y le muestra qué ocurre después.",
+      nl: "Een link is alleen nuttig als mensen hem openen. Shorten URL maakt links makkelijk deelbaar en laat zien wat er daarna gebeurt.",
+      ar: "لا يفيد الرابط إلا إذا فتحه الناس. يجعل Shorten URL مشاركة الروابط سهلة ويُريك ما يحدث بعد ذلك.",
+    },
+    before: [
+      {
+        en: "Long, messy links that break in messages and print",
+        ur: "لمبے اور بے ترتیب لنکس جو پیغامات اور پرنٹ میں خراب ہو جاتے ہیں",
+        es: "Enlaces largos y desordenados que se rompen en mensajes e impresos",
+        nl: "Lange, rommelige links die kapotgaan in berichten en drukwerk",
+        ar: "روابط طويلة وفوضوية تتعطل في الرسائل والمطبوعات",
+      },
+      {
+        en: "No idea who clicked or where they came from",
+        ur: "کچھ معلوم نہیں کہ کس نے کلک کیا اور وہ کہاں سے آیا",
+        es: "Ni idea de quién hizo clic ni de dónde venía",
+        nl: "Geen idee wie er klikte en waar diegene vandaan kwam",
+        ar: "لا فكرة عمّن نقر ومن أين جاء",
+      },
+      {
+        en: "Links that stay live long after a campaign ends",
+        ur: "ایسے لنکس جو مہم ختم ہونے کے بہت بعد بھی چلتے رہتے ہیں",
+        es: "Enlaces que siguen activos mucho después de acabar la campaña",
+        nl: "Links die nog lang actief blijven nadat een campagne is afgelopen",
+        ar: "روابط تظل فعّالة طويلًا بعد انتهاء الحملة",
+      },
+    ],
+    after: [
+      {
+        en: "Short links and a QR code for every one",
+        ur: "مختصر لنکس اور ہر ایک کے لیے کیو آر کوڈ",
+        es: "Enlaces cortos y un código QR para cada uno",
+        nl: "Korte links en een QR-code bij elke link",
+        ar: "روابط قصيرة ورمز QR لكل رابط",
+      },
+      {
+        en: "Clicks by country, city, device, browser and source",
+        ur: "ملک، شہر، ڈیوائس، براؤزر اور ذریعے کے مطابق کلکس",
+        es: "Clics por país, ciudad, dispositivo, navegador y origen",
+        nl: "Klikken per land, stad, apparaat, browser en bron",
+        ar: "النقرات حسب الدولة والمدينة والجهاز والمتصفح والمصدر",
+      },
+      {
+        en: "Expiry dates that switch a link off on time",
+        ur: "میعاد کی تاریخیں جو لنک کو وقت پر بند کر دیتی ہیں",
+        es: "Fechas de caducidad que desactivan un enlace a tiempo",
+        nl: "Vervaldatums die een link op tijd uitschakelen",
+        ar: "تواريخ انتهاء تُوقف الرابط في موعده",
+      },
+    ],
+    faqs: [
+      {
+        q: {
+          en: "Can I use my own domain?",
+          ur: "کیا میں اپنا ڈومین استعمال کر سکتا ہوں؟",
+          es: "¿Puedo usar mi propio dominio?",
+          nl: "Kan ik mijn eigen domein gebruiken?",
+          ar: "هل يمكنني استخدام نطاقي الخاص؟",
+        },
+        a: {
+          en: "Yes. Custom domains let you share branded links.",
+          ur: "جی ہاں۔ حسب ضرورت ڈومین سے آپ برانڈڈ لنکس شیئر کر سکتے ہیں۔",
+          es: "Sí. Los dominios personalizados le permiten compartir enlaces con su marca.",
+          nl: "Ja. Met eigen domeinen deelt u links onder uw eigen merk.",
+          ar: "نعم. تتيح لك النطاقات المخصصة مشاركة روابط تحمل علامتك.",
+        },
+      },
+      {
+        q: {
+          en: "What can I see about each click?",
+          ur: "ہر کلک کے بارے میں میں کیا دیکھ سکتا ہوں؟",
+          es: "¿Qué puedo ver de cada clic?",
+          nl: "Wat kan ik zien van elke klik?",
+          ar: "ماذا يمكنني أن أرى عن كل نقرة؟",
+        },
+        a: {
+          en: "Country, city, device, browser, operating system and where the visitor came from.",
+          ur: "ملک، شہر، ڈیوائس، براؤزر، آپریٹنگ سسٹم اور وزیٹر کہاں سے آیا۔",
+          es: "País, ciudad, dispositivo, navegador, sistema operativo y de dónde llegó el visitante.",
+          nl: "Land, stad, apparaat, browser, besturingssysteem en waar de bezoeker vandaan kwam.",
+          ar: "الدولة والمدينة والجهاز والمتصفح ونظام التشغيل ومن أين جاء الزائر.",
+        },
+      },
+    ],
+  },
 };

@@ -4,7 +4,7 @@ import { useId, type ReactNode } from "react";
 import {
   Activity, BarChart3, Bell, BookOpen, Calendar, CalendarCheck, Car, CheckCircle2, ClipboardList, Dumbbell, FileText,
   FolderOpen, GitPullRequestArrow, LayoutDashboard, Mail, MessageSquare, Search, Settings, Stethoscope, Users,
-  Workflow, Wallet, Send, Clock, Gauge, UserCog, ListChecks, Bot, Package, ShoppingCart, Target, TrendingUp, type LucideIcon,
+  Workflow, Wallet, Link2, Globe, QrCode, Send, Clock, Gauge, UserCog, ListChecks, Bot, Package, ShoppingCart, Target, TrendingUp, type LucideIcon,
 } from "lucide-react";
 import { motion } from "motion/react";
 import { AdminDashboardMock, BrowserFrame } from "./visuals";
@@ -378,6 +378,40 @@ function InvoiceMock({ lang }: { lang: Lang }) {
   );
 }
 
+function ShortenMock({ lang }: { lang: Lang }) {
+  const links: [string, string, string][] = [
+    ["trimu.net/launch", "Product launch", "1,284"],
+    ["trimu.net/menu", "Cafe menu QR", "932"],
+    ["trimu.net/event", "Event tickets", "611"],
+  ];
+  const where: [string, number][] = [[T(lang, "Pakistan", "پاکستان"), 62], [T(lang, "UAE", "متحدہ عرب امارات"), 21], [T(lang, "United Kingdom", "برطانیہ"), 11]];
+  return (
+    <Shell icons={[LayoutDashboard, Link2, QrCode, Globe, Users, Settings]} title={T(lang, "Dashboard", "ڈیش بورڈ")} sub="Shorten URL">
+      <Kpis items={[
+        { l: T(lang, "Total clicks", "کل کلکس"), v: "12,480", d: "+18%", icon: Activity },
+        { l: T(lang, "Short links", "مختصر لنکس"), v: "86", d: "+5", icon: Link2 },
+        { l: T(lang, "Countries", "ممالک"), v: "24", icon: Globe },
+        { l: T(lang, "QR codes", "کیو آر کوڈ"), v: "41", icon: QrCode },
+      ]} />
+      <div className="mt-3 grid gap-3 lg:grid-cols-5">
+        <Card title={T(lang, "Top links", "مقبول لنکس")} className="lg:col-span-3">
+          <ul className="mt-2 space-y-2.5">{links.map(([u, n, c]) => <Row key={u} lead={tile(Link2)} title={u} sub={n} right={<span className="text-[10px] font-semibold text-ink-soft">{c}</span>} />)}</ul>
+        </Card>
+        <Card title={T(lang, "Clicks by country", "ملک کے مطابق کلکس")} className="lg:col-span-2">
+          <ul className="mt-2 space-y-2.5">
+            {where.map(([n, v]) => (
+              <li key={n} className="text-[10px]">
+                <span className="flex justify-between"><b>{n}</b><span className="text-ink-soft">{v}%</span></span>
+                <span className="mt-1 block h-1.5 overflow-hidden rounded-full bg-mist"><motion.span initial={{ width: 0 }} whileInView={{ width: `${v}%` }} viewport={{ once: true }} transition={{ duration: 1.1, delay: 0.3 }} className="block h-full rounded-full bg-brand-600" /></span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      </div>
+    </Shell>
+  );
+}
+
 /** Branded dashboard mockup for a product slug. */
 export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang }) {
   const slug = oldSlug(address); // built-in pictures are keyed by the original names
@@ -390,6 +424,7 @@ export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang 
     slug === "ai-sales-agent" ? <SalesAgentMock lang={lang} /> :
     slug === "pos" ? <PosMock lang={lang} /> :
     slug === "smartinvoice" ? <InvoiceMock lang={lang} /> :
+    slug === "shortenurl" ? <ShortenMock lang={lang} /> :
     <AdminDashboardMock lang={lang} />;
   // Only real product domains are shown; the rest use an ePortal path.
   const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", hayroutes: "hayroutes.com" };
