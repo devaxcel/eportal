@@ -4,7 +4,6 @@ import { seoBySlug } from "./seo-content";
 
 export const nav: { key: string; path: string; label: L }[] = [
   { key: "solutions", path: "/solutions", label: { en: "Solutions", ur: "حل" } },
-  { key: "pricing", path: "/pricing", label: { en: "Pricing", ur: "قیمتیں" } },
   { key: "about", path: "/about", label: { en: "About", ur: "ہمارے بارے میں" } },
   { key: "contact", path: "/contact", label: { en: "Contact", ur: "رابطہ" } },
 ];
@@ -697,8 +696,8 @@ export const hubFaqs: { q: L; a: L }[] = [
   {
     q: { en: "How is pricing decided?", ur: "قیمت کیسے طے ہوتی ہے؟" },
     a: {
-      en: "SchoolDesk has published plans. For the other platforms we quote based on your needs. Request a demo and we will share a clear price.",
-      ur: "اسکول ڈیسک کے پلانز شائع شدہ ہیں۔ دوسرے پلیٹ فارمز کے لیے ہم آپ کی ضرورت کے مطابق قیمت بتاتے ہیں۔ ڈیمو کی درخواست کریں، ہم واضح قیمت بتائیں گے۔",
+      en: "We quote based on your needs. Request a demo and we will share a clear price.",
+      ur: "ہم آپ کی ضرورت کے مطابق قیمت بتاتے ہیں۔ ڈیمو کی درخواست کریں، ہم واضح قیمت بتائیں گے۔",
     },
   },
 ];

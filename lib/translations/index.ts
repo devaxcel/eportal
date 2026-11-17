@@ -12,6 +12,7 @@ const all: [string, string, string, string][] = [
   ...part1,
   ...part2,
   ...counts,
+  ["We quote based on your needs. Request a demo and we will share a clear price.", "Presupuestamos según sus necesidades. Solicite una demostración y le daremos un precio claro.", "Wij maken een offerte op maat. Vraag een demo aan en wij geven u een duidelijke prijs.", "نقدّم عرض سعر بحسب احتياجاتك. اطلب عرضًا توضيحيًا وسنزوّدك بسعر واضح."],
   ["Every platform works on its own.", "Cada plataforma funciona por sí sola.", "Elk platform werkt zelfstandig.", "كل منصة تعمل بمفردها."],
 ];
 

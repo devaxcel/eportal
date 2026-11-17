@@ -433,11 +433,6 @@ export function PricingTeaser({ lang }: { lang: Lang }) {
           </Reveal>
         ))}
       </div>
-      <div className="mt-10 text-center">
-        <Link href={href(lang, "/pricing")} className="inline-flex items-center gap-2 font-semibold text-brand-600 hover:underline">
-          {T(lang, "Compare all plans", "تمام پلانز کا موازنہ")}<ArrowRight size={16} className="rtl:rotate-180" />
-        </Link>
-      </div>
     </section>
   );
 }

@@ -54,9 +54,6 @@ function SolutionHero({ s, lang }: { s: Solution; lang: Lang }) {
                 {tx(ui.demo, lang)}
                 <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
               </Link>
-              <Link href={href(lang, "/pricing")} className="glass rounded-xl px-6 py-3.5 font-semibold text-white transition hover:bg-white/15">
-                {tx(ui.seePricing, lang)}
-              </Link>
             </div>
           </Reveal>
           <Reveal delay={0.3}>
@@ -212,9 +209,6 @@ function PricingNote({ s, lang }: { s: Solution; lang: Lang }) {
           <div className="flex flex-wrap justify-center gap-3">
             <Link href={`${href(lang, "/demo")}?solution=${s.slug}`} className="rounded-xl bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-700">
               {T(lang, "Get a quote", "قیمت حاصل کریں")}
-            </Link>
-            <Link href={href(lang, "/pricing")} className="rounded-xl border border-line px-6 py-3 font-semibold hover:border-brand-300">
-              {tx(ui.seePricing, lang)}
             </Link>
           </div>
         </div>

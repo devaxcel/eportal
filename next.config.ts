@@ -14,11 +14,12 @@ const SLUG_RENAMES: Record<string, string> = {
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return Object.entries(SLUG_RENAMES).map(([from, to]) => ({
+    const gone = [{ source: "/:lang(en|ur|es|nl|ar)/pricing", destination: "/:lang/solutions", permanent: true }];
+    return gone.concat(Object.entries(SLUG_RENAMES).map(([from, to]) => ({
       source: `/:lang(en|ur|es|nl|ar)/solutions/${from}`,
       destination: `/:lang/solutions/${to}`,
       permanent: true,
-    }));
+    })));
   },
   // Lets `NEXT_DIST_DIR=.next-build npm run build` run beside a dev server without clobbering .next
   distDir: process.env.NEXT_DIST_DIR || ".next",

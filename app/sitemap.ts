@@ -5,7 +5,7 @@ import { getSolutions } from "@/lib/solutions-data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const solutions = await getSolutions();
-  const pages = ["", "/solutions", "/pricing", "/about", "/contact", "/demo", "/portals"];
+  const pages = ["", "/solutions", "/about", "/contact", "/demo", "/portals"];
   const paths = [...pages, ...solutions.map((s) => `/solutions/${s.slug}`)];
 
   return paths.flatMap((path) =>
