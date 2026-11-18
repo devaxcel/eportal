@@ -23,4 +23,4 @@ export async function recordEvent(e: EventRow): Promise<void> {
 }
 
 /** /es/solutions/trainerbook -> trainerbook */
-export const solutionOfPath = (path: string | null | undefined) => path?.match(/^\/[a-z]{2}\/solutions\/([a-z0-9-]+)/)?.[1] ?? null;
+export const solutionOfPath = (path: string | null | undefined) => path?.match(/^(?:\/(?:en|ur|es|nl|ar))?\/solutions\/([a-z0-9-]+)/)?.[1] ?? null;

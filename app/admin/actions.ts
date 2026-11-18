@@ -294,7 +294,7 @@ export async function cancelBookingAdmin(id: string): Promise<Result> {
     await sendMail({
       to: data.email,
       subject: T(lang, "Your demo was cancelled", "آپ کا ڈیمو منسوخ کر دیا گیا"),
-      html: layout(T(lang, "Your demo was cancelled by our team", "آپ کا ڈیمو ہماری ٹیم نے منسوخ کر دیا"), [[T(lang, "Was at", "وقت تھا"), formatSlot(Date.parse(data.start_at), data.visitor_tz || "UTC", lang)]], `${T(lang, "Sorry about that. Please book another time:", "معذرت۔ براہ کرم نیا وقت بک کریں:")} ${siteUrl()}/${lang}/demo`),
+      html: layout(T(lang, "Your demo was cancelled by our team", "آپ کا ڈیمو ہماری ٹیم نے منسوخ کر دیا"), [[T(lang, "Was at", "وقت تھا"), formatSlot(Date.parse(data.start_at), data.visitor_tz || "UTC", lang)]], `${T(lang, "Sorry about that. Please book another time:", "معذرت۔ براہ کرم نیا وقت بک کریں:")} ${siteUrl()}/demo`),
     });
     revalidatePath("/admin/bookings");
     return { ok: true, message: "Cancelled. The visitor was emailed." };

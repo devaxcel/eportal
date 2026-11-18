@@ -21,7 +21,8 @@ export type L = { en: string; ur: string; es?: string; nl?: string; ar?: string 
 
 export const isLang = (v: string): v is Lang => (locales as readonly string[]).includes(v);
 export const dirOf = (lang: Lang) => (rtl.includes(lang) ? "rtl" : "ltr");
-export const href = (lang: Lang, path = "") => `/${lang}${path}`;
+/** Page addresses carry no language: the visitor's language comes from a cookie (see middleware.ts). */
+export const href = (_lang: Lang, path = "") => path || "/";
 
 const pick = (lang: Lang, en: string, ur: string) => {
   if (lang === "en") return en;

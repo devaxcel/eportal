@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   BarChart3, Bot, BookOpen, Briefcase, Building2, Camera, Car, Check, ChevronDown, Dumbbell, Globe, House, Landmark,
@@ -21,7 +20,6 @@ const icons: Record<string, LucideIcon> = {
 export function Header({ lang }: { lang: Lang }) {
   const solutions = useSolutions();
   const [open, setOpen] = useState(false);
-  const pathname = usePathname() || `/${lang}`;
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +39,11 @@ export function Header({ lang }: { lang: Lang }) {
       document.removeEventListener("keydown", onKey);
     };
   }, [langOpen]);
-  const switchHref = (l: Lang) => pathname.replace(/^\/(en|ur|es|nl|ar)/, `/${l}`) || `/${l}`;
+  // The language is remembered in a cookie, so every address stays free of it.
+  const chooseLang = (l: Lang) => {
+    document.cookie = `lang=${l}; path=/; max-age=31536000; samesite=lax`;
+    window.location.reload();
+  };
   const link = "rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition hover:bg-mist hover:text-black";
 
   return (
@@ -104,15 +106,15 @@ export function Header({ lang }: { lang: Lang }) {
               <ul role="listbox" className="absolute end-0 top-full z-50 w-44 translate-y-2 overflow-hidden rounded-xl border border-line bg-white p-1 shadow-2xl shadow-black/10">
                 {locales.map((l) => (
                   <li key={l}>
-                    <Link
-                      href={switchHref(l)}
-                      hrefLang={l}
-                      onClick={() => setLangOpen(false)}
-                      className={`flex items-center justify-between rounded-lg px-3 py-2 text-sm hover:bg-mist ${l === lang ? "font-bold text-brand-700" : "text-black"}`}
+                    <button
+                      type="button"
+                      lang={l}
+                      onClick={() => (l === lang ? setLangOpen(false) : chooseLang(l))}
+                      className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-start text-sm hover:bg-mist ${l === lang ? "font-bold text-brand-700" : "text-black"}`}
                     >
                       {langNames[l]}
                       {l === lang && <Check size={14} />}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>

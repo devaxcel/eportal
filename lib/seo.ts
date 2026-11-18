@@ -23,7 +23,7 @@ export function seoOf(s: Solution, lang: Lang) {
 /** Next.js metadata for a solution page: title, description, keywords, canonical, hreflang, Open Graph, Twitter. */
 export function solutionMetadata(s: Solution, lang: Lang): Metadata {
   const seo = seoOf(s, lang);
-  const url = `${SITE_URL}/${lang}/solutions/${s.slug}`;
+  const url = `${SITE_URL}/solutions/${s.slug}`;
   const images = s.seo?.ogImage ? [s.seo.ogImage] : undefined;
   return {
     title: seo.customTitle ? { absolute: seo.title } : seo.title,
@@ -31,7 +31,6 @@ export function solutionMetadata(s: Solution, lang: Lang): Metadata {
     keywords: seo.keywords.length ? seo.keywords : undefined,
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}/solutions/${s.slug}`])),
       types: { "text/markdown": `${SITE_URL}/md/${lang}/solutions/${s.slug}` },
     },
     openGraph: { type: "website", title: seo.title, description: seo.description, url, siteName: "ePortal", locale: lang, images },
@@ -50,7 +49,7 @@ export function solutionSchema(s: Solution, lang: Lang, site: string = SITE_URL)
     }
   }
   const name = tx(s.name, lang);
-  const url = `${site}/${lang}/solutions/${s.slug}`;
+  const url = `${site}/solutions/${s.slug}`;
   const graph: unknown[] = [
     {
       "@type": "SoftwareApplication",
@@ -65,8 +64,8 @@ export function solutionSchema(s: Solution, lang: Lang, site: string = SITE_URL)
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "ePortal", item: `${site}/${lang}` },
-        { "@type": "ListItem", position: 2, name: "Solutions", item: `${site}/${lang}/solutions` },
+        { "@type": "ListItem", position: 1, name: "ePortal", item: `${site}/` },
+        { "@type": "ListItem", position: 2, name: "Solutions", item: `${site}/solutions` },
         { "@type": "ListItem", position: 3, name, item: url },
       ],
     },

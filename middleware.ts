@@ -51,22 +51,29 @@ export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   if (pathname === "/admin" || pathname.startsWith("/admin/")) return adminGate(req);
   if (pathname === "/md" || pathname.startsWith("/md/")) return;
-  if (locales.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
-    // Agents that ask for markdown get the markdown twin of the page.
-    if (req.method === "GET" && (req.headers.get("accept") ?? "").includes("text/markdown")) {
-      const url = req.nextUrl.clone();
-      url.pathname = `/md${pathname}`;
-      return NextResponse.rewrite(url);
-    }
-    const res = NextResponse.next();
-    res.headers.set("Vary", "Accept");
+
+  // Addresses carry no language. An old /ur/... link goes to the clean address and remembers the language.
+  const old = pathname.match(/^\/(en|ur|es|nl|ar)(\/.*)?$/);
+  if (old) {
+    const url = req.nextUrl.clone();
+    url.pathname = old[2] && old[2] !== "/" ? old[2] : "/";
+    const res = NextResponse.redirect(url, 308);
+    res.cookies.set("lang", old[1], { path: "/", maxAge: 31536000, sameSite: "lax" });
     return res;
   }
 
-  const lang = preferred(req.headers.get("accept-language") ?? "");
+  // Language: the visitor's choice (cookie), else their browser language, else English.
+  const saved = req.cookies.get("lang")?.value ?? "";
+  const lang = locales.includes(saved) ? saved : preferred(req.headers.get("accept-language") ?? "");
+  const rest = pathname === "/" ? "" : pathname;
+
   const url = req.nextUrl.clone();
-  url.pathname = `/${lang}${pathname === "/" ? "" : pathname}`;
-  return NextResponse.redirect(url);
+  // Agents that ask for markdown get the markdown twin of the page.
+  const wantsMarkdown = req.method === "GET" && (req.headers.get("accept") ?? "").includes("text/markdown");
+  url.pathname = wantsMarkdown ? `/md/${lang}${rest}` : `/${lang}${rest}`;
+  const res = NextResponse.rewrite(url);
+  res.headers.set("Vary", "Accept, Accept-Language, Cookie");
+  return res;
 }
 
 export const config = {

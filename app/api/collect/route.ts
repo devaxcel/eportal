@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   const site = req.headers.get("sec-fetch-site");
   if (site && site !== "same-origin" && site !== "same-site") return done();
 
-  let body: { kind?: string; path?: string; ref?: string };
+  let body: { kind?: string; path?: string; lang?: string; ref?: string };
   try {
     body = JSON.parse(await req.text());
   } catch {
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
   }
 
   const path = String(body.path ?? "").slice(0, 200);
-  const lang = path.split("/")[1] ?? "";
+  const lang = isLang(String(body.lang)) ? String(body.lang) : path.split("/")[1] ?? "";
   if (!isLang(lang) || path.startsWith("/admin")) return done();
 
   let referrer: string | null = null;

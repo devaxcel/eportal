@@ -147,7 +147,7 @@ export async function bookSlot(_prev: BookState, form: FormData): Promise<BookSt
     const sol = await solutionName(f.solution);
     const { data: enquiry } = await db
       .from("enquiries")
-      .insert({ source: "booking", solution: f.solution || null, name: f.name, organisation: f.organisation || null, phone: f.phone || null, email: f.email, message: f.message || null, lang, page: `/${lang}/demo`, ip_hash: hash })
+      .insert({ source: "booking", solution: f.solution || null, name: f.name, organisation: f.organisation || null, phone: f.phone || null, email: f.email, message: f.message || null, lang, page: "/demo", ip_hash: hash })
       .select("id")
       .single();
 
@@ -158,11 +158,11 @@ export async function bookSlot(_prev: BookState, form: FormData): Promise<BookSt
       .single();
     if (error || !booking) return { ok: false, error: error?.code === "23505" ? "taken" : "server" };
 
-    void recordEvent({ kind: "booking", solution: f.solution || null, lang, path: `/${lang}/demo` });
+    void recordEvent({ kind: "booking", solution: f.solution || null, lang, path: "/demo" });
 
     const when = formatSlot(start, visitorTz, lang);
     const whenTeam = formatSlot(start, settings.timezone, "en");
-    const cancel = `${siteUrl()}/${lang}/demo/cancel/${booking.cancel_token}`;
+    const cancel = `${siteUrl()}/demo/cancel/${booking.cancel_token}`;
     const ics = buildIcs({ uid: booking.id, start, end, title: `ePortal demo: ${sol}`, description: `${settings.meeting_info}\nChange or cancel: ${cancel}` });
 
     await Promise.all([

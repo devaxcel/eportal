@@ -12,7 +12,7 @@ const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 /** What agents and search engines learn about the business on every page. */
 export function organizationGraph(lang: Lang, solutions: Solution[]) {
   const orgId = `${SITE_URL}/#organization`;
-  const demo = `${SITE_URL}/${lang}/demo`;
+  const demo = `${SITE_URL}/demo`;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -43,7 +43,7 @@ export function organizationGraph(lang: Lang, solutions: Solution[]) {
           name: `${site.name} solutions`,
           itemListElement: solutions.map((s) => ({
             "@type": "Offer",
-            url: `${SITE_URL}/${lang}/solutions/${s.slug}`,
+            url: `${SITE_URL}/solutions/${s.slug}`,
             description: "Priced on request: a quote follows a short demo.",
             availability: "https://schema.org/InStock",
             itemOffered: { "@type": "Service", name: tx(s.name, lang), description: tx(s.description, lang), serviceType: tx(s.tagline, lang), provider: { "@id": orgId }, areaServed: "Worldwide" },
@@ -70,7 +70,7 @@ export function homeGraph(lang: Lang, solutions: Solution[]) {
       {
         "@type": "ItemList",
         name: `${site.name} solutions`,
-        itemListElement: solutions.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: tx(s.name, lang), url: `${SITE_URL}/${lang}/solutions/${s.slug}` })),
+        itemListElement: solutions.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: tx(s.name, lang), url: `${SITE_URL}/solutions/${s.slug}` })),
       },
       {
         "@type": "FAQPage",
@@ -82,7 +82,7 @@ export function homeGraph(lang: Lang, solutions: Solution[]) {
 
 /* ------------------------------------------------------------------ markdown */
 
-const link = (lang: Lang, path: string) => `${SITE_URL}/${lang}${path}`;
+const link = (_lang: Lang, path: string) => `${SITE_URL}${path}`;
 
 function solutionMarkdown(s: Solution, lang: Lang): string {
   const lines = [`# ${tx(s.name, lang)}`, "", `> ${tx(s.tagline, lang)}`, "", tx(s.description, lang), "", "## Features", ...s.features.map((f) => `- ${tx(f, lang)}`), "", "## Who it is for", ...s.forWho.map((f) => `- ${tx(f, lang)}`)];

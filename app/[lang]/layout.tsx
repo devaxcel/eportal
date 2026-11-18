@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       `${names}: smart platforms built in Lahore.`,
       "لاہور میں تیار کردہ سمارٹ پلیٹ فارمز: اسکول ڈیسک اور مزید۔",
     ),
-    alternates: { languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])) },
   };
 }
 

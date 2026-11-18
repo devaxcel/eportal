@@ -14,18 +14,24 @@ const SLUG_RENAMES: Record<string, string> = {
 
 const nextConfig: NextConfig = {
   async redirects() {
-    const gone = [{ source: "/:lang(en|ur|es|nl|ar)/pricing", destination: "/:lang/solutions", permanent: true }];
-    return gone.concat(Object.entries(SLUG_RENAMES).map(([from, to]) => ({
-      source: `/:lang(en|ur|es|nl|ar)/solutions/${from}`,
-      destination: `/:lang/solutions/${to}`,
-      permanent: true,
-    })));
+    // Old addresses, with and without a language prefix (the middleware removes the prefix afterwards).
+    const gone = [
+      { source: "/pricing", destination: "/solutions", permanent: true },
+      { source: "/:lang(en|ur|es|nl|ar)/pricing", destination: "/:lang/solutions", permanent: true },
+    ];
+    const renamed = Object.entries(SLUG_RENAMES).flatMap(([from, to]) => [
+      { source: `/solutions/${from}`, destination: `/solutions/${to}`, permanent: true },
+      { source: `/:lang(en|ur|es|nl|ar)/solutions/${from}`, destination: `/:lang/solutions/${to}`, permanent: true },
+    ]);
+    return [...gone, ...renamed];
   },
-  // /en/solutions/schooldesk.md serves the markdown twin of the page.
+  // /solutions/schooldesk.md serves the markdown twin of the page (English; /ur/... paths pick other languages).
   async rewrites() {
     return [
       { source: "/:lang(en|ur|es|nl|ar).md", destination: "/md/:lang" },
       { source: "/:lang(en|ur|es|nl|ar)/:path*.md", destination: "/md/:lang/:path*" },
+      { source: "/index.md", destination: "/md/en" },
+      { source: "/:path+.md", destination: "/md/en/:path+" },
     ];
   },
   // Lets `NEXT_DIST_DIR=.next-build npm run build` run beside a dev server without clobbering .next
