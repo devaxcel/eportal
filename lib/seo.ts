@@ -32,6 +32,7 @@ export function solutionMetadata(s: Solution, lang: Lang): Metadata {
     alternates: {
       canonical: url,
       languages: Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}/solutions/${s.slug}`])),
+      types: { "text/markdown": `${SITE_URL}/md/${lang}/solutions/${s.slug}` },
     },
     openGraph: { type: "website", title: seo.title, description: seo.description, url, siteName: "ePortal", locale: lang, images },
     twitter: { card: images ? "summary_large_image" : "summary", title: seo.title, description: seo.description, images },

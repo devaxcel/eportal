@@ -2,7 +2,10 @@ import { notFound } from "next/navigation";
 import { CtaBand, FaqList, SectionHead } from "@/components/Section";
 import { EmotionalStatement } from "@/components/heart";
 import { GettingStarted, HubHero, SolutionsGrid, WhyEportal } from "@/components/hub";
+import { JsonLd } from "@/components/JsonLd";
+import { homeGraph } from "@/lib/agents";
 import { hubFaqs } from "@/lib/content";
+import { getSolutions } from "@/lib/solutions-data";
 import { isLang, T } from "@/lib/i18n";
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
@@ -11,6 +14,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
+      <JsonLd data={homeGraph(lang, await getSolutions())} />
       <HubHero lang={lang} />
       <SolutionsGrid lang={lang} />
       <EmotionalStatement lang={lang} />

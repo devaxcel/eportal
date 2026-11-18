@@ -50,7 +50,18 @@ async function adminGate(req: NextRequest) {
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   if (pathname === "/admin" || pathname.startsWith("/admin/")) return adminGate(req);
-  if (locales.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) return;
+  if (pathname === "/md" || pathname.startsWith("/md/")) return;
+  if (locales.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
+    // Agents that ask for markdown get the markdown twin of the page.
+    if (req.method === "GET" && (req.headers.get("accept") ?? "").includes("text/markdown")) {
+      const url = req.nextUrl.clone();
+      url.pathname = `/md${pathname}`;
+      return NextResponse.rewrite(url);
+    }
+    const res = NextResponse.next();
+    res.headers.set("Vary", "Accept");
+    return res;
+  }
 
   const lang = preferred(req.headers.get("accept-language") ?? "");
   const url = req.nextUrl.clone();

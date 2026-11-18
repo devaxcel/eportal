@@ -21,6 +21,13 @@ const nextConfig: NextConfig = {
       permanent: true,
     })));
   },
+  // /en/solutions/schooldesk.md serves the markdown twin of the page.
+  async rewrites() {
+    return [
+      { source: "/:lang(en|ur|es|nl|ar).md", destination: "/md/:lang" },
+      { source: "/:lang(en|ur|es|nl|ar)/:path*.md", destination: "/md/:lang/:path*" },
+    ];
+  },
   // Lets `NEXT_DIST_DIR=.next-build npm run build` run beside a dev server without clobbering .next
   distDir: process.env.NEXT_DIST_DIR || ".next",
 };

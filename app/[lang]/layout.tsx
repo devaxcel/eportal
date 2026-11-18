@@ -8,6 +8,8 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MotionProvider, ScrollProgress } from "@/components/motion";
 import { SolutionsProvider } from "@/components/SolutionsProvider";
 import { Track } from "@/components/Track";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationGraph } from "@/lib/agents";
 import { getSolutions } from "@/lib/solutions-data";
 import { dirOf, isLang, locales, Tm } from "@/lib/i18n";
 
@@ -26,6 +28,7 @@ export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const names = (await getSolutions()).map((s) => s.name.en).join(", ");
   return {
     title: {
       default: Tm(
@@ -37,8 +40,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     description: Tm(
       lang,
-      "SchoolDesk, TrainerBook, ApproveFlow, ReportRelay, MedCodeX, LessonBook, LeadChat and SaleDesk: smart platforms built in Lahore.",
-      "اسکول ڈیسک، ٹرینر بک، اپروو فلو، رپورٹ ریلے، میڈ کوڈ ایکس، لیسن بک، لیڈ چیٹ اور سیل ڈیسک: لاہور میں تیار کردہ سمارٹ پلیٹ فارمز۔",
+      `${names}: smart platforms built in Lahore.`,
+      "لاہور میں تیار کردہ سمارٹ پلیٹ فارمز: اسکول ڈیسک اور مزید۔",
     ),
     alternates: { languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])) },
   };
@@ -62,6 +65,7 @@ export default async function RootLayout({
         {typekit && <link rel="stylesheet" href={`https://use.typekit.net/${typekit}.css`} />}
       </head>
       <body>
+        <JsonLd data={organizationGraph(lang, solutions)} />
         <MotionProvider>
           <SolutionsProvider solutions={solutions}>
             <ScrollProgress />
