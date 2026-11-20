@@ -8,6 +8,7 @@ import { recordEvent } from "@/lib/events";
 import { isLang, T, type Lang } from "@/lib/i18n";
 import { esc, layout, sendMail } from "@/lib/mail";
 import { clientIp, ipHash } from "@/lib/privacy";
+import { getService } from "@/lib/services";
 import { getSolutions } from "@/lib/solutions-data";
 import { adminClient } from "@/lib/supabase/admin";
 import { formatSlot, isValidTimeZone } from "@/lib/tz";
@@ -23,7 +24,7 @@ const PHONE = /^[+()\-.\s\d]{6,30}$/;
 
 const ready = () => Boolean(supabaseUrl() && serviceRoleKey());
 
-type Fields = { name: string; organisation: string; phone: string; email: string; message: string; solution: string; students: string };
+type Fields = { name: string; organisation: string; phone: string; email: string; message: string; solution: string; students: string; topic: string };
 
 /** Shared checks for the message form and the booking form. */
 async function readFields(form: FormData, needEmail: boolean): Promise<{ f: Fields } | { error: ErrorCode }> {
@@ -39,6 +40,7 @@ async function readFields(form: FormData, needEmail: boolean): Promise<{ f: Fiel
     message: clean(form.get("msg"), 2000),
     solution: clean(form.get("solution"), 60),
     students: clean(form.get("students"), 20),
+    topic: getService(clean(form.get("topic"), 40))?.topic ?? "",
   };
   if ([f.name, f.organisation, f.phone, f.email, f.message].some((v, i) => v.length > [100, 120, 30, 200, 2000][i])) return { error: "long" };
   if (f.name.length < 2) return { error: "name" };
@@ -60,7 +62,8 @@ async function tooMany(hash: string | null) {
   return (count ?? 0) >= 5;
 }
 
-const solutionName = async (slug: string) => (await getSolutions()).find((s) => s.slug === slug)?.name.en ?? "Not chosen";
+const solutionName = async (slug: string, topic = "") => topic || (await solutionNameOf(slug));
+const solutionNameOf = async (slug: string) => (await getSolutions()).find((s) => s.slug === slug)?.name.en ?? "Not chosen";
 
 /* ------------------------------------------------------------ enquiry form */
 
@@ -79,14 +82,14 @@ export async function submitEnquiry(_prev: EnquiryState, form: FormData): Promis
 
     const { data, error } = await adminClient()
       .from("enquiries")
-      .insert({ source: "form", solution: f.solution || null, name: f.name, organisation: f.organisation || null, phone: f.phone || null, email: f.email || null, students: f.students || null, message: f.message || null, lang, page, ip_hash: hash })
+      .insert({ source: "form", solution: f.solution || null, name: f.name, organisation: f.organisation || null, phone: f.phone || null, email: f.email || null, students: f.students || null, message: (f.topic ? `[${f.topic}] ${f.message}`.trim() : f.message) || null, lang, page, ip_hash: hash })
       .select("id")
       .single();
     if (error || !data) return { ok: false, error: "server" };
 
     void recordEvent({ kind: "enquiry", solution: f.solution || null, lang, path: page });
 
-    const sol = await solutionName(f.solution);
+    const sol = await solutionName(f.solution, f.topic);
     await Promise.all([
       sendMail({
         to: notifyEmails(),

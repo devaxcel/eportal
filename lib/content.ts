@@ -4,6 +4,8 @@ import { seoBySlug } from "./seo-content";
 
 export const nav: { key: string; path: string; label: L }[] = [
   { key: "solutions", path: "/solutions", label: { en: "Solutions", ur: "حل" } },
+  { key: "custom-portal", path: "/custom-portal", label: { en: "Custom Portal", ur: "کسٹم پورٹل" } },
+  { key: "business-website", path: "/business-website", label: { en: "Business Website", ur: "بزنس ویب سائٹ" } },
   { key: "about", path: "/about", label: { en: "About", ur: "ہمارے بارے میں" } },
   { key: "contact", path: "/contact", label: { en: "Contact", ur: "رابطہ" } },
 ];

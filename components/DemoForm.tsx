@@ -7,6 +7,7 @@ import { TrackedLink } from "./Track";
 import { useSolutions } from "./SolutionsProvider";
 import { T, tx, type Lang } from "@/lib/i18n";
 import { newSlug } from "@/lib/slugs";
+import { getService } from "@/lib/services";
 import { site } from "@/lib/site";
 
 const sizes = ["< 200", "200 – 600", "600 – 1,500", "1,500+"];
@@ -26,7 +27,8 @@ export const errorText = (lang: Lang, code: ErrorCode) =>
 
 export const fieldClass = "w-full rounded-xl border border-line bg-white px-4 py-3 text-base outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-200";
 
-export function DemoForm({ lang }: { lang: Lang }) {
+/** `topic` marks a made-to-order service request (custom portal, business website): the solution picker is hidden. */
+export function DemoForm({ lang, topic }: { lang: Lang; topic?: string }) {
   const solutions = useSolutions();
   const [state, action, pending] = useActionState(submitEnquiry, undefined);
   const [v, setV] = useState({ solution: "", name: "", org: "", phone: "", email: "", students: sizes[0], msg: "" });
@@ -45,7 +47,8 @@ export function DemoForm({ lang }: { lang: Lang }) {
   }, [solutions]);
 
   const chosen = solutions.find((s) => s.slug === v.solution);
-  const text = ["ePortal request", `Solution: ${chosen ? chosen.name.en : "Not sure yet"}`, `Name: ${v.name}`, `Organisation: ${v.org}`, `Phone: ${v.phone}`, v.email && `Email: ${v.email}`, v.msg && `Notes: ${v.msg}`].filter(Boolean).join("\n");
+  const topicName = topic ? getService(topic)?.topic : undefined;
+  const text = ["ePortal request", topicName ? `Service: ${topicName}` : `Solution: ${chosen ? chosen.name.en : "Not sure yet"}`, `Name: ${v.name}`, `Organisation: ${v.org}`, `Phone: ${v.phone}`, v.email && `Email: ${v.email}`, v.msg && `Notes: ${v.msg}`].filter(Boolean).join("\n");
 
   if (state?.ok) {
     return (
@@ -66,18 +69,19 @@ export function DemoForm({ lang }: { lang: Lang }) {
       <input type="hidden" name="lang" value={lang} />
       <input type="hidden" name="page" value={page} />
       <input type="hidden" name="ts" value={loadedAt} />
+      {topic && <input type="hidden" name="topic" value={topic} />}
       {/* honeypot: hidden from people, filled in by simple bots */}
       <div aria-hidden="true" className="absolute -start-[9999px] h-0 w-0 overflow-hidden">
         <label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
       </div>
 
-      <label className="block">
+      {!topic && <label className="block">
         <span className="mb-1.5 block text-sm font-semibold">{T(lang, "Which solution are you interested in?", "آپ کس حل میں دلچسپی رکھتے ہیں؟")}</span>
         <select name="solution" className={fieldClass} value={v.solution} onChange={set("solution")}>
           <option value="">{T(lang, "Not sure yet", "ابھی یقین نہیں")}</option>
           {solutions.map((s) => <option key={s.slug} value={s.slug}>{tx(s.name, lang)}</option>)}
         </select>
-      </label>
+      </label>}
       <label className="block">
         <span className="mb-1.5 block text-sm font-semibold">{T(lang, "Your name", "آپ کا نام")}</span>
         <input name="name" className={fieldClass} value={v.name} onChange={set("name")} required maxLength={100} autoComplete="name" />
@@ -97,14 +101,14 @@ export function DemoForm({ lang }: { lang: Lang }) {
         </label>
       </div>
       <p className="-mt-2 text-xs text-ink-soft">{T(lang, "Add a phone number or an email so we can reply.", "جواب دینے کے لیے فون نمبر یا ای میل لکھیں۔")}</p>
-      {v.solution === "schooldesk" && (
+      {!topic && v.solution === "schooldesk" && (
         <label className="block">
           <span className="mb-1.5 block text-sm font-semibold">{T(lang, "Number of students", "طلبہ کی تعداد")}</span>
           <select name="students" className={fieldClass} value={v.students} onChange={set("students")}>{sizes.map((s) => <option key={s}>{s}</option>)}</select>
         </label>
       )}
       <label className="block">
-        <span className="mb-1.5 block text-sm font-semibold">{T(lang, "Anything we should know? (optional)", "کچھ اور بتانا چاہیں؟ (اختیاری)")}</span>
+        <span className="mb-1.5 block text-sm font-semibold">{topic ? T(lang, "What would you like us to build? (optional)", "آپ ہم سے کیا بنوانا چاہتے ہیں؟ (اختیاری)") : T(lang, "Anything we should know? (optional)", "کچھ اور بتانا چاہیں؟ (اختیاری)")}</span>
         <textarea name="msg" rows={3} className={fieldClass} value={v.msg} onChange={set("msg")} maxLength={2000} />
       </label>
 

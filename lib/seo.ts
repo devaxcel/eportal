@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Solution } from "./content";
 import { siteUrl } from "./env";
 import { locales, tx, type Lang } from "./i18n";
+import type { Service } from "./services";
 
 export const SITE_URL = siteUrl();
 
@@ -81,6 +82,55 @@ export function solutionSchema(s: Solution, lang: Lang, site: string = SITE_URL)
     });
   }
   return { "@context": "https://schema.org", "@graph": graph };
+}
+
+/** Next.js metadata for a made-to-order service page. */
+export function serviceMetadata(s: Service, lang: Lang): Metadata {
+  const url = `${SITE_URL}${s.path}`;
+  const title = tx(s.seoTitle, lang);
+  const description = tx(s.seoDescription, lang);
+  return {
+    title,
+    description,
+    keywords: s.keywords,
+    alternates: { canonical: url, types: { "text/markdown": `${SITE_URL}/md/${lang}${s.path}` } },
+    openGraph: { type: "website", title, description, url, siteName: "ePortal", locale: lang },
+    twitter: { card: "summary", title, description },
+  };
+}
+
+/** JSON-LD for a service page: the service, its breadcrumb and its questions. */
+export function serviceGraph(s: Service, lang: Lang) {
+  const url = `${SITE_URL}${s.path}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: tx(s.title, lang),
+        serviceType: s.topic,
+        description: tx(s.seoDescription, lang),
+        url,
+        inLanguage: lang,
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: [{ "@type": "Country", name: "Pakistan" }, { "@type": "Place", name: "Worldwide" }],
+        offers: { "@type": "Offer", url, description: "Free consultation, then a clear written quote.", availability: "https://schema.org/InStock" },
+        potentialAction: { "@type": "ContactAction", name: tx(s.title, lang), target: `${url}#request` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ePortal", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: tx(s.label, lang), item: url },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: tx(f.q, lang), acceptedAnswer: { "@type": "Answer", text: tx(f.a, lang) } })),
+      },
+    ],
+  };
 }
 
 /** Is this string valid JSON that looks like schema.org structured data? Used by the dashboard. */

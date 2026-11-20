@@ -3,6 +3,7 @@ import { hubFaqs } from "./content";
 import { tx, T, type Lang } from "./i18n";
 import { SITE_URL } from "./seo";
 import { site } from "./site";
+import { getService, services, type Service } from "./services";
 import { getSolution, getSolutions } from "./solutions-data";
 
 /* ------------------------------------------------------------ structured data */
@@ -96,6 +97,17 @@ function solutionMarkdown(s: Solution, lang: Lang): string {
   return lines.join("\n");
 }
 
+function serviceMarkdown(s: Service, lang: Lang): string {
+  return [
+    `# ${tx(s.title, lang)}`, "", `> ${tx(s.seoDescription, lang)}`, "", tx(s.sub, lang), "",
+    "## What you get", ...s.included.map((x) => `- ${tx(x, lang)}`), "",
+    "## Who it is for", ...s.forWho.map((x) => `- ${tx(x, lang)}`), "",
+    "## How it works", ...s.steps.map((st, i) => `${i + 1}. **${tx(st.title, lang)}**: ${tx(st.text, lang)}`), "",
+    "## Questions", ...s.faqs.flatMap((f) => [`### ${tx(f.q, lang)}`, tx(f.a, lang), ""]),
+    "## Next steps", `- Send a request: ${link(lang, s.path)}#request`, "- Pricing: a free consultation, then a clear written quote.", ...contactBlock(lang),
+  ].join("\n");
+}
+
 const contactBlock = (lang: Lang) => [
   `- Email: ${site.email}`,
   `- Phone: ${site.phone}`,
@@ -125,6 +137,8 @@ export async function markdownPage(lang: Lang, segs: string[]): Promise<string |
     const s = await getSolution(segs[1]);
     return s ? solutionMarkdown(s, lang) : null;
   }
+  const svc = getService(key);
+  if (svc) return serviceMarkdown(svc, lang);
   if (key === "contact") return [`# ${T(lang, "Contact", "رابطہ")} ${site.name}`, "", ...contactBlock(lang)].join("\n");
   if (key === "demo") {
     return [`# Book a demo`, "", "A 30 minute call, no commitment. We learn what you need, show the platform that fits and send a clear quote.", "", `- Book a time or send a request: ${link(lang, "/demo")}`, "- Choose a solution with `?solution=<slug>`, for example `?solution=schooldesk`.", "", "## Contact", ...contactBlock(lang)].join("\n");
@@ -141,6 +155,8 @@ export async function llmsTxt(): Promise<string> {
     `# ${site.name}`, "",
     `> ${site.name} is a set of smart software platforms by ${site.company}, built in Lahore, Pakistan. Pages are available in English, Urdu, Spanish, Dutch and Arabic. Every page has a markdown version: send \`Accept: text/markdown\` or add \`.md\` to the page address.`, "",
     "## Solutions", ...solutions.map((s) => `- [${tx(s.name, lang)}](${link(lang, `/solutions/${s.slug}`)}): ${tx(s.description, lang)}`), "",
+    "## Services",
+    ...services.map((s) => `- [${tx(s.title, lang)}](${link(lang, s.path)}): ${tx(s.seoDescription, lang)}`), "",
     "## Key pages",
     `- [All solutions](${link(lang, "/solutions")})`,
     `- [Book a demo](${link(lang, "/demo")}): pick a time online, 30 minutes, no commitment`,
