@@ -480,6 +480,65 @@ const baseSolutions: Solution[] = [
       },
     ],
   },
+  {
+    slug: "influnexa",
+    category: "business",
+    icon: "Megaphone",
+    status: "new",
+    url: "https://influnexa.com/",
+    mock: "influnexa",
+    accent: "from-fuchsia-500 to-violet-700",
+    name: { en: "Influnexa", ur: "انفلونیکسا", ar: "إنفلونيكسا" },
+    tagline: {
+      en: "Find, shortlist and hire verified creators",
+      ur: "تصدیق شدہ کرییٹرز تلاش کریں، شارٹ لسٹ کریں اور ہائر کریں",
+      ar: "اعثر على صنّاع محتوى موثّقين واختصرهم ووظّفهم",
+    },
+    description: {
+      en: "A platform to discover journalists, creators, speakers and experts, see their real reach on every platform, then connect or hire. Shortlist and compare people, post campaigns, and sign milestone agreements online.",
+      ur: "صحافیوں، کرییٹرز، مقررین اور ماہرین کو تلاش کرنے کا پلیٹ فارم۔ ہر پلیٹ فارم پر ان کی اصل رسائی دیکھیں، پھر رابطہ کریں یا ہائر کریں۔ لوگوں کو شارٹ لسٹ اور موازنہ کریں، مہمات شائع کریں اور آن لائن مائل اسٹون معاہدے پر دستخط کریں۔",
+      ar: "منصّة لاكتشاف الصحفيين وصنّاع المحتوى والمتحدثين والخبراء، ومعرفة وصولهم الحقيقي على كل منصّة، ثم التواصل معهم أو توظيفهم. اختصر الأشخاص وقارن بينهم، وانشر الحملات، ووقّع اتفاقيات المراحل إلكترونيًا.",
+    },
+    features: [
+      {
+        en: "Search verified creators by industry, country, language and reach",
+        ur: "صنعت، ملک، زبان اور رسائی کے مطابق تصدیق شدہ کرییٹرز تلاش کریں",
+        ar: "ابحث عن صنّاع محتوى موثّقين حسب المجال والدولة واللغة والوصول",
+      },
+      {
+        en: "Real followers and engagement on every platform, with sources shown",
+        ur: "ہر پلیٹ فارم پر اصل فالوورز اور انگیجمنٹ، ذرائع کے ساتھ",
+        ar: "متابعون وتفاعل حقيقيّان على كل منصّة مع إظهار المصادر",
+      },
+      {
+        en: "Shortlists, private notes and side by side comparison",
+        ur: "شارٹ لسٹس، نجی نوٹس اور ساتھ ساتھ موازنہ",
+        ar: "قوائم مختصرة وملاحظات خاصة ومقارنة جنبًا إلى جنب",
+      },
+      {
+        en: "Campaigns, hire requests and signed milestone agreements",
+        ur: "مہمات، ہائر درخواستیں اور دستخط شدہ مائل اسٹون معاہدے",
+        ar: "حملات وطلبات توظيف واتفاقيات مراحل موقّعة",
+      },
+    ],
+    forWho: [
+      {
+        en: "Brands and agencies running creator campaigns",
+        ur: "برانڈز اور ایجنسیاں جو کرییٹر مہمات چلاتی ہیں",
+        ar: "العلامات التجارية والوكالات التي تدير حملات صنّاع المحتوى",
+      },
+      {
+        en: "Creators, journalists, speakers and experts who want to be found",
+        ur: "کرییٹرز، صحافی، مقررین اور ماہرین جو نظر آنا چاہتے ہیں",
+        ar: "صنّاع المحتوى والصحفيون والمتحدثون والخبراء الراغبون في الظهور",
+      },
+      {
+        en: "Managers and talent agents acting for their clients",
+        ur: "مینیجرز اور ٹیلنٹ ایجنٹس جو اپنے کلائنٹس کی نمائندگی کرتے ہیں",
+        ar: "المديرون ووكلاء المواهب الذين يمثّلون عملاءهم",
+      },
+    ],
+  },
 ];
 
 /** The built-in line-up with its search text (see seo-content.ts). */

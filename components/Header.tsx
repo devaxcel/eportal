@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
   BarChart3, Bot, BookOpen, Briefcase, Building2, Camera, Car, Check, ChevronDown, Dumbbell, Globe, House, Landmark,
-  Mail, Menu, Plane, Rocket, Scale, School, Shield, ShoppingCart, Stethoscope, Store, Truck, Users, Utensils,
+  Mail, Megaphone, Menu, Plane, Rocket, Scale, School, Shield, ShoppingCart, Stethoscope, Store, Truck, Users, Utensils,
   Wallet, Workflow, Wrench, X, Zap, type LucideIcon,
 } from "lucide-react";
 import { Logo } from "./Logo";
@@ -13,7 +13,7 @@ import { useSolutions } from "./SolutionsProvider";
 import { href, langNames, locales, T, tx, type Lang } from "@/lib/i18n";
 
 const icons: Record<string, LucideIcon> = {
-  School, Dumbbell, Workflow, Mail, Stethoscope, Car, Bot, ShoppingCart, Briefcase, Building2, Store, Landmark, Truck, Plane,
+  School, Dumbbell, Workflow, Mail, Megaphone, Stethoscope, Car, Bot, ShoppingCart, Briefcase, Building2, Store, Landmark, Truck, Plane,
   Utensils, Camera, Scale, Wrench, Globe, Shield, Zap, Rocket, BookOpen, Users, BarChart3, Wallet, House,
 };
 

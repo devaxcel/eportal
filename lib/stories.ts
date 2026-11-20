@@ -296,4 +296,40 @@ export const stories: Record<string, Story> = {
       },
     ],
   },
+
+  influnexa: {
+    statement: {
+      en: "The right voice makes a message land. Influnexa helps you find that person, check their real reach and hire them with a signed agreement.",
+      ur: "درست آواز پیغام کو اثر دیتی ہے۔ انفلونیکسا آپ کو وہ شخص تلاش کرنے، اس کی اصل رسائی جانچنے اور دستخط شدہ معاہدے کے ساتھ ہائر کرنے میں مدد دیتا ہے۔",
+      ar: "الصوت المناسب يجعل الرسالة تصل. يساعدك إنفلونيكسا على إيجاد هذا الشخص والتحقق من وصوله الحقيقي وتوظيفه باتفاقية موقّعة.",
+    },
+    before: [
+      { en: "Hunting for creators across many apps and spreadsheets", ur: "کئی ایپس اور اسپریڈ شیٹس میں کرییٹرز کی تلاش", ar: "البحث عن صنّاع المحتوى عبر تطبيقات وجداول كثيرة" },
+      { en: "Follower numbers you cannot trust", ur: "فالوورز کے ایسے اعداد جن پر بھروسا نہیں", ar: "أعداد متابعين لا يمكن الوثوق بها" },
+      { en: "Deals agreed in chat with nothing in writing", ur: "چیٹ میں طے ہونے والے سودے، تحریری کچھ نہیں", ar: "اتفاقات تتم في الدردشة دون أي توثيق مكتوب" },
+    ],
+    after: [
+      { en: "One search by industry, country, language and reach", ur: "صنعت، ملک، زبان اور رسائی کے مطابق ایک ہی تلاش", ar: "بحث واحد حسب المجال والدولة واللغة والوصول" },
+      { en: "Verified profiles with real reach and open sources", ur: "تصدیق شدہ پروفائلز، اصل رسائی اور کھلے ذرائع کے ساتھ", ar: "ملفات موثّقة بوصول حقيقي ومصادر معلنة" },
+      { en: "Milestone agreements signed online, with terms locked", ur: "آن لائن دستخط شدہ مائل اسٹون معاہدے، شرائط لاک", ar: "اتفاقيات مراحل موقّعة إلكترونيًا مع تثبيت الشروط" },
+    ],
+    faqs: [
+      {
+        q: { en: "How is a profile verified?", ur: "پروفائل کی تصدیق کیسے ہوتی ہے؟", ar: "كيف يتم التحقق من الملف؟" },
+        a: { en: "The person claims the profile, receives a 6-digit code on one of their official accounts, and an admin approves it once they enter the code.", ur: "شخص پروفائل کلیم کرتا ہے، اپنے کسی سرکاری اکاؤنٹ پر 6 ہندسوں کا کوڈ پاتا ہے، اور کوڈ درج کرنے کے بعد ایڈمن منظوری دیتا ہے۔", ar: "يطالب الشخص بالملف ويتلقى رمزًا من 6 أرقام على أحد حساباته الرسمية، ثم يوافق المشرف بعد إدخال الرمز." },
+      },
+      {
+        q: { en: "Is it free to join?", ur: "کیا شامل ہونا مفت ہے؟", ar: "هل الانضمام مجاني؟" },
+        a: { en: "Creating an account and a profile is free.", ur: "اکاؤنٹ اور پروفائل بنانا مفت ہے۔", ar: "إنشاء حساب وملف شخصي مجاني." },
+      },
+      {
+        q: { en: "How does hiring work?", ur: "ہائرنگ کیسے کام کرتی ہے؟", ar: "كيف يتم التوظيف؟" },
+        a: { en: "A verified business sends a hire request. When the talent accepts, both sides see each other's contact details and can draft an agreement with milestones.", ur: "تصدیق شدہ کاروبار ہائر درخواست بھیجتا ہے۔ ٹیلنٹ قبول کرے تو دونوں فریق ایک دوسرے کی رابطہ تفصیلات دیکھتے ہیں اور مائل اسٹونز کے ساتھ معاہدہ تیار کر سکتے ہیں۔", ar: "ترسل شركة موثّقة طلب توظيف. عند قبول الموهبة يرى الطرفان بيانات التواصل ويمكنهما صياغة اتفاقية بمراحل." },
+      },
+      {
+        q: { en: "Can a manager work for a creator?", ur: "کیا مینیجر کسی کرییٹر کے لیے کام کر سکتا ہے؟", ar: "هل يمكن لمدير أن يعمل لصالح صانع محتوى؟" },
+        a: { en: "Yes. A verified manager can request to represent a creator, and the creator chooses what the manager may do.", ur: "جی ہاں۔ تصدیق شدہ مینیجر کسی کرییٹر کی نمائندگی کی درخواست کر سکتا ہے، اور کرییٹر طے کرتا ہے کہ مینیجر کیا کر سکتا ہے۔", ar: "نعم. يمكن لمدير موثّق طلب تمثيل صانع محتوى، ويحدد الصانع ما يُسمح للمدير بفعله." },
+      },
+    ],
+  },
 };

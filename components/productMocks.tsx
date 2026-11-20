@@ -412,6 +412,40 @@ function ShortenMock({ lang }: { lang: Lang }) {
   );
 }
 
+function InfluenceMock({ lang }: { lang: Lang }) {
+  const people: [string, string, string][] = [
+    ["Sara Khan", T(lang, "Technology", "ٹیکنالوجی"), "1.2M"],
+    ["Ali Raza", T(lang, "Media & News", "میڈیا اور خبریں"), "860K"],
+    ["Hina Malik", T(lang, "Entertainment", "تفریح"), "640K"],
+  ];
+  const where: [string, number][] = [["Instagram", 58], ["YouTube", 27], ["TikTok", 15]];
+  return (
+    <Shell icons={[LayoutDashboard, Search, Users, ListChecks, FileText, Settings]} title={T(lang, "Discover", "تلاش")} sub="Influnexa">
+      <Kpis items={[
+        { l: T(lang, "Verified profiles", "تصدیق شدہ پروفائلز"), v: "1,240", d: "+64", icon: Users },
+        { l: T(lang, "Shortlists", "شارٹ لسٹس"), v: "12", icon: ListChecks },
+        { l: T(lang, "Open campaigns", "کھلی مہمات"), v: "4", icon: Target },
+        { l: T(lang, "Signed deals", "دستخط شدہ سودے"), v: "9", d: "+3", icon: FileText },
+      ]} />
+      <div className="mt-3 grid gap-3 lg:grid-cols-5">
+        <Card title={T(lang, "Top creators", "نمایاں کرییٹرز")} className="lg:col-span-3">
+          <ul className="mt-2 space-y-2.5">{people.map(([nm, cat, r]) => <Row key={nm} lead={avatar(nm)} title={nm} sub={cat} right={<span className="text-[10px] font-semibold text-ink-soft">{r}</span>} />)}</ul>
+        </Card>
+        <Card title={T(lang, "Reach by platform", "پلیٹ فارم کے مطابق رسائی")} className="lg:col-span-2">
+          <ul className="mt-2 space-y-2.5">
+            {where.map(([nm, v]) => (
+              <li key={nm} className="text-[10px]">
+                <span className="flex justify-between"><b>{nm}</b><span className="text-ink-soft">{v}%</span></span>
+                <span className="mt-1 block h-1.5 overflow-hidden rounded-full bg-mist"><motion.span initial={{ width: 0 }} whileInView={{ width: `${v}%` }} viewport={{ once: true }} transition={{ duration: 1.1, delay: 0.3 }} className="block h-full rounded-full bg-brand-600" /></span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      </div>
+    </Shell>
+  );
+}
+
 /** Branded dashboard mockup for a product slug. */
 export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang }) {
   const slug = oldSlug(address); // built-in pictures are keyed by the original names
@@ -425,8 +459,9 @@ export function ProductMock({ slug: address, lang }: { slug: string; lang: Lang 
     slug === "pos" ? <PosMock lang={lang} /> :
     slug === "smartinvoice" ? <InvoiceMock lang={lang} /> :
     slug === "shortenurl" ? <ShortenMock lang={lang} /> :
+    slug === "influnexa" ? <InfluenceMock lang={lang} /> :
     <AdminDashboardMock lang={lang} />;
   // Only real product domains are shown; the rest use an ePortal path.
-  const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", hayroutes: "hayroutes.com" };
+  const url: Record<string, string> = { eschool: "eportal.pk/solutions/eschool", formed: "formed.fit", hayroutes: "hayroutes.com", influnexa: "influnexa.com" };
   return <BrowserFrame url={url[slug] ?? `eportal.pk/solutions/${address}`}>{inner}</BrowserFrame>;
 }
