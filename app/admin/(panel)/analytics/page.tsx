@@ -96,7 +96,7 @@ export default async function Analytics({ searchParams }: { searchParams: Promis
       {o && (
         <>
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
-            {[["Visitors", o.visitors], ["Page views", o.views], ["Leads", leads], ["Lead rate", `${rate}%`], ["WhatsApp clicks", o.whatsapp]].map(([k, v]) => (
+            {[["Visitors", o.visitors], ["Page views", o.views], ["Leads", leads], ["Lead rate", `${rate}%`], ["Call taps", o.whatsapp]].map(([k, v]) => (
               <div key={k as string} className="rounded-2xl border border-line bg-white p-4"><p className="text-xs font-semibold uppercase tracking-wide text-ink-soft">{k}</p><p className="mt-1 text-3xl font-extrabold">{v}</p></div>
             ))}
           </div>

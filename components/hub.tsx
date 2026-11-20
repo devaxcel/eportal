@@ -111,7 +111,7 @@ export function WhyEportal({ lang }: { lang: Lang }) {
     { icon: "MapPin", t: T(lang, "Built in Pakistan", "پاکستان میں تیار"), d: T(lang, "Designed around local workflows, with Urdu and English where it matters.", "مقامی طریقہ کار کے مطابق، جہاں ضرورت ہو اردو اور انگریزی کے ساتھ۔") },
     { icon: "MousePointerClick", t: T(lang, "Simple for everyone", "سب کے لیے آسان"), d: T(lang, "Clear screens that need no training, on web and mobile.", "واضح اسکرینیں جنہیں سیکھنے کی ضرورت نہیں، ویب اور موبائل پر۔") },
     { icon: "Sparkles", t: T(lang, "Practical AI", "عملی اے آئی"), d: T(lang, "AI that saves time on real tasks, with people always in control.", "اے آئی جو حقیقی کاموں میں وقت بچاتا ہے، فیصلے ہمیشہ انسان کے ہاتھ میں۔") },
-    { icon: "Headset", t: T(lang, "Support you can reach", "قابل رسائی سپورٹ"), d: T(lang, "A real person on phone or WhatsApp when you need help.", "ضرورت پر فون یا واٹس ایپ پر حقیقی انسان۔") },
+    { icon: "Headset", t: T(lang, "Support you can reach", "قابل رسائی سپورٹ"), d: T(lang, "A real person on the phone or by email when you need help.", "ضرورت پر فون یا ای میل پر حقیقی انسان۔") },
   ];
   return (
     <section className="bg-mist py-24">

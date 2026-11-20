@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { CallButton } from "@/components/CallButton";
 import { MotionProvider, ScrollProgress } from "@/components/motion";
 import { SolutionsProvider } from "@/components/SolutionsProvider";
 import { Track } from "@/components/Track";
@@ -72,7 +72,7 @@ export default async function RootLayout({
             <Header lang={lang} />
             <main>{children}</main>
             <Footer lang={lang} />
-            <WhatsAppButton lang={lang} />
+            <CallButton lang={lang} />
           </SolutionsProvider>
         </MotionProvider>
       </body>

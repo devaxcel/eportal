@@ -16,6 +16,7 @@ export const ui = {
   learnMore: { en: "Learn more", ur: "مزید جانیں" },
   language: { en: "اردو", ur: "English" },
   whatsapp: { en: "Chat on WhatsApp", ur: "واٹس ایپ پر بات کریں" },
+  callUs: { en: "Call us", ur: "ہمیں کال کریں" },
   newBadge: { en: "New", ur: "نیا" },
   liveBadge: { en: "Live", ur: "دستیاب" },
   perMonth: { en: "/ month", ur: "/ ماہانہ" },
@@ -564,7 +565,7 @@ export const plans: Plan[] = [
       { en: "Admin and teacher portals", ur: "ایڈمن اور ٹیچر پورٹلز" },
       { en: "Parent app", ur: "پیرنٹ ایپ" },
       { en: "500 SMS credits per month", ur: "ماہانہ 500 ایس ایم ایس" },
-      { en: "Email and WhatsApp support", ur: "ای میل اور واٹس ایپ سپورٹ" },
+      { en: "Email and phone support", ur: "ای میل اور فون سپورٹ" },
     ],
   },
   {

@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { DemoForm } from "./DemoForm";
 import { Icon } from "./Icon";
 import { JsonLd } from "./JsonLd";
@@ -20,8 +20,8 @@ export function ServicePage({ s, lang }: { s: Service; lang: Lang }) {
             {T(lang, "Start your request", "اپنی درخواست شروع کریں")}
             <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
           </a>
-          <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold transition hover:bg-white/15">
-            <MessageCircle size={18} /> {T(lang, "Chat on WhatsApp", "واٹس ایپ پر بات کریں")}
+          <a href={site.phoneHref} className="glass inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold transition hover:bg-white/15">
+            <Phone size={18} /> {T(lang, "Call us", "ہمیں کال کریں")}: <span dir="ltr">{site.phone}</span>
           </a>
         </div>
       </PageHero>

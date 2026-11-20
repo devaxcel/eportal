@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Reveal } from "./motion";
 import { ui } from "@/lib/content";
 import { href, T, tx, type L, type Lang } from "@/lib/i18n";
@@ -71,8 +71,8 @@ export function CtaBand({ lang }: { lang: Lang }) {
               {tx(ui.demo, lang)}
               <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
             </Link>
-            <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold transition hover:bg-white/15">
-              <MessageCircle size={18} /> {tx(ui.whatsapp, lang)}
+            <a href={site.phoneHref} className="glass inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold transition hover:bg-white/15">
+              <Phone size={18} /> {tx(ui.callUs, lang)}: <span dir="ltr">{site.phone}</span>
             </a>
           </div>
         </div>

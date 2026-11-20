@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useState } from "react";
-import { CheckCircle2, Mail, MessageCircle } from "lucide-react";
+import { CheckCircle2, Mail, Phone } from "lucide-react";
 import { submitEnquiry, type ErrorCode } from "@/app/[lang]/demo/actions";
 import { TrackedLink } from "./Track";
 import { useSolutions } from "./SolutionsProvider";
@@ -19,10 +19,10 @@ export const errorText = (lang: Lang, code: ErrorCode) =>
     email: T(lang, "That email address does not look right.", "یہ ای میل درست نہیں لگتی۔"),
     long: T(lang, "One of the answers is too long. Please shorten it.", "کوئی جواب بہت لمبا ہے۔ براہ کرم مختصر کریں۔"),
     spam: T(lang, "That looked automatic. Please try again in a moment.", "یہ خودکار لگا۔ براہ کرم کچھ دیر بعد دوبارہ کوشش کریں۔"),
-    rate: T(lang, "Too many requests from your connection. Please try again later or message us on WhatsApp.", "آپ کے کنکشن سے بہت زیادہ درخواستیں آئیں۔ بعد میں کوشش کریں یا واٹس ایپ پر پیغام بھیجیں۔"),
+    rate: T(lang, "Too many requests from your connection. Please try again later or call us.", "آپ کے کنکشن سے بہت زیادہ درخواستیں آئیں۔ بعد میں کوشش کریں یا ہمیں کال کریں۔"),
     taken: T(lang, "That time was just taken. Please choose another.", "وہ وقت ابھی کسی اور نے لے لیا۔ براہ کرم دوسرا چنیں۔"),
     closed: T(lang, "Booking is not available right now. Please send a message instead.", "بکنگ ابھی دستیاب نہیں۔ براہ کرم پیغام بھیجیں۔"),
-    server: T(lang, "Something went wrong on our side. Please try again or message us on WhatsApp.", "ہماری طرف کوئی خرابی ہوئی۔ دوبارہ کوشش کریں یا واٹس ایپ پر پیغام بھیجیں۔"),
+    server: T(lang, "Something went wrong on our side. Please try again or call us.", "ہماری طرف کوئی خرابی ہوئی۔ دوبارہ کوشش کریں یا ہمیں کال کریں۔"),
   })[code];
 
 export const fieldClass = "w-full rounded-xl border border-line bg-white px-4 py-3 text-base outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-200";
@@ -57,8 +57,8 @@ export function DemoForm({ lang, topic }: { lang: Lang; topic?: string }) {
         <h2 className="mt-4 text-2xl font-extrabold">{T(lang, "Thank you, we have your request", "شکریہ، ہمیں آپ کی درخواست مل گئی")}</h2>
         <p className="mt-2 text-ink-soft">{T(lang, "Our team will reply within one working day.", "ہماری ٹیم ایک کاروباری دن میں جواب دے گی۔")}</p>
         <p className="mt-4 text-sm text-ink-soft">{T(lang, "Your reference", "آپ کا حوالہ")}: <b dir="ltr">{state.ref}</b></p>
-        <TrackedLink href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white">
-          <MessageCircle size={18} /> {T(lang, "Chat on WhatsApp while you wait", "انتظار کے دوران واٹس ایپ پر بات کریں")}
+        <TrackedLink href={site.phoneHref} className="mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-3 font-semibold text-white">
+          <Phone size={18} /> {T(lang, "Need us sooner? Call", "جلدی چاہیے؟ کال کریں")} <span dir="ltr">{site.phone}</span>
         </TrackedLink>
       </div>
     );
@@ -92,7 +92,7 @@ export function DemoForm({ lang, topic }: { lang: Lang; topic?: string }) {
       </label>
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-1.5 block text-sm font-semibold">{T(lang, "Phone / WhatsApp", "فون / واٹس ایپ")}</span>
+          <span className="mb-1.5 block text-sm font-semibold">{T(lang, "Phone", "فون")}</span>
           <input name="phone" dir="ltr" type="tel" className={fieldClass} value={v.phone} onChange={set("phone")} maxLength={30} autoComplete="tel" />
         </label>
         <label className="block">
@@ -120,7 +120,7 @@ export function DemoForm({ lang, topic }: { lang: Lang; topic?: string }) {
 
       <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-ink-soft">
         <span>{T(lang, "Or reach us directly:", "یا براہ راست رابطہ کریں:")}</span>
-        <TrackedLink href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-semibold text-[#128C4B]"><MessageCircle size={15} /> WhatsApp</TrackedLink>
+        <TrackedLink href={site.phoneHref} className="inline-flex items-center gap-1.5 font-semibold text-brand-700"><Phone size={15} /> <span dir="ltr">{site.phone}</span></TrackedLink>
         <a href={`mailto:${site.email}?subject=${encodeURIComponent("ePortal request")}&body=${encodeURIComponent(text)}`} className="inline-flex items-center gap-1.5 font-semibold text-brand-700"><Mail size={15} /> {T(lang, "Email", "ای میل")}</a>
       </div>
       <p className="text-center text-xs text-ink-soft">{T(lang, "We use your details only to answer this request.", "ہم آپ کی معلومات صرف اس درخواست کا جواب دینے کے لیے استعمال کرتے ہیں۔")}</p>

@@ -21,7 +21,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const solutions = await getSolutions();
   const values = [
     { icon: "Languages", t: T(lang, "Built for Pakistan", "پاکستان کے لیے"), d: T(lang, "Urdu and English, local fee systems, Pakistani school workflows.", "اردو اور انگریزی، مقامی فیس نظام، پاکستانی اسکولوں کا طریقہ کار۔") },
-    { icon: "Handshake", t: T(lang, "Support you can reach", "قابل رسائی سپورٹ"), d: T(lang, "Talk to a real person on phone or WhatsApp.", "فون یا واٹس ایپ پر حقیقی انسان سے بات کریں۔") },
+    { icon: "Handshake", t: T(lang, "Support you can reach", "قابل رسائی سپورٹ"), d: T(lang, "Talk to a real person on the phone or by email.", "فون یا ای میل پر حقیقی انسان سے بات کریں۔") },
     { icon: "Sparkles", t: T(lang, "Practical AI", "عملی اے آئی"), d: T(lang, "AI that saves time on daily tasks, with staff always in control.", "اے آئی جو روزمرہ کاموں میں وقت بچائے، عملہ ہمیشہ کنٹرول میں۔") },
     { icon: "ShieldCheck", t: T(lang, "Your data stays yours", "آپ کا ڈیٹا آپ کا"), d: T(lang, "Role-based access, backups and the freedom to export any time.", "کردار پر مبنی رسائی، بیک اپ اور کسی بھی وقت ایکسپورٹ کی آزادی۔") },
   ];

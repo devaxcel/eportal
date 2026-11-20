@@ -4,10 +4,10 @@ export const site = {
   company: "AXCEL",
   companyUrl: "https://axcelworld.com",
   email: "info@eportal.pk",
-  phone: "+92-423-2020-786",
+  // Lahore landline 042-3202-0786 (no WhatsApp on this number)
+  phone: "042-3202-0786",
   phoneHref: "tel:+924232020786",
-  // WhatsApp number in international format, digits only. Placeholder: set the real WhatsApp number.
-  whatsapp: "924232020786",
+  phoneIntl: "+92-42-3202-0786",
   address: {
     en: "Barkat Market, Lahore 54700, Pakistan",
     ur: "برکت مارکیٹ، لاہور 54700، پاکستان",

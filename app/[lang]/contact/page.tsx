@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { DemoForm } from "@/components/DemoForm";
 import { FaqList, PageHero, SectionHead } from "@/components/Section";
 import { Reveal, Spot } from "@/components/motion";
@@ -18,7 +18,6 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
   const items = [
     { icon: Phone, label: T(lang, "Phone", "فون"), value: site.phone, href: site.phoneHref, ltr: true },
-    { icon: MessageCircle, label: "WhatsApp", value: T(lang, "Chat with us", "ہم سے بات کریں"), href: `https://wa.me/${site.whatsapp}` },
     { icon: Mail, label: T(lang, "Email", "ای میل"), value: site.email, href: `mailto:${site.email}` },
     { icon: MapPin, label: T(lang, "Office", "دفتر"), value: tx(site.address, lang) },
     { icon: Clock, label: T(lang, "Hours", "اوقات"), value: tx(site.hours, lang) },

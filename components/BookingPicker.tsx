@@ -131,7 +131,7 @@ export function BookingPicker({ lang }: { lang: Lang }) {
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block"><span className="mb-1.5 block text-sm font-semibold">{T(lang, "Your name", "آپ کا نام")}</span><input name="name" required maxLength={100} autoComplete="name" className={fieldClass} /></label>
             <label className="block"><span className="mb-1.5 block text-sm font-semibold">{T(lang, "Email", "ای میل")}</span><input name="email" type="email" required dir="ltr" maxLength={200} autoComplete="email" className={fieldClass} /></label>
-            <label className="block"><span className="mb-1.5 block text-sm font-semibold">{T(lang, "Phone / WhatsApp", "فون / واٹس ایپ")}</span><input name="phone" type="tel" dir="ltr" maxLength={30} autoComplete="tel" className={fieldClass} /></label>
+            <label className="block"><span className="mb-1.5 block text-sm font-semibold">{T(lang, "Phone", "فون")}</span><input name="phone" type="tel" dir="ltr" maxLength={30} autoComplete="tel" className={fieldClass} /></label>
             <label className="block"><span className="mb-1.5 block text-sm font-semibold">{T(lang, "Organisation (school, clinic, company…)", "ادارہ (اسکول، کلینک، کمپنی…)")}</span><input name="org" maxLength={120} autoComplete="organization" className={fieldClass} /></label>
           </div>
           <label className="block">

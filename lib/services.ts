@@ -72,7 +72,7 @@ export const services: Service[] = [
       { en: "Teams replacing spreadsheets, paper forms and WhatsApp groups", ur: "وہ ٹیمیں جو اسپریڈ شیٹس، کاغذی فارم اور واٹس ایپ گروپ سے آگے بڑھنا چاہتی ہیں" },
     ],
     steps: [
-      { title: { en: "Tell us what you need", ur: "اپنی ضرورت بتائیں" }, text: { en: "Fill in the short form below or message us on WhatsApp. No technical knowledge needed.", ur: "نیچے مختصر فارم بھریں یا واٹس ایپ پر پیغام بھیجیں۔ تکنیکی معلومات ضروری نہیں۔" } },
+      { title: { en: "Tell us what you need", ur: "اپنی ضرورت بتائیں" }, text: { en: "Fill in the short form below or call us. No technical knowledge needed.", ur: "نیچے مختصر فارم بھریں یا ہمیں کال کریں۔ تکنیکی معلومات ضروری نہیں۔" } },
       { title: { en: "Free consultation", ur: "مفت مشاورت" }, text: { en: "A short call to understand your process, your users and what success looks like.", ur: "ایک مختصر کال جس میں ہم آپ کا طریقہ کار، صارفین اور مطلوبہ نتیجہ سمجھتے ہیں۔" } },
       { title: { en: "Clear written quote", ur: "واضح تحریری کوٹیشن" }, text: { en: "Scope, price and timeline in plain language before any work starts.", ur: "کام شروع ہونے سے پہلے دائرہ کار، قیمت اور مدت سادہ زبان میں۔" } },
       { title: { en: "Build and review", ur: "تیاری اور جائزہ" }, text: { en: "You see working versions along the way and tell us what to adjust.", ur: "آپ راستے میں کام کرتے ہوئے ورژن دیکھتے ہیں اور تبدیلیاں بتاتے ہیں۔" } },
@@ -133,7 +133,7 @@ export const services: Service[] = [
       { en: "New businesses that need to launch online quickly", ur: "نئے کاروبار جنہیں جلدی آن لائن آنا ہے" },
     ],
     steps: [
-      { title: { en: "Tell us about your business", ur: "اپنے کاروبار کے بارے میں بتائیں" }, text: { en: "Share what you do, who your customers are and any sites you like. A short form or a WhatsApp message is enough.", ur: "بتائیں آپ کیا کرتے ہیں، آپ کے گاہک کون ہیں اور کون سی ویب سائٹس پسند ہیں۔ مختصر فارم یا واٹس ایپ پیغام کافی ہے۔" } },
+      { title: { en: "Tell us about your business", ur: "اپنے کاروبار کے بارے میں بتائیں" }, text: { en: "Share what you do, who your customers are and any sites you like. A short form or a phone call is enough.", ur: "بتائیں آپ کیا کرتے ہیں، آپ کے گاہک کون ہیں اور کون سی ویب سائٹس پسند ہیں۔ مختصر فارم یا فون کال کافی ہے۔" } },
       { title: { en: "Free consultation and quote", ur: "مفت مشاورت اور کوٹیشن" }, text: { en: "We agree the pages and features and send a clear written price and timeline.", ur: "ہم صفحات اور فیچرز طے کرتے ہیں اور واضح تحریری قیمت اور مدت بھیجتے ہیں۔" } },
       { title: { en: "Design preview", ur: "ڈیزائن کا پیش نظارہ" }, text: { en: "You review the design and ask for changes before we build everything.", ur: "مکمل تیاری سے پہلے آپ ڈیزائن دیکھتے اور تبدیلیاں بتاتے ہیں۔" } },
       { title: { en: "Build and content", ur: "تیاری اور مواد" }, text: { en: "We build the site, add your content and set it up for search engines.", ur: "ہم ویب سائٹ بناتے ہیں، آپ کا مواد شامل کرتے ہیں اور اسے سرچ انجن کے لیے تیار کرتے ہیں۔" } },
