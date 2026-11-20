@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CallButton } from "@/components/CallButton";
+import { SiteLoader } from "@/components/SiteLoader";
 import { MotionProvider, ScrollProgress } from "@/components/motion";
 import { SolutionsProvider } from "@/components/SolutionsProvider";
 import { Track } from "@/components/Track";
@@ -64,6 +65,7 @@ export default async function RootLayout({
         {typekit && <link rel="stylesheet" href={`https://use.typekit.net/${typekit}.css`} />}
       </head>
       <body>
+        <SiteLoader />
         <JsonLd data={organizationGraph(lang, solutions)} />
         <MotionProvider>
           <SolutionsProvider solutions={solutions}>
