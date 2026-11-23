@@ -2,7 +2,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { DemoForm } from "./DemoForm";
 import { Icon } from "./Icon";
 import { JsonLd } from "./JsonLd";
-import { Check, FaqList, PageHero, SectionHead } from "./Section";
+import { Check, CtaBand, FaqList, PageHero, SectionHead } from "./Section";
 import { Reveal } from "./motion";
 import { T, tx, type Lang } from "@/lib/i18n";
 import { serviceGraph } from "@/lib/seo";
@@ -85,6 +85,8 @@ export function ServicePage({ s, lang }: { s: Service; lang: Lang }) {
         <SectionHead eyebrow={T(lang, "FAQ", "اکثر پوچھے گئے سوالات")} title={T(lang, "Questions we are often asked", "اکثر پوچھے جانے والے سوالات")} />
         <div className="mt-10"><FaqList items={s.faqs} lang={lang} /></div>
       </section>
+
+      <CtaBand lang={lang} title={tx(s.title, lang)} sub={T(lang, "Free consultation, then a clear written quote. We reply within one working day.", "مفت مشاورت، پھر واضح تحریری کوٹیشن۔ ہم ایک کاروباری دن میں جواب دیتے ہیں۔")} href="#request" label={T(lang, "Start your request", "اپنی درخواست شروع کریں")} />
     </>
   );
 }

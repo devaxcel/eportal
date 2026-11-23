@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { CtaBand, FaqList, SectionHead } from "@/components/Section";
+import { CtaBand, FaqList, SectionHead, ServiceCtas } from "@/components/Section";
 import { EmotionalStatement } from "@/components/heart";
 import { GettingStarted, HubHero, SolutionsGrid, WhyEportal } from "@/components/hub";
 import { JsonLd } from "@/components/JsonLd";
@@ -28,6 +28,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
+      <ServiceCtas lang={lang} />
       <CtaBand lang={lang} />
     </>
   );

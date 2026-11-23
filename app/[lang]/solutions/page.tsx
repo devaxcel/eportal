@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { SolutionColumns } from "@/components/SolutionColumns";
-import { CtaBand, PageHero, SectionHead } from "@/components/Section";
+import { CtaBand, PageHero, SectionHead, ServiceCtas } from "@/components/Section";
 import { Reveal } from "@/components/motion";
 import { isLang, T, Tm } from "@/lib/i18n";
 
@@ -43,6 +43,7 @@ export default async function SolutionsPage({ params }: { params: Promise<{ lang
           ))}
         </div>
       </section>
+      <ServiceCtas lang={lang} />
       <CtaBand lang={lang} />
     </>
   );

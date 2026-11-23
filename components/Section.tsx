@@ -52,7 +52,7 @@ export function PageHero({ eyebrow, title, sub, children }: { eyebrow?: string; 
   );
 }
 
-export function CtaBand({ lang }: { lang: Lang }) {
+export function CtaBand({ lang, title, sub, href: to, label }: { lang: Lang; title?: string; sub?: string; href?: string; label?: string }) {
   return (
     <section className="container-x py-20">
       <Reveal>
@@ -61,14 +61,14 @@ export function CtaBand({ lang }: { lang: Lang }) {
           <div className="animate-float-slow pointer-events-none absolute -start-10 top-8 hidden h-28 w-28 rounded-3xl bg-brand-500/25 blur-xl sm:block" />
           <div className="animate-float pointer-events-none absolute -end-6 bottom-6 hidden h-36 w-36 rounded-full bg-brand-400/25 blur-2xl sm:block" />
           <h2 className="relative mx-auto max-w-2xl text-3xl font-extrabold sm:text-5xl">
-            {T(lang, "Find the right ePortal solution for you", "اپنے لیے درست ای پورٹل حل تلاش کریں")}
+            {title ?? T(lang, "Find the right ePortal solution for you", "اپنے لیے درست ای پورٹل حل تلاش کریں")}
           </h2>
           <p className="relative mx-auto mt-5 max-w-xl text-lg text-white/75">
-            {T(lang, "Tell us what you need. A short demo, no commitment.", "اپنی ضرورت بتائیں۔ مختصر ڈیمو، کوئی پابندی نہیں۔")}
+            {sub ?? T(lang, "Tell us what you need. A short demo, no commitment.", "اپنی ضرورت بتائیں۔ مختصر ڈیمو، کوئی پابندی نہیں۔")}
           </p>
           <div className="relative mt-9 flex flex-wrap justify-center gap-3">
-            <Link href={href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">
-              {tx(ui.demo, lang)}
+            <Link href={to ?? href(lang, "/demo")} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-400">
+              {label ?? tx(ui.demo, lang)}
               <ArrowRight size={18} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
             </Link>
             <a href={site.phoneHref} className="glass inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold transition hover:bg-white/15">
@@ -77,6 +77,33 @@ export function CtaBand({ lang }: { lang: Lang }) {
           </div>
         </div>
       </Reveal>
+    </section>
+  );
+}
+
+/** "Need something built for you?" Two cards that send visitors to the made-to-order service pages. */
+export function ServiceCtas({ lang }: { lang: Lang }) {
+  const items = [
+    { path: "/custom-portal", title: T(lang, "Request a custom portal for your business", "اپنے کاروبار کے لیے کسٹم پورٹل کی درخواست کریں"), text: T(lang, "Client, staff, vendor or student portals built around your process.", "آپ کے طریقہ کار کے مطابق کلائنٹ، اسٹاف، وینڈر یا اسٹوڈنٹ پورٹلز۔"), cta: T(lang, "Request a portal", "پورٹل کی درخواست دیں") },
+    { path: "/business-website", title: T(lang, "Get your business website", "اپنے کاروبار کی ویب سائٹ بنوائیں"), text: T(lang, "A fast, professional website that shows up on Google and brings enquiries.", "تیز اور پیشہ ورانہ ویب سائٹ جو گوگل پر نظر آئے اور انکوائریاں لائے۔"), cta: T(lang, "Get a website", "ویب سائٹ بنوائیں") },
+  ];
+  return (
+    <section className="container-x py-20">
+      <SectionHead eyebrow={T(lang, "Built for you", "آپ کے لیے تیار")} title={T(lang, "Need something made to order?", "کچھ حسب ضرورت بنوانا ہے؟")} sub={T(lang, "Not every business fits a ready made platform. We design and build exactly what you need.", "ہر کاروبار تیار شدہ پلیٹ فارم میں فٹ نہیں ہوتا۔ ہم بالکل وہی بناتے ہیں جو آپ کو چاہیے۔")} />
+      <div className="mx-auto mt-10 grid max-w-4xl gap-5 md:grid-cols-2">
+        {items.map((i, k) => (
+          <Reveal key={i.path} delay={k * 0.08}>
+            <Link href={href(lang, i.path)} className="group flex h-full flex-col rounded-2xl border border-line bg-white p-7 transition hover:border-brand-300 hover:shadow-xl hover:shadow-brand-600/10">
+              <h3 className="text-xl font-extrabold">{i.title}</h3>
+              <p className="mt-2 flex-1 text-ink-soft">{i.text}</p>
+              <span className="mt-5 inline-flex items-center gap-2 font-semibold text-brand-600">
+                {i.cta}
+                <ArrowRight size={16} className="transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+              </span>
+            </Link>
+          </Reveal>
+        ))}
+      </div>
     </section>
   );
 }
