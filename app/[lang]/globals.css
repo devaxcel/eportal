@@ -229,3 +229,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .site-loader { animation-duration: 0.01s; animation-delay: 0s; }
 }
+
+/* reCAPTCHA badge hidden: the notice is shown inside each form instead */
+.grecaptcha-badge { visibility: hidden; }

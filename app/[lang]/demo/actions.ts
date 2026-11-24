@@ -7,6 +7,7 @@ import { notifyEmails, serviceRoleKey, siteUrl, supabaseUrl } from "@/lib/env";
 import { recordEvent } from "@/lib/events";
 import { isLang, T, type Lang } from "@/lib/i18n";
 import { esc, layout, sendMail } from "@/lib/mail";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 import { clientIp, ipHash } from "@/lib/privacy";
 import { getService } from "@/lib/services";
 import { getSolutions } from "@/lib/solutions-data";
@@ -27,10 +28,12 @@ const ready = () => Boolean(supabaseUrl() && serviceRoleKey());
 type Fields = { name: string; organisation: string; phone: string; email: string; message: string; solution: string; students: string; topic: string };
 
 /** Shared checks for the message form and the booking form. */
-async function readFields(form: FormData, needEmail: boolean): Promise<{ f: Fields } | { error: ErrorCode }> {
+async function readFields(form: FormData, needEmail: boolean, captchaAction: string): Promise<{ f: Fields } | { error: ErrorCode }> {
   if (clean(form.get("website"), 50)) return { error: "spam" }; // hidden field a person never fills in
   const loaded = Number(form.get("ts"));
   if (loaded && Date.now() - loaded < 2000) return { error: "spam" }; // sent faster than a person can type
+  // Google reCAPTCHA v3: checked before anything is stored or emailed
+  if (!(await verifyRecaptcha(clean(form.get("recaptcha"), 3000), captchaAction, clientIp(await headers())))) return { error: "spam" };
 
   const f: Fields = {
     name: clean(form.get("name"), 100),
@@ -69,7 +72,7 @@ const solutionNameOf = async (slug: string) => (await getSolutions()).find((s) =
 
 export async function submitEnquiry(_prev: EnquiryState, form: FormData): Promise<EnquiryState> {
   if (!ready()) return { ok: false, error: "server" };
-  const parsed = await readFields(form, false);
+  const parsed = await readFields(form, false, "enquiry");
   if ("error" in parsed) return { ok: false, error: parsed.error };
   const { f } = parsed;
   const lang = (isLang(String(form.get("lang"))) ? String(form.get("lang")) : "en") as Lang;
@@ -128,7 +131,7 @@ export type BookState = { ok: true; start: number; end: number } | { ok: false; 
 
 export async function bookSlot(_prev: BookState, form: FormData): Promise<BookState> {
   if (!ready()) return { ok: false, error: "server" };
-  const parsed = await readFields(form, true);
+  const parsed = await readFields(form, true, "booking");
   if ("error" in parsed) return { ok: false, error: parsed.error };
   const { f } = parsed;
   const lang = (isLang(String(form.get("lang"))) ? String(form.get("lang")) : "en") as Lang;

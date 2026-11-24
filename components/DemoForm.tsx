@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useState } from "react";
 import { CheckCircle2, Mail, Phone } from "lucide-react";
 import { submitEnquiry, type ErrorCode } from "@/app/[lang]/demo/actions";
+import { Recaptcha, RecaptchaNotice } from "./Recaptcha";
 import { TrackedLink } from "./Track";
 import { useSolutions } from "./SolutionsProvider";
 import { T, tx, type Lang } from "@/lib/i18n";
@@ -70,6 +71,7 @@ export function DemoForm({ lang, topic }: { lang: Lang; topic?: string }) {
       <input type="hidden" name="page" value={page} />
       <input type="hidden" name="ts" value={loadedAt} />
       {topic && <input type="hidden" name="topic" value={topic} />}
+      <Recaptcha action="enquiry" refreshOn={state} />
       {/* honeypot: hidden from people, filled in by simple bots */}
       <div aria-hidden="true" className="absolute -start-[9999px] h-0 w-0 overflow-hidden">
         <label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
@@ -123,6 +125,7 @@ export function DemoForm({ lang, topic }: { lang: Lang; topic?: string }) {
         <TrackedLink href={site.phoneHref} className="inline-flex items-center gap-1.5 font-semibold text-brand-700"><Phone size={15} /> <span dir="ltr">{site.phone}</span></TrackedLink>
         <a href={`mailto:${site.email}?subject=${encodeURIComponent("ePortal request")}&body=${encodeURIComponent(text)}`} className="inline-flex items-center gap-1.5 font-semibold text-brand-700"><Mail size={15} /> {T(lang, "Email", "ای میل")}</a>
       </div>
+      <RecaptchaNotice lang={lang} />
       <p className="text-center text-xs text-ink-soft">{T(lang, "We use your details only to answer this request.", "ہم آپ کی معلومات صرف اس درخواست کا جواب دینے کے لیے استعمال کرتے ہیں۔")}</p>
     </form>
   );

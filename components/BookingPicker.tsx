@@ -1,5 +1,6 @@
 "use client";
 
+import { Recaptcha, RecaptchaNotice } from "./Recaptcha";
 import { useActionState, useEffect, useMemo, useState } from "react";
 import { CalendarCheck, ChevronLeft, ChevronRight, Clock, Globe } from "lucide-react";
 import { bookSlot, getSlots, type SlotsResult } from "@/app/[lang]/demo/actions";
@@ -126,6 +127,7 @@ export function BookingPicker({ lang }: { lang: Lang }) {
           <input type="hidden" name="start" value={start} />
           <input type="hidden" name="tz" value={tz} />
           <input type="hidden" name="ts" value={loadedAt} />
+          <Recaptcha action="booking" refreshOn={state} />
           <div aria-hidden="true" className="absolute -start-[9999px] h-0 w-0 overflow-hidden"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
           <p className="rounded-xl bg-brand-50 px-4 py-3 text-sm font-semibold text-brand-800" dir="auto">{fmtLong(start)}</p>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -144,6 +146,7 @@ export function BookingPicker({ lang }: { lang: Lang }) {
           <label className="block"><span className="mb-1.5 block text-sm font-semibold">{T(lang, "Anything we should know? (optional)", "کچھ اور بتانا چاہیں؟ (اختیاری)")}</span><textarea name="msg" rows={3} maxLength={2000} className={fieldClass} /></label>
           {state && !state.ok && <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{errorText(lang, state.error)}</p>}
           <button disabled={pending} className="w-full rounded-xl bg-brand-600 px-5 py-3.5 font-semibold text-white hover:bg-brand-700 disabled:opacity-60">{pending ? T(lang, "Booking…", "بک ہو رہا ہے…") : T(lang, "Confirm booking", "بکنگ کنفرم کریں")}</button>
+          <RecaptchaNotice lang={lang} />
           <p className="text-center text-xs text-ink-soft">{T(lang, "We use your details only to answer this request.", "ہم آپ کی معلومات صرف اس درخواست کا جواب دینے کے لیے استعمال کرتے ہیں۔")}</p>
         </form>
       )}
