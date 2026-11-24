@@ -13,6 +13,9 @@ const SLUG_RENAMES: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
+  // The reCAPTCHA site key is public by design. Setting it as RECAPTCHA_SITE_KEY in Vercel avoids the NEXT_PUBLIC_ warning;
+  // it is handed to the browser code at build time under the name the components read.
+  env: { NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY ?? process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "" },
   async redirects() {
     // Old addresses, with and without a language prefix (the middleware removes the prefix afterwards).
     const gone = [
