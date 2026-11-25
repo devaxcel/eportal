@@ -25,7 +25,7 @@ export function seoOf(s: Solution, lang: Lang) {
 export function solutionMetadata(s: Solution, lang: Lang): Metadata {
   const seo = seoOf(s, lang);
   const url = `${SITE_URL}/solutions/${s.slug}`;
-  const images = s.seo?.ogImage ? [s.seo.ogImage] : undefined;
+  const images = [s.seo?.ogImage || `${SITE_URL}/api/og`];
   return {
     title: seo.customTitle ? { absolute: seo.title } : seo.title,
     description: seo.description,
@@ -35,7 +35,7 @@ export function solutionMetadata(s: Solution, lang: Lang): Metadata {
       types: { "text/markdown": `${SITE_URL}/md/${lang}/solutions/${s.slug}` },
     },
     openGraph: { type: "website", title: seo.title, description: seo.description, url, siteName: "ePortal", locale: lang, images },
-    twitter: { card: images ? "summary_large_image" : "summary", title: seo.title, description: seo.description, images },
+    twitter: { card: "summary_large_image", title: seo.title, description: seo.description, images },
   };
 }
 
@@ -94,8 +94,8 @@ export function serviceMetadata(s: Service, lang: Lang): Metadata {
     description,
     keywords: s.keywords,
     alternates: { canonical: url, types: { "text/markdown": `${SITE_URL}/md/${lang}${s.path}` } },
-    openGraph: { type: "website", title, description, url, siteName: "ePortal", locale: lang },
-    twitter: { card: "summary", title, description },
+    openGraph: { type: "website", title, description, url, siteName: "ePortal", locale: lang, images: [`${SITE_URL}/api/og`] },
+    twitter: { card: "summary_large_image", title, description, images: [`${SITE_URL}/api/og`] },
   };
 }
 

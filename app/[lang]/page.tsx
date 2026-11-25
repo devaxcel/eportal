@@ -8,6 +8,8 @@ import { hubFaqs } from "@/lib/content";
 import { getSolutions } from "@/lib/solutions-data";
 import { isLang, T } from "@/lib/i18n";
 
+export const generateMetadata = () => ({ alternates: { canonical: "/" } });
+
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();

@@ -153,7 +153,7 @@ export async function llmsTxt(): Promise<string> {
   const solutions = await getSolutions();
   return [
     `# ${site.name}`, "",
-    `> ${site.name} is a set of smart software platforms by ${site.company}, built in Lahore, Pakistan. Pages are available in English, Urdu, Spanish, Dutch and Arabic. Every page has a markdown version: send \`Accept: text/markdown\` or add \`.md\` to the page address.`, "",
+    `> ${site.name} is a set of smart software platforms by ${site.company}, built in Lahore, Pakistan. The site is available in English, Urdu, Spanish, Dutch and Arabic at the same addresses (the language follows the visitor's browser or the language switcher). Every page has a markdown version: send \`Accept: text/markdown\` or add \`.md\` to the page address. For another language use \`/md/<lang>/<page>\`, for example \`/md/ur/solutions/schooldesk\` (languages: en, ur, es, nl, ar).`, "",
     "## Solutions", ...solutions.map((s) => `- [${tx(s.name, lang)}](${link(lang, `/solutions/${s.slug}`)}): ${tx(s.description, lang)}`), "",
     "## Services",
     ...services.map((s) => `- [${tx(s.title, lang)}](${link(lang, s.path)}): ${tx(s.seoDescription, lang)}`), "",

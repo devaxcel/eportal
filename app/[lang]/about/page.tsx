@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: Tm(lang, "About", "ہمارے بارے میں") };
+  return { title: Tm(lang, "About", "ہمارے بارے میں"), alternates: { canonical: "/about" } };
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {

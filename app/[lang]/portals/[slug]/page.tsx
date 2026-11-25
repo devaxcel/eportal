@@ -14,7 +14,7 @@ export const generateStaticParams = () =>
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
   const p = portals.find((x) => x.slug === slug);
-  return { title: p ? Tm(lang, p.name.en, p.name.ur) : "Portal" };
+  return { title: p ? Tm(lang, p.name.en, p.name.ur) : "Portal", alternates: { canonical: `/portals/${slug}` } };
 }
 
 export default async function PortalPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {

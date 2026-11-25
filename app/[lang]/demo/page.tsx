@@ -10,7 +10,7 @@ import { isLang, T, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: Tm(lang, "Request a Demo", "ڈیمو حاصل کریں") };
+  return { title: Tm(lang, "Request a Demo", "ڈیمو حاصل کریں"), alternates: { canonical: "/demo" } };
 }
 
 export default async function DemoPage({ params }: { params: Promise<{ lang: string }> }) {

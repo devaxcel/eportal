@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: Tm(lang, "Contact", "رابطہ") };
+  return { title: Tm(lang, "Contact", "رابطہ"), alternates: { canonical: "/contact" } };
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {

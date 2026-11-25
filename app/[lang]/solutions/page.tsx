@@ -6,7 +6,7 @@ import { isLang, T, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: Tm(lang, "Solutions", "حل") };
+  return { title: Tm(lang, "Solutions", "حل"), alternates: { canonical: "/solutions" } };
 }
 
 export default async function SolutionsPage({ params }: { params: Promise<{ lang: string }> }) {

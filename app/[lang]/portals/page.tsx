@@ -10,7 +10,7 @@ import { href, isLang, T, tx, Tm } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return { title: Tm(lang, "Portals", "پورٹلز") };
+  return { title: Tm(lang, "Portals", "پورٹلز"), alternates: { canonical: "/portals" } };
 }
 
 export default async function PortalsPage({ params }: { params: Promise<{ lang: string }> }) {
